@@ -54,7 +54,7 @@ if [[ -f ${gvars.maindir}/etc/${instance}_cntl_vars ]] then
     fi
 fi
 for i in "${!gvars.@}"; do
-    if [[ $(eval print \${$i}) == UNSET ]] then
+    if [[ $(eval print -- \${$i}) == UNSET ]] then
         print -u2 ERROR variable $i not set
         exit 1
     fi

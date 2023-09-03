@@ -30,7 +30,7 @@ function vg_ssh_fun_maintail_term {
             continue
         fi
         vgssh $SSHDEST \
-            "mkdir -p ./vg/tail/$d.$VG_SYSNAME; cat > ./vg/tail/$d.$VG_SYSNAME/$k.tmp; chmod +x ./vg/tail/$d.$VG_SYSNAME/$k.tmp; mv ./vg/tail/$d.$VG_SYSNAME/$k.tmp ./vg/tail/$d.$VG_SYSNAME/$k" \
+            "mkdir -p ./.vg/tail/$d.$VG_SYSNAME; cat > ./.vg/tail/$d.$VG_SYSNAME/$k.tmp; chmod +x ./.vg/tail/$d.$VG_SYSNAME/$k.tmp; mv ./.vg/tail/$d.$VG_SYSNAME/$k.tmp ./.vg/tail/$d.$VG_SYSNAME/$k" \
         < ${sizes[$k].k} 2>> ssh.err
         sizes[$k].done=1
     done
@@ -39,7 +39,7 @@ function vg_ssh_fun_maintail_term {
             continue
         fi
         vgssh $SSHDEST \
-            "mkdir -p ./vg/tail/$d.$VG_SYSNAME; cat > ./vg/tail/$d.$VG_SYSNAME/$k.tmp; chmod +x ./vg/tail/$d.$VG_SYSNAME/$k.tmp; mv ./vg/tail/$d.$VG_SYSNAME/$k.tmp ./vg/tail/$d.$VG_SYSNAME/$k" \
+            "mkdir -p ./.vg/tail/$d.$VG_SYSNAME; cat > ./.vg/tail/$d.$VG_SYSNAME/$k.tmp; chmod +x ./.vg/tail/$d.$VG_SYSNAME/$k.tmp; mv ./.vg/tail/$d.$VG_SYSNAME/$k.tmp ./.vg/tail/$d.$VG_SYSNAME/$k" \
         < ${sizes[$k].k} 2>> ssh.err
     done
 
@@ -63,7 +63,7 @@ function vg_ssh_fun_maintail_send {
     d=${d//[!a-zA-Z0-9.]/_}
     for file in "${!tail[@]}"; do
         typeset -n tailr=tail[$file]
-        print -r "cd ./vg/tail/$d.$VG_SYSNAME && TAILHOST=$VG_TARGETNAME ./vgksh ./run $file"
+        print -r "cd ./.vg/tail/$d.$VG_SYSNAME && TAILHOST=$VG_TARGETNAME ./vgksh ./run $file"
     done
     return 0
 }

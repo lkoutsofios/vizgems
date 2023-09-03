@@ -1,0 +1,13 @@
+
+a=$1
+v=$2
+
+[[ ! -d ../addons ]] && exit 0
+
+cd ../addons
+
+for i in *; do
+    [[ ! -d $i ]] && continue
+    print creating vg.addons-$i.$a.$v.tar
+    (cd $i && tar cf ../vg.addons-$i.$a.$v.tar .)
+done

@@ -2,14 +2,14 @@
 
 #v=$(date -f %Y-%m-%d)
 #v=$(< version)
-v=1002.2022.04.20
+v=1002.2023.09.01
 [[ $v == '' ]] && exit
 
 print $v
 
 rm -rf vg.*.*.v$v.* # swift.v$v.*.full.tar
 
-archs=linux.i386-64
+archs=$(egrep ssh: ../lib/package/admin/admin.db | sed 's/[ 	].*$//')
 
 for a in $archs; do
     ./bin/mksystem vg.system $a v$v INIT ast swift-base swift-vg
@@ -50,3 +50,7 @@ for i in vg.*.tgz; do
     print removing ${i%.tgz}
     rm -rf ${i%.tgz} $i
 done
+
+#for a in $archs; do
+#    ./bin/mkaddons $a v$v
+#done

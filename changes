@@ -1,0 +1,18 @@
+v1002.2022.09.01
+
+- added more rules to scope/tail/syslog
+- added locations to location.txt
+- changed make.probe to account for new gcc versions
+- fixed ksh eval bug in several swift and vizgems script
+- fixed ntp scope tool to add more ways to check the time offset
+
+v1002.2022.06.20
+
+- added more rules to scope/tail/syslog
+- changed the scope/tail client directory to ~/.vg
+- added code to use rle/huffman when asked for rtb which isn't open source
+
+v1002.2022.04.20
+
+- first open source update
+- replaced vcodex rtb compression with rle/huffman because rtb isn't available

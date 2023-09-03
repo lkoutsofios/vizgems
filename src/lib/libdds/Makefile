@@ -2,6 +2,8 @@
 
 LICENSE = since=1996,author=ek
 
+FEATURE_NORTB == 1
+
 CCFLAGS += $$(CC.DLL)
 
 $(INCLUDEDIR) :INSTALLDIR: dds.h dds_int.h

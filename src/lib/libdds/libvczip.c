@@ -221,6 +221,9 @@ char *_ddsvczgenrtb (DDSschema_t *schemap) {
     int coff, noff;
     char *s;
 
+#ifdef FEATURE_NORTB
+    strcpy (rtbbuf, "rle.0,huffman");
+#else
     strcpy (rtbbuf, "rtable.schema=[");
     s = rtbbuf + strlen (rtbbuf);
     coff = 0;
@@ -236,6 +239,7 @@ char *_ddsvczgenrtb (DDSschema_t *schemap) {
         coff = noff;
     }
     strcat (s, "],mtf,rle.0,huffman");
+#endif
     return &rtbbuf[0];
 }
 

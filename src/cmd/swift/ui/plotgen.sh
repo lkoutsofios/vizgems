@@ -141,7 +141,7 @@ fi
 
 (
     print "set terminal $term"
-    print "set title \"$(eval print $title)\""
+    print "set title \"$(eval print -- $title)\""
     print "set tics out"
     if [[ $xticks != '' ]] then
         print "set xtics ($xticks)"
@@ -162,7 +162,7 @@ fi
         fi
         MAXVALUE=${maxvalues[$count]}
         print "\"${files[$count]}\" \c"
-        print "title \"$(eval print ${legends[$count]})\" \c"
+        print "title \"$(eval print -- ${legends[$count]})\" \c"
         if [[ ${styles[$count]} != '' ]] then
             print "with ${styles[$count]}\c"
         fi

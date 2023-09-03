@@ -28,7 +28,7 @@ function vg_ssh_fun_mainntp_send {
 
     case $targettype in
     *linux*)
-        cmd="(/usr/sbin/ntpq -p || /usr/sbin/ntpdc -c peers || /usr/bin/ntpq -p || /usr/bin/ntpdc -c peers || /usr/bin/chronyc sourcestats) 2> /dev/null"
+        cmd="(/usr/sbin/ntpq -p || /usr/sbin/ntpdc -c peers || /usr/bin/ntpq -p || /usr/bin/ntpdc -c peers || /usr/bin/chronyc sourcestats || /usr/bin/timedatectl timesync-status) 2> /dev/null"
         ;;
     *freebsd*)
         cmd="/usr/bin/ntpq -p"
@@ -51,6 +51,8 @@ function vg_ssh_fun_mainntp_receive {
         ntpvs[ntp_offset._total]=${vs[6]%%+([a-z])}
     elif (( vn == 10 )) then
         ntpvs[ntp_offset._total]=${vs[8]}
+    elif (( vn == 2 )) && [[ ${vs[0]} == Offset: ]] then
+        ntpvs[ntp_offset._total]=${vs[1]}
     fi
     return 0
 }

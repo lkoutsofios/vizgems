@@ -242,7 +242,7 @@ else
             continue
         fi
         [[ $aattr != '' ]] && ae+="$aattr"
-        aurl=$(eval print -r "\"$ae\"")
+        aurl=$(eval print -r -- "\"$ae\"")
         print -r "<d>$(printf '%#H' "$aurl")|$(printf '%#H' "$al")|$wtype</d>"
     done
     IFS="$ifs"

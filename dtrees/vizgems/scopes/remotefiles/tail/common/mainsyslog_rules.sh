@@ -6,17 +6,17 @@ rules=(
         [exclude]=(
             [0]=(
                 tool=kernel
-                txt='*@(vhci_hcd|ALSA|apparmor|AppArmor|IPVS: Creat|Modules linked|\[<*>\]*0x|audit*callbacks|Read?[0-9]|USB|Touch|usb|MTP|Memory cgroup stats for|node*:slabs:*,objs:*,free:|cache*object*size|entrypoint.sh|audit*cron)*'
+                txt='*@(vhci_hcd|ALSA|apparmor|AppArmor|IPVS: Creat|Modules linked|\[<*>\]*0x|audit*callbacks|Read?[0-9]|USB|Touch|usb|MTP|Memory cgroup stats for|node*:slabs:*,objs:*,free:|cache*object*size|entrypoint.sh|audit*cron|veth)*'
             )
             [1]=(
                 tool='systemd*'
-                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist)*'
+                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh)*'
             )
             [2]=(
                 tool='sshd*'
-                txt='*@(opened|closed|Accepted|[Dd]isconnected|locate|stashed)*'
+                txt='*@(opened|closed|Accepted|[Dd]isconnected|locate|stashed|kwallet5)*'
             )
-            [3]=( tool='cron*' txt='*@(RunAsUser*ignored|CMD|REPLACE|opened|closed| info )*' )
+            [3]=( tool='cron*' txt='*@(RunAsUser*ignored|CMD|REPLACE|opened|closed| info |pam_kwallet5)*' )
             [4]=( tool='@(tls_prune|cyr_expire|master|ctl_cyrusdb)' txt='*' )
             [5]=( tool='dnsmasq*' txt='*' )
             [6]=( tool='ovs*' txt='*INFO*' )
@@ -32,7 +32,7 @@ rules=(
             [16]=( tool=irqbalance txt='*affinity_hint subset empty*' )
             [17]=( tool=sqlanywhere txt='*' )
             [18]=( tool='*' txt='*SELinux*' )
-            [19]=( tool='setroubleshoot' txt='*Plugin Exception*' )
+            [19]=( tool='setroubleshoot' txt='*@(Plugin Exception|rpm info)*' )
             [20]=( tool='rsyslog*' txt='*@(action*action*suspended|MARK)*' )
             [21]=( tool='auditd*' txt='*@(rotating)*' )
             [22]=( tool='chronyd*' txt='*' )
@@ -65,6 +65,17 @@ rules=(
             [49]=( tool='@(sendmail|sm-mta)' txt='*' )
             [50]=( tool='xrdp' txt='*' )
             [51]=( tool='gvfs*' txt='*' )
+            [52]=( tool='yast-timesync*' txt='*' )
+            [53]=( tool='tracker-store*' txt='*' )
+            [54]=( tool='rtkit-daemon*' txt='*' )
+            [55]=( tool='pipewire*' txt='*' )
+            [56]=( tool='snap*' txt='*' )
+            [57]=( tool='tracker*' txt='*' )
+            [58]=( tool='goa-daemon*' txt='*' )
+            [59]=( tool='web*php*' txt='*' )
+            [60]=( tool='named' txt='*' )
+            [61]=( tool='avahi*' txt='*' )
+            [62]=(  tool='dockerd*' txt='*level=@(info|warning)*' )
         )
         [include]=(
             [0]=(

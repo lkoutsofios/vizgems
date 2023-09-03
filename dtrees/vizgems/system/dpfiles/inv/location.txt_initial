@@ -103,6 +103,7 @@ map|l|city_bennettsville|l2|state_us_sc|
 map|l|city_bentonville|l2|state_us_ar|
 map|l|city_benton|l2|state_us_il|
 map|l|city_berazategui|l2|state_ar|
+map|l|city_berkeleyheights|l2|state_us_nj|
 map|l|city_berlin|l2|state_de|
 map|l|city_bethesda|l2|state_us_md|
 map|l|city_bethlehem|l2|state_us_pa|
@@ -1035,6 +1036,7 @@ map|l|city_pinebluff|l2|state_us_ar|
 map|l|city_pineknot|l2|state_us_ky|
 map|l|city_pineprairie|l2|state_us_la|
 map|l|city_pineville|l2|state_us_la|
+map|l|city_piraeus|l2|state_gr|
 map|l|city_piscataway|l2|state_us_nj|
 map|l|city_pismobeach|l2|state_us_ca|
 map|l|city_pittsburgh|l2|state_us_pa|
@@ -1060,6 +1062,7 @@ map|l|city_poprad|l2|state_sk|
 map|l|city_portage|l2|state_us_mi|
 map|l|city_portblandford|l2|state_ca|
 map|l|city_portland|l2|state_us_or|
+map|l|city_portorafti|l2|state_gr|
 map|l|city_porto|l2|state_pt|
 map|l|city_portsaintlucie|l2|state_us_fl|
 map|l|city_post|l2|state_us_tx|
@@ -2152,6 +2155,9 @@ node|l|city_benton|nodename|Benton
 node|l|city_berazategui|coord|-58.2552778 -34.7333333
 node|l|city_berazategui|name|Berazategui, AR
 node|l|city_berazategui|nodename|Berazategui
+node|l|city_berkeleyheights|coord|-74.4311 40.6809
+node|l|city_berkeleyheights|name|Berkeley Heights, NJ USA
+node|l|city_berkeleyheights|nodename|Berkeley Heights
 node|l|city_berlin|coord|10.45 54.033333
 node|l|city_berlin|name|Berlin, DE
 node|l|city_berlin|nodename|Berlin
@@ -4947,6 +4953,9 @@ node|l|city_pineprairie|nodename|Pine Prairie
 node|l|city_pineville|coord|-92.4341667 31.3222222
 node|l|city_pineville|name|Pineville, LA USA
 node|l|city_pineville|nodename|Pineville
+node|l|city_piraeus|coord|23.63708 37.94745
+node|l|city_piraeus|name|Piraeus, GR
+node|l|city_piraeus|nodename|Piraeus
 node|l|city_piscataway|coord|-74.471489 40.539255
 node|l|city_piscataway|name|Piscataway, NJ USA
 node|l|city_piscataway|nodename|Piscataway
@@ -5022,6 +5031,9 @@ node|l|city_portblandford|nodename|Port Blandford
 node|l|city_portland|coord|-122.6750000 45.5236111
 node|l|city_portland|name|Portland, OR USA
 node|l|city_portland|nodename|Portland
+node|l|city_portorafti|coord|24.00855713891551 37.887606950150875
+node|l|city_portorafti|name|Porto Rafti, GR
+node|l|city_portorafti|nodename|Porto Rafti, GR
 node|l|city_porto|coord|-8.6166667 41.15
 node|l|city_porto|name|Porto, PT
 node|l|city_porto|nodename|Porto

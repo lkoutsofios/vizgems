@@ -1,2 +1,5 @@
-./bin/package make
-./bin/package write base binary INIT ast swift swift-base swift-vg version=$(date -f %Y-%m-%d)
+./bin/package admin make
+./bin/package admin results failed
+./bin/package admin write base binary INIT ast swift swift-base swift-vg version=$(date -f %Y-%m-%d)
+
+for i in seurat zigil leftycentos7 leftycentos8 leftyopensuse15 leftytumbleweed leftyubuntu16 leftyubuntu18 leftyubuntu20 leftyfreebsd; do print AAA $i; dist src $i:swift/dev/src; done
