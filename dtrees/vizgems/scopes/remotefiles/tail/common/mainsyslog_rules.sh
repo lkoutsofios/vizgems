@@ -6,7 +6,7 @@ rules=(
         [exclude]=(
             [0]=(
                 tool=kernel
-                txt='*@(vhci_hcd|ALSA|apparmor|AppArmor|IPVS: Creat|Modules linked|\[<*>\]*0x|audit*callbacks|Read?[0-9]|USB|Touch|usb|MTP|Memory cgroup stats for|node*:slabs:*,objs:*,free:|cache*object*size|entrypoint.sh|audit*cron|veth)*'
+                txt='*@(vhci_hcd|ALSA|apparmor|AppArmor|IPVS: Creat|Modules linked|\[<*>\]*0x|audit*callbacks|Read?[0-9]|USB|Touch|usb|MTP|Memory cgroup stats for|node*:slabs:*,objs:*,free:|cache*object*size|entrypoint.sh|audit*cron|veth|Bluetooth)*'
             )
             [1]=(
                 tool='systemd*'
@@ -76,6 +76,7 @@ rules=(
             [60]=( tool='named' txt='*' )
             [61]=( tool='avahi*' txt='*' )
             [62]=(  tool='dockerd*' txt='*level=@(info|warning)*' )
+            [63]=( tool='baloo*' txt='*' )
         )
         [include]=(
             [0]=(

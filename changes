@@ -1,3 +1,9 @@
+v1002.2022.11.01
+
+- changed graphviz parser to understand 'digraph' or 'graph' without a name
+- added more rules to scope/tail/syslog
+- fixed dotty bug that was interpreting layout tags wrong
+
 v1002.2022.09.01
 
 - added more rules to scope/tail/syslog

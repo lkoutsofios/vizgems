@@ -36,6 +36,10 @@ file: graph_type T_id
     { D2Lbegin ($2); free ($2); }
   '{' stmt_list '}'
     { D2Lend (); }
+| graph_type
+    { D2Lbegin ("g"); }
+  '{' stmt_list '}'
+    { D2Lend (); }
 | error
     { D2Labort (); }
 | /* empty*/
@@ -180,4 +184,6 @@ subg_stmt: subg_hdr '{' stmt_list '}' %prec '{'
 
 subg_hdr: T_subgraph T_id
     { D2Lpushgraph ($2); free ($2); }
+|  T_subgraph
+    { D2Lpushgraph (NULL); }
 ;
