@@ -1,6 +1,6 @@
 
 ph_data=(
-    title="AT&amp;T Visualizer 10.02"
+    title="AT&amp;T Visualizer 11.00"
     host=$(uname -n)
     styles=()
     browser=FF pid='' bannermenu='' htmldir='' cgidir='' opencgidir=''

@@ -111,7 +111,7 @@ vg_dq_vt_util_em.c vg_dq_vt_util_invgraph.c vg_dq_vt_util_invgrid.c \
 vg_dq_vt_util_invmap.c vg_dq_vt_util_invmapll.c vg_dq_vt_util_invtab.c \
 vg_dq_vt_util_ri.c vg_dq_vt_util_statchart.c vg_dq_vt_util_stattab.c \
 vg_dq_vt_util_ut.c \
--lgv -lgraph -lgd -lvgxml
+-lgvc -lcgraph -lgd -lvgxml
 
 authkey = "da visualizer"
 key.h :

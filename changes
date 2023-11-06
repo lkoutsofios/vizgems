@@ -1,3 +1,7 @@
+v1100.2023.11.01
+
+- first version of using the distro graphviz
+
 v1002.2022.11.01
 
 - changed graphviz parser to understand 'digraph' or 'graph' without a name

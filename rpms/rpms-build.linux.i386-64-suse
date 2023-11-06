@@ -16,6 +16,7 @@ gcc
 gdbm-devel
 glibc
 glibc-devel
+graphviz-devel
 gzip
 iputils
 java-11-openjdk-headless
@@ -50,11 +51,13 @@ libfontconfig1
 libfreetype6
 libfuse2
 libgdbm4
+libgraphviz6
 libjitterentropy3
 libjpeg62
 libjpeg62-devel
 libjson-c-devel
 libjson-c3
+libltdl7
 liblzma5
 libopenssl-3-devel
 libopenssl1_1

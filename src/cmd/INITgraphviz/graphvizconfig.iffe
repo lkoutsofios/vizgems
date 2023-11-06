@@ -1,49 +1,19 @@
 set config
 
-hdr values,stdbool,malloc,stddef,stdlib,strings,string,unistd,limits,inttypes
-hdr stdint,errno,iconv,pthread,errno,fpu_control,fenv,iconv
-hdr expat -lexpat
 hdr zlib -lz
-hdr gts -lgts
-hdr triangle
-hdr freetype/freetype -lfreetype
-#hdr ft2build
-hdr jpeglib -ljpeg
-hdr png -lpng
-hdr ttf -lttf
-hdr xpm -lXpm
-
-sys types,fpu,mman
-
-lib sincos,lsqrt,log2 math.h -lm
-lib setenv,strcasecmp,strncasecmp,deflateBound,vsnprintf,vasprintf
-lib drand48,lrand48,srand48,cbrt,fesetenv
-lib feenableexcept fenv.h
-
-typ boolean,intptr
-
-mem jpeg_common_struct.client_data jpeglib.h
-
-hdr stdlib,errno,dirent,termios,ndir
-sys ndir
-lib strerror
-
-mem FILE._IO_read_end,FILE._IO_read_ptr,FILE._next,FILE._endb stdio.h
-mem FILE._cnt,FILE._r stdio.h
-
-exp HAVE_EXPAT HAVE_EXPAT_H & HAVE_EXPAT_LIB
-exp HAVE_SYS_TYPES_H _sys_types
 exp HAVE_LIBZ HAVE_ZLIB_H & HAVE_Z_LIB
-exp HAVE_GTS HAVE_GTS_H & HAVE_GTS_LIB
-exp HAVE_TRIANGLE HAVE_TRIANGLE_H
-exp HAVE_INTPTR_T HAVE_INTPTR
-exp HAVE_LIBFREETYPE HAVE_FREETYPE_LIB
-exp HAVE_FT2BUILD_H HAVE_FREETYPE_LIB
+hdr jpeglib -ljpeg
+mem jpeg_common_struct.client_data jpeglib.h
 exp HAVE_LIBJPEG HAVE_JPEGLIB_H & HAVE_JPEG_LIB & HAVE_LIBZ & HAVE_CLIENT_DATA_IN_JPEG_COMMON_STRUCT
+hdr png -lpng
 exp HAVE_LIBPNG HAVE_PNG_H & HAVE_PNG_LIB & HAVE_LIBZ
-exp HAVE_PTHREAD HAVE_PTHREAD_H
-exp HAVE_LIBTTF HAVE_TTF_H & HAVE_TTF_LIB
+hdr freetype/freetype -lfreetype
+exp HAVE_LIBFREETYPE HAVE_FREETYPE_LIB
+hdr xpm -lXpm
 exp HAVE_LIBXPM HAVE_XPM_H & HAVE_XPM_LIB
+
+hdr stddef,stdlib,pthread,errno,iconv
+exp HAVE_PTHREAD HAVE_PTHREAD_H
 exp HAVE_ICONV HAVE_ICONV_H
 exp HAVE_ICONV_T_DEF HAVE_ICONV_H
 

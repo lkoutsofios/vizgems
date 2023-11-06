@@ -8,6 +8,7 @@ bzip2-libs
 coreutils
 curl
 diffutils
+expat
 freetype
 fuse-libs
 gawk
@@ -16,6 +17,7 @@ gdbm-libs
 glib2
 glibc
 graphite2
+graphviz
 gzip
 harfbuzz
 iputils
@@ -36,6 +38,7 @@ libXtst
 libbrotli
 libjpeg-turbo
 libpng
+libtool-ltdl
 libuuid
 libxcb
 libxcrypt

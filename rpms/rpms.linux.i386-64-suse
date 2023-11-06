@@ -33,9 +33,11 @@ libfontconfig1
 libfreetype6
 libfuse2
 libgdbm4
+libgraphviz6
 libjitterentropy3
 libjpeg62
 libjson-c3
+libltdl7
 liblzma5
 libopenssl1_1
 libopenssl3

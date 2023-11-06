@@ -30,7 +30,7 @@ static char *rendermode, *pagemode;
 static char *sortorder, *sorturl;
 }
 LIBS{
--lvg_dq_vt_util -lvgxml -lgv -lgraph -lgd
+-lvg_dq_vt_util -lvgxml -lgvc -lcgraph -lgd
 }
 BEGIN{
     if (attrload (getenv ("INVTABATTRFILE")) == -1)

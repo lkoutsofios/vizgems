@@ -1,13 +1,14 @@
 #ifndef _VG_DQ_VT_UTIL_INCLUDE
 #define _VG_DQ_VT_UTIL_INCLUDE
 
+#define Dict_t Dt_t
 #include <ast.h>
 #include <vmalloc.h>
 #include <swift.h>
 #include <graphviz/graphvizconfig.h>
 #include <graphviz/geom.h>
 #include <graphviz/gvc.h>
-#include <graphviz/graph.h>
+#include <graphviz/cgraph.h>
 #include <graphviz/gd.h>
 #include <graphviz/gdfontt.h>
 #include <graphviz/gdfonts.h>
@@ -910,6 +911,7 @@ extern int RIaddtoc (RI_t *, int, char *);
 extern int RIparseattr (char *, int, RIop_t *);
 extern int RIparseop (RI_t *, char *, int);
 extern int RIaddop (RI_t *, RIop_t *);
+extern int RIcenterops (RIop_t *, int, int, int, int, int);
 extern int RIaddpt (RI_t *, int, int);
 extern int RIaddpts (RI_t *, int *, int *, int);
 extern int RIgettextsize (char *, char *, char *, RIop_t *);

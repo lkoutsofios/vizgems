@@ -24,7 +24,7 @@ static int findex, maxpix;
 static char *rendermode, *pagemode;
 }
 LIBS{
--lvg_dq_vt_util -lvgxml -lgv -lgraph -lgd
+-lvg_dq_vt_util -lvgxml -lgvc -lcgraph -lgd
 }
 BEGIN{
     if (attrload (getenv ("INVGRIDATTRFILE")) == -1)

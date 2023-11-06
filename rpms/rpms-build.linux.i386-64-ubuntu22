@@ -18,6 +18,8 @@ libbrotli1
 libbsd0
 libc6
 libc6-dev
+libcdt5
+libcgraph6
 libcrypt-dev
 libcrypt1
 libdb5.3
@@ -29,6 +31,8 @@ libfreetype6
 libfuse-dev
 libfuse2
 libgcc-s1
+libgraphviz-dev
+libgvc6
 libhtml-parser-perl
 libice-dev
 libice6
@@ -38,8 +42,10 @@ libjpeg-turbo8
 libjpeg-turbo8-dev
 libjson-c-dev
 libjson-c5
+libltdl7
 liblzma5
 libmd0
+libpathplan4
 libpng-dev
 libpng16-16
 libreoffice-calc

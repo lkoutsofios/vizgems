@@ -323,7 +323,7 @@ static char *alarmattr (
 }
 }
 LIBS{
--lvg_dq_vt_util -lvgxml -lgv -lgraph -lgd
+-lvg_dq_vt_util -lvgxml -lgvc -lcgraph -lgd
 }
 BEGIN{
     if (attrload (getenv ("ALARMTABATTRFILE")) == -1)

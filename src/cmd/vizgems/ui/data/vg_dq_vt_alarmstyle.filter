@@ -22,7 +22,7 @@ static int findex, openmode;
 static char *rendermode;
 }
 LIBS{
--lvg_dq_vt_util -lvgxml -lgv -lgraph -lgd
+-lvg_dq_vt_util -lvgxml -lgvc -lcgraph -lgd
 }
 BEGIN{
     if (attrload (getenv ("ALARMSTYLEATTRFILE")) == -1)
