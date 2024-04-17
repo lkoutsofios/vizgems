@@ -12,6 +12,7 @@ diffutils
 gawk
 gcc
 glibc
+graphviz
 gzip
 iputils
 java-11-openjdk-headless
@@ -29,7 +30,6 @@ libbz2-1
 libcrypt1
 libdb-4_8
 libexpat1
-libfontconfig1
 libfreetype6
 libfuse2
 libgraphviz6

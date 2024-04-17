@@ -55,12 +55,11 @@ libxmu6
 libxpm4
 libxt6
 libxtst6
-linux-headers-6.2.0-35
-linux-headers-6.2.0-36
-linux-headers-6.2.0-36-generic
-linux-modules-6.2.0-36-generic
+linux-headers-6.2.0-37
+linux-headers-6.2.0-39
 lvm2
 openssh-client
+python3-twisted
 snapd
 tnftp
 vim
