@@ -280,7 +280,7 @@ vg_scopeinv_mainhadoop vg_scopeinv_mainopenstack vg_scopeinv_mainsmartctl \
 vg_scopeinv_maindellswitch vg_scopeinv_mainnrpe vg_scopeinv_maincollectd \
 vg_scopeinv_mainpurestorage vg_scopeinv_maindellswitch2 \
 vg_scopeinv_mainjetstor vg_scopeinv_mainidrac vg_scopeinv_mainlinux_rcloud \
-vg_scopeinv_mainfreebsd
+vg_scopeinv_mainfreebsd vg_ssh_fun_mainsensors
 
 $(INSTALLROOT)/scopes/scopeinv/vg_scopeinv_mainciscocat :INSTALL: \
 vg_scopeinv_maincisco
