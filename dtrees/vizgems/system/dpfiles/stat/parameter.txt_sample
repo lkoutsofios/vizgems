@@ -32,6 +32,7 @@ os|mainlinux.i386|mainlinux.i386|os_runqueue._total|y|SSH:cooked?user=[scope_use
 os|mainlinux.i386|mainlinux.i386|os_swapin._total|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=os_swapin&inst=_total&file=vmstat|KB|counter|||
 os|mainlinux.i386|mainlinux.i386|os_swapout._total|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=os_swapout&inst=_total&file=vmstat|KB|counter|||
 os|mainlinux.i386|mainlinux.i386|proc_topcpu.1|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=maintop&var=proc_topcpu&inst=1&exclude=*:top|%|number|||
+os|mainlinux.i386|mainlinux.i386|sensor_stemp|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainsensors&var=sensor_stemp&inst=[[!si_stempid]]|C|number|>=95%:1:2/3:1/3600:>850%:4:2/3:1/3600:CLEAR:5:3/3||
 os|mainlinux.i386|mainlinux.i386|sensor_temp|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainmegacli&var=sensor_temp&inst=[[!si_hwname]]|F|number|||
 os|mainlinux.i386|mainlinux.i386|swap_used._total|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=swap_used&inst=_total&file=meminfo|MB|number|>=98%:2:4/4:1/3600:>=95%:4:4/4:1/3600:CLEAR:5:4/4||y
 os|mainlinux.i386|mainlinux.i386|tcpip_inbw|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=tcpip_inbw&inst=[[si_iface]]&file=net/dev|mbps|number|||

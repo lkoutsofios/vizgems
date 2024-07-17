@@ -9,7 +9,7 @@ set -o pipefail
 case $targettype in
 *)
     export PROC_FILES='stat meminfo net/dev'
-    tools='maindf mainproc mainuptime mainmegacli mainnvidia'
+    tools='maindf mainproc mainuptime mainmegacli mainnvidia mainsensors'
     ;;
 esac
 

@@ -111,6 +111,7 @@ sensor_pf|Power Factor|Power Factor (%s)|avg|n|
 sensor_power|Power|Power (%s)|sum|n|si_powername
 sensor_pres|Pressure Sensor|Pressure Sensor (%s)|avg|n|si_preslabel
 sensor_temp|Temp Sensor|Temp Sensor (%s)|avg|n|si_templabel
+sensor_stemp|Temp Sensor|Temp Sensor (%s)|avg|n|
 sensor_ucurrent|Unbalanced Current|Unbalanced Current (%s)|sum|n|
 sensor_volts|Voltage|Voltage (%s)|avg|n|
 sensor_wind|Wind Sensor|Wind Sensor (%s)|avg|n|

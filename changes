@@ -1,3 +1,8 @@
+v1100.2024.07.17
+
+- added ssh fun sensors scope tool for the 'sensors' command
+- added support for ubuntu 24.04
+
 v1100.2024.04.15
 
 - update rpm dependencies
