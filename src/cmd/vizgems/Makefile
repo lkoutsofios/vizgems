@@ -280,7 +280,7 @@ vg_scopeinv_mainhadoop vg_scopeinv_mainopenstack vg_scopeinv_mainsmartctl \
 vg_scopeinv_maindellswitch vg_scopeinv_mainnrpe vg_scopeinv_maincollectd \
 vg_scopeinv_mainpurestorage vg_scopeinv_maindellswitch2 \
 vg_scopeinv_mainjetstor vg_scopeinv_mainidrac vg_scopeinv_mainlinux_rcloud \
-vg_scopeinv_mainfreebsd vg_ssh_fun_mainsensors
+vg_scopeinv_mainfreebsd
 
 $(INSTALLROOT)/scopes/scopeinv/vg_scopeinv_mainciscocat :INSTALL: \
 vg_scopeinv_maincisco
@@ -302,7 +302,8 @@ vg_ssh_fun_mainnetstat vg_ssh_fun_mainproc vg_ssh_fun_mainprstat \
 vg_ssh_fun_mainps vg_ssh_fun_mainsar vg_ssh_fun_mainsmee vg_ssh_fun_mainswap \
 vg_ssh_fun_maintail vg_ssh_fun_maintop vg_ssh_fun_mainuptime \
 vg_ssh_fun_mainvmstat vg_ssh_fun_mainsmartctl vg_ssh_fun_maincollectd \
-vg_ssh_fun_mainnvidia vg_ssh_fun_mainrcloud vg_ssh_fun_mainntp
+vg_ssh_fun_mainnvidia vg_ssh_fun_mainrcloud vg_ssh_fun_mainntp \
+vg_ssh_fun_mainsensors
 
 $(INSTALLROOT)/scopes/wmi :INSTALLDIR: vg_wmi_driver
 
