@@ -1782,9 +1782,18 @@ for cid in "${!alist[@]}"; do
                     alvaidsst2fosid[$alv:$aid:$sst]=$bestfosid
                 fi
                 findscope $alv $aid "$aip" "$ast" "$asl" "$ant" "$sst"
+                if [[ ${alvaidsst2sid[$alv:$aid:$sst]} == '' ]] then
+                    nosid=y
+                else
+                    nosid=n
+                fi
                 alvaidsst2sid[$alv:$aid:$sst]=$bestsid
                 alvaidsst2fosid[$alv:$aid:$sst]=$bestfosid
                 if [[ $bestsid != '' ]] then
+                    if [[ $nosid == y ]] then
+                        genalarm CLEAR $alv $aid 5 \
+                        "asset $alv:$aid covered by $bestsid"
+                    fi
                     (( sid2cn[$bestsid]++ ))
                     ((
                         sid2cost[$bestsid] +=

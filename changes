@@ -1,3 +1,10 @@
+v1100.2024.08.31
+
+- added code to scopemgr to create clear alarms for when an asset is covered
+- added scripts for Raspbian OS builds
+- added scripts for Ubuntu 24 OS builds
+- added code to genpkglist to handle Raspbian OS (PI Debian)
+
 v1100.2024.07.19
 
 - fixed adding ssh fun sensors scope tool for the 'sensors' command again

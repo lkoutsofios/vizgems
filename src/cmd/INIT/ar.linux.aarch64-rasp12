@@ -1,0 +1,6 @@
+: linux.aarch64-rasp12 ar wrapper
+
+case $1 in
+*x*) /usr/bin/ar "$@" ;;
+*)   /usr/bin/ar U"$@" ;;
+esac

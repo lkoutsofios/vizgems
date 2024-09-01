@@ -7,6 +7,9 @@ usepkg=n
 if [[ $(egrep NAME /etc/os-release 2> /dev/null) == *[Uu]buntu* ]] then
     userpm=n
     usedpkg=y
+elif [[ $(egrep NAME /etc/os-release 2> /dev/null) == *Raspbian* ]] then
+    userpm=n
+    usedpkg=y
 elif [[ $(uname -a) == *FreeBSD* ]] then
     userpm=n
     usepkg=y
