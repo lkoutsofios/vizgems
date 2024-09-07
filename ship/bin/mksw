@@ -18,7 +18,6 @@ for i in "$@"; do
         pax -ps -rf $tgz -s ",^arch/$v/,,"
     )
 done
-chgrp -Rh swift $a.$v.sw
 chmod u+s $a.$v.sw/bin/probe
 chmod u+s,g+s $a.$v.sw/lib/ssd
 chmod u+s $a.$v.sw/lib/probe/probe

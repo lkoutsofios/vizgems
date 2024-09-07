@@ -41,6 +41,10 @@ os|mainlinux.i386|mainlinux.i386|tcpip_inpkt|y|SSH:cooked?user=[scope_user]&pass
 os|mainlinux.i386|mainlinux.i386|tcpip_outbw|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=tcpip_outbw&inst=[[si_iface]]&file=net/dev|mbps|number|||
 os|mainlinux.i386|mainlinux.i386|tcpip_outerrpkt|n|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=tcpip_outerrpkt&inst=[[si_iface]]&file=net/dev|pkts|number|>5:1:2/2:1/3600:CLEAR:5:2/2||
 os|mainlinux.i386|mainlinux.i386|tcpip_outpkt|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainproc&var=tcpip_outpkt&inst=[[si_iface]]&file=net/dev|pkts|number|||
+os|mainlinux.i386|mainlinux.i386|apcups_status|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainapcups&var=apcups_status&inst=[[!si_apcupsid]]|%|number|||
+os|mainlinux.i386|mainlinux.i386|apcups_load|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainapcups&var=apcups_load&inst=[[!si_apcupsid]]|%|number|||
+os|mainlinux.i386|mainlinux.i386|apcups_battleft|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainapcups&var=apcups_battleft&inst=[[!si_apcupsid]]|%|number|||
+os|mainlinux.i386|mainlinux.i386|apcups_timeleft|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainapcups&var=apcups_timeleft&inst=[[!si_apcupsid]]|m|number|||
 os|mainlinux.i386|mainlinux.i386|collection|n|NOOP:none|%|number|>=50:2:3/3:1/3600:>0:4:3/3:1/3600:CLEAR:5:3/3||
 
 os|mainidrac|mainlinux.i386|ping_loss._main|y|PING:raw?var=loss&count=10&ip=[scope_ip]|%|number|>=100:1:2/2:1/3600:CLEAR:5:2/2||y

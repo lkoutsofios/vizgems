@@ -303,7 +303,7 @@ vg_ssh_fun_mainps vg_ssh_fun_mainsar vg_ssh_fun_mainsmee vg_ssh_fun_mainswap \
 vg_ssh_fun_maintail vg_ssh_fun_maintop vg_ssh_fun_mainuptime \
 vg_ssh_fun_mainvmstat vg_ssh_fun_mainsmartctl vg_ssh_fun_maincollectd \
 vg_ssh_fun_mainnvidia vg_ssh_fun_mainrcloud vg_ssh_fun_mainntp \
-vg_ssh_fun_mainsensors
+vg_ssh_fun_mainsensors vg_ssh_fun_mainapcups
 
 $(INSTALLROOT)/scopes/wmi :INSTALLDIR: vg_wmi_driver
 
