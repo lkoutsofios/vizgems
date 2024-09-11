@@ -1,3 +1,11 @@
+v1100.2024.09.11
+
+- added arch linux distro and cleaned up cc/ar scripts
+
+v1100.2024.09.07
+
+- added scope ssh tool to monitor apc ups
+
 v1100.2024.08.31
 
 - added code to scopemgr to create clear alarms for when an asset is covered

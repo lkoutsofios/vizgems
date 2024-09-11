@@ -29,6 +29,10 @@
 
 #include "limits.h"
 
+#if __GNUC__ > 13
+#include <sys/stat.h>
+#endif
+
 #include "FEATURE/param"
 
 #include <modecanon.h>

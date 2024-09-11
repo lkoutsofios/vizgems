@@ -38,6 +38,10 @@
 #include <sfio.h>
 #endif
 
+#if __GNUC__ > 13
+#include <errno.h>
+#endif
+
 #ifndef	ast
 #define ast		_ast_info
 #endif
