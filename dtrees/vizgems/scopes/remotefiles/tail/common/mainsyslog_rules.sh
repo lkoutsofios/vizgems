@@ -10,11 +10,11 @@ rules=(
             )
             [1]=(
                 tool='systemd*'
-                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh)*'
+                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh|wireplumber)*'
             )
             [2]=(
                 tool='sshd*'
-                txt='*@(opened|closed|Accepted|[Dd]isconnected|locate|stashed|kwallet5)*'
+                txt='*@(opened|closed|Accepted|[Dd]isconnected|locate|stashed|kwallet5|deprecated reading of user environment|executable specified in Exec= does not exist)*'
             )
             [3]=( tool='cron*' txt='*@(RunAsUser*ignored|CMD|REPLACE|opened|closed| info |pam_kwallet5)*' )
             [4]=( tool='@(tls_prune|cyr_expire|master|ctl_cyrusdb)' txt='*' )
@@ -77,6 +77,8 @@ rules=(
             [61]=( tool='avahi*' txt='*' )
             [62]=(  tool='dockerd*' txt='*level=@(info|warning)*' )
             [63]=( tool='baloo*' txt='*' )
+            [64]=( tool='wireplumber' txt='*' )
+            [65]=( tool='bluetoothd' txt='*' )
         )
         [include]=(
             [0]=(

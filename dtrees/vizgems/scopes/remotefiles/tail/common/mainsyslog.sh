@@ -9,17 +9,29 @@ datere1='{3}([A-Za-z])+( )+([0-9]) {2}([0-9]):{2}([0-9]):{2}([0-9])'
 datere2='{4}([0-9])-{2}([0-9])-{2}([0-9])T{2}([0-9]):{2}([0-9]):{2}([0-9])'
 typeset -l tool
 
-for p in syslog messages; do
+doneflag=n
+for p in syslog messages JOURNALD; do
+    [[ $doneflag == y ]] && break
     f=syslog
     typeset -n rr=rules[$f]
     [[ $rr == '' ]] && continue
+    [[ ! -f /var/log/$p && $p != JOURNALD ]] && continue
+    doneflag=y
 
     mint=${ printf '%(%#)T'; }
     (( mint -= 12 * 60 * 60 ))
     maxt=${ printf '%(%#)T'; }
     (( maxt += 10 * 60 ))
     typeset -A counts txts
-    ./vgtail /var/log/$p "" ./$f.$n.$p | while read -r line; do
+    if [[ $p != JOURNALD ]] then
+        ./vgtail /var/log/$p "" ./$f.$n.$p
+    else
+        if [[ ! -f jctl.cursor ]] then
+            journalctl -q --no-pager --cursor-file=jctl.cursor > /dev/null 2>&1
+        fi
+        journalctl -q --no-pager -o short-iso --cursor-file=jctl.cursor
+    fi \
+    | while read -r line; do
         [[ $line != @($datere1|$datere2)*:* ]] && continue
 
         line=${line// +( )/ }

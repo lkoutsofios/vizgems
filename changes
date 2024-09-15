@@ -1,3 +1,10 @@
+v1100.2024.09.15
+
+- fixed vgssh to get rid of X warning
+- added code to vgtail to use journal when syslog is not available
+- added more rules to scope/tail/syslog
+- added code to getpkglist for arch linux (pacman)
+
 v1100.2024.09.11
 
 - added arch linux distro and cleaned up cc/ar scripts

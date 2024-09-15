@@ -7,12 +7,23 @@ usepkg=n
 if [[ $(egrep NAME /etc/os-release 2> /dev/null) == *[Uu]buntu* ]] then
     userpm=n
     usedpkg=y
+    usepkg=n
+    usepac=n
 elif [[ $(egrep NAME /etc/os-release 2> /dev/null) == *Raspbian* ]] then
     userpm=n
     usedpkg=y
+    usepkg=n
+    usepac=n
+elif [[ $(egrep NAME /etc/os-release 2> /dev/null) == *Arch\ Linux* ]] then
+    userpm=n
+    usedpkg=n
+    usepkg=n
+    usepac=y
 elif [[ $(uname -a) == *FreeBSD* ]] then
     userpm=n
+    usedpkg=n
     usepkg=y
+    usepac=n
 fi
 
 function getpkg {
@@ -27,6 +38,9 @@ function getpkg {
         fi
     elif [[ $usedpkg == y ]] then
         dpkg -S "*$f" 2> /dev/null | egrep -v 'diversion by ' | sed 's/:.*$//'
+    elif [[ $usepac == y ]] then
+        pacman -F "$f" 2> /dev/null | egrep 'is owned by' \
+        | sed -e 's/.*is owned by //' -e 's/ .*$//' -e 's!^.*/!!'
     elif [[ $usepkg == y ]] then
         p=$(pkg which "$f" | egrep -v 'not found' | sed 's/^.* //')
         if [[ $p != '' ]] then
