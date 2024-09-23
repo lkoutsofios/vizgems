@@ -1,5 +1,5 @@
 
-apache2
+apache2-prefork
 apache2-utils
 bash-sh
 bind-utils
@@ -11,6 +11,7 @@ diffutils
 gawk
 gcc
 glibc
+gnuplot
 graphviz
 gzip
 iputils
@@ -36,10 +37,9 @@ libgdbm4
 libgraphviz6
 libjitterentropy3
 libjpeg62
-libjson-c3
+libjson-c5
 libltdl7
 liblzma5
-libopenssl1_1
 libopenssl3
 libpng16-16
 libsnmp40

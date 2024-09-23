@@ -16,7 +16,6 @@ gzip
 iputils-ping
 klibc-utils
 ksh93u+m
-less
 libbrotli-dev
 libbrotli1
 libbsd0
@@ -89,13 +88,14 @@ libxt-dev
 libxt6t64
 libxtst-dev
 libxtst6
-linux-headers-6.8.0-31
-linux-modules-6.5.0-35-generic
+linux-headers-6.8.0-45
+linux-headers-6.8.0-45-generic
+linux-modules-6.8.0-45-generic
 linux-modules-extra-6.8.0-31-generic
+linux-modules-extra-6.8.0-45-generic
 lvm2
 openssh-client
 python3-setuptools
-python3-twisted
 snapd
 tar
 tnftp

@@ -1,5 +1,4 @@
 
-apache2
 apache2-prefork
 apache2-utils
 bash-sh
@@ -54,11 +53,12 @@ libjitterentropy3
 libjpeg62
 libjpeg62-devel
 libjson-c-devel
-libjson-c3
+libjson-c5
 libltdl7
 liblzma5
 libopenssl-1_1-devel
 libopenssl1_1
+libopenssl3
 libpng16-16
 libpng16-devel
 libsnmp40

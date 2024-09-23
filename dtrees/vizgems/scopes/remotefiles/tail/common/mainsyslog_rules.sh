@@ -10,7 +10,7 @@ rules=(
             )
             [1]=(
                 tool='systemd*'
-                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh|wireplumber)*'
+                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh|wireplumber|p11-kit)*'
             )
             [2]=(
                 tool='sshd*'

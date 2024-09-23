@@ -54,6 +54,7 @@ libxpm4
 libxt6
 libxtst6
 linux-image-6.6.31+rpt-rpi-v7
+linux-image-6.6.47+rpt-rpi-v6
 lynx
 mawk
 ncurses-term

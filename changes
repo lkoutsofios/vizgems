@@ -1,3 +1,9 @@
+v1100.2024.09.23
+
+- added more rules to scope/tail/syslog
+- added support for opensuse tumbleweed
+- fixed cdt.h issue caused by bad graphviz package
+
 v1100.2024.09.15
 
 - fixed vgssh to get rid of X warning

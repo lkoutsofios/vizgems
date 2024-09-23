@@ -3,6 +3,11 @@
 LICENSE = since=1996,author=ek
 
 CCFLAGS += $$(CC.DLL)
+if CC.HOSTTYPE == "linux.i386-64-suse99" || CC.HOSTTYPE == "linux.i386-64-arch99"
+	CCFLAGS += -DHAVEGVCDT
+	DDSCCFLAGS=-ccflags -DHAVEGVCDT
+end
+
 
 .SOURCE.mk: .INSERT dp/inv dp/alarm dp/stat
 .SOURCE: dc dc/netdisc dc/port dc/sched dc/scopes dc/url dc/wmi dc/xml
