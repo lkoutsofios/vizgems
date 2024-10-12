@@ -1,4 +1,4 @@
-
+ImageMagick
 apache2-prefork
 apache2-utils
 bash-sh
@@ -46,6 +46,8 @@ libxcb1
 libxml2-2
 libz1
 lynx
+mailx
+man
 mariadb-client
 mksh
 mtools
@@ -57,9 +59,11 @@ openssh-common
 smartmontools
 tar
 tnftp
+util-linux
 vim
 wget
 xauth
 xdpyinfo
 xorg-x11-server-Xvfb
+xterm-bin
 zip

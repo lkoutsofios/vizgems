@@ -27,7 +27,7 @@ for p in syslog messages JOURNALD; do
         ./vgtail /var/log/$p "" ./$f.$n.$p
     else
         if [[ ! -f jctl.cursor ]] then
-            journalctl -q --no-pager --cursor-file=jctl.cursor > /dev/null 2>&1
+            journalctl -q --no-pager -o short-iso --cursor-file=jctl.cursor > /dev/null 2>&1
         fi
         journalctl -q --no-pager -o short-iso --cursor-file=jctl.cursor
     fi \

@@ -9,7 +9,7 @@ if [[ $(egrep NAME /etc/os-release 2> /dev/null) == *[Uu]buntu* ]] then
     usedpkg=y
     usepkg=n
     usepac=n
-elif [[ $(egrep NAME /etc/os-release 2> /dev/null) == *Raspbian* ]] then
+elif [[ $(egrep NAME /etc/os-release 2> /dev/null) == *Debian* ]] then
     userpm=n
     usedpkg=y
     usepkg=n
@@ -26,10 +26,44 @@ elif [[ $(uname -a) == *FreeBSD* ]] then
     usepac=n
 fi
 
-function getpkg {
-    typeset f=$1 p r
+findpaths() {
+    unset paths
+    typeset l paths
 
-    [[ -d $f ]] && return
+    if [[ "$1" == $PWD/* ]] then
+        return
+    fi
+
+    if [[ "$1" == /* ]] then
+        paths[0]="$1"
+        paths[1]=$(realpath "$1")
+    fi
+
+    whence -v -a "$1" 2> /dev/null | while read l; do
+        case $l in
+        *"is a"*" shell "*)
+            unset paths
+            typeset paths
+            return
+            ;;
+        *"is a"*" $PWD/"*)
+            unset paths
+            typeset paths
+            return
+            ;;
+        *" is "*/*)
+            l=${l##*" is "}
+            l=${l##*([!/])}
+            paths[${#paths[@]}]="$l"
+            paths[${#paths[@]}]=$(realpath "$l")
+            ;;
+        esac
+    done
+}
+
+function findpkg {
+    typeset f=$1 p
+
     if [[ $userpm == y ]] then
         rpm -qf "$f" --qf '%{NAME}\n' 2> /dev/null | egrep -v 'is not owned'
         if [[ $f == /lib* ]] then
@@ -46,32 +80,23 @@ function getpkg {
         if [[ $p != '' ]] then
             pkg query '%n' "$p"
         fi
-    fi | tail -1 | read r
-    if [[ $r != '' || ! -L $f ]] then
-        print -- $r
-        return
-    fi
-    r=$(realpath "$f")
-    [[ $r != */* ]] && return
-    f=$r
-    [[ -d $f ]] && return
-    if [[ $userpm == y ]] then
-        rpm -qf "$f" --qf '%{NAME}\n' 2> /dev/null | egrep -v 'is not owned'
-        if [[ $f == /lib* ]] then
-            rpm -qf "/usr$f" --qf '%{NAME}\n' 2> /dev/null \
-            | egrep -v 'is not owned'
-        fi  
-    elif [[ $usedpkg == y ]] then
-        dpkg -S "$f" 2> /dev/null | egrep -v 'diversion by ' | sed 's/:.*$//'
-    elif [[ $usepkg == y ]] then
-        p=$(pkg which "$f" | egrep -v 'not found' | sed 's/^.* //')
-        if [[ $p != '' ]] then
-            pkg query '%n' "$p"
-        fi  
-    fi | tail -1 | read r
-    if [[ $r != '' ]] then
-        print -- $r
-    fi
+    fi | tail -1
+}
+
+function getpkg {
+    typeset path pkg
+
+    findpaths "$1"
+    (( ${#paths[@]} == 0 )) && return
+
+    for path in "${paths[@]}"; do
+        pkg=$(findpkg "$path")
+        if [[ $pkg != '' ]] then
+            print "$pkg"
+            return
+        fi
+    done
+    print -u2 NOT FOUND $1
 }
 
 gmode=n
@@ -93,8 +118,11 @@ for arch in $archs; do
     n) name=rpms.$arch ;;
     *) name=rpms-build.$arch ;;
     esac
+
     (
-        cd arch/$arch
+        PATH=$PWD/arch/$arch/bin:$PATH
+        LD_LIBRARY_PATH=$PWD/arch/$arch/lib:$LD_LIBRARY_PATH
+
         tw -e 'type != DIR' file | egrep 'script' | sed 's/:.*$//' \
         | while read i; do
             cp $i a.sh
@@ -102,9 +130,7 @@ for arch in $archs; do
             egrep -v '^p;' a.A | egrep ';p;' | awk -F';' '{ print $3 }'
             rm a.sh a.A
         done | sort -u | while read i; do
-            p=$(whence "$i" 2> /dev/null)
-            [[ $p == '' ]] && continue
-            getpkg "$p"
+            getpkg "$i"
         done
     
         find /usr -name "mod_ssl.so" 2> /dev/null | read p
@@ -126,8 +152,9 @@ for arch in $archs; do
         done
     
         getpkg /bin/ksh
+        getpkg /usr/bin/ssh
         getpkg /usr/bin/cc
         getpkg /usr/bin/yacc
         getpkg /usr/bin/bison
-    ) | sort -u > ~/$name
+    ) 2> ~/$name.log | sort -u > ~/$name
 done

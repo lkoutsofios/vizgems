@@ -1,4 +1,3 @@
-
 bash
 bind-utils
 binutils
@@ -17,11 +16,13 @@ fuse-devel
 fuse-libs
 gawk
 gcc
+gdb
 gdbm-devel
 gdbm-libs
 glib2
 glib2-devel
 glibc
+glibc-common
 glibc-devel
 graphite2
 graphite2-devel
@@ -70,6 +71,7 @@ libxcrypt
 libxcrypt-devel
 libxml2
 libxml2-devel
+man-db
 mtools
 net-snmp-devel
 net-snmp-libs
@@ -81,6 +83,7 @@ pcre
 pcre-devel
 smartmontools
 tar
+util-linux
 vim-minimal
 wget
 xorg-x11-utils

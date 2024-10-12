@@ -42,14 +42,19 @@ function vg_ssh_fun_mainsensors_receive {
         case $val in
         *:*ISA*)  smode=core    ;;
         *:*ACPI*) smode=chassis ;;
+        *:*PCI*)  smode=pci     ;;
         esac
     }
     [[ $smode == chassis && $val == temp+([0-9]):* ]] && {
         sid=${val#temp}
         sid=${sid%:*}
     }
-    [[ $smode == core && $val == Core\ +([0-9]):* ]] && {
-        sid=${val##Core?( )}
+    [[ $smode == core && $val == @(Core\ |temp)+([0-9]):* ]] && {
+        sid=${val##@(Core|temp)?( )}
+        sid=${sid%:*}
+    }
+    [[ $smode == pci && $val == @(Sensor\ |temp)+([0-9]):* ]] && {
+        sid=${val##@(Sensor|temp)?( )}
         sid=${sid%:*}
     }
     [[ $val == *temp*_input:* ]] && {
@@ -88,7 +93,7 @@ function vg_ssh_fun_mainsensors_invsend {
 }
 
 function vg_ssh_fun_mainsensors_invreceive {
-    typeset val=$1
+    typeset val=$1 max
 
     [[ $val == '' ]] && {
         smode='' sid='' seenmax=''
@@ -97,14 +102,19 @@ function vg_ssh_fun_mainsensors_invreceive {
         case $val in
         *:*ISA*)  smode=core    ;;
         *:*ACPI*) smode=chassis ;;
+        *:*PCI*)  smode=pci     ;;
         esac
     }
     [[ $smode == chassis && $val == temp+([0-9]):* ]] && {
         sid=${val#temp}
         sid=${sid%:*}
     }
-    [[ $smode == core && $val == Core\ +([0-9]):* ]] && {
-        sid=${val##Core?( )}
+    [[ $smode == core && $val == @(Core\ |temp)+([0-9]):* ]] && {
+        sid=${val##@(Core|temp)?( )}
+        sid=${sid%:*}
+    }
+    [[ $smode == pci && $val == @(Sensor\ |temp)+([0-9]):* ]] && {
+        sid=${val##@(Sensor|temp)?( )}
         sid=${sid%:*}
     }
     [[ $val == *temp*_input:* ]] && {
@@ -114,13 +124,21 @@ function vg_ssh_fun_mainsensors_invreceive {
     }
     [[ $val == *temp*_max:* ]] && {
         if [[ $smode != '' && $sid != '' ]] then
-            print "node|o|$aid|si_sz_sensor_stemp.$smode$sid|${val##*' '}"
+            max=${val##*' '}
+            if (( max > 500 )) then
+                max=100
+            fi
+            print "node|o|$aid|si_sz_sensor_stemp.$smode$sid|$max"
             seenmax=y
         fi
     }
     [[ $val == *temp*_crit:* ]] && {
         if [[ $smode != '' && $sid != '' && $seenmax != y ]] then
-            print "node|o|$aid|si_sz_sensor_stemp.$smode$sid|${val##*' '}"
+            max=${val##*' '}
+            if (( max > 500 )) then
+                max=100
+            fi
+            print "node|o|$aid|si_sz_sensor_stemp.$smode$sid|$max"
             seenmax=y
         fi
     }

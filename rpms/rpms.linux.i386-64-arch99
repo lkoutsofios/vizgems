@@ -1,4 +1,3 @@
-
 bash
 binutils
 bison
@@ -23,6 +22,7 @@ harfbuzz
 icu
 iputils
 json-c
+ksh
 libice
 libjpeg-turbo
 libpng
@@ -40,12 +40,14 @@ libxmu
 libxpm
 libxt
 libxtst
+mandoc
 net-snmp
 netpbm
 openssh
 openssl
 pcre2
 tar
+util-linux
 util-linux-libs
 vi
 xorg-server-xvfb

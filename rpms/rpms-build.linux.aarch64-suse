@@ -1,4 +1,4 @@
-
+ImageMagick
 apache2-prefork
 apache2-utils
 bash-sh
@@ -71,6 +71,8 @@ libxml2-2
 libxml2-devel
 libz1
 lynx
+mailx
+man
 mariadb-client
 mksh
 mtools
@@ -83,11 +85,13 @@ openssh-common
 smartmontools
 tar
 tnftp
+util-linux
 vim
 wget
 xauth
 xdpyinfo
 xorg-x11-server-Xvfb
+xterm-bin
 xz-devel
 zip
 zlib-devel

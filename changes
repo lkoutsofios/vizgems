@@ -1,3 +1,11 @@
+v1100.2024.10.12
+
+- updated rpm generation tool
+- added option for journalctl log processing
+- added journalctl processing to syslog tool
+- added more rules to scope/tail/syslog
+- fixed ssh fun sensors scope tool to drop bogus max temps and added pci temps
+
 v1100.2024.09.23
 
 - added more rules to scope/tail/syslog

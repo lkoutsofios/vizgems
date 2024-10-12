@@ -1,4 +1,3 @@
-
 bash
 bind-utils
 binutils
@@ -13,9 +12,11 @@ freetype
 fuse-libs
 gawk
 gcc
+gdb
 gdbm-libs
 glib2
 glibc
+glibc-common
 graphite2
 graphviz
 gzip
@@ -43,6 +44,7 @@ libuuid
 libxcb
 libxcrypt
 libxml2
+man-db
 mtools
 net-snmp-libs
 openssh
@@ -51,6 +53,7 @@ openssl-libs
 pcre
 smartmontools
 tar
+util-linux
 vim-minimal
 wget
 xorg-x11-utils

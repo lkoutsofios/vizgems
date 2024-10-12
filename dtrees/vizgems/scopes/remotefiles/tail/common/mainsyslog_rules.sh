@@ -10,7 +10,7 @@ rules=(
             )
             [1]=(
                 tool='systemd*'
-                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh|wireplumber|p11-kit)*'
+                txt='*@([Ss]ession|Reloaded|Start|Stop|Created|Succeeded|slice|seat|buttons|target|Received SIGRTMIN|tmp|Temp|Service hold-off time over|Service hold-off time over|GnuPG|D-Bus|service*Killing|user|dbus|snapper|Sound|pulse|Multimedia|debconf|XDG|xdg|gnome|watcher*does not exist|One time sync config|Finished Create|snap|Bluetooth|journal|successful|PipeWire|tracker-miner|Tracker|gcr-ssh|wireplumber|p11-kit|pipewire.service|docker*Consumed|sysstat-collect.service|Finished Backup|DrKonqi|Finished Check if mainboard battery is Ok|Finished|Consumed*time)*'
             )
             [2]=(
                 tool='sshd*'
@@ -79,6 +79,8 @@ rules=(
             [63]=( tool='baloo*' txt='*' )
             [64]=( tool='wireplumber' txt='*' )
             [65]=( tool='bluetoothd' txt='*' )
+            [66]=( tool='fwupd*' txt='*' )
+            [67]=( tool='run-parts' txt='*' )
         )
         [include]=(
             [0]=(
