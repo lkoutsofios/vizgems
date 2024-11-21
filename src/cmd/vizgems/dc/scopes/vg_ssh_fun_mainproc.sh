@@ -461,7 +461,12 @@ function vg_ssh_fun_mainproc_emit_net_dev {
         case ${procr.name} in
         *bw.*)
             k=${procr.var//bw/byte}.${procr.inst}
-            [[ ${proc_net_dev_state[$k]} == '' ]] && continue
+            if [[ ${proc_net_dev_state[$k]} == '' ]] then
+                if [[ ${procr.name} == *.@(vnet|veth)* ]] then
+                    touch -d "14 day ago" inv.out
+                fi
+                continue
+            fi
             pv=${proc_net_dev_state[$k]}
             cv=${procvs[$k]}
             (( dv = cv - pv ))
@@ -507,7 +512,11 @@ function vg_ssh_fun_mainproc_emit_net_dev {
     done
     {
         for procvi in "${!procvs[@]}"; do
-            print -r "proc_net_dev_state[$procvi]=${procvs[$procvi]}"
+            case $procvi in
+            tcpip_*)
+                print -r "proc_net_dev_state[$procvi]=${procvs[$procvi]}"
+                ;;
+            esac
         done
         print -r "proc_net_dev_state[_time_]=$VG_JOBTS"
     } > proc_net_dev.state.tmp && mv proc_net_dev.state.tmp proc_net_dev.state

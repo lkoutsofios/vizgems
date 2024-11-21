@@ -2,13 +2,13 @@ rules=(
     sev=2
     tmode=keep
     counted=y
-    [exclude]=(
+    exclude=(
         [0]=(
             tool=pipewire
             txt='*@(Device or resource busy)*'
         )
     )
-    [include]=(
+    include=(
         [0]=(
             tool=kernel
             txt='*'
