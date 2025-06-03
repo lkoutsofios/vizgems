@@ -762,7 +762,7 @@ function dq_main_run {
             mkdir $dir
             (
                 cd $dir
-                ssh ${spec%%:*} ${spec#*:} -remote -user "$SWMID" \
+                vgssh ${spec%%:*} ${spec#*:} -remote -user "$SWMID" \
                 < ../vars.lst > data.pax 2> errors
                 if [[ $? != 0 ]] then
                     print -u2 VG QUERY ERROR: remote query to $spec failed

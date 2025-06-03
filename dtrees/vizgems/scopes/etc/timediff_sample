@@ -38,7 +38,7 @@ elif [[ $TIMESYS == NONE ]] then
 else
     cp etc/time.diff etc/time.diff.tmp
     hostspec=${TIMESYS%%:*}
-    timedrun 30 ssh $sfl $hostspec "TZ=$TZ date '+%s'" \
+    timedrun 30 vgssh $sfl $hostspec "TZ=$TZ date '+%s'" \
     | tail -1 | read -t 30 rtim
     if [[ $rtim == [0-9]* ]] then
         date '+%s' | read ltim

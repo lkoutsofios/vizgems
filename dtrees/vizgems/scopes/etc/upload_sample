@@ -177,7 +177,7 @@ for dir in $workdirs; do
             (
                 fsize=$(ls -Z '%(size)d' $file)
                 (( wt = 120 + ((9.0 * fsize) / transrate) * 9 ))
-                timedrun $wt ssh $sfl $hostspec \
+                timedrun $wt vgssh $sfl $hostspec \
                     "cat > $rfile.tmp && mv $rfile.tmp $rfile" \
                 < $file 2> /dev/null
                 if [[ $? != 0 ]] then

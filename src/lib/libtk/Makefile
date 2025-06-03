@@ -16,6 +16,10 @@ else
 CCFLAGS			=	$(CC.OPTIMIZE)
 end
 
+if CC.HOSTTYPE == "linux.i386-64-arch99"
+CCFLAGS += --std=c99
+end
+
 .SOURCE : generic unix
 .SOURCE.h : include bitmaps xlib generic tcl
 

@@ -399,7 +399,7 @@ if [[ $1 == @(sync|reallysync*) ]] then
     tmpdir=SWIFT_CFG_DSYSTEMDIR/tmp/prop.sync.$dsthost
     mkdir -p $tmpdir
     rm -f $tmpdir/*
-    timedrun 100 ssh $sfl $dsthost \
+    timedrun 100 vgssh $sfl $dsthost \
         "${dstdir}/../etc/confmgr -printmd5" \
     < /dev/null > $tmpdir/rmt
     SWIFT_CFG_DSYSTEMDIR/etc/confmgr -printmd5 > $tmpdir/lcl
@@ -603,7 +603,7 @@ for dir in $dirs; do
                 (
                     fsize=$(ls -Z '%(size)d' $file)
                     (( wt = 120 + ((9.0 * fsize) / transrate) * 18 ))
-                    timedrun $wt ssh $sfl $hostspec \
+                    timedrun $wt vgssh $sfl $hostspec \
                         "cat > $rfile.tmp && mv $rfile.tmp $rfile" \
                     < $file 2> $tmpdir/ssh.err.$ssherri
                     if [[ $? != 0 ]] then

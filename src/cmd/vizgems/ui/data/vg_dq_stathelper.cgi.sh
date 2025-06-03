@@ -53,7 +53,7 @@ if [[ $REMOTESPECS != '' ]] then
                     typeset -n qsn=qs_$i
                     print -r "$i=$qsn"
                 done
-            ) | ssh ${spec%%:*} $cmd -remote -user "$SWMID" \
+            ) | vgssh ${spec%%:*} $cmd -remote -user "$SWMID" \
             > stat.txt.tmp 2> errors
             if [[ $? != 0 ]] then
                 print -u2 VG QUERY ERROR: remote query to $spec failed

@@ -219,6 +219,9 @@ list(register Ftw_t* ftw)
 			}
 			else
 				qual_buf[0] = 0;
+#ifndef S_ISVTX
+#define S_ISVTX        __S_ISVTX
+#endif
 			if (!streq(label[1], "share"))
 				mode |= (S_ISVTX|S_IXOTH);
 			if (!sp && !(sp = sfstropen()))

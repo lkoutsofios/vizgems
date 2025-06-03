@@ -58,7 +58,7 @@ for spec in $POLLSYS; do
         for dir in alarm stat autoinv health; do
             mkdir -p $sn.$dir
             cd $sn.$dir
-            timedrun 300 ssh $sfl $hostspec \
+            timedrun 300 vgssh $sfl $hostspec \
                 "tar cf - $rdir/$dir/tmp/HOLD4POLL@$sn 2> /dev/null" \
             | pax -rf - -s!.*/!! 2>&1 | egrep -v '[0-9]* blocks$'
             (
@@ -70,7 +70,7 @@ for spec in $POLLSYS; do
                     print -u2 SWIFT WARNING incoming scope file $file
                 done
                 print _exit_
-            ) | timedrun 300 ssh $sfl $hostspec \
+            ) | timedrun 300 vgssh $sfl $hostspec \
             "while read i; do [[ \$i == _exit_ ]] && break; rm -f $rdir/$dir/tmp/HOLD4POLL@$sn/\$i; done"
         done
     ) &

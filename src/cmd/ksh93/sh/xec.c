@@ -2237,7 +2237,8 @@ int sh_exec(register const Shnode_t *t, int flags)
 			int flag = errorflg|OPTIMIZE_FLAG;
 			struct dolnod	*argsav=0;
 			struct comnod	*tp;
-			char *cp, *trap, *nullptr = 0;
+// EK - someone defines nullptr now
+			char *cp, *trap, *kshnullptr = 0;
 			int nameref, refresh=1;
 			char *av[5];
 #if SHOPT_COSHELL
@@ -2285,7 +2286,7 @@ int sh_exec(register const Shnode_t *t, int flags)
 					save_prompt = shp->nextprompt;
 					shp->nextprompt = 3;
 					shp->timeout = 0;
-					shp->exitval=sh_readline(shp,&nullptr,0,1,(size_t)0,1000*shp->st.tmout);
+					shp->exitval=sh_readline(shp,&kshnullptr,0,1,(size_t)0,1000*shp->st.tmout);
 					shp->nextprompt = save_prompt;
 					if(shp->exitval||sfeof(sfstdin)||sferror(sfstdin))
 					{

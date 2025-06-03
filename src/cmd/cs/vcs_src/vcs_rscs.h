@@ -42,7 +42,7 @@
 		
 struct rno_t			/* unique id for a sfile in WAN */
 {
-	u_long		host;
+	unsigned long		host;
 	dev_t		dev;
 	ino_t		ino;
 };

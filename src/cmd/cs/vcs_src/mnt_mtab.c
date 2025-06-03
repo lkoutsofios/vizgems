@@ -104,8 +104,8 @@ int im_restart(argc, argv)
 
 int do_call(mpoint, value, dump)
 	char*	mpoint;
-	caddr_t value;
-	caddr_t dump;
+	char * value;
+	char * dump;
 {
 	register char*	vcscmd;
 	char		reply[1024 *2];

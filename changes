@@ -1,3 +1,22 @@
+v1100.2025.06.03
+
+- changes to deal with Arch Linux gcc update
+
+v1100.2025.03.10
+
+- no changes just rebuilding
+
+v1100.2024.12.05
+
+- replaced ssh with vgssh to ensure zapping the known_hosts file doesn't stop
+  processing
+
+v1100.2024.11.21
+
+- fixed mainjournal_rules bugs
+- added code to mainproc ssh scope to re-inv if docker/vm interfaces change
+- fixed mainproc ssh scope to not save all variables in the /net/dev file
+
 v1100.2024.10.12
 
 - updated rpm generation tool

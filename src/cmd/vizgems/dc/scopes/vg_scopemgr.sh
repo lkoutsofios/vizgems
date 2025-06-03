@@ -1055,7 +1055,7 @@ if [[ $reinv == y ]] then
         dir=${sid2dir[$risid]}
 
         cmd="${dir:-$SCOPEDIR}/etc/schedulejob reinv $riaid"
-        timedrun 120 ssh \
+        timedrun 120 vgssh \
             -C -o ConnectTimeout=15 -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=2 -o StrictHostKeyChecking=no \
             $user@$ip "$cmd" \
@@ -1129,7 +1129,7 @@ if [[ $getfiles == y ]] then
         dir=${sid2dir[$gfsid]}
 
         cmd="${dir:-$SCOPEDIR}/etc/schedulejob getfiles $gfaid"
-        timedrun 120 ssh \
+        timedrun 120 vgssh \
             -C -o ConnectTimeout=15 -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=2 -o StrictHostKeyChecking=no \
             $user@$ip "$cmd" \
@@ -1963,7 +1963,7 @@ if (( ${#glist[@]} > 0 )) then
         rm -f scope/state/pushfailed
         SECONDS=0
         (( wt = 120 + ((9.0 * lsize) / transrate) * 18 ))
-        timedrun $wt ssh \
+        timedrun $wt vgssh \
             -C -o ConnectTimeout=15 -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=2 -o StrictHostKeyChecking=no \
             $user@$ip "$cmd" \

@@ -2,14 +2,14 @@
 
 #v=$(date -f %Y-%m-%d)
 #v=$(< version)
-v=1100.2024.10.12
+v=1100.2025.03.10
 [[ $v == '' ]] && exit
 
 print $v
 
 rm -f swift.v$v.*tgz swift.v$v.*.full.tar
 
-archs=$(egrep ssh: ../lib/package/admin/admin.db | sed 's/[ 	].*$//')
+archs=$(egrep ssh: ../lib/package/admin/admin.db | egrep -v '^#' | sed 's/[ 	].*$//')
 
 for a in $archs; do
     ./bin/mksw $a swift.v$v INIT ast swift
