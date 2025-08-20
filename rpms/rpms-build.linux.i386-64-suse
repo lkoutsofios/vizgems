@@ -48,9 +48,13 @@ libXt-devel
 libXt6
 libXtst-devel
 libXtst6
+libbrotli-devel
+libbrotlicommon1
+libbrotlidec1
 libbz2-1
 libbz2-devel
 libcrypt1
+libdb-4_8
 libexpat-devel
 libexpat1
 libfreetype6

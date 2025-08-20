@@ -19,7 +19,6 @@ graphite
 graphviz
 gzip
 harfbuzz
-icu
 iputils
 json-c
 ksh
@@ -35,7 +34,6 @@ libxcb
 libxcrypt
 libxdmcp
 libxext
-libxml2
 libxmu
 libxpm
 libxt

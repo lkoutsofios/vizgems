@@ -31,6 +31,8 @@ libice-dev
 libice6
 libicu-dev
 libicu72
+libjpeg62-turbo
+libjpeg62-turbo-dev
 libjson-c-dev
 libjson-c5
 libltdl7

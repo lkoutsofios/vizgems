@@ -16,7 +16,7 @@ else
 CCFLAGS			=	$(CC.OPTIMIZE)
 end
 
-if CC.HOSTTYPE == "linux.i386-64-arch99"
+if CC.HOSTTYPE == "linux.i386-64-suse16" || CC.HOSTTYPE == "linux.i386-64-suse90" || CC.HOSTTYPE == "linux.i386-64-suse99" || CC.HOSTTYPE == "linux.i386-64-arch99"
 CCFLAGS += --std=c99
 end
 
