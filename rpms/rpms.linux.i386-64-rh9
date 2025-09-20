@@ -19,6 +19,7 @@ glibc
 glibc-common
 graphite2
 graphviz
+graphviz-devel
 gzip
 harfbuzz
 iputils

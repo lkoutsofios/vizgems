@@ -19,6 +19,8 @@ glibc-devel
 gnuplot
 graphviz
 graphviz-devel
+graphviz-gd
+graphviz-plugins-core
 gzip
 iputils
 java-11-openjdk-headless
@@ -34,10 +36,8 @@ libX11-6
 libX11-devel
 libXau-devel
 libXau6
-libXaw-devel
 libXaw3d-devel
 libXaw3d8
-libXaw7
 libXext-devel
 libXext6
 libXmu-devel
@@ -54,7 +54,6 @@ libbrotlidec1
 libbz2-1
 libbz2-devel
 libcrypt1
-libdb-4_8
 libexpat-devel
 libexpat1
 libfreetype6
@@ -64,7 +63,6 @@ libgraphviz6
 libjitterentropy3
 libjpeg62
 libjpeg62-devel
-libjpeg8
 libjson-c-devel
 libjson-c5
 libltdl7

@@ -20,6 +20,7 @@ graphviz
 graphviz-devel
 gzip
 iputils
+java-21-openjdk-headless
 jitterentropy-devel
 ksh
 libICE-devel
@@ -42,11 +43,9 @@ libXt-devel
 libXt6
 libXtst-devel
 libXtst6
-libbrotli-devel
-libbrotlicommon1
-libbrotlidec1
-libbz2-1
-libbz2-devel
+libbrotlicommon1-x86-64-v3
+libbrotlidec1-x86-64-v3
+libbz2-1-x86-64-v3
 libcdt5
 libcgraph6
 libcrypt1
@@ -63,12 +62,10 @@ libjpeg62-devel
 libjson-c-devel
 libjson-c5
 libltdl7
-liblzma5
-libopenssl-3-devel
-libopenssl3
+liblzma5-x86-64-v3
+libopenssl3-x86-64-v3
 libpathplan4
-libpng16-16
-libpng16-devel
+libpng16-16-x86-64-v3
 libsnmp40
 libuuid-devel
 libuuid1
@@ -77,7 +74,7 @@ libxcb1
 libxcrypt-devel
 libxml2-2
 libxml2-devel
-libz1
+libz1-x86-64-v3
 lynx
 mailx
 man
@@ -99,6 +96,4 @@ xauth
 xdpyinfo
 xorg-x11-server-Xvfb
 xterm-bin
-xz-devel
 zip
-zlib-devel

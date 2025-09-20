@@ -6,6 +6,7 @@ curl
 diffutils
 gcc
 gcc-12
+graphviz
 libbrotli-dev
 libbrotli1
 libbsd0
@@ -76,6 +77,7 @@ man-db
 mawk
 openjdk-17-jre-headless
 openssh-client
+pixflat-icons
 uuid-dev
 vim
 wget

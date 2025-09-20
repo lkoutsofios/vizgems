@@ -9,6 +9,7 @@ diffutils
 gawk
 gcc
 gcc-13-x86-64-linux-gnu
+graphviz
 gzip
 iputils-ping
 libbrotli-dev
@@ -78,6 +79,7 @@ libxt-dev
 libxt6t64
 libxtst-dev
 libxtst6
+linux-headers-6.8.0-31
 man-db
 openssh-client
 tar

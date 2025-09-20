@@ -13,12 +13,9 @@ gawk
 gcc
 gcc-libs
 gdbm
-glib2
 glibc
-graphite
 graphviz
 gzip
-harfbuzz
 icu
 iputils
 json-c
@@ -45,7 +42,6 @@ net-snmp
 netpbm
 openssh
 openssl
-pcre2
 tar
 util-linux
 util-linux-libs
