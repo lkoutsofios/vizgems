@@ -140,8 +140,16 @@ for dir in $workdirs; do
 
     for spec in $specs; do
         [[ $spec != *:* ]] && continue
-        hostspec=${spec%%:*}
-        rdir=${spec#"$hostspec:"}
+        if [[ $spec == *:*:* ]] then
+            hostspec=${spec%:*}
+            port="-p ${hostspec#*:}"
+            rdir=${spec##"$hostspec"?(:)}
+            hostspec=${hostspec%:*}
+        else
+            hostspec=${spec%%:*}
+            port=
+            rdir=${spec##"$hostspec"?(:)}
+        fi
         mkdir -p $tdir/$dir/tmp/$hostspec
         if [[ ! -d $tdir/$dir/tmp/$hostspec ]] then
             print -u2 $(ts) cannot create $tdir/$dir/tmp/$hostspec
@@ -163,9 +171,17 @@ for dir in $workdirs; do
 
     for spec in $specs; do
         [[ $spec != *:* ]] && continue
-        hostspec=${spec%%:*}
+        if [[ $spec == *:*:* ]] then
+            hostspec=${spec%:*}
+            port="-p ${hostspec#*:}"
+            rdir=${spec##"$hostspec"?(:)}
+            hostspec=${hostspec%:*}
+        else
+            hostspec=${spec%%:*}
+            port=
+            rdir=${spec##"$hostspec"?(:)}
+        fi
         [[ $hostspec == HOLD4POLL@* ]] && continue
-        rdir=${spec##"$hostspec"?(:)}
         rm -f $tdir/$dir/tmp/$hostspec/failed[12]
         for file in $tdir/$dir/tmp/$hostspec/*.xml; do
             [[ ! -f $file ]] && continue

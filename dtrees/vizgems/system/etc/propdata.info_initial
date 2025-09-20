@@ -2,10 +2,11 @@
 # data to. it must set the variables ALARMSYS CLEARSYS STATSYS EMAILSYS
 # to either 'NONE' for no propagation or to a QUOTED, SPACE-SEPARATED
 # line of the form:
-#     "user1@server1:dir1 user2@server2:dir2 ..."
+#     "user1@server1:[port:]dir1 user2@server2:[port:]dir2 ..."
 # where:
 #     'user' is the user name on the remote system
 #     'server' is the name or ip address of the remote system
+#     'port' (optional) is the ssh port of the remote system
 #     'dir' is the directory name to upload to
 # example:
 #     ALARMSYS="alpweb1:/export/home/swift/vizgems/data/system/incoming"

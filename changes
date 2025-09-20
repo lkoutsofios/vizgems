@@ -1,3 +1,9 @@
+v1100.2025.09.20
+
+- added feature to specify the ssh port number for all inter-vizgems transfers
+- improved the genpkglist tool to catch graphviz plugin package
+- fixed Eastern-European-Time spec in prefshelper
+
 v1100.2025.08.20
 
 - changes to deal with opensuse 16.0

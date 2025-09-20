@@ -516,8 +516,16 @@ for dir in $dirs; do
 
     for spec in $specs; do
         [[ $spec != *:* ]] && continue
-        hostspec=${spec%%:*}
-        rdir=${spec##"$hostspec"?(:)}
+        if [[ $spec == *:*:* ]] then
+            hostspec=${spec%:*}
+            port="-p ${hostspec#*:}"
+            rdir=${spec##"$hostspec"?(:)}
+            hostspec=${hostspec%:*}
+        else
+            hostspec=${spec%%:*}
+            port=
+            rdir=${spec##"$hostspec"?(:)}
+        fi
         mkdir -p $tdir/$dir/tmp/$hostspec
         if [[ ! -d $tdir/$dir/tmp/$hostspec ]] then
             print -u2 propdata: cannot create $tdir/$dir/tmp/$hostspec
@@ -586,8 +594,16 @@ for dir in $dirs; do
     else
         for spec in $specs; do
             [[ $spec != *:* ]] && continue
-            hostspec=${spec%%:*}
-            rdir=${spec##"$hostspec"?(:)}
+            if [[ $spec == *:*:* ]] then
+                hostspec=${spec%:*}
+                port="-p ${hostspec#*:}"
+                rdir=${spec##"$hostspec"?(:)}
+                hostspec=${hostspec%:*}
+            else
+                hostspec=${spec%%:*}
+                port=
+                rdir=${spec##"$hostspec"?(:)}
+            fi
             rm -f $tdir/$dir/tmp/$hostspec/failed[12]
             for file in $tdir/$dir/tmp/$hostspec/*.xml; do
                 [[ ! -f $file ]] && continue

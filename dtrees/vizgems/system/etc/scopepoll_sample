@@ -52,8 +52,16 @@ rm -rf SWIFT_CFG_DSYSTEMDIR/tmp/poll/*
 
 for spec in $POLLSYS; do
     [[ $spec != *:* ]] && continue
-    hostspec=${spec%%:*}
-    rdir=${spec##"$hostspec"?(:)}
+    if [[ $spec == *:*:* ]] then
+        hostspec=${spec%:*}
+        port="-p ${hostspec#*:}"
+        rdir=${spec##"$hostspec"?(:)}
+        hostspec=${hostspec%:*}
+    else
+        hostspec=${spec%%:*}
+        port=
+        rdir=${spec##"$hostspec"?(:)}
+    fi
     (
         for dir in alarm stat autoinv health; do
             mkdir -p $sn.$dir

@@ -156,5 +156,16 @@ for arch in $archs; do
         getpkg /usr/bin/cc
         getpkg /usr/bin/yacc
         getpkg /usr/bin/bison
+        getpkg /usr/lib64/graphviz/libgvplugin_dot_layout.so
+        getpkg /usr/lib/x86_64-linux-gnu/graphviz/libgvplugin_dot_layout.so
+
+        getpkg /usr/lib64/graphviz/libgvplugin_neato_layout.so
+        getpkg /usr/lib/x86_64-linux-gnu/graphviz/libgvplugin_neato_layout.so
+
+        getpkg /usr/lib64/graphviz/libgvplugin_gd.so
+        getpkg /usr/lib/x86_64-linux-gnu/graphviz/libgvplugin_gd.so
+
+        getpkg /usr/lib64/graphviz/libgvplugin_core.so
+        getpkg /usr/lib/x86_64-linux-gnu/graphviz/libgvplugin_core.so
     ) 2> ~/$name.log | sort -u > ~/$name
 done
