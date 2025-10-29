@@ -293,7 +293,7 @@ all)
         rm $i
         f=y
     done
-    if [[ ! -f $2 ]] then
+    if [[ ! -f $2 ]] || ! ddsinfo $2 > /dev/null 2>&1; then
         ddscat -is vg_stat.schema \
         > $2.tmp && mv $2.tmp $2
     fi

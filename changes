@@ -1,3 +1,8 @@
+v1100.2025.10.29
+
+- changes to build on raspbian 13
+- fix in vg_stat.sh to detect data corruption
+
 v1100.2025.09.20
 
 - added feature to specify the ssh port number for all inter-vizgems transfers
