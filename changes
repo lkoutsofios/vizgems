@@ -1,3 +1,7 @@
+v1100.2026.03.12
+
+- renamed all of cdt functions and types to astcdt because graphviz uses an incompatible version of cdt
+
 v1100.2026.01.24
 
 - rebuild

@@ -116,7 +116,7 @@ __STDPP__directive pragma pp:hide mount umount unmount
 
 #include <ast.h>
 #include <error.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <ctype.h>
 #include <ls.h>
 #include <mnt.h>

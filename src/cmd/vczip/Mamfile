@@ -137,10 +137,10 @@ make ${PACKAGE_ast_INCLUDE}/vcwindow.h implicit
 done ${PACKAGE_ast_INCLUDE}/vcwindow.h dontcare
 make ${PACKAGE_ast_INCLUDE}/vcmethods.h implicit
 done ${PACKAGE_ast_INCLUDE}/vcmethods.h dontcare
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/stdio.h implicit
 prev ${PACKAGE_ast_INCLUDE}/sfio.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit

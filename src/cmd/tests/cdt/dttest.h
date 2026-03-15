@@ -17,7 +17,7 @@
 *                 Glenn Fowler <gsf@research.att.com>                  *
 *                                                                      *
 ***********************************************************************/
-#include	"cdt.h"
+#include	"astcdt.h"
 #include	"terror.h"
 
 #if __STD_C

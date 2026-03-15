@@ -2,4 +2,6 @@
 ./bin/package admin results failed
 ./bin/package admin write base binary INIT ast swift swift-base swift-vg version=$(date -f %Y-%m-%d)
 
-for i in $(machs b); do [[ $i == leo ]] && continue; print AAA $i; dist src $i:swift/src; done
+for i in $(machs b); do [[ $i == leo ]] && continue; print MACH $i; dist src $i:swift/src; done
+
+for i in $(machs B); do print MACH $i; ssh $i ls -l "/usr/include/graphviz/cdt.h*"; done

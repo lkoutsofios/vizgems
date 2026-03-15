@@ -1,6 +1,6 @@
 VARS{
 #include <vmalloc.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include "vg_hdr.h"
 #include "sl_level_node.c"
 

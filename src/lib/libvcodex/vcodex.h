@@ -49,7 +49,7 @@
 #include	<stdio.h>
 #endif
 
-#include	<cdt.h>			/* container data types		*/
+#include	<astcdt.h>			/* container data types		*/
 
 #if !_SFIO_H /* emulate Sfio features */
 #define Sfoff_t		off_t	/* file offset type	*/

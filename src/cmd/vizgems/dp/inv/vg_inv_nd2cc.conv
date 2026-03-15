@@ -1,5 +1,5 @@
 VARS{
-#include <cdt.h>
+#include <astcdt.h>
 
 #define SZ_level DDSSZ_inrec_inv_edge_level1
 #define SZ_id DDSSZ_inrec_inv_edge_id1

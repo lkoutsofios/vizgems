@@ -135,10 +135,10 @@ prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/error.h dontcare
 make ${PACKAGE_ast_INCLUDE}/dt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/dt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
@@ -166,7 +166,7 @@ done ${PACKAGE_ast_INCLUDE}/ast_ccode.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/ccode.h
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done jcm.c
 meta jcm.o %.c>%.o jcm.c jcm

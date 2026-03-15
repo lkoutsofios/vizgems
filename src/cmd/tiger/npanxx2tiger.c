@@ -2,7 +2,7 @@
 
 #include <ast.h>
 #include <option.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <swift.h>
 #include <math.h>
 #include "tiger.h"

@@ -116,7 +116,7 @@ extern int	opterr;
 
 #endif /*_PACKAGE_ast*/
 
-#include <cdt.h>
+#include <astcdt.h>
 #include <ctype.h>
 #include <errno.h>
 #include <mime.h>

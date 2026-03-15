@@ -228,14 +228,14 @@ done ${INSTALLROOT}/include/ast/cmd.h dontcare
 prev ${INSTALLROOT}/include/ast/shcmd.h implicit
 make ${INSTALLROOT}/include/ast/nval.h implicit
 prev ${INSTALLROOT}/include/ast/option.h implicit
-make ${INSTALLROOT}/include/ast/cdt.h implicit
+make ${INSTALLROOT}/include/ast/astcdt.h implicit
 prev ${INSTALLROOT}/include/ast/ast_common.h implicit
 prev ${INSTALLROOT}/include/ast/ast_std.h implicit
-done ${INSTALLROOT}/include/ast/cdt.h dontcare
+done ${INSTALLROOT}/include/ast/astcdt.h dontcare
 prev ${INSTALLROOT}/include/ast/ast.h implicit
 prev ${INSTALLROOT}/include/ast/prototyped.h implicit
 done ${INSTALLROOT}/include/ast/nval.h dontcare
-prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/astcdt.h implicit
 prev ${INSTALLROOT}/include/ast/ast.h implicit
 prev ${INSTALLROOT}/include/ast/prototyped.h implicit
 done ${INSTALLROOT}/include/ast/shell.h dontcare

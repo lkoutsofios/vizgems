@@ -30,7 +30,7 @@
 #define SH_VERSION	20071012
 
 #include	<ast.h>
-#include	<cdt.h>
+#include	<astcdt.h>
 #ifdef _SH_PRIVATE
 #   include	"name.h"
 #else

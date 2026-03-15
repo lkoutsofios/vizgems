@@ -58,7 +58,7 @@
 
 #undef	extern
 
-#include <cdt.h>
+#include <astcdt.h>
 #include <vmalloc.h>
 
 #define EX_VERSION	20000101L

@@ -73,7 +73,7 @@
 **	Written by Kiem-Phong Vo (07/15/95)
 */
 
-#include	"cdt.h"
+#include	"astcdt.h"
 
 /* short-hand notations */
 #define reg	register

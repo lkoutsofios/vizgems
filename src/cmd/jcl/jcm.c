@@ -50,7 +50,7 @@ USAGE_LICENSE
 ;
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <ccode.h>
 #include <ctype.h>
 #include <error.h>

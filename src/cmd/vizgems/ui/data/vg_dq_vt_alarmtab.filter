@@ -1,6 +1,6 @@
 VARS{
 #include <vmalloc.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <tm.h>
 #define VG_DEFS_MAIN
 #include "vg_hdr.h"

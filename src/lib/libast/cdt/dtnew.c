@@ -22,20 +22,20 @@
 #pragma prototyped
 
 /*
- * dtopen() with handle placed in specific vm region
+ * astdtopen() with handle placed in specific vm region
  */
 
 #include <dt.h>
 
 typedef struct Dc_s
 {
-	Dtdisc_t	ndisc;
-	Dtdisc_t*	odisc;
+	astDtdisc_t	ndisc;
+	astDtdisc_t*	odisc;
 	Vmalloc_t*	vm;
 } Dc_t;
 
 static int
-eventf(Dt_t* dt, int op, void* data, Dtdisc_t* disc)
+eventf(astDt_t* dt, int op, void* data, astDtdisc_t* disc)
 {
 	Dc_t*	dc = (Dc_t*)disc;
 	int	r;
@@ -46,7 +46,7 @@ eventf(Dt_t* dt, int op, void* data, Dtdisc_t* disc)
 }
 
 static void*
-memoryf(Dt_t* dt, void* addr, size_t size, Dtdisc_t* disc)
+memoryf(astDt_t* dt, void* addr, size_t size, astDtdisc_t* disc)
 {
 	return vmresize(((Dc_t*)disc)->vm, addr, size, VM_RSMOVE);
 }
@@ -55,10 +55,10 @@ memoryf(Dt_t* dt, void* addr, size_t size, Dtdisc_t* disc)
  * open a dictionary using disc->memoryf if set or vm otherwise
  */
 
-Dt_t*
-_dtnew(Vmalloc_t* vm, Dtdisc_t* disc, Dtmethod_t* meth, unsigned long version)
+astDt_t*
+_astdtnew(Vmalloc_t* vm, astDtdisc_t* disc, astDtmethod_t* meth, unsigned long version)
 {
-	Dt_t*		dt;
+	astDt_t*		dt;
 	Dc_t		dc;
 
 	dc.odisc = disc;
@@ -67,15 +67,15 @@ _dtnew(Vmalloc_t* vm, Dtdisc_t* disc, Dtmethod_t* meth, unsigned long version)
 	if (!dc.ndisc.memoryf)
 		dc.ndisc.memoryf = memoryf;
 	dc.vm = vm;
-	if (dt = _dtopen(&dc.ndisc, meth, version))
-		dtdisc(dt, disc, DT_SAMECMP|DT_SAMEHASH);
+	if (dt = _astdtopen(&dc.ndisc, meth, version))
+		astdtdisc(dt, disc, DT_SAMECMP|DT_SAMEHASH);
 	return dt;
 }
 
-#undef dtnew
+#undef astdtnew
 
-Dt_t*
-dtnew(Vmalloc_t* vm, Dtdisc_t* disc, Dtmethod_t* meth)
+astDt_t*
+astdtnew(Vmalloc_t* vm, astDtdisc_t* disc, astDtmethod_t* meth)
 {
-	return _dtnew(vm, disc, meth, 20050420L);
+	return _astdtnew(vm, disc, meth, 20050420L);
 }

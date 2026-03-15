@@ -189,18 +189,18 @@ done ${PACKAGE_ast_INCLUDE}/cmd.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/shcmd.h implicit
 make include/nval.h implicit
 prev ${PACKAGE_ast_INCLUDE}/option.h implicit
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done include/nval.h dontcare
 make include/name.h implicit
 prev include/nval.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done include/name.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done include/shell.h
 done sh/pmain.c
@@ -281,7 +281,7 @@ done include/fault.h dontcare
 make include/history.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done include/history.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev FEATURE/options implicit
 prev FEATURE/externs implicit
 prev ${PACKAGE_ast_INCLUDE}/error.h implicit
@@ -606,7 +606,7 @@ prev include/lexstates.h implicit
 prev include/shtable.h implicit
 prev include/shnodes.h implicit
 prev FEATURE/options implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 done include/shlex.h
 prev include/path.h implicit
 prev include/name.h implicit
@@ -1146,7 +1146,7 @@ done xec.o generated
 make env.o
 make sh/env.c
 prev include/env.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done sh/env.c
 meta env.o %.c>%.o sh/env.c env

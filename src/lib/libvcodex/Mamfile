@@ -201,10 +201,10 @@ prev vchdr.h implicit
 done vclog.c
 make vcsfxsort.c
 make ${PACKAGE_ast_INCLUDE}/vgraph.h implicit
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
 done ${PACKAGE_ast_INCLUDE}/vgraph.h
 prev vchdr.h implicit
 done vcsfxsort.c
@@ -367,7 +367,7 @@ exec - then rm -f 1.${COTEMP}.h
 exec - else mv 1.${COTEMP}.h vcmethods.h
 exec - fi
 done vcmethods.h dontcare generated
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/stdio.h implicit
 prev ${PACKAGE_ast_INCLUDE}/sfio.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit

@@ -526,10 +526,10 @@ prev include/regex.h implicit
 prev include/ls.h implicit
 prev include/error.h implicit
 prev std/endian.h implicit
-make include/cdt.h implicit
+make include/astcdt.h implicit
 prev ast_common.h implicit
 prev include/ast_std.h implicit
-done include/cdt.h dontcare
+done include/astcdt.h dontcare
 prev include/ast.h implicit
 done misc/findlib.h
 done misc/fastfind.c
@@ -1307,7 +1307,7 @@ prev include/ast.h implicit
 done include/debug.h
 make misc/optlib.h implicit
 prev include/error.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done misc/optlib.h
 done misc/optget.c
@@ -1369,7 +1369,7 @@ prev include/error.h implicit
 prev include/modex.h implicit
 make include/dt.h implicit
 prev include/vmalloc.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 done include/dt.h
 prev include/ccode.h implicit
 prev include/ast.h implicit
@@ -1387,7 +1387,7 @@ prev include/sfio.h implicit
 done include/mime.h dontcare
 prev include/tok.h implicit
 prev include/magic.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done misc/mimelib.h
 done misc/mime.c
@@ -1514,7 +1514,7 @@ prev ast_nl_types.h implicit
 done std/nl_types.h
 prev include/mc.h implicit
 prev include/error.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev port/lclib.h implicit
 done misc/translate.c
 meta translate.o %.c>%.o misc/translate.c translate
@@ -1756,7 +1756,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done fmtfmt.o generated
 make fmtfs.o
 make string/fmtfs.c
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev FEATURE/fs implicit
 make include/mnt.h implicit
 done include/mnt.h
@@ -1863,7 +1863,7 @@ done fmttime.o generated
 make fmtuid.o
 make string/fmtuid.c
 prev std/stdio.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done string/fmtuid.c
 meta fmtuid.o %.c>%.o string/fmtuid.c fmtuid
@@ -1873,7 +1873,7 @@ done fmtuid.o generated
 make fmtgid.o
 make string/fmtgid.c
 prev std/stdio.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done string/fmtgid.c
 meta fmtgid.o %.c>%.o string/fmtgid.c fmtgid
@@ -1957,7 +1957,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done strperm.o generated
 make struid.o
 make string/struid.c
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done string/struid.c
 meta struid.o %.c>%.o string/struid.c struid
@@ -1966,7 +1966,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done struid.o generated
 make strgid.o
 make string/strgid.c
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done string/strgid.c
 meta strgid.o %.c>%.o string/strgid.c strgid
@@ -2241,7 +2241,7 @@ prev ast_nl_types.h implicit
 prev include/tm.h implicit
 prev include/mc.h implicit
 prev std/iconv.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done tm/tmlocale.c
 meta tmlocale.o %.c>%.o tm/tmlocale.c tmlocale
@@ -3039,7 +3039,7 @@ prev include/debug.h implicit
 make include/aso.h implicit
 prev ast_common.h implicit
 done include/aso.h dontcare
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 make ${INSTALLROOT}/include/ast/dlldefs.h implicit
 done ${INSTALLROOT}/include/ast/dlldefs.h dontcare
 prev include/ast.h implicit
@@ -3781,7 +3781,7 @@ prev std/wchar.h implicit
 prev std/stdio.h implicit
 prev include/regex.h implicit
 prev include/stk.h implicit
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 prev include/ast.h implicit
 done regex/reglib.h
 done regex/regalloc.c
@@ -4011,7 +4011,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done dtnew.o generated
 make dtcomp.o
 make cdt/dtcomp.c
-prev include/cdt.h implicit
+prev include/astcdt.h implicit
 done cdt/dtcomp.c
 meta dtcomp.o %.c>%.o cdt/dtcomp.c dtcomp
 prev cdt/dtcomp.c
@@ -6500,14 +6500,14 @@ exec - then rm -f 1.${COTEMP}.x
 exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/ccode.h
 exec - fi
 done ${INSTALLROOT}/include/ast/ccode.h generated
-make ${INSTALLROOT}/include/ast/cdt.h
-prev include/cdt.h
-exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' include/cdt.h > 1.${COTEMP}.x
-exec - if cmp 2>/dev/null -s ${INSTALLROOT}/include/ast/cdt.h 1.${COTEMP}.x
+make ${INSTALLROOT}/include/ast/astcdt.h
+prev include/astcdt.h
+exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' include/astcdt.h > 1.${COTEMP}.x
+exec - if cmp 2>/dev/null -s ${INSTALLROOT}/include/ast/astcdt.h 1.${COTEMP}.x
 exec - then rm -f 1.${COTEMP}.x
-exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/cdt.h
+exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/astcdt.h
 exec - fi
-done ${INSTALLROOT}/include/ast/cdt.h generated
+done ${INSTALLROOT}/include/ast/astcdt.h generated
 make ${INSTALLROOT}/include/ast/cdtlib.h
 prev cdt/cdtlib.h
 exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' cdt/cdtlib.h > 1.${COTEMP}.x

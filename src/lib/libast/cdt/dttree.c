@@ -30,17 +30,17 @@
 */
 
 typedef struct _dttree_s
-{	Dtdata_t	data;
-	Dtlink_t*	root;	/* tree root */
-} Dttree_t;
+{	astDtdata_t	data;
+	astDtlink_t*	root;	/* tree root */
+} astDttree_t;
 
 #ifdef CDT_DEBUG
-int dttreeprint(Dt_t* dt, Dtlink_t* here, int lev, char* (*objprintf)(Void_t*) )
+int astdttreeprint(astDt_t* dt, astDtlink_t* here, int lev, char* (*objprintf)(Void_t*) )
 {
 	int		k, rv;
 	char		*obj, *endb, buf[1024];
-	Dtdisc_t	*disc = dt->disc;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDtdisc_t	*disc = dt->disc;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	if(!here && !(here = tree->root) )
 		return -1;
@@ -74,9 +74,9 @@ int dttreeprint(Dt_t* dt, Dtlink_t* here, int lev, char* (*objprintf)(Void_t*) )
 	write(2, buf, endb-buf);
 
 	if(here->_left)
-		dttreeprint(dt, here->_left, lev+1, objprintf);
+		astdttreeprint(dt, here->_left, lev+1, objprintf);
 	if(here->_rght)
-		dttreeprint(dt, here->_rght, lev+1, objprintf);
+		astdttreeprint(dt, here->_rght, lev+1, objprintf);
 
 	return 0;
 }
@@ -84,16 +84,16 @@ int dttreeprint(Dt_t* dt, Dtlink_t* here, int lev, char* (*objprintf)(Void_t*) )
 
 /* terminal object: DT_FIRST|DT_LAST */
 #if __STD_C
-Void_t* tfirstlast(Dt_t* dt, int type)
+Void_t* tfirstlast(astDt_t* dt, int type)
 #else
 Void_t* tfirstlast(dt, type)
-Dt_t*	dt;
+astDt_t*	dt;
 int	type;
 #endif
 {
-	Dtlink_t	*t, *root;
-	Dtdisc_t	*disc = dt->disc;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDtlink_t	*t, *root;
+	astDtdisc_t	*disc = dt->disc;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	if(!(root = tree->root) )
 		return NIL(Void_t*);
@@ -113,18 +113,18 @@ int	type;
 
 /* DT_CLEAR */
 #if __STD_C
-static Void_t* tclear(Dt_t* dt)
+static Void_t* tclear(astDt_t* dt)
 #else
 static Void_t* tclear(dt)
-Dt_t*	dt;
+astDt_t*	dt;
 #endif
 {
-	Dtlink_t	*root, *t;
-	Dtdisc_t	*disc = dt->disc;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDtlink_t	*root, *t;
+	astDtdisc_t	*disc = dt->disc;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	root = tree->root;
-	tree->root = NIL(Dtlink_t*);
+	tree->root = NIL(astDtlink_t*);
 	tree->data.size = 0;
 
 	if(root && (disc->link < 0 || disc->freef) )
@@ -140,18 +140,18 @@ Dt_t*	dt;
 }
 
 #if __STD_C
-static Void_t* tlist(Dt_t* dt, Dtlink_t* list, int type)
+static Void_t* tlist(astDt_t* dt, astDtlink_t* list, int type)
 #else
 static Void_t* tlist(dt, list, type)
-Dt_t*   	dt;
-Dtlink_t*	list;    
+astDt_t*   	dt;
+astDtlink_t*	list;    
 int     	type;
 #endif
 {
 	Void_t		*obj;
-	Dtlink_t	*last, *r, *t;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
-	Dtdisc_t	*disc = dt->disc;
+	astDtlink_t	*last, *r, *t;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
+	astDtdisc_t	*disc = dt->disc;
 
 	if(type&(DT_FLATTEN|DT_EXTRACT) )
 	{	if((list = tree->root) )
@@ -167,7 +167,7 @@ int     	type;
 		if(type&DT_FLATTEN)
 			tree->root = list;
 		else
-		{	tree->root = NIL(Dtlink_t*);
+		{	tree->root = NIL(astDtlink_t*);
 			dt->data->size = 0;
 		}
 	}
@@ -185,12 +185,12 @@ int     	type;
 }
 
 #if __STD_C /* compute tree depth and number of nodes */
-static ssize_t tsize(Dtlink_t* root, ssize_t lev, Dtstat_t* st)
+static ssize_t tsize(astDtlink_t* root, ssize_t lev, astDtstat_t* st)
 #else
 static ssize_t tsize(root, lev, st)
-Dtlink_t*	root;
+astDtlink_t*	root;
 ssize_t		lev;
-Dtstat_t*	st;
+astDtstat_t*	st;
 #endif
 {
 	ssize_t		size, z;
@@ -223,39 +223,39 @@ Dtstat_t*	st;
 }
 
 #if __STD_C
-static Void_t* tstat(Dt_t* dt, Dtstat_t* st)
+static Void_t* tstat(astDt_t* dt, astDtstat_t* st)
 #else
 static Void_t* tstat(dt, st)
-Dt_t*		dt;
-Dtstat_t*	st;
+astDt_t*		dt;
+astDtstat_t*	st;
 #endif
 {
 	ssize_t		size;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	if(!st)
 		return (Void_t*)dt->data->size;
 	else
-	{	memset(st, 0, sizeof(Dtstat_t));
+	{	memset(st, 0, sizeof(astDtstat_t));
 		size = tsize(tree->root, 0, st);
 		/**/DEBUG_ASSERT((dt->data->type&DT_SHARE) || size == dt->data->size);
 		st->meth  = dt->meth->type;
 		st->size  = size;
-		st->space = sizeof(Dttree_t) + (dt->disc->link >= 0 ? 0 : size*sizeof(Dthold_t));
+		st->space = sizeof(astDttree_t) + (dt->disc->link >= 0 ? 0 : size*sizeof(astDthold_t));
 		return (Void_t*)size;
 	}
 }
 
 #if __STD_C /* make a list into a balanced tree */
-static Dtlink_t* tbalance(Dtlink_t* list, ssize_t size)
+static astDtlink_t* tbalance(astDtlink_t* list, ssize_t size)
 #else
-static Dtlink_t* tbalance(list, size)
-Dtlink_t*	list;
+static astDtlink_t* tbalance(list, size)
+astDtlink_t*	list;
 ssize_t		size;
 #endif
 {
 	ssize_t		n;
-	Dtlink_t	*l, *mid;
+	astDtlink_t	*l, *mid;
 
 	if(size <= 2)
 		return list;
@@ -263,30 +263,30 @@ ssize_t		size;
 	for(l = list, n = size/2 - 1; n > 0; n -= 1)
 		l = l->_rght;
 
-	mid = l->_rght; l->_rght = NIL(Dtlink_t*);
+	mid = l->_rght; l->_rght = NIL(astDtlink_t*);
 	mid->_left = tbalance(list, (n = size/2) );
 	mid->_rght = tbalance(mid->_rght, size - (n + 1));
 	return mid;
 }
 
-static void toptimize(Dt_t* dt)
+static void toptimize(astDt_t* dt)
 {
 	ssize_t		size;
-	Dtlink_t	*l, *list;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDtlink_t	*l, *list;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
-	if((list = (Dtlink_t*)tlist(dt, NIL(Void_t*), DT_FLATTEN)) )
+	if((list = (astDtlink_t*)tlist(dt, NIL(Void_t*), DT_FLATTEN)) )
 	{	for(size = 0, l = list; l; l = l->_rght)
 			size += 1;
 		tree->root = tbalance(list, size);
 	}
 }
 
-static Dtlink_t* troot(Dt_t* dt, Dtlink_t* list, Dtlink_t* link, Void_t* obj, int type)
+static astDtlink_t* troot(astDt_t* dt, astDtlink_t* list, astDtlink_t* link, Void_t* obj, int type)
 {
-	Dtlink_t	*root, *last, *t, *r, *l;
+	astDtlink_t	*root, *last, *t, *r, *l;
 	Void_t		*key, *o, *k;
-	Dtdisc_t	*disc = dt->disc;
+	astDtdisc_t	*disc = dt->disc;
 
 	key = _DTKEY(disc, obj); /* key of object */
 
@@ -322,8 +322,8 @@ static Dtlink_t* troot(Dt_t* dt, Dtlink_t* list, Dtlink_t* link, Void_t* obj, in
 		return list;
 	}
 
-	last = list; list->_left = list->_rght = NIL(Dtlink_t*);
-	root = NIL(Dtlink_t*);
+	last = list; list->_left = list->_rght = NIL(astDtlink_t*);
+	root = NIL(astDtlink_t*);
 
 	while(!root && (t = link->_rght) ) /* link->_rght is the left subtree <= obj */
 	{	while((r = t->_rght) ) /* make t the maximum element */
@@ -340,7 +340,7 @@ static Dtlink_t* troot(Dt_t* dt, Dtlink_t* list, Dtlink_t* link, Void_t* obj, in
 		}
 		else /* add t to equal list in an order-preserving manner */
 		{	link->_rght = t->_left;
-			t->_left = t->_rght = NIL(Dtlink_t*);
+			t->_left = t->_rght = NIL(astDtlink_t*);
 			if(type&DT_NEXT )
 				{ last->_left = t; last = t; }
 			else	{ t->_rght = list; list = t; }
@@ -362,7 +362,7 @@ static Dtlink_t* troot(Dt_t* dt, Dtlink_t* list, Dtlink_t* link, Void_t* obj, in
 		}
 		else /* add t to equal list in an order-preserving manner */
 		{	link->_left = t->_rght;
-			t->_left = t->_rght = NIL(Dtlink_t*);
+			t->_left = t->_rght = NIL(astDtlink_t*);
 			if(type&DT_NEXT )
 				{ t->_left = list; list = t; }
 			else	{ last->_rght = t; last = t; }
@@ -391,19 +391,19 @@ static Dtlink_t* troot(Dt_t* dt, Dtlink_t* list, Dtlink_t* link, Void_t* obj, in
 }
 
 #if __STD_C
-static Void_t* dttree(Dt_t* dt, Void_t* obj, int type)
+static Void_t* astdttree(astDt_t* dt, Void_t* obj, int type)
 #else
-static Void_t* dttree(dt,obj,type)
-Dt_t*		dt;
+static Void_t* astdttree(dt,obj,type)
+astDt_t*		dt;
 Void_t* 	obj;
 int		type;
 #endif
 {
 	int		cmp;
 	Void_t		*o, *k, *key;
-	Dtlink_t	*root, *t, *l, *r, *me, link;
-	Dtdisc_t	*disc = dt->disc;
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDtlink_t	*root, *t, *l, *r, *me, link;
+	astDtdisc_t	*disc = dt->disc;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	type = DTTYPE(dt, type); /* map type for upward compatibility */
 	if(!(type&DT_OPERATIONS) )
@@ -414,24 +414,24 @@ int		type;
 	if(type&(DT_FIRST|DT_LAST) )
 		DTRETURN(obj, tfirstlast(dt, type));
 	else if(type&(DT_EXTRACT|DT_RESTORE|DT_FLATTEN))
-		DTRETURN(obj, tlist(dt, (Dtlink_t*)obj, type));
+		DTRETURN(obj, tlist(dt, (astDtlink_t*)obj, type));
 	else if(type&DT_CLEAR)
 		DTRETURN(obj, tclear(dt));
 	else if(type&DT_STAT)
 	{	toptimize(dt); /* balance tree to avoid deep recursion */
-		DTRETURN(obj, tstat(dt, (Dtstat_t*)obj));
+		DTRETURN(obj, tstat(dt, (astDtstat_t*)obj));
 	}
 
 	if(!obj) /* from here on, an object prototype is required */
 		DTRETURN(obj, NIL(Void_t*));
 
 	if(type&DT_RELINK) /* relinking objects after some processing */
-	{	me = (Dtlink_t*)obj;
+	{	me = (astDtlink_t*)obj;
 		obj = _DTOBJ(disc,me);
 		key = _DTKEY(disc,obj);
 	}
 	else
-	{	me = NIL(Dtlink_t*);
+	{	me = NIL(astDtlink_t*);
 		if(type&DT_MATCH) /* no prototype object given, just the key */
 		{	key = obj;
 			obj = NIL(Void_t*);
@@ -469,7 +469,7 @@ int		type;
 				}
 				else
 				{	rlink(r,root);
-					root = NIL(Dtlink_t*);
+					root = NIL(astDtlink_t*);
 					break;
 				}
 			}
@@ -496,14 +496,14 @@ int		type;
 				}
 				else
 				{	llink(l,root);
-					root = NIL(Dtlink_t*);
+					root = NIL(astDtlink_t*);
 					break;
 				}
 			}
 		}
 	}
-	l->_rght = root ? root->_left : NIL(Dtlink_t*);
-	r->_left = root ? root->_rght : NIL(Dtlink_t*);
+	l->_rght = root ? root->_left : NIL(astDtlink_t*);
+	r->_left = root ? root->_rght : NIL(astDtlink_t*);
 
 	if(root)
 	{	if(dt->meth->type&DT_OBAG ) /* may need to reset root to the right object */
@@ -521,7 +521,7 @@ int		type;
 		}
 		else if(type&DT_NEXT)
 		{	root->_left = link._rght;
-			root->_rght = NIL(Dtlink_t*);
+			root->_rght = NIL(astDtlink_t*);
 			link._rght = root;
 		dt_next:
 			if((root = link._left) )	
@@ -534,7 +534,7 @@ int		type;
 		}
 		else if(type&DT_PREV)
 		{	root->_rght = link._left;
-			root->_left = NIL(Dtlink_t*);
+			root->_left = NIL(astDtlink_t*);
 			link._left = root;
 		dt_prev:
 			if((root = link._rght) )
@@ -568,7 +568,7 @@ int		type;
 				goto has_root;
 			}
 			else
-			{	root->_left = NIL(Dtlink_t*);
+			{	root->_left = NIL(astDtlink_t*);
 				root->_rght = link._left;
 				link._left = root;
 				goto dt_insert;
@@ -578,7 +578,7 @@ int		type;
 		{	if(dt->meth->type&DT_OSET)
 				_dtfree(dt, me, DT_DELETE);
 			else
-			{	me->_left = NIL(Dtlink_t*);
+			{	me->_left = NIL(astDtlink_t*);
 				me->_rght = link._left;
 				link._left = me;
 			}
@@ -636,19 +636,19 @@ dt_return:
 	return obj;
 }
 
-static int treeevent(Dt_t* dt, int event, Void_t* arg)
+static int treeevent(astDt_t* dt, int event, Void_t* arg)
 {
-	Dttree_t	*tree = (Dttree_t*)dt->data;
+	astDttree_t	*tree = (astDttree_t*)dt->data;
 
 	if(event == DT_OPEN)
 	{	if(tree) /* already initialized */
 			return 0;
-		if(!(tree = (Dttree_t*)(*dt->memoryf)(dt, 0, sizeof(Dttree_t), dt->disc)) )
+		if(!(tree = (astDttree_t*)(*dt->memoryf)(dt, 0, sizeof(astDttree_t), dt->disc)) )
 		{	DTERROR(dt, "Error in allocating a tree data structure");
 			return -1;
 		}
-		memset(tree, 0, sizeof(Dttree_t));
-		dt->data = (Dtdata_t*)tree;
+		memset(tree, 0, sizeof(astDttree_t));
+		dt->data = (astDtdata_t*)tree;
 		return 1;
 	}
 	else if(event == DT_CLOSE)
@@ -657,7 +657,7 @@ static int treeevent(Dt_t* dt, int event, Void_t* arg)
 		if(tree->root)
 			(void)tclear(dt);
 		(void)(*dt->memoryf)(dt, (Void_t*)tree, 0, dt->disc);
-                dt->data = NIL(Dtdata_t*);
+                dt->data = NIL(astDtdata_t*);
                 return 0;
 	}
 	else if(event == DT_OPTIMIZE) /* balance the search tree */
@@ -669,26 +669,26 @@ static int treeevent(Dt_t* dt, int event, Void_t* arg)
 
 #if _UWIN
 
-Void_t* dtfinger(Dt_t* dt)
+Void_t* dtfinger(astDt_t* dt)
 {
-	return (dt && dt->meth && (dt->meth->type & DT_ORDERED)) ? (Void_t*)((Dttree_t*)dt->data)->root : NIL(Void_t*);
+	return (dt && dt->meth && (dt->meth->type & DT_ORDERED)) ? (Void_t*)((astDttree_t*)dt->data)->root : NIL(Void_t*);
 }
 
 #endif
 
 /* make this method available */
-static Dtmethod_t	_Dtoset =  { dttree, DT_OSET, treeevent, "Dtoset" };
-static Dtmethod_t	_Dtobag =  { dttree, DT_OBAG, treeevent, "Dtobag" };
-__DEFINE__(Dtmethod_t*,Dtoset,&_Dtoset);
-__DEFINE__(Dtmethod_t*,Dtobag,&_Dtobag);
+static astDtmethod_t	_Dtoset =  { astdttree, DT_OSET, treeevent, "Dtoset" };
+static astDtmethod_t	_Dtobag =  { astdttree, DT_OBAG, treeevent, "Dtobag" };
+__DEFINE__(astDtmethod_t*,astDtoset,&_Dtoset);
+__DEFINE__(astDtmethod_t*,astDtobag,&_Dtobag);
 
 /* backwards compatibility */
-#undef	Dttree
+#undef	astDttree
 #if defined(__EXPORT__)
 __EXPORT__
 #endif
-__DEFINE__(Dtmethod_t*,Dttree,&_Dtoset);
+__DEFINE__(astDtmethod_t*,astDttree,&_Dtoset);
 
 #ifdef NoF
-NoF(dttree)
+NoF(astdttree)
 #endif

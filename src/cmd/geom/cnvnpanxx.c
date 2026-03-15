@@ -3,7 +3,7 @@
 #include <ast.h>
 #include <option.h>
 #include <tok.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <math.h>
 #include <ctype.h>
 #include <swift.h>

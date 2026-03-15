@@ -215,10 +215,10 @@ make ar-omf.o
 make ar-omf.c
 make omf.h implicit
 done omf.h
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h
+done ${PACKAGE_ast_INCLUDE}/astcdt.h
 prev ardirlib.h implicit
 done ar-omf.c
 meta ar-omf.o %.c>%.o ar-omf.c ar-omf

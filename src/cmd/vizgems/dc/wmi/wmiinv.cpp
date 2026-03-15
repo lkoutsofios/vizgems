@@ -10,7 +10,7 @@
 #include <comutil.h>
 #include <wbemidl.h>
 #include <ast/sfio.h>
-#include <ast/cdt.h>
+#include <ast/astcdt.h>
 #include <ast/vmalloc.h>
 
 #include "wmi.h"

@@ -201,7 +201,7 @@ static char *createsorterstr (
         return NULL;
     }
 
-    sfprintf (fp, "#include <ast.h>\n#include <cdt.h>\n");
+    sfprintf (fp, "#include <ast.h>\n#include <astcdt.h>\n");
     sfprintf (fp, "#include <swift.h>\n#include <dds.h>\n");
     sfprintf (fp, "#include <vmalloc.h>\n#include <recsort.h>\n\n");
     if (schemap->include)

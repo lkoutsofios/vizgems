@@ -30,7 +30,7 @@
 #define _PT_H
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 
 #define PT_VERSION		20090315L
 

@@ -163,7 +163,7 @@ fi
 
 print "
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <dds.h>
 
 typedef struct dt_${name}_key_t {

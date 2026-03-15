@@ -75,7 +75,7 @@
 #define _MIMELIB_H	1
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <magic.h>
 #include <tok.h>
 

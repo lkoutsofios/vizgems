@@ -32,16 +32,16 @@
 			 DT_FLATTEN|DT_EXTRACT|DT_RESTORE|DT_STAT)
 
 #if __STD_C
-static Void_t* dtvsearch(Dt_t* dt, reg Void_t* obj, reg int type)
+static Void_t* astdtvsearch(astDt_t* dt, reg Void_t* obj, reg int type)
 #else
-static Void_t* dtvsearch(dt,obj,type)
-Dt_t*		dt;
+static Void_t* astdtvsearch(dt,obj,type)
+astDt_t*		dt;
 reg Void_t*	obj;
 reg int		type;
 #endif
 {
 	int		cmp;
-	Dt_t		*d, *p;
+	astDt_t		*d, *p;
 	Void_t		*o, *n, *oky, *nky;
 
 	if(type&DT_NOVIEWPATH)
@@ -64,7 +64,7 @@ reg int		type;
 			return NIL(Void_t*);
 
 		/* find the min/max element that satisfies the op requirement */
-		n = nky = NIL(Void_t*); p = NIL(Dt_t*);
+		n = nky = NIL(Void_t*); p = NIL(astDt_t*);
 		for(d = dt; d; d = d->view)
 		{	if(!(o = (*d->meth->searchf)(d, obj, type)) )
 				continue;
@@ -121,27 +121,27 @@ reg int		type;
 }
 
 #if __STD_C
-Dt_t* dtview(reg Dt_t* dt, reg Dt_t* view)
+astDt_t* astdtview(reg astDt_t* dt, reg astDt_t* view)
 #else
-Dt_t* dtview(dt,view)
-reg Dt_t*	dt;
-reg Dt_t*	view;
+astDt_t* astdtview(dt,view)
+reg astDt_t*	dt;
+reg astDt_t*	view;
 #endif
 {
-	reg Dt_t*	d;
+	reg astDt_t*	d;
 
 	if(view && view->meth != dt->meth) /* must use the same method */
-		return NIL(Dt_t*);
+		return NIL(astDt_t*);
 
 	/* make sure there won't be a cycle */
 	for(d = view; d; d = d->view)
 		if(d == dt)
-			return NIL(Dt_t*);
+			return NIL(astDt_t*);
 
 	/* no more viewing lower dictionary */
 	if((d = dt->view) )
 		d->nview -= 1;
-	dt->view = dt->walk = NIL(Dt_t*);
+	dt->view = dt->walk = NIL(astDt_t*);
 
 	if(!view)
 	{	dt->searchf = dt->meth->searchf;
@@ -150,7 +150,7 @@ reg Dt_t*	view;
 
 	/* ok */
 	dt->view = view;
-	dt->searchf = dtvsearch;
+	dt->searchf = astdtvsearch;
 	view->nview += 1;
 
 	return view;

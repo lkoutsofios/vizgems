@@ -72,6 +72,7 @@ libuuid1
 libxcb-devel
 libxcb1
 libxcrypt-devel
+libxdot4
 libxml2-2
 libxml2-devel
 libz1-x86-64-v3

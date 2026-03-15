@@ -271,10 +271,10 @@ make test.cdt
 prev testlib
 make cdt/dttest.h
 prev terror.h implicit
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ../../lib/libast/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h
+done ${PACKAGE_ast_INCLUDE}/astcdt.h
 done cdt/dttest.h
 bind -ldll
 make cdt/tbags.c

@@ -9,7 +9,7 @@ mailx :: README RELEASE mailx.1 \
 	names.c proc.c quit.c send.c spam.c tty.c vars.c \
 	imap.c smtp.c -lcs
 
-:: port/cdt.h port/dthdr.h port/mime.h port/mimelib.h \
+:: port/astcdt.h port/dthdr.h port/mime.h port/mimelib.h \
 	port/dtclose.c port/dtdisc.c port/dtextract.c port/dtflatten.c \
 	port/dthash.c port/dtlist.c port/dtmethod.c port/dtopen.c \
 	port/dtrenew.c port/dtrestore.c port/dtsize.c port/dtstat.c \

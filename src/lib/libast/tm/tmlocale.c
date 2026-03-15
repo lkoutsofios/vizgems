@@ -28,7 +28,7 @@
  */
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <iconv.h>
 #include <mc.h>
 #include <tm.h>

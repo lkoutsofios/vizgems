@@ -1,7 +1,7 @@
 VARS{
 #include <regex.h>
 #include <vmalloc.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <tm.h>
 #include <option.h>
 #define VG_DEFS_MAIN

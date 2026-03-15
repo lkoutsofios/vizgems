@@ -24,7 +24,7 @@
  */
 
 #include <ardirlib.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <omf.h>
 
 #ifndef EILSEQ

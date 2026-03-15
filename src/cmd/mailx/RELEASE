@@ -131,7 +131,7 @@
 	 set MAILCAP; get checks ${MAILCAP} for view command(s), Get doesn't
 	 mime [ pattern[;] command | < file ] -- add/del/list mime capabilities
 	 alias case insensitive -- mail addrs and sendmail aliases are anyway
-	 use <cdt.h>
+	 use <astcdt.h>
 	 use <mime.h>
 	 mark [messagelist] mark
 	 folder directories treated as mh folders

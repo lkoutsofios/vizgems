@@ -39,7 +39,7 @@ static const char id[] = "\n@(#)$Id: at.svc (AT&T Research) 2012-02-29 $\0\n";
 
 #include "at.h"
 
-#include <cdt.h>
+#include <astcdt.h>
 #include <debug.h>
 #include <dirent.h>
 #include <proc.h>

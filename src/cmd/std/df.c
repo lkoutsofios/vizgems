@@ -99,7 +99,7 @@ USAGE_LICENSE
 
 #include <ast.h>
 #include <error.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <ls.h>
 #include <mnt.h>
 #include <sig.h>

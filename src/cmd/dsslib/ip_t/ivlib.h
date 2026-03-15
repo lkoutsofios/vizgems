@@ -37,7 +37,7 @@ extern void		abort _ARG_((void));
 
 #include		<iv.h>
 #include		<ivmethods.h>
-#include		<cdt.h>
+#include		<astcdt.h>
 
 #ifndef NIL
 #define NIL(t)		((t)0)

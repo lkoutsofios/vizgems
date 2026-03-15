@@ -77,7 +77,7 @@ make ip_t.o
 make ip_t.c
 make ptv.h implicit
 make pt.h implicit
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 make ${PACKAGE_ast_INCLUDE}/endian.h implicit
 make ${PACKAGE_ast_INCLUDE}/bytesex.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
@@ -140,7 +140,7 @@ done ${PACKAGE_ast_INCLUDE}/ast_lib.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_std.h dontcare
-done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
 make ${PACKAGE_ast_INCLUDE}/ast.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_api.h implicit
 make ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
@@ -156,7 +156,7 @@ prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast.h dontcare
 done pt.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done ptv.h
 prev pt.h implicit
@@ -168,7 +168,7 @@ make ${PACKAGE_ast_INCLUDE}/cx.h implicit
 prev ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
 make ${PACKAGE_ast_INCLUDE}/dt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/dt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
@@ -264,7 +264,7 @@ make ptaddresses.c
 make ptlib.h implicit
 prev pt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/error.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 done ptlib.h
 done ptaddresses.c
 meta ptaddresses.o %.c>%.o ptaddresses.c ptaddresses
@@ -410,7 +410,7 @@ done fv.o generated
 make ivopen.o
 make ivopen.c
 make ivlib.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 make ivmethods.h implicit
 done ivmethods.h dontcare
 make iv.h implicit
@@ -481,7 +481,7 @@ prev ptv.h implicit
 prev ${PACKAGE_ast_INCLUDE}/error.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ip6.h implicit
 prev fv.h implicit
-prev ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+prev ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 done ptvlib.h
 done ptvaddresses.c
 meta ptvaddresses.o %.c>%.o ptvaddresses.c ptvaddresses

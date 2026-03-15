@@ -4,7 +4,7 @@
 #include <option.h>
 #include <vmalloc.h>
 #include <tok.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <swift.h>
 #include <sys/socket.h>
 #include <sys/time.h>

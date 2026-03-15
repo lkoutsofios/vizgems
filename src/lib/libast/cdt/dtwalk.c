@@ -28,22 +28,22 @@
 */
 
 #if __STD_C
-int dtwalk(Dt_t* dt, int (*userf)(Dt_t*, Void_t*, Void_t*), Void_t* data)
+int astdtwalk(astDt_t* dt, int (*userf)(astDt_t*, Void_t*, Void_t*), Void_t* data)
 #else
-int dtwalk(dt,userf,data)
-Dt_t*	dt;
+int astdtwalk(dt,userf,data)
+astDt_t*	dt;
 int(*	userf)();
 Void_t*	data;
 #endif
 {
 	Void_t	*obj, *next;
-	Dt_t	*walk;
+	astDt_t	*walk;
 	int	rv;
 
-	for(obj = dtfirst(dt); obj; )
+	for(obj = astdtfirst(dt); obj; )
 	{	if(!(walk = dt->walk) )
 			walk = dt;
-		next = dtnext(dt,obj);
+		next = astdtnext(dt,obj);
 		if((rv = (*userf)(walk, obj, data )) < 0)
 			return rv;
 		obj = next;

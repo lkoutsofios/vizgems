@@ -1,12 +1,145 @@
 #ifndef _VG_DQ_VT_UTIL_INCLUDE
 #define _VG_DQ_VT_UTIL_INCLUDE
 
-#define Dict_t Dt_t
 #include <ast.h>
 #include <vmalloc.h>
 #include <swift.h>
 #include <graphviz/graphvizconfig.h>
+
+#undef Dtlink_t
+#undef Dthold_t
+#undef Dtdisc_t
+#undef Dtmethod_t
+#undef Dtdata_t
+#undef Dtuser_t
+#undef Dt_t
+#undef Dtstat_t
+#undef Dtlib_t
+#undef Dttree_t
+#undef Dtlist_t
+#undef Dthash_t
+#undef Dtsearch_f
+#undef Dtmake_f
+#undef Dtfree_f
+#undef Dtcompar_f
+#undef Dthash_f
+#undef Dtmemory_f
+#undef Dtevent_f
+#undef Dttype_f
+#undef Dtset
+#undef Dtbag
+#undef Dtoset
+#undef Dtobag
+#undef Dtlist
+#undef Dtstack
+#undef Dtqueue
+#undef Dtdeque
+#undef Dtrhset
+#undef Dtrhbag
+#undef dtopen
+#undef dtclose
+#undef dtview
+#undef dtdisc
+#undef dtmethod
+#undef dtwalk
+#undef dtcustomize
+#undef dtstrhash
+#undef dtuserlock
+#undef dtuserdata
+#undef dtnew
+#undef dtinsert
+#undef dtmatch
+#undef dtfirst
+#undef dtnext
+#undef dtdelete
+#undef dtprev
+#undef dtsearch
+#undef dtflatten
+#undef dtstat
+#undef dtsize
+#undef dtclear
+#undef dtlink
+
+/*
+#undef CDT_PLUGIN_VERSION
+#undef CDT_VERSION
+#undef DTDISC
+#undef DTOFFSET
+#undef DT_ANNOUNCE
+#undef DT_APPEND
+#undef DT_ATLEAST
+#undef DT_ATMOST
+#undef DT_ATTACH
+#undef DT_BAG
+#undef DT_CLEAR
+#undef DT_CLOSE
+#undef DT_DELETE
+#undef DT_DEQUE
+#undef DT_DETACH
+#undef DT_DISC
+#undef DT_ENDCLOSE
+#undef DT_ENDOPEN
+#undef DT_ERROR
+#undef DT_EXTRACT
+#undef DT_FIRST
+#undef DT_FLATTEN
+#undef DT_HASHSIZE
+#undef DT_HIBIT
+#undef DT_INDATA
+#undef DT_INSERT
+#undef DT_LAST
+#undef DT_LIST
+#undef DT_LOBIT
+#undef DT_MATCH
+#undef DT_MAXRECURSE
+#undef DT_MAXSIZE
+#undef DT_METH
+#undef DT_METHODS
+#undef DT_NBITS
+#undef DT_NEXT
+#undef DT_OBAG
+#undef DT_ONES
+#undef DT_OPEN
+#undef DT_OPERATIONS
+#undef DT_OPTIMIZE
+#undef DT_ORDERED
+#undef DT_OSET
+#undef DT_PREV
+#undef DT_PRIME
+#undef DT_QUEUE
+#undef DT_RELINK
+#undef DT_REMOVE
+#undef DT_RESTORE
+#undef DT_RHBAG
+#undef DT_RHSET
+#undef DT_SAMECMP
+#undef DT_SAMEHASH
+#undef DT_SEARCH
+#undef DT_SET
+#undef DT_SHARE
+#undef DT_STACK
+#undef DT_STAT
+#undef DT_TOANNOUNCE
+#undef DT_ZERO
+#undef Dtuint_t
+#undef _DT
+#undef _DTCMP
+#undef _DTHSH
+#undef _DTK
+#undef _DTKEY
+#undef _DTLNK
+#undef _DTO
+#undef _DTOBJ
+#undef dtplugin
+#undef dtvcount
+#undef dtvhere
+#undef dtvnext
+*/
+
+#include <swift/geom.h>
+#define Dict_t Dt_t
 #include <graphviz/geom.h>
+#include <graphviz/types.h>
 #include <graphviz/gvc.h>
 #include <graphviz/cgraph.h>
 #include <graphviz/gd.h>
@@ -32,6 +165,115 @@
 #include <graphviz/gdfont18.h>
 #include <graphviz/gdfont19.h>
 #include <graphviz/gdfont20.h>
+
+#undef Dtlink_t
+#undef Dthold_t
+#undef Dtdisc_t
+#undef Dtmethod_t
+#undef Dtdata_t
+#undef Dtuser_t
+#undef Dt_t
+#undef Dtstat_t
+#undef Dtlib_t
+#undef Dttree_t
+#undef Dtlist_t
+#undef Dthash_t
+#undef Dtsearch_f
+#undef Dtmake_f
+#undef Dtfree_f
+#undef Dtcompar_f
+#undef Dthash_f
+#undef Dtmemory_f
+#undef Dtevent_f
+#undef Dttype_f
+#undef Dtset
+#undef Dtbag
+#undef Dtoset
+#undef Dtobag
+#undef Dtlist
+#undef Dtstack
+#undef Dtqueue
+#undef Dtdeque
+#undef Dtrhset
+#undef Dtrhbag
+#undef dtopen
+#undef dtclose
+#undef dtview
+#undef dtdisc
+#undef dtmethod
+#undef dtwalk
+#undef dtcustomize
+#undef dtstrhash
+#undef dtuserlock
+#undef dtuserdata
+#undef dtnew
+#undef dtinsert
+#undef dtmatch
+#undef dtfirst
+#undef dtnext
+#undef dtdelete
+#undef dtprev
+#undef dtsearch
+#undef dtflatten
+#undef dtstat
+#undef dtsize
+#undef dtclear
+#undef dtlink
+
+#define Dtlink_t astDtlink_t
+#define Dthold_t astDthold_t
+#define Dtdisc_t astDtdisc_t
+#define Dtmethod_t astDtmethod_t
+#define Dtdata_t astDtdata_t
+#define Dtuser_t astDtuser_t
+#define Dt_t astDt_t
+#define Dtstat_t astDtstat_t
+#define Dtlib_t astDtlib_t
+#define Dttree_t astDttree_t
+#define Dtlist_t astDtlist_t
+#define Dthash_t astDthash_t
+#define Dtsearch_f astDtsearch_f
+#define Dtmake_f astDtmake_f
+#define Dtfree_f astDtfree_f
+#define Dtcompar_f astDtcompar_f
+#define Dthash_f astDthash_f
+#define Dtmemory_f astDtmemory_f
+#define Dtevent_f astDtevent_f
+#define Dttype_f astDttype_f
+#define Dtset astDtset
+#define Dtbag astDtbag
+#define Dtoset astDtoset
+#define Dtobag astDtobag
+#define Dtlist astDtlist
+#define Dtstack astDtstack
+#define Dtqueue astDtqueue
+#define Dtdeque astDtdeque
+#define Dtrhset astDtrhset
+#define Dtrhbag astDtrhbag
+#define dtopen astdtopen
+#define dtclose astdtclose
+#define dtview astdtview
+#define dtdisc astdtdisc
+#define dtmethod astdtmethod
+#define dtwalk astdtwalk
+#define dtcustomize astdtcustomize
+#define dtstrhash astdtstrhash
+#define dtuserlock astdtuserlock
+#define dtuserdata astdtuserdata
+#define dtnew astdtnew
+#define dtinsert astdtinsert
+#define dtmatch astdtmatch
+#define dtfirst astdtfirst
+#define dtnext astdtnext
+#define dtdelete astdtdelete
+#define dtprev astdtprev
+#define dtsearch astdtsearch
+#define dtflatten astdtflatten
+#define dtstat astdtstat
+#define dtsize astdtsize
+#define dtclear astdtclear
+#define dtlink astdtlink
+
 #include "vg_hdr.h"
 
 #define SZ_level  VG_inv_node_level_L

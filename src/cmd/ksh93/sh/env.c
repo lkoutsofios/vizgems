@@ -20,7 +20,7 @@
 #pragma prototyped
 
 #include	<ast.h>
-#include	<cdt.h>
+#include	<astcdt.h>
 
 #define	env_change()		(++ast.env_serial)
 

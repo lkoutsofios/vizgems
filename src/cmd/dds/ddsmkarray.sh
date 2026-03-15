@@ -166,7 +166,7 @@ fi
 
 print "
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <dds.h>
 
 typedef struct ar_${name}_t {

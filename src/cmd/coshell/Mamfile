@@ -262,10 +262,10 @@ make ${PACKAGE_ast_INCLUDE}/css.h implicit
 prev ${PACKAGE_ast_INCLUDE}/cs.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/css.h
-make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/cdt.h
+done ${PACKAGE_ast_INCLUDE}/astcdt.h
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 done event.c
 meta event.o %.c>%.o event.c event

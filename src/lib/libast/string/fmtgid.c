@@ -34,7 +34,7 @@ __STDPP__directive pragma pp:hide getgrgid
 #endif
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <grp.h>
 
 #if defined(__STDPP__directive) && defined(__STDPP__hide)

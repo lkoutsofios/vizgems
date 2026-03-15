@@ -33,7 +33,7 @@
 #include	<error.h>
 #include	"FEATURE/externs"
 #include	"FEATURE/options"
-#include	<cdt.h>
+#include	<astcdt.h>
 #include	<history.h>
 #include	"fault.h"
 #include	"argnod.h"

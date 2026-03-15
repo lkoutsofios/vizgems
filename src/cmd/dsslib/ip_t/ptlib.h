@@ -31,7 +31,7 @@
 #define _PTPREFIX_PRIVATE_ \
 	Dtlink_t	link;
 
-#include <cdt.h>
+#include <astcdt.h>
 #include <error.h>
 
 #include "pt.h"

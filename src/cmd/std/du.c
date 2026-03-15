@@ -74,7 +74,7 @@ USAGE_LICENSE
 
 #include <ast.h>
 #include <ls.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <fts.h>
 #include <error.h>
 

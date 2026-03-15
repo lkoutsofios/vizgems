@@ -44,7 +44,7 @@ fmtfs(struct stat* st)
 
 #else
 
-#include <cdt.h>
+#include <astcdt.h>
 
 typedef struct Id_s
 {

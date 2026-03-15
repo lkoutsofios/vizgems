@@ -1,6 +1,6 @@
 #include <ast.h>
 #include <aso.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <dt.h>
 #include <option.h>
 #include <swift.h>

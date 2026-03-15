@@ -4,7 +4,7 @@
 #define _TIGER_INCLUDE
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 
 #define T_EATTR_ZIP        1
 #define T_EATTR_NPANXXLOC  2

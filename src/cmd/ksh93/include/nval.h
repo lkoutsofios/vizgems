@@ -30,7 +30,7 @@
 
 
 #include	<ast.h>
-#include	<cdt.h>
+#include	<astcdt.h>
 #include	<option.h>
 
 /* for compatibility with old hash library */

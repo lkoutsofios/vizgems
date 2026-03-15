@@ -127,7 +127,7 @@ USAGE_LICENSE
 ;
 
 #include <ast.h>
-#include <cdt.h>
+#include <astcdt.h>
 #include <ctype.h>
 #include <error.h>
 #include <fts.h>

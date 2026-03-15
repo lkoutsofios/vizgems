@@ -26,7 +26,7 @@
  *
  * hash table library interface definitions
  *
- * NOTE: new code should use the more general <cdt.h>
+ * NOTE: new code should use the more general <astcdt.h>
  */
 
 #ifndef _HASH_H

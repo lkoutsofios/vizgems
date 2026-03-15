@@ -1,7 +1,7 @@
 #ifndef _GRAPH_H
 #define _GRAPH_H	1
 
-#include	<cdt.h>
+#include	<astcdt.h>
 
 typedef struct _grnode_s	Grnode_t;
 typedef struct _gredge_s	Gredge_t;
