@@ -36,14 +36,24 @@ fi
 if [[ $remote == y ]] then
     alist=
     while read i; do
-        eval $i
-        alist+=" ${i%%=*}"
+        typeset _sh_k="${i%%=*}" _sh_v="${i#*=}"
+        if [[ $_sh_k == +([a-zA-Z0-9_]) ]]; then
+            typeset -n _sh_ref="$_sh_k"
+            _sh_ref="$_sh_v"
+            typeset +n _sh_ref
+            alist+=" $_sh_k"
+        fi
     done
 else
     alist=
     for i in "$@"; do
-        eval $i
-        alist+=" ${i%%=*}"
+        typeset _sh_k="${i%%=*}" _sh_v="${i#*=}"
+        if [[ $_sh_k == +([a-zA-Z0-9_]) ]]; then
+            typeset -n _sh_ref="$_sh_k"
+            _sh_ref="$_sh_v"
+            typeset +n _sh_ref
+            alist+=" $_sh_k"
+        fi
     done
 fi
 

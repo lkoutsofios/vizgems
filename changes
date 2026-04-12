@@ -1,3 +1,9 @@
+v1100.2026.04.15
+
+- code cleanup
+- web security fixes
+- ksh fix for copying the last argument from the previous line
+
 v1100.2026.03.12
 
 - renamed all of cdt functions and types to astcdt because graphviz uses an incompatible version of cdt

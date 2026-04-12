@@ -1,6 +1,5 @@
 VARS{
 #include <vmalloc.h>
-//#include <astcdt.h>
 #define VG_DEFS_MAIN
 #include "vg_hdr.h"
 #include "sl_level_map.c"

@@ -95,6 +95,7 @@ if ! swmuseringroups 'vg_att_admin|vg_fileedit'; then
     print "<html><body><b><font color=red>"
     print "You are not authorized to access this page"
     print "</font></b></body></html>"
+    exit 1
 fi
 
 fm_init
@@ -423,7 +424,7 @@ edit)
         for v in "${qs_list[@]}"; do
             rec=${v%%\|++\|*}
             rec=${rec//%27/\'}
-            print -r "<b>Record: <pre>$rec</pre></b><br>"
+            print -r "<b>Record: <pre>$(printf '%#H' "$rec")</pre></b><br>"
             if [[ $lpat != '' && $rec != $lpat ]] then
                 print "<b><font color=red>"
                 print "You are not authorized to remove record $rec"
@@ -473,11 +474,18 @@ edit)
                     done
                 fi
                 if [[ $qs_sbulkfile != '' ]] then
-                    cat ${qs_sbulkfile}
+                    # Prevent path traversal: restrict to SWIFTDATADIR/tmp/
+                    if [[ $qs_sbulkfile != *'..'* && \
+                          $qs_sbulkfile == "$SWIFTDATADIR/tmp/"* && \
+                          -f $qs_sbulkfile ]]; then
+                        cat "$qs_sbulkfile"
+                    else
+                        print "<font color=red><b>ERROR: invalid bulk file path</b></font><br>"
+                    fi
                 fi
             ) | while read -u3 -r rec; do
                 rec=${rec//%27/\'}
-                print -r "<b>Record: <pre>$rec</pre></b><br>"
+                print -r "<b>Record: <pre>$(printf '%#H' "$rec")</pre></b><br>"
                 ${fdata.recordchecker} $configfile $file "$rec" \
                 | while read -u3 -r line; do
                     case $line in
@@ -541,7 +549,7 @@ edit)
             done
             rec=${rec#\|+\|}
             rec=${rec//%27/\'}
-            print -r "<b>Record: <pre>$rec</pre></b><br>"
+            print -r "<b>Record: <pre>$(printf '%#H' "$rec")</pre></b><br>"
             ${fdata.recordchecker} $configfile $file "$rec" \
             | while read -r line; do
                 case $line in

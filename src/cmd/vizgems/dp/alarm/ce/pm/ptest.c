@@ -17,7 +17,6 @@ static b_t *bp;
 static void emit (void);
 
 int main (int argc, char **argv) {
-//    int i;
     a_t *zp, *ap;
     int compact = FALSE;
 
@@ -43,11 +42,6 @@ int main (int argc, char **argv) {
     sfprintf (sfstdout, "bp = %x\n", bp);
     sfprintf (sfstdout, "bp->a1 = %x %d %d\n", bp->a1, bp->a1->i, bp->a1->j);
     sfprintf (sfstdout, "bp->a2 = %x %d %d\n", bp->a2, bp->a2->i, bp->a2->j);
-//    for (i = 0; i < 1024 - 16; i++) {
-//        if ((p = PMalloc (i)) == 0)
-//            SUerror ("main", "PMalloc failed for %d", i);
-//        sfprintf (sfstdout, "%d -> %x\n", i, p);
-//    }
     if (PMterm (argv[2]) == -1)
         SUerror ("main", "PMterm failed");
 }

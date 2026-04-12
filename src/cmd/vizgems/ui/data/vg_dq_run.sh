@@ -74,8 +74,17 @@ if [[ $HTTP_COOKIE == *attVGvars* ]] then
     varlist=${varlist%%\;*}
     if [[ $varlist != '' ]] then
         varlist=${varlist//'+'/' '}
-        varlist=${varlist//@([\'\\])/'\'\1}
-        eval "varlist=\$'${varlist//'%'@(??)/'\x'\1"'\$'"}'"
+        # Safe URL decode without eval: expand %XX sequences using printf
+        typeset _vl_decoded='' _vl_rem="$varlist" _vl_hex
+        while [[ $_vl_rem == *'%'[0-9a-fA-F][0-9a-fA-F]* ]]; do
+            _vl_decoded+="${_vl_rem%%'%'[0-9a-fA-F][0-9a-fA-F]*}"
+            _vl_rem="${_vl_rem#*'%'}"
+            _vl_hex="${_vl_rem:0:2}"
+            _vl_rem="${_vl_rem:2}"
+            _vl_decoded+="$(printf "\\x$_vl_hex")"
+        done
+        _vl_decoded+="$_vl_rem"
+        varlist="$_vl_decoded"
     fi
     while [[ $varlist != '' ]] do
         kv=${varlist%%';'*}

@@ -46,6 +46,10 @@ set | egrep qs_action_ | while read -r line; do
     fi
     if [[ $n == action__filter ]] then
         filter=${nr//[/]/}
+        # Whitelist: only allow a simple alphanumeric binary name, no paths
+        if [[ $filter != +([a-zA-Z0-9_-]) ]]; then
+            filter=''
+        fi
     fi
     aattr+="&$n=$nr"
 done
@@ -203,7 +207,7 @@ else
                 $filter < $SWIFTDATADIR/tmp/actions/cache2
             fi
         fi
-    }| while read -r l1 i1 l2 i2 g u an al ae; do
+    } | while read -r l1 i1 l2 i2 g u an al ae; do
         cl1=${l1//[!a-zA-Z0-9]/}
         ci1=${i1//[!a-zA-Z0-9]/}
         cl2=${l2//[!a-zA-Z0-9]/}
@@ -241,8 +245,10 @@ else
         if [[ $ae == __SKIP__ ]] then
             continue
         fi
-        [[ $aattr != '' ]] && ae+="$aattr"
+        # Expand server-side template variables in ae BEFORE appending
+        # user-supplied aattr, so user input is never passed through eval
         aurl=$(eval print -r -- "\"$ae\"")
+        [[ $aattr != '' ]] && aurl+="$aattr"
         print -r "<d>$(printf '%#H' "$aurl")|$(printf '%#H' "$al")|$wtype</d>"
     done
     IFS="$ifs"

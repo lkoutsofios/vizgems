@@ -306,8 +306,6 @@ const char *E2ccp (HRESULT hr) {
     return "WBEMESS_E_REGISTRATION_TOO_BROAD";
   case WBEMESS_E_REGISTRATION_TOO_PRECISE:
     return "WBEMESS_E_REGISTRATION_TOO_PRECISE";
-//  case WBEMESS_E_AUTHZ_NOT_PRIVILEGED:
-//    return "WBEMESS_E_AUTHZ_NOT_PRIVILEGED";
   case WBEMMOF_E_EXPECTED_QUALIFIER_NAME:
     return "WBEMMOF_E_EXPECTED_QUALIFIER_NAME";
   case WBEMMOF_E_EXPECTED_SEMI:
@@ -501,7 +499,6 @@ const char *V2ccp (VARIANT *pv) {
       return "";
     }
     if (u == l) {
-//      sfprintf (sfstderr, "V2ccp: no elements 1\n");
       return "";
     }
     for (i = l; i <= u; i++) {
@@ -531,7 +528,6 @@ const char *V2ccp (VARIANT *pv) {
       return "";
     }
     if (u == l) {
-//      sfprintf (sfstderr, "V2ccp: no elements 2\n");
       return "";
     }
     for (i = l; i <= u; i++) {

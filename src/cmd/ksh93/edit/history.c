@@ -1124,7 +1124,7 @@ char *hist_word(char *string,int size,int word)
 	}
 	*cp = 0;
 	if(s1 != string)
-		strcpy(string,s1);
+		strcopy(string,s1);
 	return(string);
 }
 

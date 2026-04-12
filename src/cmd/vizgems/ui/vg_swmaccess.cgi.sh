@@ -85,7 +85,7 @@ if [[ $qs_mode == logout ]] then
     print "Cache-Control: no-cache, no-store, must-revalidate"
     print "Pragma: no-cache"
     print "Expires: 0"
-    print "Set-Cookie: attSWMAUTH=; path=/; SameSite=Strict\n"
+    print "Set-Cookie: attSWMAUTH=; path=/; SameSite=Strict; Secure; HttpOnly\n"
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">'
     print "<html>"
     print "<head>"
@@ -101,7 +101,10 @@ fi
 
 remoteid=$REMOTE_ADDR
 if [[ $HTTP_X_FORWARDED_FOR != '' ]] then
-    remoteid=$HTTP_X_FORWARDED_FOR
+    # Take first IP only and strip non-IP characters to prevent path traversal
+    typeset _xff="${HTTP_X_FORWARDED_FOR%%,*}"
+    _xff="${_xff//[!0-9a-fA-F.:]/}"
+    [[ $_xff != '' ]] && remoteid="$_xff"
 fi
 
 authfailed=n
@@ -133,7 +136,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
             suffix=${code//[!A-Za-z0-9_]/''}
             cachefile=$SWMROOT/tmp/$REMOTE_ADDR.${suffix:0:32}
             if [[ $HTTP_X_FORWARDED_FOR != '' ]] then
-                cachefile=$SWMROOT/tmp/$HTTP_X_FORWARDED_FOR.${suffix:0:32}
+                cachefile=$SWMROOT/tmp/$remoteid.${suffix:0:32}
             fi
             if [[ $qs_globalcookie == y && -f $SWMROOT/globalcookieok ]] then
                 line=$(egrep "^vg_att_admin:" $SWMROOT/.group)
@@ -150,7 +153,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
                 print "Cache-Control: no-cache, no-store, must-revalidate"
                 print "Pragma: no-cache"
                 print "Expires: 0"
-                print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict\n"
+                print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; Secure; HttpOnly\n"
                 print "attSWMAUTH=$code"
                 exit 0
             fi
@@ -158,7 +161,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
             print "Cache-Control: no-cache, no-store, must-revalidate"
             print "Pragma: no-cache"
             print "Expires: 0"
-            print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict\n"
+            print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; Secure; HttpOnly\n"
             print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">'
             print "<html>"
             if [[ $QUERY_STRING == *after_auth=* ]] then
@@ -179,6 +182,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
                 print -u2 ERROR illegal url $url
                 exit 1
             fi
+            url="${url//\'/}"
             print "<head>"
             print "<meta http-equiv='refresh' content='0; URL=$url' />"
             print "</head>"

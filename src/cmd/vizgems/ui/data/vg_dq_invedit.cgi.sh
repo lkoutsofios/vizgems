@@ -182,12 +182,14 @@ function gotoquery {
 }
 
 function gotourl {
+    # Escape single quotes to prevent JS string breakout
+    typeset _url="${1//\'/\\\'}"
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">'
     print "<html>"
     print "<head></head>"
     print "<body>"
     print "<script>"
-    print "location.href = '$1'"
+    print "location.href = '$_url'"
     print "</script>"
     print "</body>"
     print "</html>"
@@ -295,7 +297,16 @@ setup)
         exit 0
     fi
 
-    print -r "$HTTP_REFERER" > referer.url
+    # Only store referer if it is a safe same-origin path
+    typeset _ref="$HTTP_REFERER"
+    if [[ $_ref == *'://'* ]]; then
+        _ref="/${_ref#*'://'}"
+        _ref="/${_ref#*/}"
+    fi
+    if [[ $_ref != /cgi-* || $_ref == *$'\n'* || $_ref == *"'"* ]]; then
+        _ref='/cgi-bin-vg-members/vg_home.cgi'
+    fi
+    print -r "$_ref" > referer.url
     {
         print "custlevel=$custlevel"
         print "custid=$custid"

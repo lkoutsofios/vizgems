@@ -858,9 +858,6 @@ function vg_mouseevent (e) {
       vg_mousestate[b] = 'down'
       vg_mousereturn[b] = true
     } else {
-// not sure why this was here
-//      if (vg_browser == 'FF' && vg_mousestate[b] != 'down')
-//        return
       vg_mousestate[b] = 'up'
     }
   } else if (p == 2) {

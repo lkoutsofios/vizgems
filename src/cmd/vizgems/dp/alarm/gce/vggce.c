@@ -273,7 +273,6 @@ write:
     }
 
     evmark++;
-//    ccmark++;
 
     if (pruneevs (currtime - 60 * maxalarmkeepmin, 2) == -1) {
         SUwarning (0, "vggce", "cannot prune evs");

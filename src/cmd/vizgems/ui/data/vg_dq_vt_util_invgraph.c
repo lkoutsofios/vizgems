@@ -58,10 +58,6 @@ static int gid, nid;
 #define __PUBLIC_DATA__
 #endif
 
-//extern __PUBLIC_DATA__ gvplugin_library_t gvplugin_dot_layout_LTX_library;
-//extern __PUBLIC_DATA__ gvplugin_library_t gvplugin_neato_layout_LTX_library;
-//extern __PUBLIC_DATA__ gvplugin_library_t gvplugin_gd_LTX_library;
-//extern __PUBLIC_DATA__ gvplugin_library_t gvplugin_core_LTX_library;
 static lt_symlist_t lt_symlist[4];
 
 #undef __PUBLIC_DATA__
@@ -179,18 +175,6 @@ int IGRinit (char *pm) {
     if (!(lt_symlist[3].address = (void *) dlsym (hp, lt_symlist[3].name)))
         SUerror ("IGRinit", "cannot find gvplugin_core_LTX_library");
 
-/*
-    lt_symlist[0].name = "gvplugin_dot_layout_LTX_library";
-    lt_symlist[0].address = (void *) &gvplugin_dot_layout_LTX_library;
-    lt_symlist[1].name = "gvplugin_neato_layout_LTX_library";
-    lt_symlist[1].address = (void *) &gvplugin_neato_layout_LTX_library;
-    lt_symlist[2].name = "gvplugin_gd_LTX_library";
-    lt_symlist[2].address = (void *) &gvplugin_gd_LTX_library;
-    lt_symlist[3].name = "gvplugin_core_LTX_library";
-    lt_symlist[3].address = (void *) &gvplugin_core_LTX_library;
-*/
-
-//    aginit ();
     gvc = gvContextPlugins (lt_symlist, 0);
 
     if (getenv ("DEBUG"))
