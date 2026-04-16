@@ -214,7 +214,7 @@ static int registryopen (char *regname, char *regkey, char *rname, int rport) {
         SUwarning (1, "registryopen", "cannot find host %s", host);
         return -1;
     }
-    memset ((char *) &sin, 1, sizeof (sin));
+    memset ((char *) &sin, 0, sizeof (sin));
     memcpy ((char *) &sin.sin_addr, hp->h_addr, hp->h_length);
     sin.sin_family = hp->h_addrtype;
     sin.sin_port = htons (port);

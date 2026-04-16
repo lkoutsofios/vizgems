@@ -91,7 +91,7 @@ static int launch (char *datadir, schedule_t *sp, time_t ct, time_t dt) {
             shellpath = "/bin/ksh";
     }
 
-    strcpy (jobid, sp->jp->id);
+    sfsprintf (jobid, PATH_MAX, "%s", sp->jp->id);
     for (s = jobid; *s; s++)
         if (*s == '/')
             *s = '_';

@@ -1623,7 +1623,12 @@ load(register Sfio_t* sp, const char* objfile, int source, int ucheck)
 	 * and compute pointers to the compiled data
 	 */
 
-	if (!(p = newof(0, char, lists * sizeof(List_t) + rules * sizeof(Rule_t) + variables * sizeof(Var_t) + strings, 0)))
+	if (strings < 0 || lists < 0 || rules < 0 || variables < 0)
+	{
+		error(3, "%s: corrupt state file", objfile);
+		goto bad;
+	}
+	if (!(p = newof(0, char, (size_t)lists * sizeof(List_t) + (size_t)rules * sizeof(Rule_t) + (size_t)variables * sizeof(Var_t) + (size_t)strings, 0)))
 	{
 		error(3, "out of space");
 		goto bad;

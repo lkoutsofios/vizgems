@@ -1571,7 +1571,11 @@ AGGRserver_t *AGGRserverget (char *namep) {
         return NULL;
 
     strcpy (host, namep + 7);
-    *(strchr (host, '/')) = 0;
+    if (!(portp = strchr (host, '/'))) {
+        SUwarning (1, "AGGRserverget", "malformed name %s", namep);
+        return NULL;
+    }
+    *portp = 0;
     if ((asp = dtmatch (asdict, host))) {
         asp->refcount++;
         return asp;
@@ -3169,8 +3173,11 @@ static int clientopen (AGGRfile_t *afp, int createflag) {
         return -1;
     }
     cmd = (createflag ? AGGR_CMDcreate : AGGR_CMDopen);
-    namep = strchr (afp->namep, '/') + 2;
-    namep = strchr (namep, '/');
+    if (!(namep = strchr (afp->namep, '/')) ||
+        !(namep = strchr (namep + 2, '/'))) {
+        SUwarning (1, "clientopen", "malformed name %s", afp->namep);
+        return -1;
+    }
     if (
         msgput (afp->serverp, &cmd, MSG_4, TRUE) == -1 ||
         msgput (afp->serverp, namep, MSG_S, FALSE) == -1 ||

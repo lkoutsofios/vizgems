@@ -194,7 +194,7 @@ int main (int argc, char **argv) {
     );
     sfprintf (
         sfstdout, "tconn=%f\n",
-        (t4.tv_sec - t3.tv_sec) + (t3.tv_usec - t3.tv_usec) / 1000000.0
+        (t4.tv_sec - t3.tv_sec) + (t4.tv_usec - t3.tv_usec) / 1000000.0
     );
     sfprintf (
         sfstdout, "tres1=%f\n",

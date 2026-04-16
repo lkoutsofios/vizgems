@@ -638,7 +638,7 @@ metaget(Rule_t* r, Frame_t* active, char* stem, Rule_t** meta)
 	 * unconstrained match
 	 */
 
-	strcpy(stem, b);
+	strncopy(stem, b, MAXNAME);
 
  primary:
 

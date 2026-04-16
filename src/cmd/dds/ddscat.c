@@ -459,7 +459,7 @@ static int loadstate (char *file) {
         }
         if (state != 1)
             break;
-        strcpy (fname, line1);
+        sfsprintf (fname, PATH_MAX, "%s", line1);
         if (
             !(line2 = sfgetr (fp, '\n', 1)) ||
             (off = strtoll ((*line2 == 'Z') ? line2 + 1 : line2, NULL, 10)) < 0

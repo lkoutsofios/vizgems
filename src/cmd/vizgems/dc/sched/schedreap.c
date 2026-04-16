@@ -95,7 +95,7 @@ static int postlog (char *datadir, char *ts, schedule_t *sp) {
     char file[PATH_MAX], jobid[PATH_MAX], *s;
     Sfio_t *fp;
 
-    strcpy (jobid, sp->jp->id);
+    sfsprintf (jobid, PATH_MAX, "%s", sp->jp->id);
     for (s = jobid; *s; s++)
         if (*s == '/')
             *s = '_';

@@ -181,7 +181,7 @@ static int sh_checkaudit(History_t *hp, const char *name, char *logbuf, size_t l
 	int	id1, id2, r=0, n, fd;
 	if((fd=open(name, O_RDONLY)) < 0)
 		return(0);
-	if((n = read(fd, logbuf,len-1)) < 0)
+	if((n = read(fd, logbuf,len-1)) <= 0)
 		goto done;
 	while(logbuf[n-1]=='\n')
 		n--;

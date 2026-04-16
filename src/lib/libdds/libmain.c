@@ -735,7 +735,7 @@ char *_ddscreateso (
             getuid (), getpid (), random ()
         );
         if (sostr)
-            strcpy (sofile, sostr);
+            sfsprintf (sofile, PATH_MAX + 2, "%s", sostr);
         else {
             strcpy (sofile, cfile);
             l = strlen (sofile);

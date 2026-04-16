@@ -953,19 +953,19 @@ edit)
         ERROR)
             eflag=y
             print "<tr class=page><td class=page>"
-            print "<b><font color=red>ERROR: $(printf '%#H' "$rest")</font></b>"
+            print "<b><font color=red>ERROR: $(printf '%H' "$rest")</font></b>"
             print "</td></tr>"
             ;;
         WARNING)
             print "<tr class=page><td class=page>"
-            print "<font color=red>WARNING: $(printf '%#H' "$rest")</font>"
+            print "<font color=red>WARNING: $(printf '%H' "$rest")</font>"
             print "</td></tr>"
             ;;
         REC)
             print -u3 -r "$rest"
             ;;
         *)
-            print "<tr class=page><td class=page>$(printf '%#H' "$tag"): $(printf '%#H' "$rest")</td></tr>"
+            print "<tr class=page><td class=page>$(printf '%H' "$tag"): $(printf '%H' "$rest")</td></tr>"
             ;;
         esac
     done 3> editschecked.xml

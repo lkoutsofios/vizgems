@@ -265,7 +265,7 @@ int main (int argc, char **argv) {
                         }
                         if (inm == inn)
                             emit2 = TRUE;
-                        pemit2 = emit1;
+                        pemit2 = emit2;
                     }
                 }
                 emit = emit1 || emit2;

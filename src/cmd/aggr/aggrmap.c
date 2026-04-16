@@ -200,7 +200,7 @@ int main (int argc, char **argv) {
         case 'a':
             while ((line = sfgetr (sfp, '\n', 1))) {
                 if (
-                    (avn = tokscan (line, &s, " %v ", avs, 10)) < 1 || avn > 2
+                    (avn = tokscan (line, &s, " %v ", avs, 10)) != 2
                 ) {
                     SUwarning (1, "aggrmap", "bad line");
                     continue;
@@ -329,7 +329,7 @@ int main (int argc, char **argv) {
         case 'a':
             while ((line = sfgetr (sfstdin, '\n', 1))) {
                 if (
-                    (avn = tokscan (line, &s, " %v ", avs, 10)) < 1 || avn > 2
+                    (avn = tokscan (line, &s, " %v ", avs, 10)) != 2
                 ) {
                     SUwarning (1, "aggrmap", "bad line");
                     continue;

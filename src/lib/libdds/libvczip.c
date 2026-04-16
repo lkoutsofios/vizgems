@@ -66,7 +66,7 @@ ssize_t DDSvczread (
     size_t currlen, rest;
     vczwin_t *vczwinp;
     int vczwini;
-    void *lastblockfix;
+    void *lastblockfix = NULL;
 
     ip = (vczi_t *) hdrp->vczp;
 
