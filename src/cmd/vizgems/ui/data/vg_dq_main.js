@@ -218,7 +218,7 @@ function dq_sdivpage_receive (req) {
      return
 
   res = req.responseText
-  sdpf.del.innerHTML = unescape (res)
+  sdpf.del.innerHTML = decodeURIComponent (res)
   dq_sdivpage_inprogress = false
 }
 

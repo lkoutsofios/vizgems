@@ -77,7 +77,8 @@ typeset ill='+(@(\<|%3c)@([a-z][a-z0-9]|a)*|\`*\`|\$*\(*\)|\$*\{*\})'
 
 if [[ $qs_mode == logout ]] then
     url=${REQUEST_URI%%[?&]*}
-    if [[ $url == *$ill* ]] then
+    typeset -l lurl=$url
+    if [[ $lurl == *$ill* ]] then
         print -r -u2 "SWIFT ERROR swmaccess: illegal characters in REQUEST_URI"
         exit 1
     fi
@@ -85,7 +86,8 @@ if [[ $qs_mode == logout ]] then
     print "Cache-Control: no-cache, no-store, must-revalidate"
     print "Pragma: no-cache"
     print "Expires: 0"
-    print "Set-Cookie: attSWMAUTH=; path=/; SameSite=Strict; Secure; HttpOnly\n"
+    print "Set-Cookie: attSWMAUTH=; path=/; SameSite=Strict; HttpOnly\n"
+    url="${url//\'/}"
     print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">'
     print "<html>"
     print "<head>"
@@ -153,7 +155,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
                 print "Cache-Control: no-cache, no-store, must-revalidate"
                 print "Pragma: no-cache"
                 print "Expires: 0"
-                print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; Secure; HttpOnly\n"
+                print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; HttpOnly\n"
                 print "attSWMAUTH=$code"
                 exit 0
             fi
@@ -161,7 +163,7 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
             print "Cache-Control: no-cache, no-store, must-revalidate"
             print "Pragma: no-cache"
             print "Expires: 0"
-            print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; Secure; HttpOnly\n"
+            print "Set-Cookie: attSWMAUTH=$code; path=/; SameSite=Strict; HttpOnly\n"
             print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">'
             print "<html>"
             if [[ $QUERY_STRING == *after_auth=* ]] then
@@ -174,7 +176,8 @@ if [[ $qs_mode == @(auth|showcookie) ]] then
             else
                 url=/cgi-bin-vg-members/vg_home.cgi
             fi
-            if [[ $url == *$ill* ]] then
+            typeset -l lurl=$url
+            if [[ $lurl == *$ill* ]] then
                 print -r -u2 "SWIFT ERROR swmaccess: illegal characters in url"
                 exit 1
             fi
@@ -245,7 +248,8 @@ elif [[ $qs_url != '' ]] then
 else
     url=/cgi-bin-vg-members/vg_home.cgi
 fi
-if [[ $url == *$ill* ]] then
+typeset -l lurl=$url
+if [[ $lurl == *$ill* ]] then
     print -r -u2 "SWIFT ERROR swmaccess: illegal characters in url"
     exit 1
 fi

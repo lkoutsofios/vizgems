@@ -47,7 +47,8 @@ typeset -l lfmt
 
 typeset ill='+(@(\<|%3c)@([a-z][a-z0-9]|a)*|\`*\`|\$*\(*\)|\$*\{*\})'
 rest=$QUERY_STRING
-if [[ $rest == *$ill* ]] then
+typeset -l lrest=$rest
+if [[ $lrest == *$ill* ]] then
     print -r -u2 "SWIFT ERROR rest: illegal characters in QUERY_STRING"
     exit 1
 fi

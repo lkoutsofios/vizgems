@@ -25,7 +25,8 @@ if [[ $HTTPS == on ]] then
 else
     homeurl=http://$HTTP_HOST
 fi
-if [[ $QUERY_STRING == *$ill* ]] then
+typeset -l lqs=$QUERY_STRING
+if [[ $lqs == *$ill* ]] then
     print -r -u2 "SWIFT ERROR atteaccess: illegal characters in QUERY_STRING"
     exit 1
 fi
