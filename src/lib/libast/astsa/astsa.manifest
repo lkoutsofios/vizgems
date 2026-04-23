@@ -12,7 +12,7 @@
 ../cdt/dttree.c
 ../cdt/dtview.c
 ../cdt/dtwalk.c
-../include/astcdt.h
+../include/cdt.h
 ../include/hashkey.h
 ../include/hashpart.h
 ../include/ip6.h

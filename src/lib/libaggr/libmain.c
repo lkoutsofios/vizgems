@@ -6,7 +6,7 @@
 #include <netdb.h>
 #include <errno.h>
 #include <vmalloc.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <tok.h>
 #include <math.h>
 #include <float.h>

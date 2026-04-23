@@ -29,13 +29,13 @@
 */
 
 #if __STD_C
-static Void_t* astdtmemory(astDt_t* dt, Void_t* addr, size_t size, astDtdisc_t* disc)
+static Void_t* dtmemory(Dt_t* dt, Void_t* addr, size_t size, Dtdisc_t* disc)
 #else
-static Void_t* astdtmemory(dt, addr, size, disc)
-astDt_t* 		dt;	/* dictionary			*/
+static Void_t* dtmemory(dt, addr, size, disc)
+Dt_t* 		dt;	/* dictionary			*/
 Void_t* 	addr;	/* address to be manipulate	*/
 size_t		size;	/* size to obtain		*/
-astDtdisc_t* 	disc;	/* discipline			*/
+Dtdisc_t* 	disc;	/* discipline			*/
 #endif
 {
 	if(addr)
@@ -49,21 +49,21 @@ astDtdisc_t* 	disc;	/* discipline			*/
 }
 
 #if __STD_C
-astDtdisc_t* astdtdisc(astDt_t* dt, astDtdisc_t* disc, int type)
+Dtdisc_t* dtdisc(Dt_t* dt, Dtdisc_t* disc, int type)
 #else
-astDtdisc_t* astdtdisc(dt,disc,type)
-astDt_t*		dt;
-astDtdisc_t*	disc;
+Dtdisc_t* dtdisc(dt,disc,type)
+Dt_t*		dt;
+Dtdisc_t*	disc;
 int		type;
 #endif
 {
-	astDtdisc_t	*old;
-	astDtlink_t	*list;
+	Dtdisc_t	*old;
+	Dtlink_t	*list;
 
-	if(!(old = dt->disc) )	/* initialization call from astdtopen() */
+	if(!(old = dt->disc) )	/* initialization call from dtopen() */
 	{	dt->disc = disc;
 		if(!(dt->memoryf = disc->memoryf) )
-			dt->memoryf = astdtmemory;
+			dt->memoryf = dtmemory;
 		return disc;
 	}
 
@@ -71,18 +71,18 @@ int		type;
 		return old;
 
 	if(old->eventf && (*old->eventf)(dt,DT_DISC,(Void_t*)disc,old) < 0)
-		return NIL(astDtdisc_t*);
+		return NIL(Dtdisc_t*);
 
 	if((type & (DT_SAMEHASH|DT_SAMECMP)) != (DT_SAMEHASH|DT_SAMECMP) )
-		list = astdtextract(dt); /* grab the list of objects if any */
-	else	list = NIL(astDtlink_t*);
+		list = dtextract(dt); /* grab the list of objects if any */
+	else	list = NIL(Dtlink_t*);
 
 	dt->disc = disc;
 	if(!(dt->memoryf = disc->memoryf) )
-		dt->memoryf = astdtmemory;
+		dt->memoryf = dtmemory;
 
 	if(list ) /* reinsert extracted objects (with new discipline) */
-		astdtrestore(dt, list);
+		dtrestore(dt, list);
 
 	return old;
 }

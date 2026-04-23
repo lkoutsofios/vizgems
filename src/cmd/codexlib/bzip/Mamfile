@@ -41,15 +41,6 @@ make bzip
 make libcodexbzip.a archive
 make bzip.o
 make bzip.c
-make ${PACKAGE_ast_INCLUDE}/endian.h implicit
-make ${PACKAGE_ast_INCLUDE}/bytesex.h implicit
-make ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
-make ${PACKAGE_ast_INCLUDE}/ast_map.h implicit
-done ${PACKAGE_ast_INCLUDE}/ast_map.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-done ${PACKAGE_ast_INCLUDE}/ast_common.h dontcare
-done ${PACKAGE_ast_INCLUDE}/bytesex.h dontcare
-done ${PACKAGE_ast_INCLUDE}/endian.h dontcare
 make ${PACKAGE_ast_INCLUDE}/bzlib.h implicit
 make windows.h implicit
 done windows.h dontcare virtual
@@ -62,17 +53,16 @@ make ${PACKAGE_ast_INCLUDE}/regex.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_api.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_api.h dontcare
 make ${PACKAGE_ast_INCLUDE}/ast_wchar.h implicit
-make ${PACKAGE_ast_INCLUDE}/wctype.h implicit
-make ${PACKAGE_ast_INCLUDE}/ast_wctype.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-make ${PACKAGE_ast_INCLUDE}/wchar.h implicit
-prev ${PACKAGE_ast_INCLUDE}/ast_wchar.h implicit
-done ${PACKAGE_ast_INCLUDE}/wchar.h dontcare
-done ${PACKAGE_ast_INCLUDE}/ast_wctype.h dontcare
-done ${PACKAGE_ast_INCLUDE}/wctype.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/stdio.h implicit
-prev ${PACKAGE_ast_INCLUDE}/stdio.h implicit
+make ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
+make ${PACKAGE_ast_INCLUDE}/ast_map.h implicit
+done ${PACKAGE_ast_INCLUDE}/ast_map.h dontcare
+make ${PACKAGE_ast_INCLUDE}/endian.h implicit
+make ${PACKAGE_ast_INCLUDE}/bytesex.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
+done ${PACKAGE_ast_INCLUDE}/bytesex.h dontcare
+done ${PACKAGE_ast_INCLUDE}/endian.h dontcare
+done ${PACKAGE_ast_INCLUDE}/ast_common.h dontcare
 done ${PACKAGE_ast_INCLUDE}/ast_wchar.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 make ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
@@ -95,9 +85,6 @@ done ${PACKAGE_ast_INCLUDE}/ast_fs.h dontcare
 done ${PACKAGE_ast_INCLUDE}/ast_fcntl.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_getopt.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_sys.h implicit
-prev ${PACKAGE_ast_INCLUDE}/getopt.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_sys.h dontcare
 make ${PACKAGE_ast_INCLUDE}/ast_lib.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_lib.h dontcare

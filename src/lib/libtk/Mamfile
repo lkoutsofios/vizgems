@@ -4,7 +4,7 @@ setv PACKAGE_X11 ${INSTALLROOT}
 setv PACKAGE_X11_INCLUDE ${PACKAGE_X11}/include/X11
 setv PACKAGE_X11_LIB ${PACKAGE_X11}/lib64
 setv PACKAGE_tcl_INCLUDE ${INSTALLROOT}/include/tcl
-setv PACKAGE_tcl_LIB ${INSTALLROOT}/${PACKAGEROOT}/../../usr/lib64
+setv PACKAGE_tcl_LIB ${INSTALLROOT}/lib
 setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
 setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
 setv PACKAGEROOT ../../../../..
@@ -93,7 +93,6 @@ done ${INSTALLROOT}/include/ast/ast_map.h dontcare
 done ${INSTALLROOT}/include/ast/ast_common.h dontcare
 done ${INSTALLROOT}/include/ast/bytesex.h dontcare
 done ${INSTALLROOT}/include/ast/endian.h dontcare
-prev ${INSTALLROOT}/include/ast/endian.h implicit
 make compat/unistd.h implicit
 make ${INSTALLROOT}/include/tcl/tcl.h implicit
 make ${INSTALLROOT}/include/ast/stdio.h implicit
@@ -105,15 +104,6 @@ make ${INSTALLROOT}/include/ast/regex.h implicit
 make ${INSTALLROOT}/include/ast/ast_api.h implicit
 done ${INSTALLROOT}/include/ast/ast_api.h dontcare
 make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
-make ${INSTALLROOT}/include/ast/wctype.h implicit
-make ${INSTALLROOT}/include/ast/ast_wctype.h implicit
-prev ${INSTALLROOT}/include/ast/endian.h implicit
-make ${INSTALLROOT}/include/ast/wchar.h implicit
-prev ${INSTALLROOT}/include/ast/ast_wchar.h implicit
-done ${INSTALLROOT}/include/ast/wchar.h dontcare
-done ${INSTALLROOT}/include/ast/ast_wctype.h dontcare
-done ${INSTALLROOT}/include/ast/wctype.h dontcare
-prev ${INSTALLROOT}/include/ast/stdio.h implicit
 prev ${INSTALLROOT}/include/ast/stdio.h implicit
 prev ${INSTALLROOT}/include/ast/ast_common.h implicit
 done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
@@ -138,8 +128,6 @@ done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
 done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
 prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
 make ${INSTALLROOT}/include/ast/ast_sys.h implicit
-prev ${INSTALLROOT}/include/ast/getopt.h implicit
-prev ${INSTALLROOT}/include/ast/endian.h implicit
 done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
 make ${INSTALLROOT}/include/ast/ast_lib.h implicit
 done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
@@ -168,12 +156,8 @@ prev ${INSTALLROOT}/include/tcl/tcl.h implicit
 make compat/stdlib.h implicit
 prev ${INSTALLROOT}/include/tcl/tcl.h implicit
 done compat/stdlib.h dontcare
-prev ${INSTALLROOT}/include/ast/stdio.h implicit
-prev ${INSTALLROOT}/include/ast/endian.h implicit
-prev ${INSTALLROOT}/include/ast/endian.h implicit
 make compat/limits.h implicit
 done compat/limits.h dontcare
-prev ${INSTALLROOT}/include/ast/endian.h implicit
 prev ${INSTALLROOT}/include/ast/stdio.h implicit
 done unix/tkUnixPort.h dontcare
 make tkMacPort.h implicit

@@ -4,7 +4,7 @@
 #define VGGCE_H
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <regex.h>
 #include <swift.h>
 #include "vg_hdr.h"

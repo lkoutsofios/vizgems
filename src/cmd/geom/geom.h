@@ -4,7 +4,7 @@
 #define _GEOM_INCLUDE
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 
 typedef float GEOMpoint_t[3];
 typedef float GEOMcolor_t[4];

@@ -30,7 +30,7 @@
 #define _OPTLIB_H		1
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 
 #define OPT_cache		0x01
 #define OPT_functions		0x02

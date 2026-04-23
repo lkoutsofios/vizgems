@@ -25,7 +25,7 @@ exp HAVE_ERRNO_DECL HAVE_ERRNO_H
 cat{
 	#if _PACKAGE_ast
 	#include <ast.h>
-	#include <astcdt.h>
+	#include <cdt.h>
 	#include <stdio.h>
 	#ifndef NIL
 	#define NIL(type) ((type)0)

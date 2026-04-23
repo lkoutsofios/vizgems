@@ -1,3 +1,9 @@
+v1100.2026.04.23
+
+- rolled back rename of cdt functions and types and used dlopen to pull in libgraphviz as isolated code
+- removed directories: 3d mailx jcl libjcl
+- regenerated all Mamfiles
+
 v1100.2026.04.17
 
 - more security bug fixes

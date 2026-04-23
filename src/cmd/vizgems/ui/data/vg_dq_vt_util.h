@@ -4,68 +4,7 @@
 #include <ast.h>
 #include <vmalloc.h>
 #include <swift.h>
-#include <graphviz/graphvizconfig.h>
-
-#undef Dtlink_t
-#undef Dthold_t
-#undef Dtdisc_t
-#undef Dtmethod_t
-#undef Dtdata_t
-#undef Dtuser_t
-#undef Dt_t
-#undef Dtstat_t
-#undef Dtlib_t
-#undef Dttree_t
-#undef Dtlist_t
-#undef Dthash_t
-#undef Dtsearch_f
-#undef Dtmake_f
-#undef Dtfree_f
-#undef Dtcompar_f
-#undef Dthash_f
-#undef Dtmemory_f
-#undef Dtevent_f
-#undef Dttype_f
-#undef Dtset
-#undef Dtbag
-#undef Dtoset
-#undef Dtobag
-#undef Dtlist
-#undef Dtstack
-#undef Dtqueue
-#undef Dtdeque
-#undef Dtrhset
-#undef Dtrhbag
-#undef dtopen
-#undef dtclose
-#undef dtview
-#undef dtdisc
-#undef dtmethod
-#undef dtwalk
-#undef dtcustomize
-#undef dtstrhash
-#undef dtuserlock
-#undef dtuserdata
-#undef dtnew
-#undef dtinsert
-#undef dtmatch
-#undef dtfirst
-#undef dtnext
-#undef dtdelete
-#undef dtprev
-#undef dtsearch
-#undef dtflatten
-#undef dtstat
-#undef dtsize
-#undef dtclear
-#undef dtlink
-
 #include <swift/geom.h>
-#define Dict_t Dt_t
-#include <graphviz/geom.h>
-#include <graphviz/types.h>
-#include <graphviz/gvc.h>
-#include <graphviz/cgraph.h>
 #include <graphviz/gd.h>
 #include <graphviz/gdfontt.h>
 #include <graphviz/gdfonts.h>
@@ -89,114 +28,6 @@
 #include <graphviz/gdfont18.h>
 #include <graphviz/gdfont19.h>
 #include <graphviz/gdfont20.h>
-
-#undef Dtlink_t
-#undef Dthold_t
-#undef Dtdisc_t
-#undef Dtmethod_t
-#undef Dtdata_t
-#undef Dtuser_t
-#undef Dt_t
-#undef Dtstat_t
-#undef Dtlib_t
-#undef Dttree_t
-#undef Dtlist_t
-#undef Dthash_t
-#undef Dtsearch_f
-#undef Dtmake_f
-#undef Dtfree_f
-#undef Dtcompar_f
-#undef Dthash_f
-#undef Dtmemory_f
-#undef Dtevent_f
-#undef Dttype_f
-#undef Dtset
-#undef Dtbag
-#undef Dtoset
-#undef Dtobag
-#undef Dtlist
-#undef Dtstack
-#undef Dtqueue
-#undef Dtdeque
-#undef Dtrhset
-#undef Dtrhbag
-#undef dtopen
-#undef dtclose
-#undef dtview
-#undef dtdisc
-#undef dtmethod
-#undef dtwalk
-#undef dtcustomize
-#undef dtstrhash
-#undef dtuserlock
-#undef dtuserdata
-#undef dtnew
-#undef dtinsert
-#undef dtmatch
-#undef dtfirst
-#undef dtnext
-#undef dtdelete
-#undef dtprev
-#undef dtsearch
-#undef dtflatten
-#undef dtstat
-#undef dtsize
-#undef dtclear
-#undef dtlink
-
-#define Dtlink_t astDtlink_t
-#define Dthold_t astDthold_t
-#define Dtdisc_t astDtdisc_t
-#define Dtmethod_t astDtmethod_t
-#define Dtdata_t astDtdata_t
-#define Dtuser_t astDtuser_t
-#define Dt_t astDt_t
-#define Dtstat_t astDtstat_t
-#define Dtlib_t astDtlib_t
-#define Dttree_t astDttree_t
-#define Dtlist_t astDtlist_t
-#define Dthash_t astDthash_t
-#define Dtsearch_f astDtsearch_f
-#define Dtmake_f astDtmake_f
-#define Dtfree_f astDtfree_f
-#define Dtcompar_f astDtcompar_f
-#define Dthash_f astDthash_f
-#define Dtmemory_f astDtmemory_f
-#define Dtevent_f astDtevent_f
-#define Dttype_f astDttype_f
-#define Dtset astDtset
-#define Dtbag astDtbag
-#define Dtoset astDtoset
-#define Dtobag astDtobag
-#define Dtlist astDtlist
-#define Dtstack astDtstack
-#define Dtqueue astDtqueue
-#define Dtdeque astDtdeque
-#define Dtrhset astDtrhset
-#define Dtrhbag astDtrhbag
-#define dtopen astdtopen
-#define dtclose astdtclose
-#define dtview astdtview
-#define dtdisc astdtdisc
-#define dtmethod astdtmethod
-#define dtwalk astdtwalk
-#define dtcustomize astdtcustomize
-#define dtstrhash astdtstrhash
-#define dtuserlock astdtuserlock
-#define dtuserdata astdtuserdata
-#define dtnew astdtnew
-#define dtinsert astdtinsert
-#define dtmatch astdtmatch
-#define dtfirst astdtfirst
-#define dtnext astdtnext
-#define dtdelete astdtdelete
-#define dtprev astdtprev
-#define dtsearch astdtsearch
-#define dtflatten astdtflatten
-#define dtstat astdtstat
-#define dtsize astdtsize
-#define dtclear astdtclear
-#define dtlink astdtlink
 
 #include "vg_hdr.h"
 
@@ -554,7 +385,7 @@ typedef struct IGRcc_s {
     int done;
     struct IGRcc_s *lccp;
     int prc, src;
-    Agraph_t *gp;
+    void *gp;
     int opi, opn;
 } IGRcc_t;
 
@@ -566,7 +397,7 @@ typedef struct IGRcl_s {
     /* end key */
     int rc;
     short nclass;
-    Agraph_t *gp;
+    void *gp;
     int opi, opn;
 } IGRcl_t;
 
@@ -577,7 +408,7 @@ typedef struct IGRrk_s {
     char id[SZ_id];
     /* end key */
     int rc;
-    Agraph_t *gp;
+    void *gp;
     int opi, opn;
 } IGRrk_t;
 
@@ -594,8 +425,8 @@ typedef struct IGRnd_s {
     struct IGRrk_s **rks, *rkp;
     int rkn;
     short nclass;
-    Agraph_t *gp, *rkgp;
-    Agnode_t *np;
+    void *gp, *rkgp;
+    void *np;
     int opi, opn;
     int w, h, havewh;
 } IGRnd_t;
@@ -605,7 +436,7 @@ typedef struct IGRed_s {
     /* begin key */
     struct IGRnd_s *ndp1, *ndp2;
     /* end key */
-    Agedge_t *ep;
+    void *ep;
     int opi, opn;
 } IGRed_t;
 
@@ -1111,18 +942,16 @@ extern int IGRflatten (void);
 extern int IGRreset (char *);
 extern int IGRlayout (char *);
 extern int IGRnewgraph (IGRcc_t *, char *);
-extern int IGRnewccgraph (Agraph_t *, IGRcc_t *, char *);
-extern int IGRnewclgraph (Agraph_t *, IGRcl_t *, char *);
-extern int IGRnewrkgraph (Agraph_t *, IGRrk_t *, char *);
-extern int IGRnewnode (Agraph_t *, IGRnd_t *, char *);
-extern int IGRnewedge (Agraph_t *, IGRed_t *, char *);
+extern int IGRnewccgraph (void *, IGRcc_t *, char *);
+extern int IGRnewclgraph (void *, IGRcl_t *, char *);
+extern int IGRnewrkgraph (void *, IGRrk_t *, char *);
+extern int IGRnewnode (void *, IGRnd_t *, char *);
+extern int IGRnewedge (void *, IGRed_t *, char *);
 extern int IGRbegindraw (char *, int, RIop_t *, int, char *, char *);
 extern int IGRenddraw (void);
-extern int IGRdrawsgraph (Agraph_t *, RIop_t *, int, char *, char *);
-extern int IGRdrawnode (
-    Agnode_t *, RIop_t *, int, int, int, int, char *, char *
-);
-extern int IGRdrawedge (Agedge_t *, RIop_t *, int, char *, char *);
+extern int IGRdrawsgraph (void *, RIop_t *, int, char *, char *);
+extern int IGRdrawnode (void *, RIop_t *, int, int, int, int, char *, char *);
+extern int IGRdrawedge (void *, RIop_t *, int, char *, char *);
 
 extern int IGDinit (int, char *);
 extern IGDcc_t *IGDinsertcc (char *, char *);

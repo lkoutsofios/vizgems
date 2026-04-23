@@ -111,7 +111,7 @@ static const char	ident_name[] = "EVEN";
 #define log		_log	/* gnu builtin? you've got to be kidding */
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <css.h>
 #include <ctype.h>
 #include <debug.h>

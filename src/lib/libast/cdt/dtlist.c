@@ -27,18 +27,18 @@
 */
 
 typedef struct _dtlist_s
-{	astDtdata_t	data;
-	astDtlink_t*	link;	/* list of objects		*/
-	astDtlink_t*	here;	/* finger to searched objects	*/
-} astDtlist_t;
+{	Dtdata_t	data;
+	Dtlink_t*	link;	/* list of objects		*/
+	Dtlink_t*	here;	/* finger to searched objects	*/
+} Dtlist_t;
 
 #ifdef DEBUG
-int astdtlistprint(astDt_t* dt, astDtlink_t* here, char* (*objprintf)(Void_t*) )
+int dtlistprint(Dt_t* dt, Dtlink_t* here, char* (*objprintf)(Void_t*) )
 {
 	int		k;
 	char		*obj, *endb, buf[1024];
-	astDtdisc_t	*disc = dt->disc;
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtdisc_t	*disc = dt->disc;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	if(!here && !(here = list->link) )
 		return -1;
@@ -59,16 +59,16 @@ int astdtlistprint(astDt_t* dt, astDtlink_t* here, char* (*objprintf)(Void_t*) )
 
 /* terminal objects: DT_FIRST|DT_LAST */
 #if __STD_C
-Void_t* lfirstlast(astDt_t* dt, int type)
+Void_t* lfirstlast(Dt_t* dt, int type)
 #else
 Void_t* lfirstlast(dt, type)
-astDt_t*	dt;
+Dt_t*	dt;
 int	type;
 #endif
 {
-	astDtlink_t	*lnk;
-	astDtdisc_t	*disc = dt->disc;
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtlink_t	*lnk;
+	Dtdisc_t	*disc = dt->disc;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	if((lnk = list->link) )
 	{	if(type&DT_LAST)
@@ -81,18 +81,18 @@ int	type;
 
 /* DT_CLEAR */
 #if __STD_C
-Void_t* lclear(astDt_t* dt)
+Void_t* lclear(Dt_t* dt)
 #else
 Void_t* lclear(dt)
-astDt_t*	dt;
+Dt_t*	dt;
 #endif
 {
-	astDtlink_t	*lnk, *next;
-	astDtdisc_t	*disc = dt->disc;
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtlink_t	*lnk, *next;
+	Dtdisc_t	*disc = dt->disc;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	lnk = list->link;
-	list->link = list->here = NIL(astDtlink_t*);
+	list->link = list->here = NIL(Dtlink_t*);
 	list->data.size = 0;
 
 	if(disc->freef || disc->link < 0)
@@ -107,15 +107,15 @@ astDt_t*	dt;
 
 /* DT_FLATTEN|DT_EXTRACT|DT_RESTORE */
 #if __STD_C
-Void_t* llist(astDt_t* dt, astDtlink_t* lnk, int type)
+Void_t* llist(Dt_t* dt, Dtlink_t* lnk, int type)
 #else
 Void_t* llist(dt, lnk, type)
-astDt_t*		dt;
-astDtlink_t*	lnk;
+Dt_t*		dt;
+Dtlink_t*	lnk;
 int		type;
 #endif
 {
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	if(type&(DT_FLATTEN|DT_EXTRACT) )
 	{	if(lnk) /* error on calling */
@@ -123,12 +123,12 @@ int		type;
 
 		lnk = list->link;
 		if(type&DT_EXTRACT)
-		{	list->link = NIL(astDtlink_t*);
+		{	list->link = NIL(Dtlink_t*);
 			dt->data->size = 0;
 		}
 	}
 	else /* if(type&DT_RESTORE) */
-	{	if(list->link != NIL(astDtlink_t*))
+	{	if(list->link != NIL(Dtlink_t*))
 			return NIL(Void_t*);
 
 		list->link = lnk;
@@ -142,36 +142,36 @@ int		type;
 }
 
 #if __STD_C
-static Void_t* liststat(astDt_t* dt, astDtstat_t* st)
+static Void_t* liststat(Dt_t* dt, Dtstat_t* st)
 #else
 static Void_t* liststat(dt, st)
-astDt_t*		dt;
-astDtstat_t*	st;
+Dt_t*		dt;
+Dtstat_t*	st;
 #endif
 {
 	if(st)
-	{	memset(st, 0, sizeof(astDtstat_t));
+	{	memset(st, 0, sizeof(Dtstat_t));
 		st->meth  = dt->meth->type;
 		st->size  = dt->data->size;
-		st->space = sizeof(astDtlist_t) + (dt->disc->link >= 0 ? 0 : dt->data->size*sizeof(astDthold_t));
+		st->space = sizeof(Dtlist_t) + (dt->disc->link >= 0 ? 0 : dt->data->size*sizeof(Dthold_t));
 	}
 
 	return (Void_t*)dt->data->size;
 }
 
 #if __STD_C
-static Void_t* astdtlist(astDt_t* dt, Void_t* obj, int type)
+static Void_t* dtlist(Dt_t* dt, Void_t* obj, int type)
 #else
-static Void_t* astdtlist(dt, obj, type)
-astDt_t*	dt;
+static Void_t* dtlist(dt, obj, type)
+Dt_t*	dt;
 Void_t*	obj;
 int	type;
 #endif
 {
-	astDtlink_t	*r, *t, *h;
+	Dtlink_t	*r, *t, *h;
 	Void_t		*key, *o, *k;
-	astDtdisc_t	*disc = dt->disc;
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtdisc_t	*disc = dt->disc;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	type = DTTYPE(dt,type); /* map type for upward compatibility */
 	if(!(type&DT_OPERATIONS) )
@@ -182,14 +182,14 @@ int	type;
 	if(type&(DT_FIRST|DT_LAST) )
 		DTRETURN(obj, lfirstlast(dt, type));
 	else if(type&(DT_EXTRACT|DT_RESTORE|DT_FLATTEN) )
-		DTRETURN(obj, llist(dt, (astDtlink_t*)obj, type));
+		DTRETURN(obj, llist(dt, (Dtlink_t*)obj, type));
 	else if(type&DT_CLEAR)
 		DTRETURN(obj, lclear(dt));
 	else if(type&DT_STAT )
-		DTRETURN(obj, liststat(dt, (astDtstat_t*)obj));
+		DTRETURN(obj, liststat(dt, (Dtstat_t*)obj));
 
 	h = list->here; /* save finger to last search object */
-	list->here = NIL(astDtlink_t*);
+	list->here = NIL(Dtlink_t*);
 
 	if(!obj)
 	{	if((type&(DT_DELETE|DT_DETACH|DT_REMOVE)) && (dt->meth->type&(DT_STACK|DT_QUEUE)) )
@@ -199,7 +199,7 @@ int	type;
 	}
 
 	if(type&DT_RELINK) /* relink object after some processing */
-	{	r = (astDtlink_t*)obj;
+	{	r = (Dtlink_t*)obj;
 		goto do_insert;
 	}
 	else if(type&(DT_INSERT|DT_APPEND|DT_ATTACH))
@@ -252,7 +252,7 @@ int	type;
 			{	list->link = r;
 				r->_left = r;
 			}
-			r->_rght = NIL(astDtlink_t*);
+			r->_rght = NIL(Dtlink_t*);
 		}
 
 		list->here = r;
@@ -270,7 +270,7 @@ int	type;
 	if(h && _DTOBJ(disc,h) == obj && (type & (DT_SEARCH|DT_NEXT|DT_PREV)) )
 		r = h; /* match at the finger, no search needed */
 	else /* linear search through the list */
-	{	h = NIL(astDtlink_t*); /* track first/last obj with same key */
+	{	h = NIL(Dtlink_t*); /* track first/last obj with same key */
 		for(r = list->link; r; r = r->_rght)
 		{	o = _DTOBJ(disc,r); k = _DTKEY(disc,o);
 			if(_DTCMP(dt, key, k, disc) != 0)
@@ -308,7 +308,7 @@ int	type;
 				t->_left = r->_left;
 		}
 
-		list->here = r == list->here ? r->_rght : NIL(astDtlink_t*);
+		list->here = r == list->here ? r->_rght : NIL(Dtlink_t*);
 
 		obj = _DTOBJ(disc,r);
 		_dtfree(dt, r, type);
@@ -320,7 +320,7 @@ int	type;
 	if(type&DT_NEXT)
 		r = r->_rght;
 	else if(type&DT_PREV)
-		r = r == list->link ? NIL(astDtlink_t*) : r->_left;
+		r = r == list->link ? NIL(Dtlink_t*) : r->_left;
 	/* else: if(type&(DT_SEARCH|DT_MATCH|DT_ATLEAST|DT_ATMOST)) */
 
 	list->here = r;
@@ -335,25 +335,25 @@ dt_return:
 }
 
 #if __STD_C
-static int listevent(astDt_t* dt, int event, Void_t* arg)
+static int listevent(Dt_t* dt, int event, Void_t* arg)
 #else
 static int listevent(dt, event, arg)
-astDt_t*	dt;
+Dt_t*	dt;
 int	event;
 Void_t*	arg;
 #endif
 {
-	astDtlist_t	*list = (astDtlist_t*)dt->data;
+	Dtlist_t	*list = (Dtlist_t*)dt->data;
 
 	if(event == DT_OPEN)
 	{	if(list) /* already initialized */
 			return 0;
-		if(!(list = (astDtlist_t*)(*dt->memoryf)(dt, 0, sizeof(astDtlist_t), dt->disc)) )
+		if(!(list = (Dtlist_t*)(*dt->memoryf)(dt, 0, sizeof(Dtlist_t), dt->disc)) )
 		{	DTERROR(dt, "Error in allocating a list data structure");
 			return -1;
 		}
-		memset(list, 0, sizeof(astDtlist_t));
-		dt->data = (astDtdata_t*)list;
+		memset(list, 0, sizeof(Dtlist_t));
+		dt->data = (Dtdata_t*)list;
 		return 1;
 	}
 	else if(event == DT_CLOSE)
@@ -362,22 +362,22 @@ Void_t*	arg;
 		if(list->link) /* remove all items */
 			(void)lclear(dt);
 		(void)(*dt->memoryf)(dt, (Void_t*)list, 0, dt->disc);
-		dt->data = NIL(astDtdata_t*);
+		dt->data = NIL(Dtdata_t*);
 		return 0;
 	}
 	else	return 0;
 }
 
-static astDtmethod_t _Dtlist  = { astdtlist, DT_LIST,  listevent, "Dtlist"  };
-static astDtmethod_t _Dtdeque = { astdtlist, DT_DEQUE, listevent, "Dtdeque" };
-static astDtmethod_t _Dtstack = { astdtlist, DT_STACK, listevent, "Dtstack" };
-static astDtmethod_t _Dtqueue = { astdtlist, DT_QUEUE, listevent, "Dtqueue" };
+static Dtmethod_t _Dtlist  = { dtlist, DT_LIST,  listevent, "Dtlist"  };
+static Dtmethod_t _Dtdeque = { dtlist, DT_DEQUE, listevent, "Dtdeque" };
+static Dtmethod_t _Dtstack = { dtlist, DT_STACK, listevent, "Dtstack" };
+static Dtmethod_t _Dtqueue = { dtlist, DT_QUEUE, listevent, "Dtqueue" };
 
-__DEFINE__(astDtmethod_t*,astDtlist,&_Dtlist);
-__DEFINE__(astDtmethod_t*,astDtdeque,&_Dtdeque);
-__DEFINE__(astDtmethod_t*,astDtstack,&_Dtstack);
-__DEFINE__(astDtmethod_t*,astDtqueue,&_Dtqueue);
+__DEFINE__(Dtmethod_t*,Dtlist,&_Dtlist);
+__DEFINE__(Dtmethod_t*,Dtdeque,&_Dtdeque);
+__DEFINE__(Dtmethod_t*,Dtstack,&_Dtstack);
+__DEFINE__(Dtmethod_t*,Dtqueue,&_Dtqueue);
 
 #ifdef NoF
-NoF(astdtlist)
+NoF(dtlist)
 #endif

@@ -111,6 +111,7 @@ exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I.  ${LDFLAGS
 done FEATURE/map generated
 exec - cmp 2>/dev/null -s FEATURE/map ast_map.h || { rm -f ast_map.h; silent test -d . || mkdir .; ${STDCP} FEATURE/map ast_map.h; }
 done ast_map.h dontcare generated
+prev std/endian.h implicit
 done ast_common.h dontcare generated
 done std/bytesex.h dontcare
 done std/endian.h dontcare
@@ -179,15 +180,11 @@ done conftab.c generated
 done joint.conflim.h generated virtual
 done conflim.h generated
 prev FEATURE/param implicit
-make comp/getopt.h implicit
-make include/ast_getopt.h implicit
-done include/ast_getopt.h dontcare
-done comp/getopt.h dontcare
 prev FEATURE/common implicit
 prev FEATURE/lib implicit
 prev FEATURE/standards implicit
 done features/limits.c
-exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd  ${LDFLAGS} ' run features/limits.c
+exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd  ${LDFLAGS} ' run features/limits.c
 done FEATURE/limits generated
 exec - cmp 2>/dev/null -s FEATURE/limits ast_limits.h || { rm -f ast_limits.h; silent test -d . || mkdir .; ${STDCP} FEATURE/limits ast_limits.h; }
 done ast_limits.h generated
@@ -212,25 +209,9 @@ make features/wchar
 prev ast_common.h implicit
 done features/wchar
 exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' run features/wchar
-make std/wctype.h implicit
-make ast_wctype.h implicit
-make FEATURE/wctype
-meta FEATURE/wctype features/%>FEATURE/% features/wctype wctype
-make features/wctype
-done features/wctype
-exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' run features/wctype
-prev std/endian.h implicit
-make std/wchar.h implicit
-prev ast_wchar.h implicit
-done std/wchar.h dontcare
-done FEATURE/wctype generated
-exec - cmp 2>/dev/null -s FEATURE/wctype ast_wctype.h || { rm -f ast_wctype.h; silent test -d . || mkdir .; ${STDCP} FEATURE/wctype ast_wctype.h; }
-done ast_wctype.h dontcare generated
-done std/wctype.h dontcare
 make std/stdio.h implicit
 prev ast_stdio.h implicit
 done std/stdio.h dontcare
-prev std/stdio.h implicit
 prev ast_common.h implicit
 done FEATURE/wchar generated
 exec - cmp 2>/dev/null -s FEATURE/wchar ast_wchar.h || { rm -f ast_wchar.h; silent test -d . || mkdir .; ${STDCP} FEATURE/wchar ast_wchar.h; }
@@ -239,7 +220,10 @@ prev ast_common.h implicit
 done ast_wchar.h dontcare generated
 prev ast_common.h implicit
 done include/regex.h dontcare
-prev comp/getopt.h implicit
+make comp/getopt.h implicit
+make include/ast_getopt.h implicit
+done include/ast_getopt.h dontcare
+done comp/getopt.h dontcare
 prev ast_map.h implicit
 make ast_botch.h implicit
 make FEATURE/botch
@@ -250,12 +234,10 @@ meta FEATURE/sys features/%>FEATURE/% features/sys sys
 make features/sys
 done features/sys
 exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' run features/sys
-prev std/endian.h implicit
-prev std/endian.h implicit
 done FEATURE/sys generated
 prev FEATURE/lib implicit
 done features/botch.c
-exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd  ${LDFLAGS} ' run features/botch.c
+exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd  ${LDFLAGS} ' run features/botch.c
 done FEATURE/botch generated
 exec - cmp 2>/dev/null -s FEATURE/botch ast_botch.h || { rm -f ast_botch.h; silent test -d . || mkdir .; ${STDCP} FEATURE/botch ast_botch.h; }
 done ast_botch.h dontcare generated
@@ -278,7 +260,7 @@ exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} '
 done FEATURE/fs generated
 prev FEATURE/lib implicit
 done features/fcntl.c
-exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd  ${LDFLAGS} ' run features/fcntl.c
+exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd  ${LDFLAGS} ' run features/fcntl.c
 make ast_fs.h implicit
 prev FEATURE/fs
 exec - cmp 2>/dev/null -s FEATURE/fs ast_fs.h || { rm -f ast_fs.h; silent test -d . || mkdir .; ${STDCP} FEATURE/fs ast_fs.h; }
@@ -313,7 +295,15 @@ done FEATURE/nl_types generated
 exec - cmp 2>/dev/null -s FEATURE/nl_types ast_nl_types.h || { rm -f ast_nl_types.h; silent test -d . || mkdir .; ${STDCP} FEATURE/nl_types ast_nl_types.h; }
 done ast_nl_types.h generated
 prev ast_wchar.h
-prev ast_wctype.h
+make ast_wctype.h
+make FEATURE/wctype
+meta FEATURE/wctype features/%>FEATURE/% features/wctype wctype
+make features/wctype
+done features/wctype
+exec - iffe -v -X ast -X std -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' run features/wctype
+done FEATURE/wctype generated
+exec - cmp 2>/dev/null -s FEATURE/wctype ast_wctype.h || { rm -f ast_wctype.h; silent test -d . || mkdir .; ${STDCP} FEATURE/wctype ast_wctype.h; }
+done ast_wctype.h generated
 exec - : clean up obsolete headers :
 exec - rm -rf dirent.h iconv.h nl_types.h stdio.h wchar.h wctype.h ast_hdr.h ast_types.h ast_unistd.h iffeio.h \
 exec - ${INSTALLROOT}/include/ast/limits.h ${INSTALLROOT}/include/ast/unistd.h \
@@ -352,14 +342,12 @@ exec - } > ast.req
 exec - rm -f 1.${COTEMP}.*
 make astmath.exe
 make port/astmath.c
-prev std/endian.h implicit
-prev std/endian.h implicit
 done port/astmath.c
 exec - X=1
 exec - for N in 1 2 3 4 5 6 8
-exec - do if ${CC} -DN=$N -DIS ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd -o astmath.exe port/astmath.c 2>/dev/null
+exec - do if ${CC} -DN=$N -DIS ${mam_cc_FLAGS} ${CCFLAGS} -o astmath.exe port/astmath.c 2>/dev/null
 exec - then : implicit math function N=$N :
-exec - elif ${CC} -DN=$N -DIS ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd -o astmath.exe port/astmath.c -lm 2>/dev/null
+exec - elif ${CC} -DN=$N -DIS ${mam_cc_FLAGS} ${CCFLAGS} -o astmath.exe port/astmath.c -lm 2>/dev/null
 exec - then : math function N=$N requires -lm :
 exec - X=0
 exec - break
@@ -525,11 +513,10 @@ prev include/vmalloc.h implicit
 prev include/regex.h implicit
 prev include/ls.h implicit
 prev include/error.h implicit
-prev std/endian.h implicit
-make include/astcdt.h implicit
+make include/cdt.h implicit
 prev ast_common.h implicit
 prev include/ast_std.h implicit
-done include/astcdt.h dontcare
+done include/cdt.h dontcare
 prev include/ast.h implicit
 done misc/findlib.h
 done misc/fastfind.c
@@ -1258,7 +1245,7 @@ prev include/ast.h implicit
 done misc/fts.c
 meta fts.o %.c>%.o misc/fts.c fts
 prev misc/fts.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Idir -Iinclude -Istd -D__OBSOLETE__=20120101 -D_PACKAGE_ast -c misc/fts.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Idir -Iinclude -Istd -D__OBSOLETE__=20250101 -D_PACKAGE_ast -c misc/fts.c
 done fts.o generated
 make astintercept.o
 make misc/astintercept.c
@@ -1307,7 +1294,7 @@ prev include/ast.h implicit
 done include/debug.h
 make misc/optlib.h implicit
 prev include/error.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done misc/optlib.h
 done misc/optget.c
@@ -1369,7 +1356,7 @@ prev include/error.h implicit
 prev include/modex.h implicit
 make include/dt.h implicit
 prev include/vmalloc.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 done include/dt.h
 prev include/ccode.h implicit
 prev include/ast.h implicit
@@ -1387,7 +1374,7 @@ prev include/sfio.h implicit
 done include/mime.h dontcare
 prev include/tok.h implicit
 prev include/magic.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done misc/mimelib.h
 done misc/mime.c
@@ -1491,7 +1478,9 @@ done localeconv.o generated
 make setlocale.o
 make comp/setlocale.c
 prev include/ast_windows.h implicit
-prev std/wctype.h implicit
+make std/wctype.h implicit
+prev ast_wctype.h implicit
+done std/wctype.h dontcare
 prev include/namval.h implicit
 make include/mc.h implicit
 prev include/ast.h implicit
@@ -1514,7 +1503,7 @@ prev ast_nl_types.h implicit
 done std/nl_types.h
 prev include/mc.h implicit
 prev include/error.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev port/lclib.h implicit
 done misc/translate.c
 meta translate.o %.c>%.o misc/translate.c translate
@@ -1599,7 +1588,9 @@ make vfork.h implicit
 done vfork.h dontcare virtual
 make stropts.h implicit
 done stropts.h dontcare virtual
-prev std/wchar.h implicit
+make std/wchar.h implicit
+prev ast_wchar.h implicit
+done std/wchar.h dontcare
 make FEATURE/float implicit
 meta FEATURE/float features/%>FEATURE/% features/float float
 make features/float
@@ -1623,7 +1614,6 @@ prev ast_time.h implicit
 prev include/ast.h implicit
 make sfio/vthread.h implicit
 prev windows.h implicit
-prev std/endian.h implicit
 prev ast_common.h implicit
 done sfio/vthread.h dontcare
 make include/sfio_t.h implicit
@@ -1691,7 +1681,7 @@ prev include/ast.h implicit
 done string/fmtbase.c
 meta fmtbase.o %.c>%.o string/fmtbase.c fmtbase
 prev string/fmtbase.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D__OBSOLETE__=20120101 -D_PACKAGE_ast -c string/fmtbase.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D__OBSOLETE__=20250101 -D_PACKAGE_ast -c string/fmtbase.c
 done fmtbase.o generated
 make fmtbuf.o
 make string/fmtbuf.c
@@ -1756,7 +1746,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done fmtfmt.o generated
 make fmtfs.o
 make string/fmtfs.c
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev FEATURE/fs implicit
 make include/mnt.h implicit
 done include/mnt.h
@@ -1862,8 +1852,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done fmttime.o generated
 make fmtuid.o
 make string/fmtuid.c
-prev std/stdio.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done string/fmtuid.c
 meta fmtuid.o %.c>%.o string/fmtuid.c fmtuid
@@ -1872,8 +1861,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done fmtuid.o generated
 make fmtgid.o
 make string/fmtgid.c
-prev std/stdio.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done string/fmtgid.c
 meta fmtgid.o %.c>%.o string/fmtgid.c fmtgid
@@ -1957,7 +1945,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done strperm.o generated
 make struid.o
 make string/struid.c
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done string/struid.c
 meta struid.o %.c>%.o string/struid.c struid
@@ -1966,7 +1954,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done struid.o generated
 make strgid.o
 make string/strgid.c
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done string/strgid.c
 meta strgid.o %.c>%.o string/strgid.c strgid
@@ -2138,7 +2126,7 @@ prev misc/proclib.h implicit
 done misc/procrun.c
 meta procrun.o %.c>%.o misc/procrun.c procrun
 prev misc/procrun.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Imisc -Iinclude -Istd -D__OBSOLETE__=20120101 -D_PACKAGE_ast -c misc/procrun.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Imisc -Iinclude -Istd -D__OBSOLETE__=20250101 -D_PACKAGE_ast -c misc/procrun.c
 done procrun.o generated
 make procfree.o
 make misc/procfree.c
@@ -2241,7 +2229,7 @@ prev ast_nl_types.h implicit
 prev include/tm.h implicit
 prev include/mc.h implicit
 prev std/iconv.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done tm/tmlocale.c
 meta tmlocale.o %.c>%.o tm/tmlocale.c tmlocale
@@ -2561,7 +2549,6 @@ make mnt.o
 make port/mnt.c
 make mnttab.h implicit
 done mnttab.h dontcare virtual
-prev std/stdio.h implicit
 prev std/stdio.h implicit
 prev include/ast_windows.h implicit
 prev include/ls.h implicit
@@ -3039,7 +3026,7 @@ prev include/debug.h implicit
 make include/aso.h implicit
 prev ast_common.h implicit
 done include/aso.h dontcare
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 make ${INSTALLROOT}/include/ast/dlldefs.h implicit
 done ${INSTALLROOT}/include/ast/dlldefs.h dontcare
 prev include/ast.h implicit
@@ -3781,7 +3768,7 @@ prev std/wchar.h implicit
 prev std/stdio.h implicit
 prev include/regex.h implicit
 prev include/stk.h implicit
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 prev include/ast.h implicit
 done regex/reglib.h
 done regex/regalloc.c
@@ -4011,7 +3998,7 @@ exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D_PACKAGE_as
 done dtnew.o generated
 make dtcomp.o
 make cdt/dtcomp.c
-prev include/astcdt.h implicit
+prev include/cdt.h implicit
 done cdt/dtcomp.c
 meta dtcomp.o %.c>%.o cdt/dtcomp.c dtcomp
 prev cdt/dtcomp.c
@@ -5539,7 +5526,7 @@ prev misc/univlib.h implicit
 done port/astconf.c
 meta astconf.o %.c>%.o port/astconf.c astconf
 prev port/astconf.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Imisc -Iinclude -Istd -D__OBSOLETE__=20120101 -DCONF_LIBSUFFIX=\""${mam_cc_SUFFIX_DYNAMIC-${mam_cc_SUFFIX_SHARED}}"\" -DCONF_LIBPREFIX=\""${mam_cc_PREFIX_DYNAMIC-${mam_cc_PREFIX_SHARED}}"\" -DHOSTTYPE=\""${mam_cc_HOSTTYPE}"\" -D_PACKAGE_ast -c port/astconf.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Imisc -Iinclude -Istd -D__OBSOLETE__=20250101 -DCONF_LIBSUFFIX=\""${mam_cc_SUFFIX_DYNAMIC-${mam_cc_SUFFIX_SHARED}}"\" -DCONF_LIBPREFIX=\""${mam_cc_PREFIX_DYNAMIC-${mam_cc_PREFIX_SHARED}}"\" -DHOSTTYPE=\""${mam_cc_HOSTTYPE}"\" -D_PACKAGE_ast -c port/astconf.c
 done astconf.o generated
 make astdynamic.o
 make port/astdynamic.c
@@ -5589,7 +5576,7 @@ prev FEATURE/standards implicit
 done conftab.c
 meta conftab.o %.c>%.o conftab.c conftab
 prev conftab.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -c conftab.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd -c conftab.c
 done conftab.o generated
 make aststatic.o
 make port/aststatic.c
@@ -5889,7 +5876,7 @@ prev FEATURE/uwin implicit
 done uwin/acosh.c
 meta acosh.o %.c>%.o uwin/acosh.c acosh
 prev uwin/acosh.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/acosh.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/acosh.c
 done acosh.o generated
 make asinh.o
 make uwin/asinh.c
@@ -5898,7 +5885,7 @@ prev FEATURE/uwin implicit
 done uwin/asinh.c
 meta asinh.o %.c>%.o uwin/asinh.c asinh
 prev uwin/asinh.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/asinh.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/asinh.c
 done asinh.o generated
 make atanh.o
 make uwin/atanh.c
@@ -5907,7 +5894,7 @@ prev FEATURE/uwin implicit
 done uwin/atanh.c
 meta atanh.o %.c>%.o uwin/atanh.c atanh
 prev uwin/atanh.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/atanh.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/atanh.c
 done atanh.o generated
 make cbrt.o
 make uwin/cbrt.c
@@ -5916,7 +5903,7 @@ prev FEATURE/uwin implicit
 done uwin/cbrt.c
 meta cbrt.o %.c>%.o uwin/cbrt.c cbrt
 prev uwin/cbrt.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/cbrt.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/cbrt.c
 done cbrt.o generated
 make crypt.o
 make uwin/crypt.c
@@ -5936,7 +5923,7 @@ prev FEATURE/uwin implicit
 done uwin/erf.c
 meta erf.o %.c>%.o uwin/erf.c erf
 prev uwin/erf.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/erf.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/erf.c
 done erf.o generated
 make err.o
 make uwin/err.c
@@ -5956,7 +5943,7 @@ prev FEATURE/uwin implicit
 done uwin/exp.c
 meta exp.o %.c>%.o uwin/exp.c exp
 prev uwin/exp.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/exp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/exp.c
 done exp.o generated
 make exp__E.o
 make uwin/exp__E.c
@@ -5965,7 +5952,7 @@ prev FEATURE/uwin implicit
 done uwin/exp__E.c
 meta exp__E.o %.c>%.o uwin/exp__E.c exp__E
 prev uwin/exp__E.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/exp__E.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/exp__E.c
 done exp__E.o generated
 make expm1.o
 make uwin/expm1.c
@@ -5974,7 +5961,7 @@ prev FEATURE/uwin implicit
 done uwin/expm1.c
 meta expm1.o %.c>%.o uwin/expm1.c expm1
 prev uwin/expm1.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/expm1.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/expm1.c
 done expm1.o generated
 make gamma.o
 make uwin/gamma.c
@@ -5983,7 +5970,7 @@ prev FEATURE/uwin implicit
 done uwin/gamma.c
 meta gamma.o %.c>%.o uwin/gamma.c gamma
 prev uwin/gamma.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/gamma.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/gamma.c
 done gamma.o generated
 make getpass.o
 make uwin/getpass.c
@@ -6001,7 +5988,7 @@ prev FEATURE/uwin implicit
 done uwin/lgamma.c
 meta lgamma.o %.c>%.o uwin/lgamma.c lgamma
 prev uwin/lgamma.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/lgamma.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/lgamma.c
 done lgamma.o generated
 make log.o
 make uwin/log.c
@@ -6010,7 +5997,7 @@ prev FEATURE/uwin implicit
 done uwin/log.c
 meta log.o %.c>%.o uwin/log.c log
 prev uwin/log.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/log.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/log.c
 done log.o generated
 make log1p.o
 make uwin/log1p.c
@@ -6019,7 +6006,7 @@ prev FEATURE/uwin implicit
 done uwin/log1p.c
 meta log1p.o %.c>%.o uwin/log1p.c log1p
 prev uwin/log1p.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/log1p.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/log1p.c
 done log1p.o generated
 make log__L.o
 make uwin/log__L.c
@@ -6028,7 +6015,7 @@ prev FEATURE/uwin implicit
 done uwin/log__L.c
 meta log__L.o %.c>%.o uwin/log__L.c log__L
 prev uwin/log__L.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/log__L.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/log__L.c
 done log__L.o generated
 make rand48.o
 make uwin/rand48.c
@@ -6067,7 +6054,7 @@ prev FEATURE/uwin implicit
 done uwin/rint.c
 meta rint.o %.c>%.o uwin/rint.c rint
 prev uwin/rint.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Istd -c uwin/rint.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -c uwin/rint.c
 done rint.o generated
 make support.o
 make uwin/support.c
@@ -6076,7 +6063,7 @@ prev FEATURE/uwin implicit
 done uwin/support.c
 meta support.o %.c>%.o uwin/support.c support
 prev uwin/support.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -Istd -c uwin/support.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iuwin -c uwin/support.c
 done support.o generated
 make sfstrtmp.o
 make disc/sfstrtmp.c
@@ -6085,7 +6072,7 @@ prev include/sfio_t.h implicit
 done disc/sfstrtmp.c
 meta sfstrtmp.o %.c>%.o disc/sfstrtmp.c sfstrtmp
 prev disc/sfstrtmp.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D__OBSOLETE__=20120101 -D_PACKAGE_ast -c disc/sfstrtmp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Icomp -Iinclude -Istd -D__OBSOLETE__=20250101 -D_PACKAGE_ast -c disc/sfstrtmp.c
 done sfstrtmp.o generated
 make spawn.o
 make obsolete/spawn.c
@@ -6500,14 +6487,14 @@ exec - then rm -f 1.${COTEMP}.x
 exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/ccode.h
 exec - fi
 done ${INSTALLROOT}/include/ast/ccode.h generated
-make ${INSTALLROOT}/include/ast/astcdt.h
-prev include/astcdt.h
-exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' include/astcdt.h > 1.${COTEMP}.x
-exec - if cmp 2>/dev/null -s ${INSTALLROOT}/include/ast/astcdt.h 1.${COTEMP}.x
+make ${INSTALLROOT}/include/ast/cdt.h
+prev include/cdt.h
+exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' include/cdt.h > 1.${COTEMP}.x
+exec - if cmp 2>/dev/null -s ${INSTALLROOT}/include/ast/cdt.h 1.${COTEMP}.x
 exec - then rm -f 1.${COTEMP}.x
-exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/astcdt.h
+exec - else mv 1.${COTEMP}.x ${INSTALLROOT}/include/ast/cdt.h
 exec - fi
-done ${INSTALLROOT}/include/ast/astcdt.h generated
+done ${INSTALLROOT}/include/ast/cdt.h generated
 make ${INSTALLROOT}/include/ast/cdtlib.h
 prev cdt/cdtlib.h
 exec - proto -p -s -l ${PACKAGEROOT}/lib/package/ast.lic '-o since=1985,author=gsf+dgk+kpv' cdt/cdtlib.h > 1.${COTEMP}.x

@@ -1,0 +1,152 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_graphviz ${INSTALLROOT}
+setv PACKAGE_graphviz_INCLUDE ${PACKAGE_graphviz}/include/graphviz
+setv PACKAGE_graphviz_LIB ${PACKAGE_graphviz}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGE_X11 ${INSTALLROOT}
+setv PACKAGE_X11_INCLUDE ${PACKAGE_X11}/include/X11
+setv PACKAGE_X11_LIB ${PACKAGE_X11}/lib64
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make ${INSTALLROOT}/include/graphviz
+exec - if silent test ! -d ${INSTALLROOT}/include/graphviz
+exec - then mkdir -p ${INSTALLROOT}/include/graphviz
+exec - fi
+done ${INSTALLROOT}/include/graphviz generated
+make ${INSTALLROOT}/include/graphviz/graphvizconfig.h
+prev ${INSTALLROOT}/include/graphviz
+make graphvizconfig.h
+meta graphvizconfig.h %.iffe>%.h graphvizconfig.iffe graphvizconfig
+make graphvizconfig.iffe
+done graphvizconfig.iffe
+bind -last
+exec - iffe -o graphvizconfig.h -v -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' ref ${mam_cc_L+-L${INSTALLROOT}/lib} -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -I/usr/include/X11 -I/usr/include/graphviz -I${INSTALLROOT}/include -I/usr/include ${mam_libast} : run graphvizconfig.iffe
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done graphvizconfig.h generated
+exec - test '' = 'graphvizconfig.h' || ${STDCMP} 2>/dev/null -s graphvizconfig.h ${INSTALLROOT}/include/graphviz/graphvizconfig.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/graphvizconfig.h ${INSTALLROOT}/include/graphviz/graphvizconfig.h.old 2>/dev/null || true; ${STDCP} graphvizconfig.h ${INSTALLROOT}/include/graphviz/graphvizconfig.h ;}
+done ${INSTALLROOT}/include/graphviz/graphvizconfig.h generated
+make ${INSTALLROOT}/lib/make
+exec - if silent test ! -d ${INSTALLROOT}/lib/make
+exec - then mkdir -p ${INSTALLROOT}/lib/make
+exec - fi
+done ${INSTALLROOT}/lib/make generated
+make ${INSTALLROOT}/lib/make/pkg-graphviz.mk
+prev ${INSTALLROOT}/lib/make
+make pkg-graphviz.mk
+prev graphvizconfig.h
+exec - {
+exec - cat <<!
+exec - PACKAGE_graphviz_DATE = "2010.03.10"
+exec - HAVE_CONFIG_H == 1
+exec - :PACKAGE: - ast
+exec - dontcare -lgraphviz
+exec - !
+exec - sed -e '/^#define[ 	][ 	]*[A-Z][A-Z_]*[ 	][ 	]*[^ 	]/!d' -e 's/^#define[ 	][ 	]*\([^ 	]*\)[ 	][ 	]*\([^ 	]*\).*/\1 = \2/' graphvizconfig.h
+exec - } > pkg-graphviz.mk
+done pkg-graphviz.mk generated
+exec - test '' = 'pkg-graphviz.mk' || ${STDCMP} 2>/dev/null -s pkg-graphviz.mk ${INSTALLROOT}/lib/make/pkg-graphviz.mk || { ${STDMV} ${INSTALLROOT}/lib/make/pkg-graphviz.mk ${INSTALLROOT}/lib/make/pkg-graphviz.mk.old 2>/dev/null || true; ${STDCP} pkg-graphviz.mk ${INSTALLROOT}/lib/make/pkg-graphviz.mk ;}
+done ${INSTALLROOT}/lib/make/pkg-graphviz.mk generated
+done install virtual
+make test
+done test dontcare virtual

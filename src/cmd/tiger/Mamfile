@@ -1,0 +1,510 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS ${mam_cc_DLL}
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make tiger
+make libtiger.a archive
+make tiger.req
+exec - set -
+exec - echo 'int main(){return 0;}' > 1.${COTEMP}.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c 1.${COTEMP}.c &&
+exec - x=`${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l'*' 2>&1 | sed -e 's/[][()+@?]/#/g' || :` &&
+exec - {
+exec - case "" in
+exec - *?) echo " " ;;
+exec - esac
+exec - for i in tiger m swift ast
+exec - do case $i in
+exec - "tiger"|tiger)
+exec - ;;
+exec - *) if test -f ${INSTALLROOT}/lib/lib/$i
+exec - then y=`cat ${INSTALLROOT}/lib/lib/$i`
+exec - case $y in
+exec - *-?*) echo "" $y ;;
+exec - esac
+exec - continue
+exec - elif test ! -f ${INSTALLROOT}/lib/lib$i.a
+exec - then case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -L${INSTALLROOT}/lib ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) continue ;;
+exec - esac
+exec - ;;
+exec - esac
+exec - fi
+exec - ;;
+exec - esac
+exec - echo " -l$i"
+exec - done
+exec - } > tiger.req
+exec - rm -f 1.${COTEMP}.*
+done tiger.req generated
+make tigerutils.o
+make tigerutils.c
+make tiger.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done tiger.h
+make ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/swift.h
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerutils.c
+meta tigerutils.o %.c>%.o tigerutils.c tigerutils
+prev tigerutils.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c tigerutils.c
+done tigerutils.o generated
+make tigerfiles.o
+make tigerfiles.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerfiles.c
+meta tigerfiles.o %.c>%.o tigerfiles.c tigerfiles
+prev tigerfiles.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c tigerfiles.c
+done tigerfiles.o generated
+make tigerrecords.o
+make tigerrecords.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerrecords.c
+meta tigerrecords.o %.c>%.o tigerrecords.c tigerrecords
+prev tigerrecords.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c tigerrecords.c
+done tigerrecords.o generated
+exec - ${AR} rc libtiger.a tigerutils.o tigerfiles.o tigerrecords.o
+exec - (ranlib libtiger.a) >/dev/null 2>&1 || true
+done libtiger.a generated
+done tiger virtual
+prev libtiger.a archive
+make tigera2b
+make tigera2b.o
+make tigera2b.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/ftwalk.h implicit
+make ${INSTALLROOT}/include/ast/fts.h implicit
+make ${INSTALLROOT}/include/ast/ast_mode.h implicit
+done ${INSTALLROOT}/include/ast/ast_mode.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_fs.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/fts.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ftwalk.h
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/option.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigera2b.c
+meta tigera2b.o %.c>%.o tigera2b.c tigera2b
+prev tigera2b.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigera2b.c
+done tigera2b.o generated
+prev libtiger.a archive
+bind -ltiger
+bind -lswift
+bind -last
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigera2b tigera2b.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigera2b generated
+make tigercat
+make tigercat.o
+make tigercat.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigercat.c
+meta tigercat.o %.c>%.o tigercat.c tigercat
+prev tigercat.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigercat.c
+done tigercat.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigercat tigercat.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigercat generated
+make tigermerge
+make tigermerge.o
+make tigermerge.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigermerge.c
+meta tigermerge.o %.c>%.o tigermerge.c tigermerge
+prev tigermerge.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigermerge.c
+done tigermerge.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigermerge tigermerge.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigermerge generated
+make tigerextract
+make tigerextract.o
+make tigerextract.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerextract.c
+meta tigerextract.o %.c>%.o tigerextract.c tigerextract
+prev tigerextract.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigerextract.c
+done tigerextract.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigerextract tigerextract.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigerextract generated
+make tigerattrmap
+make tigerattrmap.o
+make tigerattrmap.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerattrmap.c
+meta tigerattrmap.o %.c>%.o tigerattrmap.c tigerattrmap
+prev tigerattrmap.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigerattrmap.c
+done tigerattrmap.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigerattrmap tigerattrmap.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigerattrmap generated
+make tigerinfo
+make tigerinfo.o
+make tigerinfo.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerinfo.c
+meta tigerinfo.o %.c>%.o tigerinfo.c tigerinfo
+prev tigerinfo.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigerinfo.c
+done tigerinfo.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigerinfo tigerinfo.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigerinfo generated
+make tigerprint
+make tigerprint.o
+make tigerprint.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tigerprint.c
+meta tigerprint.o %.c>%.o tigerprint.c tigerprint
+prev tigerprint.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c tigerprint.c
+done tigerprint.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tigerprint tigerprint.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tigerprint generated
+make npanxx2tiger
+make npanxx2tiger.o
+make npanxx2tiger.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done npanxx2tiger.c
+meta npanxx2tiger.o %.c>%.o npanxx2tiger.c npanxx2tiger
+prev npanxx2tiger.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c npanxx2tiger.c
+done npanxx2tiger.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o npanxx2tiger npanxx2tiger.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done npanxx2tiger generated
+make zip2tiger
+make zip2tiger.o
+make zip2tiger.c
+prev tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done zip2tiger.c
+meta zip2tiger.o %.c>%.o zip2tiger.c zip2tiger
+prev zip2tiger.c
+setv _BLD_tiger -U_BLD_tiger
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?tiger]"\" -D_PACKAGE_ast -c zip2tiger.c
+done zip2tiger.o generated
+prev libtiger.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o zip2tiger zip2tiger.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done zip2tiger generated
+make tigera2b.1
+prev tigera2b
+exec - ignore tigera2b --??nroff 2> tigera2b.1
+done tigera2b.1 generated
+make tigercat.1
+prev tigercat
+exec - ignore tigercat --??nroff 2> tigercat.1
+done tigercat.1 generated
+make tigermerge.1
+prev tigermerge
+exec - ignore tigermerge --??nroff 2> tigermerge.1
+done tigermerge.1 generated
+make tigerextract.1
+prev tigerextract
+exec - ignore tigerextract --??nroff 2> tigerextract.1
+done tigerextract.1 generated
+make tigerattrmap.1
+prev tigerattrmap
+exec - ignore tigerattrmap --??nroff 2> tigerattrmap.1
+done tigerattrmap.1 generated
+make tigerinfo.1
+prev tigerinfo
+exec - ignore tigerinfo --??nroff 2> tigerinfo.1
+done tigerinfo.1 generated
+make tigerprint.1
+prev tigerprint
+exec - ignore tigerprint --??nroff 2> tigerprint.1
+done tigerprint.1 generated
+make npanxx2tiger.1
+prev npanxx2tiger
+exec - ignore npanxx2tiger --??nroff 2> npanxx2tiger.1
+done npanxx2tiger.1 generated
+make zip2tiger.1
+prev zip2tiger
+exec - ignore zip2tiger --??nroff 2> zip2tiger.1
+done zip2tiger.1 generated
+make ${PACKAGE_swift_INCLUDE}
+exec - if silent test ! -d ${PACKAGE_swift_INCLUDE}
+exec - then mkdir -p ${PACKAGE_swift_INCLUDE}
+exec - fi
+done ${PACKAGE_swift_INCLUDE} generated
+make ${PACKAGE_swift_INCLUDE}/tiger.h
+prev ${PACKAGE_swift_INCLUDE}
+prev tiger.h
+exec - test '' = 'tiger.h' || ${STDCMP} 2>/dev/null -s tiger.h ${PACKAGE_swift_INCLUDE}/tiger.h || { ${STDMV} ${PACKAGE_swift_INCLUDE}/tiger.h ${PACKAGE_swift_INCLUDE}/tiger.h.old 2>/dev/null || true; ${STDCP} tiger.h ${PACKAGE_swift_INCLUDE}/tiger.h ;}
+done ${PACKAGE_swift_INCLUDE}/tiger.h generated
+make ${INSTALLROOT}/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib
+exec - then mkdir -p ${INSTALLROOT}/lib
+exec - fi
+done ${INSTALLROOT}/lib generated
+make ${INSTALLROOT}/lib/libtiger.a archive
+prev ${INSTALLROOT}/lib
+prev libtiger.a archive
+exec - test '' = 'libtiger.a' || ${STDCMP} 2>/dev/null -s libtiger.a ${INSTALLROOT}/lib/libtiger.a || { ${STDMV} ${INSTALLROOT}/lib/libtiger.a ${INSTALLROOT}/lib/libtiger.a.old 2>/dev/null || true; ${STDCP} libtiger.a ${INSTALLROOT}/lib/libtiger.a ;}
+exec - (ranlib ${INSTALLROOT}/lib/libtiger.a) >/dev/null 2>&1 || true
+done ${INSTALLROOT}/lib/libtiger.a generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/tiger.1
+prev ${INSTALLROOT}/man/man1
+make tiger.1
+done tiger.1
+exec - test '' = 'tiger.1' || ${STDCMP} 2>/dev/null -s tiger.1 ${INSTALLROOT}/man/man1/tiger.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tiger.1 ${INSTALLROOT}/man/man1/tiger.1.old 2>/dev/null || true; ${STDCP} tiger.1 ${INSTALLROOT}/man/man1/tiger.1 ;}
+done ${INSTALLROOT}/man/man1/tiger.1 generated
+make ${INSTALLROOT}/lib/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib/lib
+exec - then mkdir -p ${INSTALLROOT}/lib/lib
+exec - fi
+done ${INSTALLROOT}/lib/lib generated
+make ${INSTALLROOT}/lib/lib/tiger
+prev ${INSTALLROOT}/lib/lib
+prev tiger.req
+exec - test '' = 'tiger.req' || ${STDCMP} 2>/dev/null -s tiger.req ${INSTALLROOT}/lib/lib/tiger || { ${STDMV} ${INSTALLROOT}/lib/lib/tiger ${INSTALLROOT}/lib/lib/tiger.old 2>/dev/null || true; ${STDCP} tiger.req ${INSTALLROOT}/lib/lib/tiger ;}
+done ${INSTALLROOT}/lib/lib/tiger generated
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/tigera2b
+prev ${INSTALLROOT}/bin
+prev tigera2b
+exec - test '' = 'tigera2b' || ${STDCMP} 2>/dev/null -s tigera2b ${INSTALLROOT}/bin/tigera2b || { ${STDMV} ${INSTALLROOT}/bin/tigera2b ${INSTALLROOT}/bin/tigera2b.old 2>/dev/null || true; ${STDCP} tigera2b ${INSTALLROOT}/bin/tigera2b ;}
+done ${INSTALLROOT}/bin/tigera2b generated
+make ${INSTALLROOT}/man/man1/tigera2b.1
+prev tigera2b.1
+exec - test '' = 'tigera2b.1' || ${STDCMP} 2>/dev/null -s tigera2b.1 ${INSTALLROOT}/man/man1/tigera2b.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigera2b.1 ${INSTALLROOT}/man/man1/tigera2b.1.old 2>/dev/null || true; ${STDCP} tigera2b.1 ${INSTALLROOT}/man/man1/tigera2b.1 ;}
+done ${INSTALLROOT}/man/man1/tigera2b.1 generated
+make ${INSTALLROOT}/bin/tigercat
+prev tigercat
+exec - test '' = 'tigercat' || ${STDCMP} 2>/dev/null -s tigercat ${INSTALLROOT}/bin/tigercat || { ${STDMV} ${INSTALLROOT}/bin/tigercat ${INSTALLROOT}/bin/tigercat.old 2>/dev/null || true; ${STDCP} tigercat ${INSTALLROOT}/bin/tigercat ;}
+done ${INSTALLROOT}/bin/tigercat generated
+make ${INSTALLROOT}/man/man1/tigercat.1
+prev tigercat.1
+exec - test '' = 'tigercat.1' || ${STDCMP} 2>/dev/null -s tigercat.1 ${INSTALLROOT}/man/man1/tigercat.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigercat.1 ${INSTALLROOT}/man/man1/tigercat.1.old 2>/dev/null || true; ${STDCP} tigercat.1 ${INSTALLROOT}/man/man1/tigercat.1 ;}
+done ${INSTALLROOT}/man/man1/tigercat.1 generated
+make ${INSTALLROOT}/bin/tigermerge
+prev tigermerge
+exec - test '' = 'tigermerge' || ${STDCMP} 2>/dev/null -s tigermerge ${INSTALLROOT}/bin/tigermerge || { ${STDMV} ${INSTALLROOT}/bin/tigermerge ${INSTALLROOT}/bin/tigermerge.old 2>/dev/null || true; ${STDCP} tigermerge ${INSTALLROOT}/bin/tigermerge ;}
+done ${INSTALLROOT}/bin/tigermerge generated
+make ${INSTALLROOT}/man/man1/tigermerge.1
+prev tigermerge.1
+exec - test '' = 'tigermerge.1' || ${STDCMP} 2>/dev/null -s tigermerge.1 ${INSTALLROOT}/man/man1/tigermerge.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigermerge.1 ${INSTALLROOT}/man/man1/tigermerge.1.old 2>/dev/null || true; ${STDCP} tigermerge.1 ${INSTALLROOT}/man/man1/tigermerge.1 ;}
+done ${INSTALLROOT}/man/man1/tigermerge.1 generated
+make ${INSTALLROOT}/bin/tigerextract
+prev tigerextract
+exec - test '' = 'tigerextract' || ${STDCMP} 2>/dev/null -s tigerextract ${INSTALLROOT}/bin/tigerextract || { ${STDMV} ${INSTALLROOT}/bin/tigerextract ${INSTALLROOT}/bin/tigerextract.old 2>/dev/null || true; ${STDCP} tigerextract ${INSTALLROOT}/bin/tigerextract ;}
+done ${INSTALLROOT}/bin/tigerextract generated
+make ${INSTALLROOT}/man/man1/tigerextract.1
+prev tigerextract.1
+exec - test '' = 'tigerextract.1' || ${STDCMP} 2>/dev/null -s tigerextract.1 ${INSTALLROOT}/man/man1/tigerextract.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigerextract.1 ${INSTALLROOT}/man/man1/tigerextract.1.old 2>/dev/null || true; ${STDCP} tigerextract.1 ${INSTALLROOT}/man/man1/tigerextract.1 ;}
+done ${INSTALLROOT}/man/man1/tigerextract.1 generated
+make ${INSTALLROOT}/bin/tigerattrmap
+prev tigerattrmap
+exec - test '' = 'tigerattrmap' || ${STDCMP} 2>/dev/null -s tigerattrmap ${INSTALLROOT}/bin/tigerattrmap || { ${STDMV} ${INSTALLROOT}/bin/tigerattrmap ${INSTALLROOT}/bin/tigerattrmap.old 2>/dev/null || true; ${STDCP} tigerattrmap ${INSTALLROOT}/bin/tigerattrmap ;}
+done ${INSTALLROOT}/bin/tigerattrmap generated
+make ${INSTALLROOT}/man/man1/tigerattrmap.1
+prev tigerattrmap.1
+exec - test '' = 'tigerattrmap.1' || ${STDCMP} 2>/dev/null -s tigerattrmap.1 ${INSTALLROOT}/man/man1/tigerattrmap.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigerattrmap.1 ${INSTALLROOT}/man/man1/tigerattrmap.1.old 2>/dev/null || true; ${STDCP} tigerattrmap.1 ${INSTALLROOT}/man/man1/tigerattrmap.1 ;}
+done ${INSTALLROOT}/man/man1/tigerattrmap.1 generated
+make ${INSTALLROOT}/bin/tigerinfo
+prev tigerinfo
+exec - test '' = 'tigerinfo' || ${STDCMP} 2>/dev/null -s tigerinfo ${INSTALLROOT}/bin/tigerinfo || { ${STDMV} ${INSTALLROOT}/bin/tigerinfo ${INSTALLROOT}/bin/tigerinfo.old 2>/dev/null || true; ${STDCP} tigerinfo ${INSTALLROOT}/bin/tigerinfo ;}
+done ${INSTALLROOT}/bin/tigerinfo generated
+make ${INSTALLROOT}/man/man1/tigerinfo.1
+prev tigerinfo.1
+exec - test '' = 'tigerinfo.1' || ${STDCMP} 2>/dev/null -s tigerinfo.1 ${INSTALLROOT}/man/man1/tigerinfo.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigerinfo.1 ${INSTALLROOT}/man/man1/tigerinfo.1.old 2>/dev/null || true; ${STDCP} tigerinfo.1 ${INSTALLROOT}/man/man1/tigerinfo.1 ;}
+done ${INSTALLROOT}/man/man1/tigerinfo.1 generated
+make ${INSTALLROOT}/bin/tigerprint
+prev tigerprint
+exec - test '' = 'tigerprint' || ${STDCMP} 2>/dev/null -s tigerprint ${INSTALLROOT}/bin/tigerprint || { ${STDMV} ${INSTALLROOT}/bin/tigerprint ${INSTALLROOT}/bin/tigerprint.old 2>/dev/null || true; ${STDCP} tigerprint ${INSTALLROOT}/bin/tigerprint ;}
+done ${INSTALLROOT}/bin/tigerprint generated
+make ${INSTALLROOT}/man/man1/tigerprint.1
+prev tigerprint.1
+exec - test '' = 'tigerprint.1' || ${STDCMP} 2>/dev/null -s tigerprint.1 ${INSTALLROOT}/man/man1/tigerprint.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tigerprint.1 ${INSTALLROOT}/man/man1/tigerprint.1.old 2>/dev/null || true; ${STDCP} tigerprint.1 ${INSTALLROOT}/man/man1/tigerprint.1 ;}
+done ${INSTALLROOT}/man/man1/tigerprint.1 generated
+make ${INSTALLROOT}/bin/npanxx2tiger
+prev npanxx2tiger
+exec - test '' = 'npanxx2tiger' || ${STDCMP} 2>/dev/null -s npanxx2tiger ${INSTALLROOT}/bin/npanxx2tiger || { ${STDMV} ${INSTALLROOT}/bin/npanxx2tiger ${INSTALLROOT}/bin/npanxx2tiger.old 2>/dev/null || true; ${STDCP} npanxx2tiger ${INSTALLROOT}/bin/npanxx2tiger ;}
+done ${INSTALLROOT}/bin/npanxx2tiger generated
+make ${INSTALLROOT}/man/man1/npanxx2tiger.1
+prev npanxx2tiger.1
+exec - test '' = 'npanxx2tiger.1' || ${STDCMP} 2>/dev/null -s npanxx2tiger.1 ${INSTALLROOT}/man/man1/npanxx2tiger.1 || { ${STDMV} ${INSTALLROOT}/man/man1/npanxx2tiger.1 ${INSTALLROOT}/man/man1/npanxx2tiger.1.old 2>/dev/null || true; ${STDCP} npanxx2tiger.1 ${INSTALLROOT}/man/man1/npanxx2tiger.1 ;}
+done ${INSTALLROOT}/man/man1/npanxx2tiger.1 generated
+make ${INSTALLROOT}/bin/zip2tiger
+prev zip2tiger
+exec - test '' = 'zip2tiger' || ${STDCMP} 2>/dev/null -s zip2tiger ${INSTALLROOT}/bin/zip2tiger || { ${STDMV} ${INSTALLROOT}/bin/zip2tiger ${INSTALLROOT}/bin/zip2tiger.old 2>/dev/null || true; ${STDCP} zip2tiger ${INSTALLROOT}/bin/zip2tiger ;}
+done ${INSTALLROOT}/bin/zip2tiger generated
+make ${INSTALLROOT}/man/man1/zip2tiger.1
+prev zip2tiger.1
+exec - test '' = 'zip2tiger.1' || ${STDCMP} 2>/dev/null -s zip2tiger.1 ${INSTALLROOT}/man/man1/zip2tiger.1 || { ${STDMV} ${INSTALLROOT}/man/man1/zip2tiger.1 ${INSTALLROOT}/man/man1/zip2tiger.1.old 2>/dev/null || true; ${STDCP} zip2tiger.1 ${INSTALLROOT}/man/man1/zip2tiger.1 ;}
+done ${INSTALLROOT}/man/man1/zip2tiger.1 generated
+done install virtual
+make test
+done test dontcare virtual

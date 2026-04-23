@@ -5,7 +5,7 @@
 
 #include <ast.h>
 #include <vmalloc.h>
-#include <astcdt.h>
+#include <cdt.h>
 
 typedef long long AGGRoff_t;
 typedef unsigned long long AGGRsize_t;

@@ -1,0 +1,772 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make ddsinfo
+make ddsinfo.o
+make ddsinfo.c
+make ${PACKAGE_swift_INCLUDE}/dds.h implicit
+make ${PACKAGE_swift_INCLUDE}/aggr.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done ${PACKAGE_swift_INCLUDE}/aggr.h dontcare
+make ${INSTALLROOT}/include/ast/recsort.h implicit
+prev ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${INSTALLROOT}/include/ast/recsort.h dontcare
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/dds.h
+make ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/swift.h
+make ${INSTALLROOT}/include/ast/dirent.h implicit
+make ${INSTALLROOT}/include/ast/ast_dirent.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_dirent.h
+done ${INSTALLROOT}/include/ast/dirent.h
+prev ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/option.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsinfo.c
+meta ddsinfo.o %.c>%.o ddsinfo.c ddsinfo
+prev ddsinfo.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsinfo.c
+done ddsinfo.o generated
+bind -ldds
+bind -lvcodex
+bind -lswift
+bind -last
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsinfo ddsinfo.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsinfo generated
+make ddsload
+make ddsload.o
+make ddsload.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/tok.h
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsload.c
+meta ddsload.o %.c>%.o ddsload.c ddsload
+prev ddsload.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsload.c
+done ddsload.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsload ddsload.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsload generated
+make ddsfilter
+make ddsfilter.o
+make ddsfilter.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsfilter.c
+meta ddsfilter.o %.c>%.o ddsfilter.c ddsfilter
+prev ddsfilter.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsfilter.c
+done ddsfilter.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsfilter ddsfilter.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsfilter generated
+make ddschoose
+make ddschoose.o
+make ddschoose.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddschoose.c
+meta ddschoose.o %.c>%.o ddschoose.c ddschoose
+prev ddschoose.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddschoose.c
+done ddschoose.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddschoose ddschoose.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddschoose generated
+make ddssplit
+make ddssplit.o
+make ddssplit.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddssplit.c
+meta ddssplit.o %.c>%.o ddssplit.c ddssplit
+prev ddssplit.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddssplit.c
+done ddssplit.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddssplit ddssplit.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddssplit generated
+make ddsgroup
+make ddsgroup.o
+make ddsgroup.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsgroup.c
+meta ddsgroup.o %.c>%.o ddsgroup.c ddsgroup
+prev ddsgroup.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsgroup.c
+done ddsgroup.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsgroup ddsgroup.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsgroup generated
+make ddscount
+make ddscount.o
+make ddscount.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddscount.c
+meta ddscount.o %.c>%.o ddscount.c ddscount
+prev ddscount.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddscount.c
+done ddscount.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddscount ddscount.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddscount generated
+make ddssort
+make ddssort.o
+make ddssort.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/recsort.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddssort.c
+meta ddssort.o %.c>%.o ddssort.c ddssort
+prev ddssort.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddssort.c
+done ddssort.o generated
+bind -lrecsort
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddssort ddssort.o ${mam_libdds} ${mam_librecsort} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddssort generated
+make ddsconv
+make ddsconv.o
+make ddsconv.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsconv.c
+meta ddsconv.o %.c>%.o ddsconv.c ddsconv
+prev ddsconv.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsconv.c
+done ddsconv.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsconv ddsconv.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsconv generated
+make ddsextract
+make ddsextract.o
+make ddsextract.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsextract.c
+meta ddsextract.o %.c>%.o ddsextract.c ddsextract
+prev ddsextract.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsextract.c
+done ddsextract.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsextract ddsextract.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsextract generated
+make ddscat
+make ddscat.o
+make ddscat.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/dirent.h implicit
+prev ${INSTALLROOT}/include/ast/regex.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddscat.c
+meta ddscat.o %.c>%.o ddscat.c ddscat
+prev ddscat.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddscat.c
+done ddscat.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddscat ddscat.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddscat generated
+make ddsaggr
+make ddsaggr.o
+make ddsaggr.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsaggr.c
+meta ddsaggr.o %.c>%.o ddsaggr.c ddsaggr
+prev ddsaggr.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsaggr.c
+done ddsaggr.o generated
+bind -laggr
+make ${mam_libm} archive
+done ${mam_libm} dontcare virtual
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsaggr ddsaggr.o ${mam_libaggr} ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsaggr generated
+make ddssplitnaggr
+make ddssplitnaggr.o
+make ddssplitnaggr.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddssplitnaggr.c
+meta ddssplitnaggr.o %.c>%.o ddssplitnaggr.c ddssplitnaggr
+prev ddssplitnaggr.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddssplitnaggr.c
+done ddssplitnaggr.o generated
+prev ${mam_libm} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddssplitnaggr ddssplitnaggr.o ${mam_libaggr} ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddssplitnaggr generated
+make ddsprint
+make ddsprint.o
+make ddsprint.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddsprint.c
+meta ddsprint.o %.c>%.o ddsprint.c ddsprint
+prev ddsprint.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddsprint.c
+done ddsprint.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddsprint ddsprint.o ${mam_libdds} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddsprint generated
+make ddscc
+make ddscc.o
+make ddscc.c
+prev ${PACKAGE_swift_INCLUDE}/dds.h implicit
+prev ${PACKAGE_swift_INCLUDE}/aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ddscc.c
+meta ddscc.o %.c>%.o ddscc.c ddscc
+prev ddscc.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"\" -D_PACKAGE_ast -c ddscc.c
+done ddscc.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ddscc ddscc.o ${mam_libaggr} ${mam_libdds} ${mam_librecsort} ${mam_libvcodex} ${mam_libswift} ${mam_libast}
+done ddscc generated
+make ddsmkdict
+make ddsmkdict.sh
+done ddsmkdict.sh
+meta ddsmkdict %.sh>% ddsmkdict.sh ddsmkdict
+prev ddsmkdict.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : ddsmkdict contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ddsmkdict.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 205 in
+exec - 0) cp ddsmkdict.sh ddsmkdict
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ddsmkdict.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ddsmkdict.sh <<'!'
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - } > ddsmkdict
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ddsmkdict.sh > ddsmkdict <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w ddsmkdict -a -x ddsmkdict || chmod u+w,+x ddsmkdict
+done ddsmkdict generated
+make ddsmkarray
+make ddsmkarray.sh
+done ddsmkarray.sh
+meta ddsmkarray %.sh>% ddsmkarray.sh ddsmkarray
+prev ddsmkarray.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : ddsmkarray contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ddsmkarray.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 205 in
+exec - 0) cp ddsmkarray.sh ddsmkarray
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ddsmkarray.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ddsmkarray.sh <<'!'
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - } > ddsmkarray
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ddsmkarray.sh > ddsmkarray <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w ddsmkarray -a -x ddsmkarray || chmod u+w,+x ddsmkarray
+done ddsmkarray generated
+make ddsmkslist
+make ddsmkslist.sh
+done ddsmkslist.sh
+meta ddsmkslist %.sh>% ddsmkslist.sh ddsmkslist
+prev ddsmkslist.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : ddsmkslist contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ddsmkslist.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 205 in
+exec - 0) cp ddsmkslist.sh ddsmkslist
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ddsmkslist.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ddsmkslist.sh <<'!'
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - } > ddsmkslist
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ddsmkslist.sh > ddsmkslist <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec - USAGE_LICENSE="[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dds]"
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w ddsmkslist -a -x ddsmkslist || chmod u+w,+x ddsmkslist
+done ddsmkslist generated
+make ddsinfo.1
+prev ddsinfo
+exec - ignore ddsinfo --??nroff 2> ddsinfo.1
+done ddsinfo.1 generated
+make ddsload.1
+prev ddsload
+exec - ignore ddsload --??nroff 2> ddsload.1
+done ddsload.1 generated
+make ddsfilter.1
+prev ddsfilter
+exec - ignore ddsfilter --??nroff 2> ddsfilter.1
+done ddsfilter.1 generated
+make ddschoose.1
+prev ddschoose
+exec - ignore ddschoose --??nroff 2> ddschoose.1
+done ddschoose.1 generated
+make ddssplit.1
+prev ddssplit
+exec - ignore ddssplit --??nroff 2> ddssplit.1
+done ddssplit.1 generated
+make ddsgroup.1
+prev ddsgroup
+exec - ignore ddsgroup --??nroff 2> ddsgroup.1
+done ddsgroup.1 generated
+make ddscount.1
+prev ddscount
+exec - ignore ddscount --??nroff 2> ddscount.1
+done ddscount.1 generated
+make ddssort.1
+prev ddssort
+exec - ignore ddssort --??nroff 2> ddssort.1
+done ddssort.1 generated
+make ddsconv.1
+prev ddsconv
+exec - ignore ddsconv --??nroff 2> ddsconv.1
+done ddsconv.1 generated
+make ddsextract.1
+prev ddsextract
+exec - ignore ddsextract --??nroff 2> ddsextract.1
+done ddsextract.1 generated
+make ddscat.1
+prev ddscat
+exec - ignore ddscat --??nroff 2> ddscat.1
+done ddscat.1 generated
+make ddsaggr.1
+prev ddsaggr
+exec - ignore ddsaggr --??nroff 2> ddsaggr.1
+done ddsaggr.1 generated
+make ddssplitnaggr.1
+prev ddssplitnaggr
+exec - ignore ddssplitnaggr --??nroff 2> ddssplitnaggr.1
+done ddssplitnaggr.1 generated
+make ddsprint.1
+prev ddsprint
+exec - ignore ddsprint --??nroff 2> ddsprint.1
+done ddsprint.1 generated
+make ddscc.1
+prev ddscc
+exec - ignore ddscc --??nroff 2> ddscc.1
+done ddscc.1 generated
+make ddsmkdict.1
+make ${INSTALLROOT}/bin/ksh
+done ${INSTALLROOT}/bin/ksh
+prev ddsmkdict
+exec - ignore ${INSTALLROOT}/bin/ksh ddsmkdict --??nroff 2> ddsmkdict.1
+done ddsmkdict.1 generated
+make ddsmkarray.1
+prev ${INSTALLROOT}/bin/ksh
+prev ddsmkarray
+exec - ignore ${INSTALLROOT}/bin/ksh ddsmkarray --??nroff 2> ddsmkarray.1
+done ddsmkarray.1 generated
+make ddsmkslist.1
+prev ${INSTALLROOT}/bin/ksh
+prev ddsmkslist
+exec - ignore ${INSTALLROOT}/bin/ksh ddsmkslist --??nroff 2> ddsmkslist.1
+done ddsmkslist.1 generated
+make ddsmkso
+make ddsmkso.sh
+done ddsmkso.sh
+make genddsmkso.mk
+done genddsmkso.mk
+meta ddsmkso %.sh>% ddsmkso.sh ddsmkso
+prev ddsmkso.sh
+exec - ${NMAKE} -f genddsmkso.mk nativepp=-1 ddsmkso
+done ddsmkso generated
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/ddsinfo
+prev ${INSTALLROOT}/bin
+prev ddsinfo
+exec - test '' = 'ddsinfo' || ${STDCMP} 2>/dev/null -s ddsinfo ${INSTALLROOT}/bin/ddsinfo || { ${STDMV} ${INSTALLROOT}/bin/ddsinfo ${INSTALLROOT}/bin/ddsinfo.old 2>/dev/null || true; ${STDCP} ddsinfo ${INSTALLROOT}/bin/ddsinfo ;}
+done ${INSTALLROOT}/bin/ddsinfo generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/ddsinfo.1
+prev ${INSTALLROOT}/man/man1
+prev ddsinfo.1
+exec - test '' = 'ddsinfo.1' || ${STDCMP} 2>/dev/null -s ddsinfo.1 ${INSTALLROOT}/man/man1/ddsinfo.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsinfo.1 ${INSTALLROOT}/man/man1/ddsinfo.1.old 2>/dev/null || true; ${STDCP} ddsinfo.1 ${INSTALLROOT}/man/man1/ddsinfo.1 ;}
+done ${INSTALLROOT}/man/man1/ddsinfo.1 generated
+make ${INSTALLROOT}/bin/ddsload
+prev ddsload
+exec - test '' = 'ddsload' || ${STDCMP} 2>/dev/null -s ddsload ${INSTALLROOT}/bin/ddsload || { ${STDMV} ${INSTALLROOT}/bin/ddsload ${INSTALLROOT}/bin/ddsload.old 2>/dev/null || true; ${STDCP} ddsload ${INSTALLROOT}/bin/ddsload ;}
+done ${INSTALLROOT}/bin/ddsload generated
+make ${INSTALLROOT}/man/man1/ddsload.1
+prev ddsload.1
+exec - test '' = 'ddsload.1' || ${STDCMP} 2>/dev/null -s ddsload.1 ${INSTALLROOT}/man/man1/ddsload.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsload.1 ${INSTALLROOT}/man/man1/ddsload.1.old 2>/dev/null || true; ${STDCP} ddsload.1 ${INSTALLROOT}/man/man1/ddsload.1 ;}
+done ${INSTALLROOT}/man/man1/ddsload.1 generated
+make ${INSTALLROOT}/bin/ddsfilter
+prev ddsfilter
+exec - test '' = 'ddsfilter' || ${STDCMP} 2>/dev/null -s ddsfilter ${INSTALLROOT}/bin/ddsfilter || { ${STDMV} ${INSTALLROOT}/bin/ddsfilter ${INSTALLROOT}/bin/ddsfilter.old 2>/dev/null || true; ${STDCP} ddsfilter ${INSTALLROOT}/bin/ddsfilter ;}
+done ${INSTALLROOT}/bin/ddsfilter generated
+make ${INSTALLROOT}/man/man1/ddsfilter.1
+prev ddsfilter.1
+exec - test '' = 'ddsfilter.1' || ${STDCMP} 2>/dev/null -s ddsfilter.1 ${INSTALLROOT}/man/man1/ddsfilter.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsfilter.1 ${INSTALLROOT}/man/man1/ddsfilter.1.old 2>/dev/null || true; ${STDCP} ddsfilter.1 ${INSTALLROOT}/man/man1/ddsfilter.1 ;}
+done ${INSTALLROOT}/man/man1/ddsfilter.1 generated
+make ${INSTALLROOT}/bin/ddschoose
+prev ddschoose
+exec - test '' = 'ddschoose' || ${STDCMP} 2>/dev/null -s ddschoose ${INSTALLROOT}/bin/ddschoose || { ${STDMV} ${INSTALLROOT}/bin/ddschoose ${INSTALLROOT}/bin/ddschoose.old 2>/dev/null || true; ${STDCP} ddschoose ${INSTALLROOT}/bin/ddschoose ;}
+done ${INSTALLROOT}/bin/ddschoose generated
+make ${INSTALLROOT}/man/man1/ddschoose.1
+prev ddschoose.1
+exec - test '' = 'ddschoose.1' || ${STDCMP} 2>/dev/null -s ddschoose.1 ${INSTALLROOT}/man/man1/ddschoose.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddschoose.1 ${INSTALLROOT}/man/man1/ddschoose.1.old 2>/dev/null || true; ${STDCP} ddschoose.1 ${INSTALLROOT}/man/man1/ddschoose.1 ;}
+done ${INSTALLROOT}/man/man1/ddschoose.1 generated
+make ${INSTALLROOT}/bin/ddssplit
+prev ddssplit
+exec - test '' = 'ddssplit' || ${STDCMP} 2>/dev/null -s ddssplit ${INSTALLROOT}/bin/ddssplit || { ${STDMV} ${INSTALLROOT}/bin/ddssplit ${INSTALLROOT}/bin/ddssplit.old 2>/dev/null || true; ${STDCP} ddssplit ${INSTALLROOT}/bin/ddssplit ;}
+done ${INSTALLROOT}/bin/ddssplit generated
+make ${INSTALLROOT}/man/man1/ddssplit.1
+prev ddssplit.1
+exec - test '' = 'ddssplit.1' || ${STDCMP} 2>/dev/null -s ddssplit.1 ${INSTALLROOT}/man/man1/ddssplit.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddssplit.1 ${INSTALLROOT}/man/man1/ddssplit.1.old 2>/dev/null || true; ${STDCP} ddssplit.1 ${INSTALLROOT}/man/man1/ddssplit.1 ;}
+done ${INSTALLROOT}/man/man1/ddssplit.1 generated
+make ${INSTALLROOT}/bin/ddsgroup
+prev ddsgroup
+exec - test '' = 'ddsgroup' || ${STDCMP} 2>/dev/null -s ddsgroup ${INSTALLROOT}/bin/ddsgroup || { ${STDMV} ${INSTALLROOT}/bin/ddsgroup ${INSTALLROOT}/bin/ddsgroup.old 2>/dev/null || true; ${STDCP} ddsgroup ${INSTALLROOT}/bin/ddsgroup ;}
+done ${INSTALLROOT}/bin/ddsgroup generated
+make ${INSTALLROOT}/man/man1/ddsgroup.1
+prev ddsgroup.1
+exec - test '' = 'ddsgroup.1' || ${STDCMP} 2>/dev/null -s ddsgroup.1 ${INSTALLROOT}/man/man1/ddsgroup.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsgroup.1 ${INSTALLROOT}/man/man1/ddsgroup.1.old 2>/dev/null || true; ${STDCP} ddsgroup.1 ${INSTALLROOT}/man/man1/ddsgroup.1 ;}
+done ${INSTALLROOT}/man/man1/ddsgroup.1 generated
+make ${INSTALLROOT}/bin/ddscount
+prev ddscount
+exec - test '' = 'ddscount' || ${STDCMP} 2>/dev/null -s ddscount ${INSTALLROOT}/bin/ddscount || { ${STDMV} ${INSTALLROOT}/bin/ddscount ${INSTALLROOT}/bin/ddscount.old 2>/dev/null || true; ${STDCP} ddscount ${INSTALLROOT}/bin/ddscount ;}
+done ${INSTALLROOT}/bin/ddscount generated
+make ${INSTALLROOT}/man/man1/ddscount.1
+prev ddscount.1
+exec - test '' = 'ddscount.1' || ${STDCMP} 2>/dev/null -s ddscount.1 ${INSTALLROOT}/man/man1/ddscount.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddscount.1 ${INSTALLROOT}/man/man1/ddscount.1.old 2>/dev/null || true; ${STDCP} ddscount.1 ${INSTALLROOT}/man/man1/ddscount.1 ;}
+done ${INSTALLROOT}/man/man1/ddscount.1 generated
+make ${INSTALLROOT}/bin/ddssort
+prev ddssort
+exec - test '' = 'ddssort' || ${STDCMP} 2>/dev/null -s ddssort ${INSTALLROOT}/bin/ddssort || { ${STDMV} ${INSTALLROOT}/bin/ddssort ${INSTALLROOT}/bin/ddssort.old 2>/dev/null || true; ${STDCP} ddssort ${INSTALLROOT}/bin/ddssort ;}
+done ${INSTALLROOT}/bin/ddssort generated
+make ${INSTALLROOT}/man/man1/ddssort.1
+prev ddssort.1
+exec - test '' = 'ddssort.1' || ${STDCMP} 2>/dev/null -s ddssort.1 ${INSTALLROOT}/man/man1/ddssort.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddssort.1 ${INSTALLROOT}/man/man1/ddssort.1.old 2>/dev/null || true; ${STDCP} ddssort.1 ${INSTALLROOT}/man/man1/ddssort.1 ;}
+done ${INSTALLROOT}/man/man1/ddssort.1 generated
+make ${INSTALLROOT}/bin/ddsconv
+prev ddsconv
+exec - test '' = 'ddsconv' || ${STDCMP} 2>/dev/null -s ddsconv ${INSTALLROOT}/bin/ddsconv || { ${STDMV} ${INSTALLROOT}/bin/ddsconv ${INSTALLROOT}/bin/ddsconv.old 2>/dev/null || true; ${STDCP} ddsconv ${INSTALLROOT}/bin/ddsconv ;}
+done ${INSTALLROOT}/bin/ddsconv generated
+make ${INSTALLROOT}/man/man1/ddsconv.1
+prev ddsconv.1
+exec - test '' = 'ddsconv.1' || ${STDCMP} 2>/dev/null -s ddsconv.1 ${INSTALLROOT}/man/man1/ddsconv.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsconv.1 ${INSTALLROOT}/man/man1/ddsconv.1.old 2>/dev/null || true; ${STDCP} ddsconv.1 ${INSTALLROOT}/man/man1/ddsconv.1 ;}
+done ${INSTALLROOT}/man/man1/ddsconv.1 generated
+make ${INSTALLROOT}/bin/ddsextract
+prev ddsextract
+exec - test '' = 'ddsextract' || ${STDCMP} 2>/dev/null -s ddsextract ${INSTALLROOT}/bin/ddsextract || { ${STDMV} ${INSTALLROOT}/bin/ddsextract ${INSTALLROOT}/bin/ddsextract.old 2>/dev/null || true; ${STDCP} ddsextract ${INSTALLROOT}/bin/ddsextract ;}
+done ${INSTALLROOT}/bin/ddsextract generated
+make ${INSTALLROOT}/man/man1/ddsextract.1
+prev ddsextract.1
+exec - test '' = 'ddsextract.1' || ${STDCMP} 2>/dev/null -s ddsextract.1 ${INSTALLROOT}/man/man1/ddsextract.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsextract.1 ${INSTALLROOT}/man/man1/ddsextract.1.old 2>/dev/null || true; ${STDCP} ddsextract.1 ${INSTALLROOT}/man/man1/ddsextract.1 ;}
+done ${INSTALLROOT}/man/man1/ddsextract.1 generated
+make ${INSTALLROOT}/bin/ddscat
+prev ddscat
+exec - test '' = 'ddscat' || ${STDCMP} 2>/dev/null -s ddscat ${INSTALLROOT}/bin/ddscat || { ${STDMV} ${INSTALLROOT}/bin/ddscat ${INSTALLROOT}/bin/ddscat.old 2>/dev/null || true; ${STDCP} ddscat ${INSTALLROOT}/bin/ddscat ;}
+done ${INSTALLROOT}/bin/ddscat generated
+make ${INSTALLROOT}/man/man1/ddscat.1
+prev ddscat.1
+exec - test '' = 'ddscat.1' || ${STDCMP} 2>/dev/null -s ddscat.1 ${INSTALLROOT}/man/man1/ddscat.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddscat.1 ${INSTALLROOT}/man/man1/ddscat.1.old 2>/dev/null || true; ${STDCP} ddscat.1 ${INSTALLROOT}/man/man1/ddscat.1 ;}
+done ${INSTALLROOT}/man/man1/ddscat.1 generated
+make ${INSTALLROOT}/bin/ddsaggr
+prev ddsaggr
+exec - test '' = 'ddsaggr' || ${STDCMP} 2>/dev/null -s ddsaggr ${INSTALLROOT}/bin/ddsaggr || { ${STDMV} ${INSTALLROOT}/bin/ddsaggr ${INSTALLROOT}/bin/ddsaggr.old 2>/dev/null || true; ${STDCP} ddsaggr ${INSTALLROOT}/bin/ddsaggr ;}
+done ${INSTALLROOT}/bin/ddsaggr generated
+make ${INSTALLROOT}/man/man1/ddsaggr.1
+prev ddsaggr.1
+exec - test '' = 'ddsaggr.1' || ${STDCMP} 2>/dev/null -s ddsaggr.1 ${INSTALLROOT}/man/man1/ddsaggr.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsaggr.1 ${INSTALLROOT}/man/man1/ddsaggr.1.old 2>/dev/null || true; ${STDCP} ddsaggr.1 ${INSTALLROOT}/man/man1/ddsaggr.1 ;}
+done ${INSTALLROOT}/man/man1/ddsaggr.1 generated
+make ${INSTALLROOT}/bin/ddssplitnaggr
+prev ddssplitnaggr
+exec - test '' = 'ddssplitnaggr' || ${STDCMP} 2>/dev/null -s ddssplitnaggr ${INSTALLROOT}/bin/ddssplitnaggr || { ${STDMV} ${INSTALLROOT}/bin/ddssplitnaggr ${INSTALLROOT}/bin/ddssplitnaggr.old 2>/dev/null || true; ${STDCP} ddssplitnaggr ${INSTALLROOT}/bin/ddssplitnaggr ;}
+done ${INSTALLROOT}/bin/ddssplitnaggr generated
+make ${INSTALLROOT}/man/man1/ddssplitnaggr.1
+prev ddssplitnaggr.1
+exec - test '' = 'ddssplitnaggr.1' || ${STDCMP} 2>/dev/null -s ddssplitnaggr.1 ${INSTALLROOT}/man/man1/ddssplitnaggr.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddssplitnaggr.1 ${INSTALLROOT}/man/man1/ddssplitnaggr.1.old 2>/dev/null || true; ${STDCP} ddssplitnaggr.1 ${INSTALLROOT}/man/man1/ddssplitnaggr.1 ;}
+done ${INSTALLROOT}/man/man1/ddssplitnaggr.1 generated
+make ${INSTALLROOT}/bin/ddsprint
+prev ddsprint
+exec - test '' = 'ddsprint' || ${STDCMP} 2>/dev/null -s ddsprint ${INSTALLROOT}/bin/ddsprint || { ${STDMV} ${INSTALLROOT}/bin/ddsprint ${INSTALLROOT}/bin/ddsprint.old 2>/dev/null || true; ${STDCP} ddsprint ${INSTALLROOT}/bin/ddsprint ;}
+done ${INSTALLROOT}/bin/ddsprint generated
+make ${INSTALLROOT}/man/man1/ddsprint.1
+prev ddsprint.1
+exec - test '' = 'ddsprint.1' || ${STDCMP} 2>/dev/null -s ddsprint.1 ${INSTALLROOT}/man/man1/ddsprint.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsprint.1 ${INSTALLROOT}/man/man1/ddsprint.1.old 2>/dev/null || true; ${STDCP} ddsprint.1 ${INSTALLROOT}/man/man1/ddsprint.1 ;}
+done ${INSTALLROOT}/man/man1/ddsprint.1 generated
+make ${INSTALLROOT}/bin/ddscc
+prev ddscc
+exec - test '' = 'ddscc' || ${STDCMP} 2>/dev/null -s ddscc ${INSTALLROOT}/bin/ddscc || { ${STDMV} ${INSTALLROOT}/bin/ddscc ${INSTALLROOT}/bin/ddscc.old 2>/dev/null || true; ${STDCP} ddscc ${INSTALLROOT}/bin/ddscc ;}
+done ${INSTALLROOT}/bin/ddscc generated
+make ${INSTALLROOT}/man/man1/ddscc.1
+prev ddscc.1
+exec - test '' = 'ddscc.1' || ${STDCMP} 2>/dev/null -s ddscc.1 ${INSTALLROOT}/man/man1/ddscc.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddscc.1 ${INSTALLROOT}/man/man1/ddscc.1.old 2>/dev/null || true; ${STDCP} ddscc.1 ${INSTALLROOT}/man/man1/ddscc.1 ;}
+done ${INSTALLROOT}/man/man1/ddscc.1 generated
+make ${INSTALLROOT}/bin/ddsmkdict
+prev ddsmkdict
+exec - test '' = 'ddsmkdict' || ${STDCMP} 2>/dev/null -s ddsmkdict ${INSTALLROOT}/bin/ddsmkdict || { ${STDMV} ${INSTALLROOT}/bin/ddsmkdict ${INSTALLROOT}/bin/ddsmkdict.old 2>/dev/null || true; ${STDCP} ddsmkdict ${INSTALLROOT}/bin/ddsmkdict ;}
+done ${INSTALLROOT}/bin/ddsmkdict generated
+make ${INSTALLROOT}/man/man1/ddsmkdict.1
+prev ddsmkdict.1
+exec - test '' = 'ddsmkdict.1' || ${STDCMP} 2>/dev/null -s ddsmkdict.1 ${INSTALLROOT}/man/man1/ddsmkdict.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsmkdict.1 ${INSTALLROOT}/man/man1/ddsmkdict.1.old 2>/dev/null || true; ${STDCP} ddsmkdict.1 ${INSTALLROOT}/man/man1/ddsmkdict.1 ;}
+done ${INSTALLROOT}/man/man1/ddsmkdict.1 generated
+make ${INSTALLROOT}/bin/ddsmkarray
+prev ddsmkarray
+exec - test '' = 'ddsmkarray' || ${STDCMP} 2>/dev/null -s ddsmkarray ${INSTALLROOT}/bin/ddsmkarray || { ${STDMV} ${INSTALLROOT}/bin/ddsmkarray ${INSTALLROOT}/bin/ddsmkarray.old 2>/dev/null || true; ${STDCP} ddsmkarray ${INSTALLROOT}/bin/ddsmkarray ;}
+done ${INSTALLROOT}/bin/ddsmkarray generated
+make ${INSTALLROOT}/man/man1/ddsmkarray.1
+prev ddsmkarray.1
+exec - test '' = 'ddsmkarray.1' || ${STDCMP} 2>/dev/null -s ddsmkarray.1 ${INSTALLROOT}/man/man1/ddsmkarray.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsmkarray.1 ${INSTALLROOT}/man/man1/ddsmkarray.1.old 2>/dev/null || true; ${STDCP} ddsmkarray.1 ${INSTALLROOT}/man/man1/ddsmkarray.1 ;}
+done ${INSTALLROOT}/man/man1/ddsmkarray.1 generated
+make ${INSTALLROOT}/bin/ddsmkslist
+prev ddsmkslist
+exec - test '' = 'ddsmkslist' || ${STDCMP} 2>/dev/null -s ddsmkslist ${INSTALLROOT}/bin/ddsmkslist || { ${STDMV} ${INSTALLROOT}/bin/ddsmkslist ${INSTALLROOT}/bin/ddsmkslist.old 2>/dev/null || true; ${STDCP} ddsmkslist ${INSTALLROOT}/bin/ddsmkslist ;}
+done ${INSTALLROOT}/bin/ddsmkslist generated
+make ${INSTALLROOT}/man/man1/ddsmkslist.1
+prev ddsmkslist.1
+exec - test '' = 'ddsmkslist.1' || ${STDCMP} 2>/dev/null -s ddsmkslist.1 ${INSTALLROOT}/man/man1/ddsmkslist.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ddsmkslist.1 ${INSTALLROOT}/man/man1/ddsmkslist.1.old 2>/dev/null || true; ${STDCP} ddsmkslist.1 ${INSTALLROOT}/man/man1/ddsmkslist.1 ;}
+done ${INSTALLROOT}/man/man1/ddsmkslist.1 generated
+make ${INSTALLROOT}/bin/ddspp
+make ddspp
+meta ddspp %.sh>% ddspp.sh ddspp
+make ddspp.sh
+done ddspp.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : ddspp contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ddspp.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ddspp.sh ddspp
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ddspp.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ddspp.sh <<'!'
+exec -
+exec - !
+exec - } > ddspp
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ddspp.sh > ddspp <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w ddspp -a -x ddspp || chmod u+w,+x ddspp
+done ddspp generated
+exec - test '' = 'ddspp' || ${STDCMP} 2>/dev/null -s ddspp ${INSTALLROOT}/bin/ddspp || { ${STDMV} ${INSTALLROOT}/bin/ddspp ${INSTALLROOT}/bin/ddspp.old 2>/dev/null || true; ${STDCP} ddspp ${INSTALLROOT}/bin/ddspp ;}
+done ${INSTALLROOT}/bin/ddspp generated
+make ${INSTALLROOT}/bin/ddsmkso
+prev ddsmkso
+exec - test '' = 'ddsmkso' || ${STDCMP} 2>/dev/null -s ddsmkso ${INSTALLROOT}/bin/ddsmkso || { ${STDMV} ${INSTALLROOT}/bin/ddsmkso ${INSTALLROOT}/bin/ddsmkso.old 2>/dev/null || true; ${STDCP} ddsmkso ${INSTALLROOT}/bin/ddsmkso ;}
+done ${INSTALLROOT}/bin/ddsmkso generated
+done install virtual
+make test
+done test dontcare virtual

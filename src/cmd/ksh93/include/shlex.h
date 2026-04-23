@@ -25,7 +25,7 @@
  *	These are the definitions for the lexical analyzer
  */
 
-#include	<astcdt.h>
+#include	<cdt.h>
 #include	"FEATURE/options"
 #include	"shnodes.h"
 #include	"shtable.h"

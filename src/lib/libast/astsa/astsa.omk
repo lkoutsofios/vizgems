@@ -18,7 +18,7 @@ ASTSA_HDRS = \
 	ast.h \
 	ast_common.h \
 	ccode.h \
-	astcdt.h \
+	cdt.h \
 	debug.h \
 	error.h \
 	hashkey.h \

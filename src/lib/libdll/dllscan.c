@@ -56,7 +56,7 @@
 #define DLL_MATCH_VERSION	0x2000
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <ctype.h>
 #include <error.h>
 #include <fts.h>

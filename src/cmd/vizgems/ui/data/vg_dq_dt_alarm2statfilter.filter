@@ -1,5 +1,5 @@
 VARS{
-#include <astcdt.h>
+#include <cdt.h>
 #include <vmalloc.h>
 #include <swift.h>
 #include "vg_hdr.h"

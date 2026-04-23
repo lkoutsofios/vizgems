@@ -3,7 +3,7 @@
 #include <ast.h>
 #include <option.h>
 #include <tok.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <swift.h>
 
 static const char usage[] =

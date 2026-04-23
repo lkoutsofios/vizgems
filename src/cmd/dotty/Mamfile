@@ -1,0 +1,132 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make dotty
+make dotty.sh
+done dotty.sh
+meta dotty %.sh>% dotty.sh dotty
+prev dotty.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : dotty contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dotty.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dotty.sh dotty
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dotty.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dotty.sh <<'!'
+exec -
+exec - !
+exec - } > dotty
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dotty.sh > dotty <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w dotty -a -x dotty || chmod u+w,+x dotty
+done dotty generated
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/dotty
+prev ${INSTALLROOT}/bin
+prev dotty
+exec - test '' = 'dotty' || ${STDCMP} 2>/dev/null -s dotty ${INSTALLROOT}/bin/dotty || { ${STDMV} ${INSTALLROOT}/bin/dotty ${INSTALLROOT}/bin/dotty.old 2>/dev/null || true; ${STDCP} dotty ${INSTALLROOT}/bin/dotty ;}
+done ${INSTALLROOT}/bin/dotty generated
+make ${INSTALLROOT}/lib/lefty
+exec - if silent test ! -d ${INSTALLROOT}/lib/lefty
+exec - then mkdir -p ${INSTALLROOT}/lib/lefty
+exec - fi
+done ${INSTALLROOT}/lib/lefty generated
+make ${INSTALLROOT}/lib/lefty/dotty.lefty
+prev ${INSTALLROOT}/lib/lefty
+make dotty.lefty
+done dotty.lefty
+exec - test '' = 'dotty.lefty' || ${STDCMP} 2>/dev/null -s dotty.lefty ${INSTALLROOT}/lib/lefty/dotty.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/dotty.lefty ${INSTALLROOT}/lib/lefty/dotty.lefty.old 2>/dev/null || true; ${STDCP} dotty.lefty ${INSTALLROOT}/lib/lefty/dotty.lefty ;}
+done ${INSTALLROOT}/lib/lefty/dotty.lefty generated
+make ${INSTALLROOT}/lib/lefty/dotty_draw.lefty
+make dotty_draw.lefty
+done dotty_draw.lefty
+exec - test '' = 'dotty_draw.lefty' || ${STDCMP} 2>/dev/null -s dotty_draw.lefty ${INSTALLROOT}/lib/lefty/dotty_draw.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/dotty_draw.lefty ${INSTALLROOT}/lib/lefty/dotty_draw.lefty.old 2>/dev/null || true; ${STDCP} dotty_draw.lefty ${INSTALLROOT}/lib/lefty/dotty_draw.lefty ;}
+done ${INSTALLROOT}/lib/lefty/dotty_draw.lefty generated
+make ${INSTALLROOT}/lib/lefty/dotty_edit.lefty
+make dotty_edit.lefty
+done dotty_edit.lefty
+exec - test '' = 'dotty_edit.lefty' || ${STDCMP} 2>/dev/null -s dotty_edit.lefty ${INSTALLROOT}/lib/lefty/dotty_edit.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/dotty_edit.lefty ${INSTALLROOT}/lib/lefty/dotty_edit.lefty.old 2>/dev/null || true; ${STDCP} dotty_edit.lefty ${INSTALLROOT}/lib/lefty/dotty_edit.lefty ;}
+done ${INSTALLROOT}/lib/lefty/dotty_edit.lefty generated
+make ${INSTALLROOT}/lib/lefty/dotty_layout.lefty
+make dotty_layout.lefty
+done dotty_layout.lefty
+exec - test '' = 'dotty_layout.lefty' || ${STDCMP} 2>/dev/null -s dotty_layout.lefty ${INSTALLROOT}/lib/lefty/dotty_layout.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/dotty_layout.lefty ${INSTALLROOT}/lib/lefty/dotty_layout.lefty.old 2>/dev/null || true; ${STDCP} dotty_layout.lefty ${INSTALLROOT}/lib/lefty/dotty_layout.lefty ;}
+done ${INSTALLROOT}/lib/lefty/dotty_layout.lefty generated
+make ${INSTALLROOT}/lib/lefty/dotty_ui.lefty
+make dotty_ui.lefty
+done dotty_ui.lefty
+exec - test '' = 'dotty_ui.lefty' || ${STDCMP} 2>/dev/null -s dotty_ui.lefty ${INSTALLROOT}/lib/lefty/dotty_ui.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/dotty_ui.lefty ${INSTALLROOT}/lib/lefty/dotty_ui.lefty.old 2>/dev/null || true; ${STDCP} dotty_ui.lefty ${INSTALLROOT}/lib/lefty/dotty_ui.lefty ;}
+done ${INSTALLROOT}/lib/lefty/dotty_ui.lefty generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/dotty.1
+prev ${INSTALLROOT}/man/man1
+make dotty.1
+done dotty.1
+exec - test '' = 'dotty.1' || ${STDCMP} 2>/dev/null -s dotty.1 ${INSTALLROOT}/man/man1/dotty.1 || { ${STDMV} ${INSTALLROOT}/man/man1/dotty.1 ${INSTALLROOT}/man/man1/dotty.1.old 2>/dev/null || true; ${STDCP} dotty.1 ${INSTALLROOT}/man/man1/dotty.1 ;}
+done ${INSTALLROOT}/man/man1/dotty.1 generated
+done install virtual
+make test
+done test dontcare virtual

@@ -1,0 +1,425 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS ${mam_cc_DLL}
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make aggr
+make libaggr.a archive
+make aggr.req
+exec - set -
+exec - echo 'int main(){return 0;}' > 1.${COTEMP}.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c 1.${COTEMP}.c &&
+exec - x=`${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l'*' 2>&1 | sed -e 's/[][()+@?]/#/g' || :` &&
+exec - {
+exec - case "" in
+exec - *?) echo " " ;;
+exec - esac
+exec - for i in aggr m socket nsl swift ast
+exec - do case $i in
+exec - "aggr"|aggr)
+exec - ;;
+exec - *) if test -f ${INSTALLROOT}/lib/lib/$i
+exec - then y=`cat ${INSTALLROOT}/lib/lib/$i`
+exec - case $y in
+exec - *-?*) echo "" $y ;;
+exec - esac
+exec - continue
+exec - elif test ! -f ${INSTALLROOT}/lib/lib$i.a
+exec - then case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -L${INSTALLROOT}/lib ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) continue ;;
+exec - esac
+exec - ;;
+exec - esac
+exec - fi
+exec - ;;
+exec - esac
+exec - echo " -l$i"
+exec - done
+exec - } > aggr.req
+exec - rm -f 1.${COTEMP}.*
+done aggr.req generated
+make libmain.o
+make libmain.c
+make key.h implicit
+exec - echo "#define SWIFTAUTHKEY \"\"" > key.h
+done key.h generated
+make aggr_int.h implicit
+make aggr.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done aggr.h dontcare
+make ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/swift.h dontcare
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done aggr_int.h
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/tok.h
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libmain.c
+meta libmain.o %.c>%.o libmain.c libmain
+prev libmain.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libmain.c
+done libmain.o generated
+make libcombine.o
+make libcombine.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libcombine.c
+meta libcombine.o %.c>%.o libcombine.c libcombine
+prev libcombine.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libcombine.c
+done libcombine.o generated
+make libcombine.inst.o
+make gencombinehdr.sh
+done gencombinehdr.sh
+meta libcombine.inst.o %.c>%.o libcombine.inst.c libcombine.inst
+make libcombine.inst.c
+meta libcombine.inst.c gen%hdr.sh>lib%.inst.c gencombinehdr.sh combine
+prev gencombinehdr.sh
+exec - ${SHELL} gencombinehdr.sh > libcombine.inst.c
+make libcombine.tmpl.h implicit
+done libcombine.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libcombine.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libcombine.inst.c
+done libcombine.inst.o generated
+make libcat.o
+make libcat.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libcat.c
+meta libcat.o %.c>%.o libcat.c libcat
+prev libcat.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libcat.c
+done libcat.o generated
+make libcat.inst.o
+make gencathdr.sh
+done gencathdr.sh
+meta libcat.inst.o %.c>%.o libcat.inst.c libcat.inst
+make libcat.inst.c
+meta libcat.inst.c gen%hdr.sh>lib%.inst.c gencathdr.sh cat
+prev gencathdr.sh
+exec - ${SHELL} gencathdr.sh > libcat.inst.c
+make libcat.tmpl.h implicit
+done libcat.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libcat.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libcat.inst.c
+done libcat.inst.o generated
+make libsum.o
+make libsum.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libsum.c
+meta libsum.o %.c>%.o libsum.c libsum
+prev libsum.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libsum.c
+done libsum.o generated
+make libsum.inst.o
+make gensumhdr.sh
+done gensumhdr.sh
+meta libsum.inst.o %.c>%.o libsum.inst.c libsum.inst
+make libsum.inst.c
+meta libsum.inst.c gen%hdr.sh>lib%.inst.c gensumhdr.sh sum
+prev gensumhdr.sh
+exec - ${SHELL} gensumhdr.sh > libsum.inst.c
+make libsum.tmpl.h implicit
+done libsum.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libsum.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libsum.inst.c
+done libsum.inst.o generated
+make libreaggr.o
+make libreaggr.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libreaggr.c
+meta libreaggr.o %.c>%.o libreaggr.c libreaggr
+prev libreaggr.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libreaggr.c
+done libreaggr.o generated
+make libreaggr.inst.o
+make genreaggrhdr.sh
+done genreaggrhdr.sh
+meta libreaggr.inst.o %.c>%.o libreaggr.inst.c libreaggr.inst
+make libreaggr.inst.c
+meta libreaggr.inst.c gen%hdr.sh>lib%.inst.c genreaggrhdr.sh reaggr
+prev genreaggrhdr.sh
+exec - ${SHELL} genreaggrhdr.sh > libreaggr.inst.c
+make libreaggr.tmpl.h implicit
+done libreaggr.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libreaggr.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libreaggr.inst.c
+done libreaggr.inst.o generated
+make libextract.o
+make libextract.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libextract.c
+meta libextract.o %.c>%.o libextract.c libextract
+prev libextract.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libextract.c
+done libextract.o generated
+make libextract.inst.o
+make genextracthdr.sh
+done genextracthdr.sh
+meta libextract.inst.o %.c>%.o libextract.inst.c libextract.inst
+make libextract.inst.c
+meta libextract.inst.c gen%hdr.sh>lib%.inst.c genextracthdr.sh extract
+prev genextracthdr.sh
+exec - ${SHELL} genextracthdr.sh > libextract.inst.c
+make libextract.tmpl.h implicit
+done libextract.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libextract.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libextract.inst.c
+done libextract.inst.o generated
+make libmean.o
+make libmean.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libmean.c
+meta libmean.o %.c>%.o libmean.c libmean
+prev libmean.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libmean.c
+done libmean.o generated
+make libmean.inst.o
+make genmeanhdr.sh
+done genmeanhdr.sh
+meta libmean.inst.o %.c>%.o libmean.inst.c libmean.inst
+make libmean.inst.c
+meta libmean.inst.c gen%hdr.sh>lib%.inst.c genmeanhdr.sh mean
+prev genmeanhdr.sh
+exec - ${SHELL} genmeanhdr.sh > libmean.inst.c
+make libmean.tmpl.h implicit
+done libmean.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libmean.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libmean.inst.c
+done libmean.inst.o generated
+make libtopn.o
+make libtopn.c
+prev aggr_int.h implicit
+prev aggr.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libtopn.c
+meta libtopn.o %.c>%.o libtopn.c libtopn
+prev libtopn.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libtopn.c
+done libtopn.o generated
+make libtopn.inst.o
+make gentopnhdr.sh
+done gentopnhdr.sh
+meta libtopn.inst.o %.c>%.o libtopn.inst.c libtopn.inst
+make libtopn.inst.c
+meta libtopn.inst.c gen%hdr.sh>lib%.inst.c gentopnhdr.sh topn
+prev gentopnhdr.sh
+exec - ${SHELL} gentopnhdr.sh > libtopn.inst.c
+make libtopn.tmpl.h implicit
+done libtopn.tmpl.h
+prev aggr_int.h implicit
+prev aggr.h implicit
+done libtopn.inst.c generated
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_BLD_aggr -D_PACKAGE_ast -c libtopn.inst.c
+done libtopn.inst.o generated
+exec - ${AR} rc libaggr.a libmain.o libcombine.o libcombine.inst.o libcat.o libcat.inst.o libsum.o libsum.inst.o libreaggr.o libreaggr.inst.o libextract.o libextract.inst.o libmean.o libmean.inst.o libtopn.o libtopn.inst.o
+exec - (ranlib libaggr.a) >/dev/null 2>&1 || true
+done libaggr.a generated
+done aggr virtual
+prev libaggr.a archive
+make ${PACKAGE_swift_INCLUDE}
+exec - if silent test ! -d ${PACKAGE_swift_INCLUDE}
+exec - then mkdir -p ${PACKAGE_swift_INCLUDE}
+exec - fi
+done ${PACKAGE_swift_INCLUDE} generated
+make ${PACKAGE_swift_INCLUDE}/aggr.h
+prev ${PACKAGE_swift_INCLUDE}
+prev aggr.h
+exec - test '' = 'aggr.h' || ${STDCMP} 2>/dev/null -s aggr.h ${PACKAGE_swift_INCLUDE}/aggr.h || { ${STDMV} ${PACKAGE_swift_INCLUDE}/aggr.h ${PACKAGE_swift_INCLUDE}/aggr.h.old 2>/dev/null || true; ${STDCP} aggr.h ${PACKAGE_swift_INCLUDE}/aggr.h ;}
+done ${PACKAGE_swift_INCLUDE}/aggr.h generated
+make ${PACKAGE_swift_INCLUDE}/aggr_int.h
+prev aggr_int.h
+exec - test '' = 'aggr_int.h' || ${STDCMP} 2>/dev/null -s aggr_int.h ${PACKAGE_swift_INCLUDE}/aggr_int.h || { ${STDMV} ${PACKAGE_swift_INCLUDE}/aggr_int.h ${PACKAGE_swift_INCLUDE}/aggr_int.h.old 2>/dev/null || true; ${STDCP} aggr_int.h ${PACKAGE_swift_INCLUDE}/aggr_int.h ;}
+done ${PACKAGE_swift_INCLUDE}/aggr_int.h generated
+make ${INSTALLROOT}/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib
+exec - then mkdir -p ${INSTALLROOT}/lib
+exec - fi
+done ${INSTALLROOT}/lib generated
+make ${INSTALLROOT}/lib/libaggr.a archive
+prev ${INSTALLROOT}/lib
+prev libaggr.a archive
+exec - test '' = 'libaggr.a' || ${STDCMP} 2>/dev/null -s libaggr.a ${INSTALLROOT}/lib/libaggr.a || { ${STDMV} ${INSTALLROOT}/lib/libaggr.a ${INSTALLROOT}/lib/libaggr.a.old 2>/dev/null || true; ${STDCP} libaggr.a ${INSTALLROOT}/lib/libaggr.a ;}
+exec - (ranlib ${INSTALLROOT}/lib/libaggr.a) >/dev/null 2>&1 || true
+done ${INSTALLROOT}/lib/libaggr.a generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/aggr.1
+prev ${INSTALLROOT}/man/man1
+make aggr.1
+done aggr.1
+exec - test '' = 'aggr.1' || ${STDCMP} 2>/dev/null -s aggr.1 ${INSTALLROOT}/man/man1/aggr.1 || { ${STDMV} ${INSTALLROOT}/man/man1/aggr.1 ${INSTALLROOT}/man/man1/aggr.1.old 2>/dev/null || true; ${STDCP} aggr.1 ${INSTALLROOT}/man/man1/aggr.1 ;}
+done ${INSTALLROOT}/man/man1/aggr.1 generated
+make ${INSTALLROOT}/man/man3
+exec - if silent test ! -d ${INSTALLROOT}/man/man3
+exec - then mkdir -p ${INSTALLROOT}/man/man3
+exec - fi
+done ${INSTALLROOT}/man/man3 generated
+make ${INSTALLROOT}/man/man3/aggr.3
+prev ${INSTALLROOT}/man/man3
+make aggr.3
+done aggr.3
+exec - test '' = 'aggr.3' || ${STDCMP} 2>/dev/null -s aggr.3 ${INSTALLROOT}/man/man3/aggr.3 || { ${STDMV} ${INSTALLROOT}/man/man3/aggr.3 ${INSTALLROOT}/man/man3/aggr.3.old 2>/dev/null || true; ${STDCP} aggr.3 ${INSTALLROOT}/man/man3/aggr.3 ;}
+done ${INSTALLROOT}/man/man3/aggr.3 generated
+make ${INSTALLROOT}/lib/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib/lib
+exec - then mkdir -p ${INSTALLROOT}/lib/lib
+exec - fi
+done ${INSTALLROOT}/lib/lib generated
+make ${INSTALLROOT}/lib/lib/aggr
+prev ${INSTALLROOT}/lib/lib
+prev aggr.req
+exec - test '' = 'aggr.req' || ${STDCMP} 2>/dev/null -s aggr.req ${INSTALLROOT}/lib/lib/aggr || { ${STDMV} ${INSTALLROOT}/lib/lib/aggr ${INSTALLROOT}/lib/lib/aggr.old 2>/dev/null || true; ${STDCP} aggr.req ${INSTALLROOT}/lib/lib/aggr ;}
+done ${INSTALLROOT}/lib/lib/aggr generated
+done install virtual
+make test
+done test dontcare virtual

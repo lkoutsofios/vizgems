@@ -104,7 +104,7 @@ __STDPP__directive pragma pp:hide lchown
 #endif
 
 #include <cmd.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <ls.h>
 #include <ctype.h>
 #include <fts_fix.h>

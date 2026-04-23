@@ -23,7 +23,7 @@ static int findex, maxpix;
 static char *rendermode, *pagemode;
 }
 LIBS{
--lvg_dq_vt_util -lvgxml -lgvc -lcgraph -lgd
+-lvg_dq_vt_util -lvgxml -lvg_gvc_wrapper -lgd
 }
 BEGIN{
     if (attrload (getenv ("INVGRAPHATTRFILE")) == -1)
@@ -176,7 +176,7 @@ END{
     int ndi1, ndi2, wndn;
     IGRed_t *edp;
     int edi;
-    Agraph_t *gp;
+    void *gp;
     int maxrc;
 
     if (IGRflatten () == -1)

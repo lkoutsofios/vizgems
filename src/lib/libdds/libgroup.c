@@ -95,7 +95,7 @@ static char *creategrouperstr (DDSschema_t *schemap, DDSexpr_t *gep) {
         return NULL;
     }
 
-    sfprintf (fp, "#include <ast.h>\n#include <astcdt.h>\n#include <swift.h>\n");
+    sfprintf (fp, "#include <ast.h>\n#include <cdt.h>\n#include <swift.h>\n");
     sfprintf (fp, "#include <vmalloc.h>\n#include <dds.h>\n\n");
     if (schemap->include)
         sfprintf (fp, "%s\n\n", schemap->include);

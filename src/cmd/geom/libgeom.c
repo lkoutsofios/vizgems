@@ -2,7 +2,7 @@
 
 #include <ast.h>
 #include <tok.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <swift.h>
 #include "geom.h"
 

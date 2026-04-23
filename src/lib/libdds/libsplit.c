@@ -105,7 +105,7 @@ static char *createsplitterstr (DDSschema_t *schemap, char *slist) {
         return NULL;
     }
 
-    sfprintf (fp, "#include <ast.h>\n#include <astcdt.h>\n#include <swift.h>\n");
+    sfprintf (fp, "#include <ast.h>\n#include <cdt.h>\n#include <swift.h>\n");
     sfprintf (fp, "#include <vmalloc.h>\n#include <dds.h>\n\n");
     if (schemap->include)
         sfprintf (fp, "%s\n\n", schemap->include);

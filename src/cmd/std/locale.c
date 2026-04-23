@@ -85,7 +85,7 @@ USAGE_LICENSE
 ;
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <ctype.h>
 #include <error.h>
 #include <lc.h>

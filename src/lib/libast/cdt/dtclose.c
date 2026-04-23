@@ -26,15 +26,15 @@
 **	Written by Kiem-Phong Vo (11/15/2010)
 */
 #if __STD_C
-int astdtclose(astDt_t* dt)
+int dtclose(Dt_t* dt)
 #else
-int astdtclose(dt)
-astDt_t*	dt;
+int dtclose(dt)
+Dt_t*	dt;
 #endif
 {
 	int		ev, type;
-	astDt_t		pdt;
-	astDtdisc_t	*disc = dt->disc;
+	Dt_t		pdt;
+	Dtdisc_t	*disc = dt->disc;
 
 	if(!dt || dt->nview > 0 ) /* can't close if being viewed */
 		return -1;
@@ -46,10 +46,10 @@ astDt_t*	dt;
 		return -1;
 
 	if(dt->view) /* turn off viewing at this point */
-		astdtview(dt,NIL(astDt_t*));
+		dtview(dt,NIL(Dt_t*));
 
 	type = dt->data->type; /* save before memory is freed */
-	memcpy(&pdt, dt, sizeof(astDt_t));
+	memcpy(&pdt, dt, sizeof(Dt_t));
 
 	if(ev == 0 ) /* release all allocated data */
 	{	(void)(*(dt->meth->searchf))(dt,NIL(Void_t*),DT_CLEAR);

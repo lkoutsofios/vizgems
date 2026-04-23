@@ -3,15 +3,15 @@ ast :PACKAGE: \
 		libexpr libodelta librecsort libsum libuu libvdelta libbz \
 		libz tests coshell cpp cs mam msgcc nmake probe ss \
 		libcoshell libcs libmam libpp libcodex paxlib codexlib \
-		at builtin codex dss dsslib ie mailx mam ncsl pack pzip \
+		at builtin codex dss dsslib ie mam ncsl pack pzip \
 		re sort sortlib std tksh tw warp libdss libpz \
-		libtksh libtk vczip libvcodex libvgraph libtaso jcl libjcl
+		libtksh libtk vczip libvcodex libvgraph libtaso
 
 :COVERS: ast-base ast-dss
 
 :LICENSE: *.open
 
-:CATEGORY: devel libs mail shells utils
+:CATEGORY: devel libs shells utils
 
 :INDEX: ksh, pax, nmake, sfio, and ast open source commands and libraries
 

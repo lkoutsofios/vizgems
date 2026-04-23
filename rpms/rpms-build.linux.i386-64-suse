@@ -54,6 +54,7 @@ libbrotlidec1
 libbz2-1
 libbz2-devel
 libcrypt1
+libdb-4_8
 libexpat-devel
 libexpat1
 libfreetype6
@@ -63,6 +64,7 @@ libgraphviz6
 libjitterentropy3
 libjpeg62
 libjpeg62-devel
+libjpeg8
 libjson-c-devel
 libjson-c5
 libltdl7

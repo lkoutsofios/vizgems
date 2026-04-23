@@ -34,7 +34,7 @@
 #endif
 #endif
 
-#include	<astcdt.h>
+#include	<cdt.h>
 #include	<unistd.h>
 #include	<aso.h>
 
@@ -56,37 +56,37 @@
 #endif
 
 /* This struct holds private method data created on DT_OPEN */
-struct _astdtdata_s
+struct _dtdata_s
 {	unsigned int	lock;	/* general dictionary lock	*/
-	astDtuser_t	user;	/* application's data		*/
+	Dtuser_t	user;	/* application's data		*/
 	unsigned int	type;	/* method type, control flags	*/
 	ssize_t		size;	/* number of objects		*/
-	astDt_t		dict;	/* when DT_INDATA is requested	*/
+	Dt_t		dict;	/* when DT_INDATA is requested	*/
 };
 
 /* this structure holds the plugin information */
-typedef struct _astdtlib_s
+typedef struct _dtlib_s
 {
 	char*		name;		/* short name */
 	char*		description;	/* short description */
 	char*		release;	/* release info */
 	char*		prefix;		/* name prefix */
-	astDtmethod_t**	methods;	/* method list */
-} astDtlib_t;
+	Dtmethod_t**	methods;	/* method list */
+} Dtlib_t;
 
 #if _BLD_cdt
 
 #if defined(__STDC__)
-#define CDTLIB(m)	__DEFINE__(astDtmethod_t*,m,&_##m);
+#define CDTLIB(m)	__DEFINE__(Dtmethod_t*,m,&_##m);
 #else
-#define CDTLIB(m)	__DEFINE__(astDtmethod_t*,m,&_/**/m);
+#define CDTLIB(m)	__DEFINE__(Dtmethod_t*,m,&_/**/m);
 #endif
 
 #else
 
 #if defined(__STDC__)
 #define CDTLIB(m) \
-	void* cdt_lib(const char* name, astDtdisc_t* disc, const char* type) \
+	void* cdt_lib(const char* name, Dtdisc_t* disc, const char* type) \
 	{ \
 		int	i; \
 		int	n; \
@@ -103,7 +103,7 @@ typedef struct _astdtlib_s
 	unsigned long plugin_version(void) { return CDT_PLUGIN_VERSION; }
 #else
 #define CDTLIB(m) \
-	void* cdt_lib(name, disc, type) const char* name; astDtdisc_t* disc; const char* type; \
+	void* cdt_lib(name, disc, type) const char* name; Dtdisc_t* disc; const char* type; \
 	{ \
 		int	i; \
 		int	n; \
@@ -137,7 +137,7 @@ typedef struct _astdtlib_s
 /* map bits for upward compabitibility */
 #define DTTYPE(dt,ty)		((dt)->typef ? (*(dt)->typef)((dt), (ty)) : (ty) )
 
-/* short-hands for fields in astDtlink_t.
+/* short-hands for fields in Dtlink_t.
 ** note that __hash is used as a hash value
 ** or as the position in the parent table.
 */
@@ -167,9 +167,9 @@ _BEGIN_EXTERNS_
 #define extern	__EXPORT__
 #endif
 
-extern astDtlink_t*	_dtmake _ARG_((astDt_t*, Void_t*, int));
-extern void		_dtfree _ARG_((astDt_t*, astDtlink_t*, int));
-extern int		_dtlock _ARG_((astDt_t*, int));
+extern Dtlink_t*	_dtmake _ARG_((Dt_t*, Void_t*, int));
+extern void		_dtfree _ARG_((Dt_t*, Dtlink_t*, int));
+extern int		_dtlock _ARG_((Dt_t*, int));
 
 #undef	extern
 

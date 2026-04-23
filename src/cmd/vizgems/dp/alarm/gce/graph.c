@@ -1,7 +1,7 @@
 #pragma prototyped
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <vmalloc.h>
 #include <swift.h>
 #include "vggce.h"

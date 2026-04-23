@@ -29,7 +29,7 @@
 	char		*nvenv;		/* pointer to environment name */ 
 
 #include	<ast.h>
-#include	<astcdt.h>
+#include	<cdt.h>
 
 typedef int (*Nambfp_f)(int, char**, void*);
 

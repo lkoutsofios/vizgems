@@ -58,14 +58,6 @@ make ${PACKAGE_ast_INCLUDE}/regex.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_api.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_api.h dontcare
 make ${PACKAGE_ast_INCLUDE}/ast_wchar.h implicit
-make ${PACKAGE_ast_INCLUDE}/wctype.h implicit
-make ${PACKAGE_ast_INCLUDE}/ast_wctype.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-make ${PACKAGE_ast_INCLUDE}/wchar.h implicit
-prev ${PACKAGE_ast_INCLUDE}/ast_wchar.h implicit
-done ${PACKAGE_ast_INCLUDE}/wchar.h dontcare
-done ${PACKAGE_ast_INCLUDE}/ast_wctype.h dontcare
-done ${PACKAGE_ast_INCLUDE}/wctype.h dontcare
 make ${PACKAGE_ast_INCLUDE}/stdio.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_stdio.h implicit
 make ${PACKAGE_ast_INCLUDE}/sfio_s.h implicit
@@ -73,7 +65,6 @@ done ${PACKAGE_ast_INCLUDE}/sfio_s.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_stdio.h dontcare
 done ${PACKAGE_ast_INCLUDE}/stdio.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/stdio.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_wchar.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
@@ -97,9 +88,6 @@ done ${PACKAGE_ast_INCLUDE}/ast_fs.h dontcare
 done ${PACKAGE_ast_INCLUDE}/ast_fcntl.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/ast_getopt.h implicit
 make ${PACKAGE_ast_INCLUDE}/ast_sys.h implicit
-prev ${PACKAGE_ast_INCLUDE}/getopt.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_sys.h dontcare
 make ${PACKAGE_ast_INCLUDE}/ast_lib.h implicit
 done ${PACKAGE_ast_INCLUDE}/ast_lib.h dontcare
@@ -129,14 +117,12 @@ make ${PACKAGE_ast_INCLUDE}/cx.h implicit
 prev ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
 make ${PACKAGE_ast_INCLUDE}/dt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/vmalloc.h implicit
-make ${PACKAGE_ast_INCLUDE}/astcdt.h implicit
+make ${PACKAGE_ast_INCLUDE}/cdt.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_common.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast_std.h implicit
-done ${PACKAGE_ast_INCLUDE}/astcdt.h dontcare
+done ${PACKAGE_ast_INCLUDE}/cdt.h dontcare
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/dt.h dontcare
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
 prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/cx.h dontcare
@@ -145,7 +131,6 @@ prev ${PACKAGE_ast_INCLUDE}/prototyped.h implicit
 done ${PACKAGE_ast_INCLUDE}/dss.h dontcare
 make ${PACKAGE_ast_INCLUDE}/cxlib.h implicit
 prev ${PACKAGE_ast_INCLUDE}/error.h implicit
-prev ${PACKAGE_ast_INCLUDE}/endian.h implicit
 prev ${PACKAGE_ast_INCLUDE}/cx.h implicit
 prev ${PACKAGE_ast_INCLUDE}/regex.h implicit
 prev ${PACKAGE_ast_INCLUDE}/ast.h implicit
@@ -167,7 +152,7 @@ done ${PACKAGE_ast_INCLUDE}/dsslib.h
 done merge.c
 meta merge.o %.c>%.o merge.c merge
 prev merge.c
-exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_ast_INCLUDE} -DUSAGE_LICENSE=\""[-author?Glenn Fowler <gsf@research.att.com>][-copyright?Copyright (c) 2003-2012 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dssmerge]"\" -D_PACKAGE_ast -c merge.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_ast_INCLUDE} -DUSAGE_LICENSE=\""[-author?Glenn Fowler <gsf@research.att.com>][-copyright?Copyright (c) 2003-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?dssmerge]"\" -D_PACKAGE_ast -c merge.c
 done merge.o generated
 make lib.o
 make lib.c

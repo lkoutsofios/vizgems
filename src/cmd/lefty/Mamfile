@@ -1,0 +1,777 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_X11 ${INSTALLROOT}
+setv PACKAGE_X11_INCLUDE ${PACKAGE_X11}/include/X11
+setv PACKAGE_X11_LIB ${PACKAGE_X11}/lib64
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG??}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make lefty
+make dot2l.o
+make dot2l/dot2l.c
+make dot2l/dot2l.h implicit
+done dot2l/dot2l.h
+make tbl.h implicit
+done tbl.h
+make code.h implicit
+done code.h
+make io.h implicit
+done io.h
+make mem.h implicit
+done mem.h
+make common.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+make commdlg.h implicit
+done commdlg.h dontcare virtual
+make windows.h implicit
+done windows.h dontcare virtual
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make config.h implicit
+meta config.h %.iffe>%.h config.iffe config
+make config.iffe
+done config.iffe
+exec - set -
+exec - echo 'int main(){return 0;}' > 1.${COTEMP}.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c 1.${COTEMP}.c &&
+exec - x=`${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l'*' 2>&1 | sed -e 's/[][()+@?]/#/g' || :` &&
+exec - {
+exec - case "" in
+exec - *?) echo " " ;;
+exec - esac
+exec - for i in gfx Xaw3d Xmu Xt Xpm Xext X11 ast
+exec - do case $i in
+exec - "gfx"|gfx)
+exec - ;;
+exec - *) if test -f ${INSTALLROOT}/lib/lib/$i
+exec - then y=`cat ${INSTALLROOT}/lib/lib/$i`
+exec - case $y in
+exec - *-?*) echo "" $y ;;
+exec - esac
+exec - continue
+exec - elif test ! -f ${INSTALLROOT}/lib/lib$i.a
+exec - then case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -L${INSTALLROOT}/lib ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) continue ;;
+exec - esac
+exec - ;;
+exec - esac
+exec - fi
+exec - ;;
+exec - esac
+exec - echo " -l$i"
+exec - done
+exec - } > gfx.req
+exec - rm -f 1.${COTEMP}.*
+bind -last
+exec - iffe -o config.h -v -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' ref ${mam_cc_L+-L${INSTALLROOT}/lib} -I${INSTALLROOT}/include/ast -I/usr/include/X11 -I${INSTALLROOT}/include -I/usr/include ${mam_libast} : run config.iffe
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done config.h dontcare generated
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done common.h
+done dot2l/dot2l.c
+meta dot2l.o %.c>%.o dot2l/dot2l.c dot2l
+prev dot2l/dot2l.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Idot2l -I${INSTALLROOT}/include/ast -DFEATURE_CS -DFEATURE_MINTSIZE -D_PACKAGE_ast -c dot2l/dot2l.c
+done dot2l.o generated
+make dotlex.o
+make dot2l/dotlex.c
+make dot2l/triefa.c implicit
+make dot2l/triefa.h implicit
+done dot2l/triefa.h
+done dot2l/triefa.c
+prev io.h implicit
+prev dot2l/dot2l.h implicit
+make dotparse.h implicit
+meta dotparse.h %.y>%.c dot2l/dotparse.y dotparse
+make dot2l/dotparse.y
+done dot2l/dotparse.y
+exec - if silent ${YACC} --version >/dev/null 2>&1
+exec - then ${YACC} ${YACCFLAGS} -odotparse.c dot2l/dotparse.y
+exec - else ${YACC} ${YACCFLAGS} dot2l/dotparse.y
+exec - ${STDED} ${STDEDFLAGS} y.tab.c <<!
+exec - 1i
+exec - #include "config.h"
+exec - .
+exec - g/extern.*malloc/d
+exec - w
+exec - q
+exec - !
+exec - mv y.tab.c dotparse.c
+exec - if silent test -s y.tab.h
+exec - then ${STDED} ${STDEDFLAGS} y.tab.h <<'!'
+exec - 1i
+exec - #ifndef _DOTPARSE_H
+exec - #define _DOTPARSE_H
+exec - .
+exec - $a
+exec - #endif /* _DOTPARSE_H */
+exec - .
+exec - w
+exec - q
+exec - !
+exec - if silent cmp 2>/dev/null -s y.tab.h dotparse.h
+exec - then rm -f y.tab.h
+exec - else mv y.tab.h dotparse.h
+exec - fi
+exec - fi
+exec - if silent test -f y.output
+exec - then mv y.output dotparse.grammar
+exec - fi
+exec - fi
+done dotparse.h generated
+prev common.h implicit
+done dot2l/dotlex.c
+meta dotlex.o %.c>%.o dot2l/dotlex.c dotlex
+prev dot2l/dotlex.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Idot2l -I${INSTALLROOT}/include/ast -DFEATURE_CS -D_PACKAGE_ast -c dot2l/dotlex.c
+done dotlex.o generated
+make dotparse.o
+make dot2l/dotparse.y
+done dot2l/dotparse.y
+meta dotparse.o %.c>%.o dotparse.c dotparse
+make dotparse.c
+prev dot2l/dot2l.h implicit
+prev config.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+make joint.dotparse.y joint
+prev dotparse.c
+prev dotparse.h
+done joint.dotparse.y generated virtual
+done dotparse.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Idot2l -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c dotparse.c
+done dotparse.o generated
+make dottrie.o
+make dot2l/dottrie.c
+prev dot2l/triefa.h implicit
+prev dotparse.h implicit
+prev common.h implicit
+done dot2l/dottrie.c
+meta dottrie.o %.c>%.o dot2l/dottrie.c dottrie
+prev dot2l/dottrie.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Idot2l -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c dot2l/dottrie.c
+done dottrie.o generated
+make io.o
+make os/unix/io.c
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+prev mem.h implicit
+make cs2l/cs2l.h implicit
+done cs2l/cs2l.h dontcare
+prev io.h implicit
+prev common.h implicit
+done os/unix/io.c
+prev os/unix/io.c
+meta io.o %.c>%.o os/unix/io.c io
+prev os/unix/io.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Ics2l -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_CS -D_PACKAGE_ast -c os/unix/io.c
+done io.o generated
+make cs2l.o
+make cs2l/cs2l.c
+prev cs2l/cs2l.h implicit
+make exec.h implicit
+done exec.h
+prev tbl.h implicit
+prev mem.h implicit
+prev code.h implicit
+prev common.h implicit
+make ${INSTALLROOT}/include/ast/msg.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/msg.h
+make ${INSTALLROOT}/include/ast/cs.h implicit
+make ${INSTALLROOT}/include/ast/times.h implicit
+make ${INSTALLROOT}/include/ast/ast_time.h implicit
+done ${INSTALLROOT}/include/ast/ast_time.h dontcare
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/times.h dontcare
+make ${INSTALLROOT}/include/ast/ls.h implicit
+make ${INSTALLROOT}/include/ast/ast_mode.h implicit
+done ${INSTALLROOT}/include/ast/ast_mode.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_fs.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ls.h dontcare
+make ${INSTALLROOT}/include/ast/hashpart.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/hashpart.h dontcare
+make ${INSTALLROOT}/include/ast/ast_cs.h implicit
+done ${INSTALLROOT}/include/ast/ast_cs.h dontcare
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/cs.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done cs2l/cs2l.c
+meta cs2l.o %.c>%.o cs2l/cs2l.c cs2l
+prev cs2l/cs2l.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Ics2l -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c cs2l/cs2l.c
+done cs2l.o generated
+make lefty.o
+make lefty.c
+make gmap2l.h implicit
+done gmap2l.h dontcare virtual
+make gmap.h implicit
+done gmap.h dontcare virtual
+make gfxview.h implicit
+done gfxview.h
+make txtview.h implicit
+done txtview.h
+make internal.h implicit
+done internal.h
+make display.h implicit
+done display.h
+make str.h implicit
+done str.h
+prev exec.h implicit
+make parse.h implicit
+done parse.h
+prev tbl.h implicit
+prev mem.h implicit
+prev io.h implicit
+prev code.h implicit
+make g.h implicit
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+done g.h
+prev common.h implicit
+done lefty.c
+meta lefty.o %.c>%.o lefty.c lefty
+prev lefty.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_RUSAGE -DFEATURE_X11 -DFEATURE_MINTSIZE -DFEATURE_CS -D_PACKAGE_ast -c lefty.c
+done lefty.o generated
+make gfxview.o
+make gfxview.c
+make colors.txt implicit
+done colors.txt
+prev gfxview.h implicit
+prev exec.h implicit
+prev parse.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev io.h implicit
+prev mem.h implicit
+prev g.h implicit
+prev common.h implicit
+done gfxview.c
+meta gfxview.o %.c>%.o gfxview.c gfxview
+prev gfxview.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_CS -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c gfxview.c
+done gfxview.o generated
+make txtview.o
+make txtview.c
+prev txtview.h implicit
+prev str.h implicit
+prev exec.h implicit
+prev parse.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev g.h implicit
+prev common.h implicit
+done txtview.c
+meta txtview.o %.c>%.o txtview.c txtview
+prev txtview.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c txtview.c
+done txtview.o generated
+make internal.o
+make internal.c
+prev internal.h implicit
+prev gmap2l.h implicit
+prev dot2l/dot2l.h implicit
+prev gfxview.h implicit
+prev txtview.h implicit
+prev display.h implicit
+prev exec.h implicit
+prev parse.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev io.h implicit
+prev mem.h implicit
+prev g.h implicit
+prev common.h implicit
+done internal.c
+meta internal.o %.c>%.o internal.c internal
+prev internal.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Idot2l -I${INSTALLROOT}/include/ast -DFEATURE_CS -D_PACKAGE_ast -DFEATURE_DOT -DFEATURE_MINTSIZE -DFEATURE_X11 -c internal.c
+done internal.o generated
+make display.o
+make display.c
+prev display.h implicit
+prev str.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev common.h implicit
+done display.c
+meta display.o %.c>%.o display.c display
+prev display.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c display.c
+done display.o generated
+make str.o
+make str.c
+prev internal.h implicit
+prev str.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev common.h implicit
+done str.c
+meta str.o %.c>%.o str.c str
+prev str.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c str.c
+done str.o generated
+make exec.o
+make exec.c
+prev internal.h implicit
+prev exec.h implicit
+prev str.h implicit
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev common.h implicit
+done exec.c
+meta exec.o %.c>%.o exec.c exec
+prev exec.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c exec.c
+done exec.o generated
+make parse.o
+make parse.c
+prev internal.h implicit
+prev parse.h implicit
+make lex.h implicit
+done lex.h
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev common.h implicit
+done parse.c
+meta parse.o %.c>%.o parse.c parse
+prev parse.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c parse.c
+done parse.o generated
+make lex.o
+make lex.c
+prev lex.h implicit
+prev common.h implicit
+done lex.c
+meta lex.o %.c>%.o lex.c lex
+prev lex.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c lex.c
+done lex.o generated
+make tbl.o
+make tbl.c
+prev tbl.h implicit
+prev code.h implicit
+prev mem.h implicit
+prev common.h implicit
+done tbl.c
+meta tbl.o %.c>%.o tbl.c tbl
+prev tbl.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c tbl.c
+done tbl.o generated
+make code.o
+make code.c
+prev mem.h implicit
+prev code.h implicit
+prev common.h implicit
+done code.c
+meta code.o %.c>%.o code.c code
+prev code.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c code.c
+done code.o generated
+make libgfx.a archive
+prev gfx.req
+make garray.o
+make ws/x11/garray.c
+prev mem.h implicit
+make ws/x11/gcommon.h implicit
+done ws/x11/gcommon.h
+prev g.h implicit
+prev common.h implicit
+done ws/x11/garray.c
+meta garray.o %.c>%.o ws/x11/garray.c garray
+prev ws/x11/garray.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/garray.c
+done garray.o generated
+make gbutton.o
+make ws/x11/gbutton.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gbutton.c
+meta gbutton.o %.c>%.o ws/x11/gbutton.c gbutton
+prev ws/x11/gbutton.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gbutton.c
+done gbutton.o generated
+make gcanvas.o
+make ws/x11/gcanvas.c
+prev gmap.h implicit
+prev mem.h implicit
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gcanvas.c
+meta gcanvas.o %.c>%.o ws/x11/gcanvas.c gcanvas
+prev ws/x11/gcanvas.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gcanvas.c
+done gcanvas.o generated
+make gcommon.o
+make ws/x11/gcommon.c
+prev mem.h implicit
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gcommon.c
+meta gcommon.o %.c>%.o ws/x11/gcommon.c gcommon
+prev ws/x11/gcommon.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gcommon.c
+done gcommon.o generated
+make glabel.o
+make ws/x11/glabel.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/glabel.c
+meta glabel.o %.c>%.o ws/x11/glabel.c glabel
+prev ws/x11/glabel.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/glabel.c
+done glabel.o generated
+make gmenu.o
+make ws/x11/gmenu.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gmenu.c
+meta gmenu.o %.c>%.o ws/x11/gmenu.c gmenu
+prev ws/x11/gmenu.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gmenu.c
+done gmenu.o generated
+make gpcanvas.o
+make ws/x11/gpcanvas.c
+prev mem.h implicit
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gpcanvas.c
+meta gpcanvas.o %.c>%.o ws/x11/gpcanvas.c gpcanvas
+prev ws/x11/gpcanvas.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gpcanvas.c
+done gpcanvas.o generated
+make gquery.o
+make ws/x11/gquery.c
+make ws/x11/libfilereq/SF.h implicit
+done ws/x11/libfilereq/SF.h
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gquery.c
+meta gquery.o %.c>%.o ws/x11/gquery.c gquery
+prev ws/x11/gquery.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -Iws/x11/libfilereq -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gquery.c
+done gquery.o generated
+make gscroll.o
+make ws/x11/gscroll.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gscroll.c
+meta gscroll.o %.c>%.o ws/x11/gscroll.c gscroll
+prev ws/x11/gscroll.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gscroll.c
+done gscroll.o generated
+make gtext.o
+make ws/x11/gtext.c
+prev mem.h implicit
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gtext.c
+meta gtext.o %.c>%.o ws/x11/gtext.c gtext
+prev ws/x11/gtext.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gtext.c
+done gtext.o generated
+make gview.o
+make ws/x11/gview.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done ws/x11/gview.c
+meta gview.o %.c>%.o ws/x11/gview.c gview
+prev ws/x11/gview.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c ws/x11/gview.c
+done gview.o generated
+make Dir.o
+make ws/x11/libfilereq/Dir.c
+make ws/x11/libfilereq/SFDecls.h implicit
+done ws/x11/libfilereq/SFDecls.h
+make ${INSTALLROOT}/include/ast/dirent.h implicit
+make ${INSTALLROOT}/include/ast/ast_dirent.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_dirent.h dontcare
+done ${INSTALLROOT}/include/ast/dirent.h dontcare
+make ndir.h implicit
+done ndir.h dontcare virtual
+prev ${INSTALLROOT}/include/ast/dirent.h implicit
+make ws/x11/libfilereq/SFinternal.h implicit
+done ws/x11/libfilereq/SFinternal.h
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev config.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ws/x11/libfilereq/Dir.c
+meta Dir.o %.c>%.o ws/x11/libfilereq/Dir.c Dir
+prev ws/x11/libfilereq/Dir.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11/libfilereq -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DFEATURE_CS -c ws/x11/libfilereq/Dir.c
+done Dir.o generated
+make Draw.o
+make ws/x11/libfilereq/Draw.c
+prev ws/x11/libfilereq/SFDecls.h implicit
+make ws/x11/libfilereq/xstat.h implicit
+done ws/x11/libfilereq/xstat.h
+prev ws/x11/libfilereq/SFinternal.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ws/x11/libfilereq/Draw.c
+meta Draw.o %.c>%.o ws/x11/libfilereq/Draw.c Draw
+prev ws/x11/libfilereq/Draw.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -Iws/x11/libfilereq -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DFEATURE_CS -c ws/x11/libfilereq/Draw.c
+done Draw.o generated
+make Path.o
+make ws/x11/libfilereq/Path.c
+prev ws/x11/libfilereq/SFDecls.h implicit
+prev ws/x11/libfilereq/xstat.h implicit
+prev ws/x11/libfilereq/SFinternal.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev config.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ws/x11/libfilereq/Path.c
+meta Path.o %.c>%.o ws/x11/libfilereq/Path.c Path
+prev ws/x11/libfilereq/Path.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11/libfilereq -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DFEATURE_CS -c ws/x11/libfilereq/Path.c
+done Path.o generated
+make SelFile.o
+make ws/x11/libfilereq/SelFile.c
+prev ws/x11/libfilereq/SFDecls.h implicit
+prev ws/x11/libfilereq/SFinternal.h implicit
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev config.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ws/x11/libfilereq/SelFile.c
+meta SelFile.o %.c>%.o ws/x11/libfilereq/SelFile.c SelFile
+prev ws/x11/libfilereq/SelFile.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11/libfilereq -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DFEATURE_CS -c ws/x11/libfilereq/SelFile.c
+done SelFile.o generated
+make g.o
+make g.c
+prev mem.h implicit
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done g.c
+meta g.o %.c>%.o g.c g
+prev g.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -DFEATURE_MINTSIZE -D_PACKAGE_ast -c g.c
+done g.o generated
+make mem.o
+make mem.c
+prev mem.h implicit
+prev common.h implicit
+done mem.c
+meta mem.o %.c>%.o mem.c mem
+prev mem.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -DFEATURE_MINTSIZE -D_PACKAGE_ast -c mem.c
+done mem.o generated
+make common.o
+make common.c
+prev ws/x11/gcommon.h implicit
+prev g.h implicit
+prev common.h implicit
+done common.c
+meta common.o %.c>%.o common.c common
+prev common.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -Iws/x11 -I${INSTALLROOT}/include/ast -DFEATURE_X11 -D_PACKAGE_ast -c common.c
+done common.o generated
+exec - ${AR} rc libgfx.a garray.o gbutton.o gcanvas.o gcommon.o glabel.o gmenu.o gpcanvas.o gquery.o gscroll.o gtext.o gview.o Dir.o Draw.o Path.o SelFile.o g.o mem.o common.o
+exec - (ranlib libgfx.a) >/dev/null 2>&1 || true
+done libgfx.a generated
+bind -lgfx
+bind -lcs
+make ${mam_libm} archive
+done ${mam_libm} dontcare virtual
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o lefty dot2l.o dotlex.o dotparse.o dottrie.o io.o cs2l.o lefty.o gfxview.o txtview.o internal.o display.o str.o exec.o parse.o lex.o tbl.o code.o ${mam_libgfx} ${mam_libcs} ${mam_libast}
+done lefty generated
+make gfx
+prev libgfx.a archive
+done gfx virtual
+prev libgfx.a archive
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/lefty
+prev ${INSTALLROOT}/bin
+prev lefty
+exec - test '' = 'lefty' || ${STDCMP} 2>/dev/null -s lefty ${INSTALLROOT}/bin/lefty || { ${STDMV} ${INSTALLROOT}/bin/lefty ${INSTALLROOT}/bin/lefty.old 2>/dev/null || true; ${STDCP} lefty ${INSTALLROOT}/bin/lefty ;}
+done ${INSTALLROOT}/bin/lefty generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/lefty.1
+prev ${INSTALLROOT}/man/man1
+make lefty.1
+done lefty.1
+exec - test '' = 'lefty.1' || ${STDCMP} 2>/dev/null -s lefty.1 ${INSTALLROOT}/man/man1/lefty.1 || { ${STDMV} ${INSTALLROOT}/man/man1/lefty.1 ${INSTALLROOT}/man/man1/lefty.1.old 2>/dev/null || true; ${STDCP} lefty.1 ${INSTALLROOT}/man/man1/lefty.1 ;}
+done ${INSTALLROOT}/man/man1/lefty.1 generated
+make ${INSTALLROOT}/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib
+exec - then mkdir -p ${INSTALLROOT}/lib
+exec - fi
+done ${INSTALLROOT}/lib generated
+make ${INSTALLROOT}/lib/libgfx.a archive
+prev ${INSTALLROOT}/lib
+prev libgfx.a archive
+exec - test '' = 'libgfx.a' || ${STDCMP} 2>/dev/null -s libgfx.a ${INSTALLROOT}/lib/libgfx.a || { ${STDMV} ${INSTALLROOT}/lib/libgfx.a ${INSTALLROOT}/lib/libgfx.a.old 2>/dev/null || true; ${STDCP} libgfx.a ${INSTALLROOT}/lib/libgfx.a ;}
+exec - (ranlib ${INSTALLROOT}/lib/libgfx.a) >/dev/null 2>&1 || true
+done ${INSTALLROOT}/lib/libgfx.a generated
+make ${INSTALLROOT}/lib/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib/lib
+exec - then mkdir -p ${INSTALLROOT}/lib/lib
+exec - fi
+done ${INSTALLROOT}/lib/lib generated
+make ${INSTALLROOT}/lib/lib/gfx
+prev ${INSTALLROOT}/lib/lib
+prev gfx.req
+exec - test '' = 'gfx.req' || ${STDCMP} 2>/dev/null -s gfx.req ${INSTALLROOT}/lib/lib/gfx || { ${STDMV} ${INSTALLROOT}/lib/lib/gfx ${INSTALLROOT}/lib/lib/gfx.old 2>/dev/null || true; ${STDCP} gfx.req ${INSTALLROOT}/lib/lib/gfx ;}
+done ${INSTALLROOT}/lib/lib/gfx generated
+make ${INSTALLROOT}/lib/lefty
+exec - if silent test ! -d ${INSTALLROOT}/lib/lefty
+exec - then mkdir -p ${INSTALLROOT}/lib/lefty
+exec - fi
+done ${INSTALLROOT}/lib/lefty generated
+make ${INSTALLROOT}/lib/lefty/def.lefty
+prev ${INSTALLROOT}/lib/lefty
+make examples/def.lefty
+done examples/def.lefty
+exec - test '' = 'examples/def.lefty' || ${STDCMP} 2>/dev/null -s examples/def.lefty ${INSTALLROOT}/lib/lefty/def.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/def.lefty ${INSTALLROOT}/lib/lefty/def.lefty.old 2>/dev/null || true; ${STDCP} examples/def.lefty ${INSTALLROOT}/lib/lefty/def.lefty ;}
+done ${INSTALLROOT}/lib/lefty/def.lefty generated
+make ${INSTALLROOT}/lib/lefty/fractal.lefty
+make examples/fractal.lefty
+done examples/fractal.lefty
+exec - test '' = 'examples/fractal.lefty' || ${STDCMP} 2>/dev/null -s examples/fractal.lefty ${INSTALLROOT}/lib/lefty/fractal.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/fractal.lefty ${INSTALLROOT}/lib/lefty/fractal.lefty.old 2>/dev/null || true; ${STDCP} examples/fractal.lefty ${INSTALLROOT}/lib/lefty/fractal.lefty ;}
+done ${INSTALLROOT}/lib/lefty/fractal.lefty generated
+make ${INSTALLROOT}/lib/lefty/tree.lefty
+make examples/tree.lefty
+done examples/tree.lefty
+exec - test '' = 'examples/tree.lefty' || ${STDCMP} 2>/dev/null -s examples/tree.lefty ${INSTALLROOT}/lib/lefty/tree.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/tree.lefty ${INSTALLROOT}/lib/lefty/tree.lefty.old 2>/dev/null || true; ${STDCP} examples/tree.lefty ${INSTALLROOT}/lib/lefty/tree.lefty ;}
+done ${INSTALLROOT}/lib/lefty/tree.lefty generated
+make ${INSTALLROOT}/lib/lefty/lefty.psp
+make lefty.psp
+done lefty.psp
+exec - test '' = 'lefty.psp' || ${STDCMP} 2>/dev/null -s lefty.psp ${INSTALLROOT}/lib/lefty/lefty.psp || { ${STDMV} ${INSTALLROOT}/lib/lefty/lefty.psp ${INSTALLROOT}/lib/lefty/lefty.psp.old 2>/dev/null || true; ${STDCP} lefty.psp ${INSTALLROOT}/lib/lefty/lefty.psp ;}
+done ${INSTALLROOT}/lib/lefty/lefty.psp generated
+done install virtual
+make test
+done test dontcare virtual

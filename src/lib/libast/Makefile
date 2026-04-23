@@ -29,7 +29,7 @@ __OBSOLETE__ == $("6 months ago":@F=%(%Y0101)T)
 
 HEADERSRC = ast.h ast_dir.h ast_getopt.h ast_std.h \
 	ast_namval.h ast_windows.h \
-	ccode.h astcdt.h cdtlib.h cmdarg.h debug.h dt.h error.h find.h ftw.h \
+	ccode.h cdt.h cdtlib.h cmdarg.h debug.h dt.h error.h find.h ftw.h \
 	ftwalk.h fts.h fs3d.h getopt.h glob.h hash.h hashkey.h hashpart.h \
 	ip6.h lc.h ls.h magic.h mc.h mime.h mnt.h modecanon.h modex.h \
 	namval.h option.h proc.h re_comp.h recfmt.h regex.h regexp.h \

@@ -2,7 +2,7 @@
 
 #include <ast.h>
 #include <vmalloc.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <math.h>
 #include <swift.h>
 #include "tiger.h"

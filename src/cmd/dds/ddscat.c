@@ -5,7 +5,7 @@
 #include <regex.h>
 #include <dirent.h>
 #include <vmalloc.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <sys/resource.h>
 #include <swift.h>
 #include <dds.h>

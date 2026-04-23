@@ -27,7 +27,7 @@
 #define _PZIP_H		1
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <option.h>
 #include <sfdcgzip.h>
 #include <vmalloc.h>

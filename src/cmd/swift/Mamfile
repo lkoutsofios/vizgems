@@ -1,0 +1,4176 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGE_X11 ${INSTALLROOT}
+setv PACKAGE_X11_INCLUDE ${PACKAGE_X11}/include/X11
+setv PACKAGE_X11_LIB ${PACKAGE_X11}/lib64
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make sdpincoming
+meta sdpincoming %.sh>% dp/sdpincoming.sh sdpincoming
+make dp/sdpincoming.sh
+done dp/sdpincoming.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpincoming contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpincoming.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpincoming.sh sdpincoming
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpincoming.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpincoming.sh <<'!'
+exec -
+exec - !
+exec - } > sdpincoming
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpincoming.sh > sdpincoming <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpincoming -a -x sdpincoming || chmod u+w,+x sdpincoming
+done sdpincoming generated
+make sdpprocessing
+meta sdpprocessing %.sh>% dp/sdpprocessing.sh sdpprocessing
+make dp/sdpprocessing.sh
+done dp/sdpprocessing.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpprocessing contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpprocessing.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpprocessing.sh sdpprocessing
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpprocessing.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpprocessing.sh <<'!'
+exec -
+exec - !
+exec - } > sdpprocessing
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpprocessing.sh > sdpprocessing <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpprocessing -a -x sdpprocessing || chmod u+w,+x sdpprocessing
+done sdpprocessing generated
+make sdpcomplete
+meta sdpcomplete %.sh>% dp/sdpcomplete.sh sdpcomplete
+make dp/sdpcomplete.sh
+done dp/sdpcomplete.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpcomplete contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpcomplete.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpcomplete.sh sdpcomplete
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpcomplete.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpcomplete.sh <<'!'
+exec -
+exec - !
+exec - } > sdpcomplete
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpcomplete.sh > sdpcomplete <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpcomplete -a -x sdpcomplete || chmod u+w,+x sdpcomplete
+done sdpcomplete generated
+make sdpcleanup
+meta sdpcleanup %.sh>% dp/sdpcleanup.sh sdpcleanup
+make dp/sdpcleanup.sh
+done dp/sdpcleanup.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpcleanup contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpcleanup.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpcleanup.sh sdpcleanup
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpcleanup.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpcleanup.sh <<'!'
+exec -
+exec - !
+exec - } > sdpcleanup
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpcleanup.sh > sdpcleanup <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpcleanup -a -x sdpcleanup || chmod u+w,+x sdpcleanup
+done sdpcleanup generated
+make sdpcontrol
+meta sdpcontrol %.sh>% dp/sdpcontrol.sh sdpcontrol
+make dp/sdpcontrol.sh
+done dp/sdpcontrol.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpcontrol contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpcontrol.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpcontrol.sh sdpcontrol
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpcontrol.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpcontrol.sh <<'!'
+exec -
+exec - !
+exec - } > sdpcontrol
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpcontrol.sh > sdpcontrol <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpcontrol -a -x sdpcontrol || chmod u+w,+x sdpcontrol
+done sdpcontrol generated
+make strincoming
+meta strincoming %.sh>% tr/strincoming.sh strincoming
+make tr/strincoming.sh
+done tr/strincoming.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strincoming contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strincoming.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strincoming.sh strincoming
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strincoming.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strincoming.sh <<'!'
+exec -
+exec - !
+exec - } > strincoming
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strincoming.sh > strincoming <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strincoming -a -x strincoming || chmod u+w,+x strincoming
+done strincoming generated
+make stroutgoing
+meta stroutgoing %.sh>% tr/stroutgoing.sh stroutgoing
+make tr/stroutgoing.sh
+done tr/stroutgoing.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : stroutgoing contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/stroutgoing.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/stroutgoing.sh stroutgoing
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/stroutgoing.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/stroutgoing.sh <<'!'
+exec -
+exec - !
+exec - } > stroutgoing
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/stroutgoing.sh > stroutgoing <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w stroutgoing -a -x stroutgoing || chmod u+w,+x stroutgoing
+done stroutgoing generated
+make strreport
+meta strreport %.sh>% tr/strreport.sh strreport
+make tr/strreport.sh
+done tr/strreport.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strreport contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strreport.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strreport.sh strreport
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strreport.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strreport.sh <<'!'
+exec -
+exec - !
+exec - } > strreport
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strreport.sh > strreport <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strreport -a -x strreport || chmod u+w,+x strreport
+done strreport generated
+make strcleanup
+meta strcleanup %.sh>% tr/strcleanup.sh strcleanup
+make tr/strcleanup.sh
+done tr/strcleanup.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strcleanup contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strcleanup.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strcleanup.sh strcleanup
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strcleanup.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strcleanup.sh <<'!'
+exec -
+exec - !
+exec - } > strcleanup
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strcleanup.sh > strcleanup <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strcleanup -a -x strcleanup || chmod u+w,+x strcleanup
+done strcleanup generated
+make strcontrol
+meta strcontrol %.sh>% tr/strcontrol.sh strcontrol
+make tr/strcontrol.sh
+done tr/strcontrol.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strcontrol contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strcontrol.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strcontrol.sh strcontrol
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strcontrol.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strcontrol.sh <<'!'
+exec -
+exec - !
+exec - } > strcontrol
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strcontrol.sh > strcontrol <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strcontrol -a -x strcontrol || chmod u+w,+x strcontrol
+done strcontrol generated
+make swmmimesplit
+make swmmimesplit.o
+make wm/swmmimesplit.c
+make ${INSTALLROOT}/include/ast/error.h implicit
+make ${INSTALLROOT}/include/ast/option.h implicit
+make ${INSTALLROOT}/include/ast/ast.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/option.h dontcare
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/error.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done wm/swmmimesplit.c
+meta swmmimesplit.o %.c>%.o wm/swmmimesplit.c swmmimesplit
+prev wm/swmmimesplit.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c wm/swmmimesplit.c
+done swmmimesplit.o generated
+bind -lswift
+bind -last
+make ${mam_libX11} archive
+done ${mam_libX11} dontcare virtual
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o swmmimesplit swmmimesplit.o ${mam_libswift} ${mam_libast}
+done swmmimesplit generated
+make swmchangepasswd.cgi
+make swmchangepasswd.o
+make wm/swmchangepasswd.c
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done wm/swmchangepasswd.c
+meta swmchangepasswd.o %.c>%.o wm/swmchangepasswd.c swmchangepasswd
+prev wm/swmchangepasswd.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c wm/swmchangepasswd.c
+done swmchangepasswd.o generated
+make swmutil.o
+make wm/swmutil.c
+make wm/swmutil.h implicit
+done wm/swmutil.h
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+done wm/swmutil.c
+meta swmutil.o %.c>%.o wm/swmutil.c swmutil
+prev wm/swmutil.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -Iwm -I${INSTALLROOT}/include/ast -c wm/swmutil.c
+done swmutil.o generated
+make ${mam_libcrypt} archive
+done ${mam_libcrypt} dontcare virtual
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o swmchangepasswd.cgi swmchangepasswd.o swmutil.o ${mam_libswift} ${mam_libast} ${mam_libswift} ${mam_libast}
+done swmchangepasswd.cgi generated
+make swmcheckpasswd
+make swmcheckpasswd.o
+make wm/swmcheckpasswd.c
+make FEATURE/crypt implicit
+meta FEATURE/crypt features/%>FEATURE/% features/crypt crypt
+make features/crypt
+done features/crypt
+exec - iffe -v -c '${CC} ${mam_cc_FLAGS} ${CCFLAGS}   ${LDFLAGS} ' ref ${mam_cc_L+-L${INSTALLROOT}/lib} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -I/usr/include/X11 -I${INSTALLROOT}/include -I/usr/include ${mam_libswift} ${mam_libast} : run features/crypt
+done FEATURE/crypt generated
+make ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/swift.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done wm/swmcheckpasswd.c
+meta swmcheckpasswd.o %.c>%.o wm/swmcheckpasswd.c swmcheckpasswd
+prev wm/swmcheckpasswd.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c wm/swmcheckpasswd.c
+done swmcheckpasswd.o generated
+prev ${mam_libcrypt} archive
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o swmcheckpasswd swmcheckpasswd.o ${mam_libswift} ${mam_libast}
+done swmcheckpasswd generated
+make suiservices
+meta suiservices %.sh>% ui/suiservices.sh suiservices
+make ui/suiservices.sh
+done ui/suiservices.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiservices contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiservices.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiservices.sh suiservices
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiservices.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiservices.sh <<'!'
+exec -
+exec - !
+exec - } > suiservices
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiservices.sh > suiservices <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiservices -a -x suiservices || chmod u+w,+x suiservices
+done suiservices generated
+make suiservicehb
+meta suiservicehb %.sh>% ui/suiservicehb.sh suiservicehb
+make ui/suiservicehb.sh
+done ui/suiservicehb.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiservicehb contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiservicehb.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiservicehb.sh suiservicehb
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiservicehb.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiservicehb.sh <<'!'
+exec -
+exec - !
+exec - } > suiservicehb
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiservicehb.sh > suiservicehb <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiservicehb -a -x suiservicehb || chmod u+w,+x suiservicehb
+done suiservicehb generated
+make suiprefhb
+meta suiprefhb %.sh>% ui/suiprefhb.sh suiprefhb
+make ui/suiprefhb.sh
+done ui/suiprefhb.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiprefhb contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiprefhb.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiprefhb.sh suiprefhb
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiprefhb.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiprefhb.sh <<'!'
+exec -
+exec - !
+exec - } > suiprefhb
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiprefhb.sh > suiprefhb <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiprefhb -a -x suiprefhb || chmod u+w,+x suiprefhb
+done suiprefhb generated
+make suidserverhelper
+meta suidserverhelper %.sh>% ui/suidserverhelper.sh suidserverhelper
+make ui/suidserverhelper.sh
+done ui/suidserverhelper.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suidserverhelper contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suidserverhelper.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suidserverhelper.sh suidserverhelper
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suidserverhelper.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suidserverhelper.sh <<'!'
+exec -
+exec - !
+exec - } > suidserverhelper
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suidserverhelper.sh > suidserverhelper <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suidserverhelper -a -x suidserverhelper || chmod u+w,+x suidserverhelper
+done suidserverhelper generated
+make suipad.cgi
+meta suipad.cgi %.sh>% ui/suipad.cgi.sh suipad.cgi
+make ui/suipad.cgi.sh
+done ui/suipad.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suipad.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suipad.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suipad.cgi.sh suipad.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suipad.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suipad.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suipad.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suipad.cgi.sh > suipad.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suipad.cgi -a -x suipad.cgi || chmod u+w,+x suipad.cgi
+done suipad.cgi generated
+make suisetup.cgi
+meta suisetup.cgi %.sh>% ui/suisetup.cgi.sh suisetup.cgi
+make ui/suisetup.cgi.sh
+done ui/suisetup.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suisetup.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suisetup.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suisetup.cgi.sh suisetup.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suisetup.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suisetup.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suisetup.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suisetup.cgi.sh > suisetup.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suisetup.cgi -a -x suisetup.cgi || chmod u+w,+x suisetup.cgi
+done suisetup.cgi generated
+make suistart.cgi
+meta suistart.cgi %.sh>% ui/suistart.cgi.sh suistart.cgi
+make ui/suistart.cgi.sh
+done ui/suistart.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suistart.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suistart.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suistart.cgi.sh suistart.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suistart.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suistart.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suistart.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suistart.cgi.sh > suistart.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suistart.cgi -a -x suistart.cgi || chmod u+w,+x suistart.cgi
+done suistart.cgi generated
+make suidateselect.cgi
+meta suidateselect.cgi %.sh>% ui/suidateselect.cgi.sh suidateselect.cgi
+make ui/suidateselect.cgi.sh
+done ui/suidateselect.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suidateselect.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suidateselect.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suidateselect.cgi.sh suidateselect.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suidateselect.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suidateselect.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suidateselect.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suidateselect.cgi.sh > suidateselect.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suidateselect.cgi -a -x suidateselect.cgi || chmod u+w,+x suidateselect.cgi
+done suidateselect.cgi generated
+make suiviewselect.cgi
+meta suiviewselect.cgi %.sh>% ui/suiviewselect.cgi.sh suiviewselect.cgi
+make ui/suiviewselect.cgi.sh
+done ui/suiviewselect.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiviewselect.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiviewselect.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiviewselect.cgi.sh suiviewselect.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiviewselect.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiviewselect.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suiviewselect.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiviewselect.cgi.sh > suiviewselect.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiviewselect.cgi -a -x suiviewselect.cgi || chmod u+w,+x suiviewselect.cgi
+done suiviewselect.cgi generated
+make suilss.cgi
+meta suilss.cgi %.sh>% ui/suilss.cgi.sh suilss.cgi
+make ui/suilss.cgi.sh
+done ui/suilss.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suilss.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suilss.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suilss.cgi.sh suilss.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suilss.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suilss.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suilss.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suilss.cgi.sh > suilss.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suilss.cgi -a -x suilss.cgi || chmod u+w,+x suilss.cgi
+done suilss.cgi generated
+make suilaunch.cgi
+meta suilaunch.cgi %.sh>% ui/suilaunch.cgi.sh suilaunch.cgi
+make ui/suilaunch.cgi.sh
+done ui/suilaunch.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suilaunch.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suilaunch.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suilaunch.cgi.sh suilaunch.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suilaunch.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suilaunch.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suilaunch.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suilaunch.cgi.sh > suilaunch.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suilaunch.cgi -a -x suilaunch.cgi || chmod u+w,+x suilaunch.cgi
+done suilaunch.cgi generated
+make suimserverhelper.cgi
+meta suimserverhelper.cgi %.sh>% ui/suimserverhelper.cgi.sh suimserverhelper.cgi
+make ui/suimserverhelper.cgi.sh
+done ui/suimserverhelper.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suimserverhelper.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suimserverhelper.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suimserverhelper.cgi.sh suimserverhelper.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suimserverhelper.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suimserverhelper.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suimserverhelper.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suimserverhelper.cgi.sh > suimserverhelper.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suimserverhelper.cgi -a -x suimserverhelper.cgi || chmod u+w,+x suimserverhelper.cgi
+done suimserverhelper.cgi generated
+make suidserverhelper.cgi
+meta suidserverhelper.cgi %.sh>% ui/suidserverhelper.cgi.sh suidserverhelper.cgi
+make ui/suidserverhelper.cgi.sh
+done ui/suidserverhelper.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suidserverhelper.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suidserverhelper.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suidserverhelper.cgi.sh suidserverhelper.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suidserverhelper.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suidserverhelper.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suidserverhelper.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suidserverhelper.cgi.sh > suidserverhelper.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suidserverhelper.cgi -a -x suidserverhelper.cgi || chmod u+w,+x suidserverhelper.cgi
+done suidserverhelper.cgi generated
+make suiencode
+make suiencode.o
+make ui/suiencode.c
+make key.h implicit
+exec - echo "#define SWIFTAUTHKEY \"\"" > key.h
+done key.h generated
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+prev ${INSTALLROOT}/include/ast/endian.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suiencode.c
+meta suiencode.o %.c>%.o ui/suiencode.c suiencode
+prev ui/suiencode.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c ui/suiencode.c
+done suiencode.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suiencode suiencode.o ${mam_libswift} ${mam_libast}
+done suiencode generated
+make suirserver
+make suirserver.o
+make ui/suirserver.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/tok.h
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suirserver.c
+meta suirserver.o %.c>%.o ui/suirserver.c suirserver
+prev ui/suirserver.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suirserver.c
+done suirserver.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suirserver suirserver.o ${mam_libswift} ${mam_libast}
+done suirserver generated
+make suirclient
+make suirclient.o
+make ui/suirclient.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/cdt.h
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suirclient.c
+meta suirclient.o %.c>%.o ui/suirclient.c suirclient
+prev ui/suirclient.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suirclient.c
+done suirclient.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suirclient suirclient.o ${mam_libswift} ${mam_libast}
+done suirclient generated
+make suimserver
+make suimserver.o
+make ui/suimserver.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suimserver.c
+meta suimserver.o %.c>%.o ui/suimserver.c suimserver
+prev ui/suimserver.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suimserver.c
+done suimserver.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suimserver suimserver.o ${mam_libswift} ${mam_libast}
+done suimserver generated
+make suimclient
+make suimclient.o
+make ui/suimclient.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suimclient.c
+meta suimclient.o %.c>%.o ui/suimclient.c suimclient
+prev ui/suimclient.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suimclient.c
+done suimclient.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suimclient suimclient.o ${mam_libswift} ${mam_libast}
+done suimclient generated
+make suidserver
+make suidserver.o
+make ui/suidserver.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suidserver.c
+meta suidserver.o %.c>%.o ui/suidserver.c suidserver
+prev ui/suidserver.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suidserver.c
+done suidserver.o generated
+bind -lcmd
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suidserver suidserver.o ${mam_libcmd} ${mam_libswift} ${mam_libast}
+done suidserver generated
+make suidclient
+make suidclient.o
+make ui/suidclient.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+make ${INSTALLROOT}/include/ast/times.h implicit
+make ${INSTALLROOT}/include/ast/ast_time.h implicit
+done ${INSTALLROOT}/include/ast/ast_time.h dontcare
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/times.h
+make ${INSTALLROOT}/include/ast/cmd.h implicit
+make ${INSTALLROOT}/include/ast/dlldefs.h implicit
+done ${INSTALLROOT}/include/ast/dlldefs.h dontcare
+make ${INSTALLROOT}/include/ast/cmdext.h implicit
+make ${INSTALLROOT}/include/ast/shcmd.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/shcmd.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/cmdext.h dontcare
+prev ${INSTALLROOT}/include/ast/shcmd.h implicit
+make ${INSTALLROOT}/include/ast/stak.h implicit
+make ${INSTALLROOT}/include/ast/stk.h implicit
+prev ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/stk.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/stak.h dontcare
+prev ${INSTALLROOT}/include/ast/error.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/cmd.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suidclient.c
+meta suidclient.o %.c>%.o ui/suidclient.c suidclient
+prev ui/suidclient.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suidclient.c
+done suidclient.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suidclient suidclient.o ${mam_libcmd} ${mam_libswift} ${mam_libast}
+done suidclient generated
+make suixserver
+make suixserver.o
+make ui/suixserver.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suixserver.c
+meta suixserver.o %.c>%.o ui/suixserver.c suixserver
+prev ui/suixserver.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suixserver.c
+done suixserver.o generated
+make ${mam_libXtst} archive
+done ${mam_libXtst} dontcare virtual
+prev ${mam_libX11} archive
+make ${mam_libXext} archive
+done ${mam_libXext} dontcare virtual
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suixserver suixserver.o ${mam_libswift} ${mam_libast}
+done suixserver generated
+make suixclient
+make suixclient.o
+make ui/suixclient.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suixclient.c
+meta suixclient.o %.c>%.o ui/suixclient.c suixclient
+prev ui/suixclient.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suixclient.c
+done suixclient.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suixclient suixclient.o ${mam_libswift} ${mam_libast}
+done suixclient generated
+make suixwacom
+make suixwacom.o
+make ui/suixwacom.c
+prev key.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suixwacom.c
+meta suixwacom.o %.c>%.o ui/suixwacom.c suixwacom
+prev ui/suixwacom.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suixwacom.c
+done suixwacom.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suixwacom suixwacom.o ${mam_libswift} ${mam_libast}
+done suixwacom generated
+make suixserver.1
+prev suixserver
+exec - ignore suixserver --??nroff 2> suixserver.1
+done suixserver.1 generated
+make suixclient.1
+prev suixclient
+exec - ignore suixclient --??nroff 2> suixclient.1
+done suixclient.1 generated
+make suixwacom.1
+prev suixwacom
+exec - ignore suixwacom --??nroff 2> suixwacom.1
+done suixwacom.1 generated
+make suicoord2item
+make suicoord2item.o
+make ui/suicoord2item.c
+make ${PACKAGE_swift_INCLUDE}/geom.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/geom.h
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suicoord2item.c
+meta suicoord2item.o %.c>%.o ui/suicoord2item.c suicoord2item
+prev ui/suicoord2item.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suicoord2item.c
+done suicoord2item.o generated
+bind -lgeom
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suicoord2item suicoord2item.o ${mam_libgeom} ${mam_libswift} ${mam_libast}
+done suicoord2item generated
+make suinewpgrp
+make suinewpgrp.o
+make ui/suinewpgrp.c
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/proc.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/proc.h
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ui/suinewpgrp.c
+meta suinewpgrp.o %.c>%.o ui/suinewpgrp.c suinewpgrp
+prev ui/suinewpgrp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?swift]"\" -D_PACKAGE_ast -c ui/suinewpgrp.c
+done suinewpgrp.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o suinewpgrp suinewpgrp.o ${mam_libswift} ${mam_libast}
+done suinewpgrp generated
+make suirserver.1
+prev suirserver
+exec - ignore suirserver --??nroff 2> suirserver.1
+done suirserver.1 generated
+make suirclient.1
+prev suirclient
+exec - ignore suirclient --??nroff 2> suirclient.1
+done suirclient.1 generated
+make suimserver.1
+prev suimserver
+exec - ignore suimserver --??nroff 2> suimserver.1
+done suimserver.1 generated
+make suimclient.1
+prev suimclient
+exec - ignore suimclient --??nroff 2> suimclient.1
+done suimclient.1 generated
+make suidserver.1
+prev suidserver
+exec - ignore suidserver --??nroff 2> suidserver.1
+done suidserver.1 generated
+make suidclient.1
+prev suidclient
+exec - ignore suidclient --??nroff 2> suidclient.1
+done suidclient.1 generated
+make suicoord2item.1
+prev suicoord2item
+exec - ignore suicoord2item --??nroff 2> suicoord2item.1
+done suicoord2item.1 generated
+make suinewpgrp.1
+prev suinewpgrp
+exec - ignore suinewpgrp --??nroff 2> suinewpgrp.1
+done suinewpgrp.1 generated
+make sutendian
+make sutendian.o
+make ut/sutendian.c
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ut/sutendian.c
+meta sutendian.o %.c>%.o ut/sutendian.c sutendian
+prev ut/sutendian.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c ut/sutendian.c
+done sutendian.o generated
+prev ${mam_libX11} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o sutendian sutendian.o ${mam_libswift} ${mam_libast}
+done sutendian generated
+make ${INSTALLROOT}/fun
+exec - if silent test ! -d ${INSTALLROOT}/fun
+exec - then mkdir -p ${INSTALLROOT}/fun
+exec - fi
+done ${INSTALLROOT}/fun generated
+make ${INSTALLROOT}/fun/sdpensuredirs
+prev ${INSTALLROOT}/fun
+make sdpensuredirs
+meta sdpensuredirs %.sh>% dp/sdpensuredirs.sh sdpensuredirs
+make dp/sdpensuredirs.sh
+done dp/sdpensuredirs.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpensuredirs contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpensuredirs.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpensuredirs.sh sdpensuredirs
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpensuredirs.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpensuredirs.sh <<'!'
+exec -
+exec - !
+exec - } > sdpensuredirs
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpensuredirs.sh > sdpensuredirs <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpensuredirs -a -x sdpensuredirs || chmod u+w,+x sdpensuredirs
+done sdpensuredirs generated
+exec - test '' = 'sdpensuredirs' || ${STDCMP} 2>/dev/null -s sdpensuredirs ${INSTALLROOT}/fun/sdpensuredirs || { ${STDMV} ${INSTALLROOT}/fun/sdpensuredirs ${INSTALLROOT}/fun/sdpensuredirs.old 2>/dev/null || true; ${STDCP} sdpensuredirs ${INSTALLROOT}/fun/sdpensuredirs ;}
+done ${INSTALLROOT}/fun/sdpensuredirs generated
+make ${INSTALLROOT}/fun/sdpensuredualdirs
+make sdpensuredualdirs
+meta sdpensuredualdirs %.sh>% dp/sdpensuredualdirs.sh sdpensuredualdirs
+make dp/sdpensuredualdirs.sh
+done dp/sdpensuredualdirs.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpensuredualdirs contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpensuredualdirs.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpensuredualdirs.sh sdpensuredualdirs
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpensuredualdirs.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpensuredualdirs.sh <<'!'
+exec -
+exec - !
+exec - } > sdpensuredualdirs
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpensuredualdirs.sh > sdpensuredualdirs <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpensuredualdirs -a -x sdpensuredualdirs || chmod u+w,+x sdpensuredualdirs
+done sdpensuredualdirs generated
+exec - test '' = 'sdpensuredualdirs' || ${STDCMP} 2>/dev/null -s sdpensuredualdirs ${INSTALLROOT}/fun/sdpensuredualdirs || { ${STDMV} ${INSTALLROOT}/fun/sdpensuredualdirs ${INSTALLROOT}/fun/sdpensuredualdirs.old 2>/dev/null || true; ${STDCP} sdpensuredualdirs ${INSTALLROOT}/fun/sdpensuredualdirs ;}
+done ${INSTALLROOT}/fun/sdpensuredualdirs generated
+make ${INSTALLROOT}/fun/sdpruncheck
+make sdpruncheck
+meta sdpruncheck %.sh>% dp/sdpruncheck.sh sdpruncheck
+make dp/sdpruncheck.sh
+done dp/sdpruncheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpruncheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpruncheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpruncheck.sh sdpruncheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpruncheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpruncheck.sh <<'!'
+exec -
+exec - !
+exec - } > sdpruncheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpruncheck.sh > sdpruncheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpruncheck -a -x sdpruncheck || chmod u+w,+x sdpruncheck
+done sdpruncheck generated
+exec - test '' = 'sdpruncheck' || ${STDCMP} 2>/dev/null -s sdpruncheck ${INSTALLROOT}/fun/sdpruncheck || { ${STDMV} ${INSTALLROOT}/fun/sdpruncheck ${INSTALLROOT}/fun/sdpruncheck.old 2>/dev/null || true; ${STDCP} sdpruncheck ${INSTALLROOT}/fun/sdpruncheck ;}
+done ${INSTALLROOT}/fun/sdpruncheck generated
+make ${INSTALLROOT}/fun/sdpspacecheck
+make sdpspacecheck
+meta sdpspacecheck %.sh>% dp/sdpspacecheck.sh sdpspacecheck
+make dp/sdpspacecheck.sh
+done dp/sdpspacecheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpspacecheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpspacecheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpspacecheck.sh sdpspacecheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpspacecheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpspacecheck.sh <<'!'
+exec -
+exec - !
+exec - } > sdpspacecheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpspacecheck.sh > sdpspacecheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpspacecheck -a -x sdpspacecheck || chmod u+w,+x sdpspacecheck
+done sdpspacecheck generated
+exec - test '' = 'sdpspacecheck' || ${STDCMP} 2>/dev/null -s sdpspacecheck ${INSTALLROOT}/fun/sdpspacecheck || { ${STDMV} ${INSTALLROOT}/fun/sdpspacecheck ${INSTALLROOT}/fun/sdpspacecheck.old 2>/dev/null || true; ${STDCP} sdpspacecheck ${INSTALLROOT}/fun/sdpspacecheck ;}
+done ${INSTALLROOT}/fun/sdpspacecheck generated
+make ${INSTALLROOT}/fun/sdpmpjobcntl
+make sdpmpjobcntl
+meta sdpmpjobcntl %.sh>% dp/sdpmpjobcntl.sh sdpmpjobcntl
+make dp/sdpmpjobcntl.sh
+done dp/sdpmpjobcntl.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpmpjobcntl contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpmpjobcntl.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpmpjobcntl.sh sdpmpjobcntl
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpmpjobcntl.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpmpjobcntl.sh <<'!'
+exec -
+exec - !
+exec - } > sdpmpjobcntl
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpmpjobcntl.sh > sdpmpjobcntl <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpmpjobcntl -a -x sdpmpjobcntl || chmod u+w,+x sdpmpjobcntl
+done sdpmpjobcntl generated
+exec - test '' = 'sdpmpjobcntl' || ${STDCMP} 2>/dev/null -s sdpmpjobcntl ${INSTALLROOT}/fun/sdpmpjobcntl || { ${STDMV} ${INSTALLROOT}/fun/sdpmpjobcntl ${INSTALLROOT}/fun/sdpmpjobcntl.old 2>/dev/null || true; ${STDCP} sdpmpjobcntl ${INSTALLROOT}/fun/sdpmpjobcntl ;}
+done ${INSTALLROOT}/fun/sdpmpjobcntl generated
+make ${INSTALLROOT}/fun/sdpjobcntl
+make sdpjobcntl
+meta sdpjobcntl %.sh>% dp/sdpjobcntl.sh sdpjobcntl
+make dp/sdpjobcntl.sh
+done dp/sdpjobcntl.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpjobcntl contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpjobcntl.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpjobcntl.sh sdpjobcntl
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpjobcntl.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpjobcntl.sh <<'!'
+exec -
+exec - !
+exec - } > sdpjobcntl
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpjobcntl.sh > sdpjobcntl <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpjobcntl -a -x sdpjobcntl || chmod u+w,+x sdpjobcntl
+done sdpjobcntl generated
+exec - test '' = 'sdpjobcntl' || ${STDCMP} 2>/dev/null -s sdpjobcntl ${INSTALLROOT}/fun/sdpjobcntl || { ${STDMV} ${INSTALLROOT}/fun/sdpjobcntl ${INSTALLROOT}/fun/sdpjobcntl.old 2>/dev/null || true; ${STDCP} sdpjobcntl ${INSTALLROOT}/fun/sdpjobcntl ;}
+done ${INSTALLROOT}/fun/sdpjobcntl generated
+make ${INSTALLROOT}/fun/sdpmv
+make sdpmv
+meta sdpmv %.sh>% dp/sdpmv.sh sdpmv
+make dp/sdpmv.sh
+done dp/sdpmv.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sdpmv contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n dp/sdpmv.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp dp/sdpmv.sh sdpmv
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < dp/sdpmv.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - dp/sdpmv.sh <<'!'
+exec -
+exec - !
+exec - } > sdpmv
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - dp/sdpmv.sh > sdpmv <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sdpmv -a -x sdpmv || chmod u+w,+x sdpmv
+done sdpmv generated
+exec - test '' = 'sdpmv' || ${STDCMP} 2>/dev/null -s sdpmv ${INSTALLROOT}/fun/sdpmv || { ${STDMV} ${INSTALLROOT}/fun/sdpmv ${INSTALLROOT}/fun/sdpmv.old 2>/dev/null || true; ${STDCP} sdpmv ${INSTALLROOT}/fun/sdpmv ;}
+done ${INSTALLROOT}/fun/sdpmv generated
+make ${INSTALLROOT}/fun/strensuredirs
+make strensuredirs
+meta strensuredirs %.sh>% tr/strensuredirs.sh strensuredirs
+make tr/strensuredirs.sh
+done tr/strensuredirs.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strensuredirs contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strensuredirs.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strensuredirs.sh strensuredirs
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strensuredirs.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strensuredirs.sh <<'!'
+exec -
+exec - !
+exec - } > strensuredirs
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strensuredirs.sh > strensuredirs <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strensuredirs -a -x strensuredirs || chmod u+w,+x strensuredirs
+done strensuredirs generated
+exec - test '' = 'strensuredirs' || ${STDCMP} 2>/dev/null -s strensuredirs ${INSTALLROOT}/fun/strensuredirs || { ${STDMV} ${INSTALLROOT}/fun/strensuredirs ${INSTALLROOT}/fun/strensuredirs.old 2>/dev/null || true; ${STDCP} strensuredirs ${INSTALLROOT}/fun/strensuredirs ;}
+done ${INSTALLROOT}/fun/strensuredirs generated
+make ${INSTALLROOT}/fun/strruncheck
+make strruncheck
+meta strruncheck %.sh>% tr/strruncheck.sh strruncheck
+make tr/strruncheck.sh
+done tr/strruncheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strruncheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strruncheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strruncheck.sh strruncheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strruncheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strruncheck.sh <<'!'
+exec -
+exec - !
+exec - } > strruncheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strruncheck.sh > strruncheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strruncheck -a -x strruncheck || chmod u+w,+x strruncheck
+done strruncheck generated
+exec - test '' = 'strruncheck' || ${STDCMP} 2>/dev/null -s strruncheck ${INSTALLROOT}/fun/strruncheck || { ${STDMV} ${INSTALLROOT}/fun/strruncheck ${INSTALLROOT}/fun/strruncheck.old 2>/dev/null || true; ${STDCP} strruncheck ${INSTALLROOT}/fun/strruncheck ;}
+done ${INSTALLROOT}/fun/strruncheck generated
+make ${INSTALLROOT}/fun/strspacecheck
+make strspacecheck
+meta strspacecheck %.sh>% tr/strspacecheck.sh strspacecheck
+make tr/strspacecheck.sh
+done tr/strspacecheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strspacecheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strspacecheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strspacecheck.sh strspacecheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strspacecheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strspacecheck.sh <<'!'
+exec -
+exec - !
+exec - } > strspacecheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strspacecheck.sh > strspacecheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strspacecheck -a -x strspacecheck || chmod u+w,+x strspacecheck
+done strspacecheck generated
+exec - test '' = 'strspacecheck' || ${STDCMP} 2>/dev/null -s strspacecheck ${INSTALLROOT}/fun/strspacecheck || { ${STDMV} ${INSTALLROOT}/fun/strspacecheck ${INSTALLROOT}/fun/strspacecheck.old 2>/dev/null || true; ${STDCP} strspacecheck ${INSTALLROOT}/fun/strspacecheck ;}
+done ${INSTALLROOT}/fun/strspacecheck generated
+make ${INSTALLROOT}/fun/strjobcntl
+make strjobcntl
+meta strjobcntl %.sh>% tr/strjobcntl.sh strjobcntl
+make tr/strjobcntl.sh
+done tr/strjobcntl.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : strjobcntl contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n tr/strjobcntl.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp tr/strjobcntl.sh strjobcntl
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < tr/strjobcntl.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - tr/strjobcntl.sh <<'!'
+exec -
+exec - !
+exec - } > strjobcntl
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - tr/strjobcntl.sh > strjobcntl <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w strjobcntl -a -x strjobcntl || chmod u+w,+x strjobcntl
+done strjobcntl generated
+exec - test '' = 'strjobcntl' || ${STDCMP} 2>/dev/null -s strjobcntl ${INSTALLROOT}/fun/strjobcntl || { ${STDMV} ${INSTALLROOT}/fun/strjobcntl ${INSTALLROOT}/fun/strjobcntl.old 2>/dev/null || true; ${STDCP} strjobcntl ${INSTALLROOT}/fun/strjobcntl ;}
+done ${INSTALLROOT}/fun/strjobcntl generated
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/splui
+prev ${INSTALLROOT}/bin
+make splui
+meta splui %.sh>% pl/splui.sh splui
+make pl/splui.sh
+done pl/splui.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : splui contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n pl/splui.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp pl/splui.sh splui
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < pl/splui.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - pl/splui.sh <<'!'
+exec -
+exec - !
+exec - } > splui
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - pl/splui.sh > splui <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w splui -a -x splui || chmod u+w,+x splui
+done splui generated
+exec - test '' = 'splui' || ${STDCMP} 2>/dev/null -s splui ${INSTALLROOT}/bin/splui || { ${STDMV} ${INSTALLROOT}/bin/splui ${INSTALLROOT}/bin/splui.old 2>/dev/null || true; ${STDCP} splui ${INSTALLROOT}/bin/splui ;}
+done ${INSTALLROOT}/bin/splui generated
+make ${INSTALLROOT}/bin/splgen
+make splgen
+meta splgen %.sh>% pl/splgen.sh splgen
+make pl/splgen.sh
+done pl/splgen.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : splgen contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n pl/splgen.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp pl/splgen.sh splgen
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < pl/splgen.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - pl/splgen.sh <<'!'
+exec -
+exec - !
+exec - } > splgen
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - pl/splgen.sh > splgen <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w splgen -a -x splgen || chmod u+w,+x splgen
+done splgen generated
+exec - test '' = 'splgen' || ${STDCMP} 2>/dev/null -s splgen ${INSTALLROOT}/bin/splgen || { ${STDMV} ${INSTALLROOT}/bin/splgen ${INSTALLROOT}/bin/splgen.old 2>/dev/null || true; ${STDCP} splgen ${INSTALLROOT}/bin/splgen ;}
+done ${INSTALLROOT}/bin/splgen generated
+make ${INSTALLROOT}/bin/splprint
+make splprint
+meta splprint %.sh>% pl/splprint.sh splprint
+make pl/splprint.sh
+done pl/splprint.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : splprint contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n pl/splprint.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp pl/splprint.sh splprint
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < pl/splprint.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - pl/splprint.sh <<'!'
+exec -
+exec - !
+exec - } > splprint
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - pl/splprint.sh > splprint <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w splprint -a -x splprint || chmod u+w,+x splprint
+done splprint generated
+exec - test '' = 'splprint' || ${STDCMP} 2>/dev/null -s splprint ${INSTALLROOT}/bin/splprint || { ${STDMV} ${INSTALLROOT}/bin/splprint ${INSTALLROOT}/bin/splprint.old 2>/dev/null || true; ${STDCP} splprint ${INSTALLROOT}/bin/splprint ;}
+done ${INSTALLROOT}/bin/splprint generated
+make ${INSTALLROOT}/lib/lefty
+exec - if silent test ! -d ${INSTALLROOT}/lib/lefty
+exec - then mkdir -p ${INSTALLROOT}/lib/lefty
+exec - fi
+done ${INSTALLROOT}/lib/lefty generated
+make ${INSTALLROOT}/lib/lefty/spl.lefty
+prev ${INSTALLROOT}/lib/lefty
+make pl/spl.lefty
+done pl/spl.lefty
+exec - test '' = 'pl/spl.lefty' || ${STDCMP} 2>/dev/null -s pl/spl.lefty ${INSTALLROOT}/lib/lefty/spl.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl.lefty ${INSTALLROOT}/lib/lefty/spl.lefty.old 2>/dev/null || true; ${STDCP} pl/spl.lefty ${INSTALLROOT}/lib/lefty/spl.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_check.lefty
+make pl/spl_check.lefty
+done pl/spl_check.lefty
+exec - test '' = 'pl/spl_check.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_check.lefty ${INSTALLROOT}/lib/lefty/spl_check.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_check.lefty ${INSTALLROOT}/lib/lefty/spl_check.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_check.lefty ${INSTALLROOT}/lib/lefty/spl_check.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_check.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_gen.lefty
+make pl/spl_gen.lefty
+done pl/spl_gen.lefty
+exec - test '' = 'pl/spl_gen.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_gen.lefty ${INSTALLROOT}/lib/lefty/spl_gen.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_gen.lefty ${INSTALLROOT}/lib/lefty/spl_gen.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_gen.lefty ${INSTALLROOT}/lib/lefty/spl_gen.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_gen.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_objects.lefty
+make pl/spl_objects.lefty
+done pl/spl_objects.lefty
+exec - test '' = 'pl/spl_objects.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_objects.lefty ${INSTALLROOT}/lib/lefty/spl_objects.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_objects.lefty ${INSTALLROOT}/lib/lefty/spl_objects.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_objects.lefty ${INSTALLROOT}/lib/lefty/spl_objects.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_objects.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_proto.lefty
+make pl/spl_proto.lefty
+done pl/spl_proto.lefty
+exec - test '' = 'pl/spl_proto.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_proto.lefty ${INSTALLROOT}/lib/lefty/spl_proto.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_proto.lefty ${INSTALLROOT}/lib/lefty/spl_proto.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_proto.lefty ${INSTALLROOT}/lib/lefty/spl_proto.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_proto.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_query.lefty
+make pl/spl_query.lefty
+done pl/spl_query.lefty
+exec - test '' = 'pl/spl_query.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_query.lefty ${INSTALLROOT}/lib/lefty/spl_query.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_query.lefty ${INSTALLROOT}/lib/lefty/spl_query.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_query.lefty ${INSTALLROOT}/lib/lefty/spl_query.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_query.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty
+make pl/spl_upgrade.lefty
+done pl/spl_upgrade.lefty
+exec - test '' = 'pl/spl_upgrade.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_upgrade.lefty ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_upgrade.lefty ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_upgrade.lefty generated
+make ${INSTALLROOT}/lib/lefty/spl_view.lefty
+make pl/spl_view.lefty
+done pl/spl_view.lefty
+exec - test '' = 'pl/spl_view.lefty' || ${STDCMP} 2>/dev/null -s pl/spl_view.lefty ${INSTALLROOT}/lib/lefty/spl_view.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/spl_view.lefty ${INSTALLROOT}/lib/lefty/spl_view.lefty.old 2>/dev/null || true; ${STDCP} pl/spl_view.lefty ${INSTALLROOT}/lib/lefty/spl_view.lefty ;}
+done ${INSTALLROOT}/lib/lefty/spl_view.lefty generated
+make ${INSTALLROOT}/bin/swmhostname
+make swmhostname
+meta swmhostname %.sh>% wm/swmhostname.sh swmhostname
+make wm/swmhostname.sh
+done wm/swmhostname.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmhostname contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmhostname.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmhostname.sh swmhostname
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmhostname.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmhostname.sh <<'!'
+exec -
+exec - !
+exec - } > swmhostname
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmhostname.sh > swmhostname <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmhostname -a -x swmhostname || chmod u+w,+x swmhostname
+done swmhostname generated
+exec - test '' = 'swmhostname' || ${STDCMP} 2>/dev/null -s swmhostname ${INSTALLROOT}/bin/swmhostname || { ${STDMV} ${INSTALLROOT}/bin/swmhostname ${INSTALLROOT}/bin/swmhostname.old 2>/dev/null || true; ${STDCP} swmhostname ${INSTALLROOT}/bin/swmhostname ;}
+done ${INSTALLROOT}/bin/swmhostname generated
+make ${INSTALLROOT}/bin/swmiplookup
+make swmiplookup
+meta swmiplookup %.sh>% wm/swmiplookup.sh swmiplookup
+make wm/swmiplookup.sh
+done wm/swmiplookup.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmiplookup contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmiplookup.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmiplookup.sh swmiplookup
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmiplookup.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmiplookup.sh <<'!'
+exec -
+exec - !
+exec - } > swmiplookup
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmiplookup.sh > swmiplookup <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmiplookup -a -x swmiplookup || chmod u+w,+x swmiplookup
+done swmiplookup generated
+exec - test '' = 'swmiplookup' || ${STDCMP} 2>/dev/null -s swmiplookup ${INSTALLROOT}/bin/swmiplookup || { ${STDMV} ${INSTALLROOT}/bin/swmiplookup ${INSTALLROOT}/bin/swmiplookup.old 2>/dev/null || true; ${STDCP} swmiplookup ${INSTALLROOT}/bin/swmiplookup ;}
+done ${INSTALLROOT}/bin/swmiplookup generated
+make ${INSTALLROOT}/bin/swmaccounts
+make swmaccounts
+meta swmaccounts %.sh>% wm/swmaccounts.sh swmaccounts
+make wm/swmaccounts.sh
+done wm/swmaccounts.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmaccounts contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmaccounts.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmaccounts.sh swmaccounts
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmaccounts.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmaccounts.sh <<'!'
+exec -
+exec - !
+exec - } > swmaccounts
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmaccounts.sh > swmaccounts <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmaccounts -a -x swmaccounts || chmod u+w,+x swmaccounts
+done swmaccounts generated
+exec - test '' = 'swmaccounts' || ${STDCMP} 2>/dev/null -s swmaccounts ${INSTALLROOT}/bin/swmaccounts || { ${STDMV} ${INSTALLROOT}/bin/swmaccounts ${INSTALLROOT}/bin/swmaccounts.old 2>/dev/null || true; ${STDCP} swmaccounts ${INSTALLROOT}/bin/swmaccounts ;}
+done ${INSTALLROOT}/bin/swmaccounts generated
+make ${INSTALLROOT}/fun/swmuseringroups
+make swmuseringroups
+meta swmuseringroups %.sh>% wm/swmuseringroups.sh swmuseringroups
+make wm/swmuseringroups.sh
+done wm/swmuseringroups.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmuseringroups contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmuseringroups.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmuseringroups.sh swmuseringroups
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmuseringroups.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmuseringroups.sh <<'!'
+exec -
+exec - !
+exec - } > swmuseringroups
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmuseringroups.sh > swmuseringroups <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmuseringroups -a -x swmuseringroups || chmod u+w,+x swmuseringroups
+done swmuseringroups generated
+exec - test '' = 'swmuseringroups' || ${STDCMP} 2>/dev/null -s swmuseringroups ${INSTALLROOT}/fun/swmuseringroups || { ${STDMV} ${INSTALLROOT}/fun/swmuseringroups ${INSTALLROOT}/fun/swmuseringroups.old 2>/dev/null || true; ${STDCP} swmuseringroups ${INSTALLROOT}/fun/swmuseringroups ;}
+done ${INSTALLROOT}/fun/swmuseringroups generated
+make ${INSTALLROOT}/www/bin
+exec - if silent test ! -d ${INSTALLROOT}/www/bin
+exec - then mkdir -p ${INSTALLROOT}/www/bin
+exec - fi
+done ${INSTALLROOT}/www/bin generated
+make ${INSTALLROOT}/www/bin/swmenv_sample
+prev ${INSTALLROOT}/www/bin
+make swmenv_sample
+meta swmenv_sample %.sh>% wm/swmenv_sample.sh swmenv_sample
+make wm/swmenv_sample.sh
+done wm/swmenv_sample.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmenv_sample contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmenv_sample.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmenv_sample.sh swmenv_sample
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmenv_sample.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmenv_sample.sh <<'!'
+exec -
+exec - !
+exec - } > swmenv_sample
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmenv_sample.sh > swmenv_sample <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmenv_sample -a -x swmenv_sample || chmod u+w,+x swmenv_sample
+done swmenv_sample generated
+exec - test '' = 'swmenv_sample' || ${STDCMP} 2>/dev/null -s swmenv_sample ${INSTALLROOT}/www/bin/swmenv_sample || { ${STDMV} ${INSTALLROOT}/www/bin/swmenv_sample ${INSTALLROOT}/www/bin/swmenv_sample.old 2>/dev/null || true; ${STDCP} swmenv_sample ${INSTALLROOT}/www/bin/swmenv_sample ;}
+done ${INSTALLROOT}/www/bin/swmenv_sample generated
+make ${INSTALLROOT}/www/bin/swmgetinfo
+make swmgetinfo
+meta swmgetinfo %.sh>% wm/swmgetinfo.sh swmgetinfo
+make wm/swmgetinfo.sh
+done wm/swmgetinfo.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmgetinfo contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmgetinfo.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmgetinfo.sh swmgetinfo
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmgetinfo.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmgetinfo.sh <<'!'
+exec -
+exec - !
+exec - } > swmgetinfo
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmgetinfo.sh > swmgetinfo <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmgetinfo -a -x swmgetinfo || chmod u+w,+x swmgetinfo
+done swmgetinfo generated
+exec - test '' = 'swmgetinfo' || ${STDCMP} 2>/dev/null -s swmgetinfo ${INSTALLROOT}/www/bin/swmgetinfo || { ${STDMV} ${INSTALLROOT}/www/bin/swmgetinfo ${INSTALLROOT}/www/bin/swmgetinfo.old 2>/dev/null || true; ${STDCP} swmgetinfo ${INSTALLROOT}/www/bin/swmgetinfo ;}
+done ${INSTALLROOT}/www/bin/swmgetinfo generated
+make ${INSTALLROOT}/www/bin/swmlistfiles
+make swmlistfiles
+meta swmlistfiles %.sh>% wm/swmlistfiles.sh swmlistfiles
+make wm/swmlistfiles.sh
+done wm/swmlistfiles.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmlistfiles contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmlistfiles.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmlistfiles.sh swmlistfiles
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmlistfiles.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmlistfiles.sh <<'!'
+exec -
+exec - !
+exec - } > swmlistfiles
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmlistfiles.sh > swmlistfiles <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmlistfiles -a -x swmlistfiles || chmod u+w,+x swmlistfiles
+done swmlistfiles generated
+exec - test '' = 'swmlistfiles' || ${STDCMP} 2>/dev/null -s swmlistfiles ${INSTALLROOT}/www/bin/swmlistfiles || { ${STDMV} ${INSTALLROOT}/www/bin/swmlistfiles ${INSTALLROOT}/www/bin/swmlistfiles.old 2>/dev/null || true; ${STDCP} swmlistfiles ${INSTALLROOT}/www/bin/swmlistfiles ;}
+done ${INSTALLROOT}/www/bin/swmlistfiles generated
+make ${INSTALLROOT}/www/bin/swmfilestats
+make swmfilestats
+meta swmfilestats %.sh>% wm/swmfilestats.sh swmfilestats
+make wm/swmfilestats.sh
+done wm/swmfilestats.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmfilestats contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmfilestats.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmfilestats.sh swmfilestats
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmfilestats.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmfilestats.sh <<'!'
+exec -
+exec - !
+exec - } > swmfilestats
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmfilestats.sh > swmfilestats <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmfilestats -a -x swmfilestats || chmod u+w,+x swmfilestats
+done swmfilestats generated
+exec - test '' = 'swmfilestats' || ${STDCMP} 2>/dev/null -s swmfilestats ${INSTALLROOT}/www/bin/swmfilestats || { ${STDMV} ${INSTALLROOT}/www/bin/swmfilestats ${INSTALLROOT}/www/bin/swmfilestats.old 2>/dev/null || true; ${STDCP} swmfilestats ${INSTALLROOT}/www/bin/swmfilestats ;}
+done ${INSTALLROOT}/www/bin/swmfilestats generated
+make ${INSTALLROOT}/www/bin/swmmimesplit
+prev swmmimesplit
+exec - test '' = 'swmmimesplit' || ${STDCMP} 2>/dev/null -s swmmimesplit ${INSTALLROOT}/www/bin/swmmimesplit || { ${STDMV} ${INSTALLROOT}/www/bin/swmmimesplit ${INSTALLROOT}/www/bin/swmmimesplit.old 2>/dev/null || true; ${STDCP} swmmimesplit ${INSTALLROOT}/www/bin/swmmimesplit ;}
+done ${INSTALLROOT}/www/bin/swmmimesplit generated
+make ${INSTALLROOT}/www/etc
+exec - if silent test ! -d ${INSTALLROOT}/www/etc
+exec - then mkdir -p ${INSTALLROOT}/www/etc
+exec - fi
+done ${INSTALLROOT}/www/etc generated
+make ${INSTALLROOT}/www/etc/swmhb
+prev ${INSTALLROOT}/www/etc
+make swmhb
+meta swmhb %.sh>% wm/swmhb.sh swmhb
+make wm/swmhb.sh
+done wm/swmhb.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmhb contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmhb.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmhb.sh swmhb
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmhb.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmhb.sh <<'!'
+exec -
+exec - !
+exec - } > swmhb
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmhb.sh > swmhb <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmhb -a -x swmhb || chmod u+w,+x swmhb
+done swmhb generated
+exec - test '' = 'swmhb' || ${STDCMP} 2>/dev/null -s swmhb ${INSTALLROOT}/www/etc/swmhb || { ${STDMV} ${INSTALLROOT}/www/etc/swmhb ${INSTALLROOT}/www/etc/swmhb.old 2>/dev/null || true; ${STDCP} swmhb ${INSTALLROOT}/www/etc/swmhb ;}
+done ${INSTALLROOT}/www/etc/swmhb generated
+make ${INSTALLROOT}/www/etc/swmcleanup
+make swmcleanup
+meta swmcleanup %.sh>% wm/swmcleanup.sh swmcleanup
+make wm/swmcleanup.sh
+done wm/swmcleanup.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmcleanup contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmcleanup.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmcleanup.sh swmcleanup
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmcleanup.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmcleanup.sh <<'!'
+exec -
+exec - !
+exec - } > swmcleanup
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmcleanup.sh > swmcleanup <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmcleanup -a -x swmcleanup || chmod u+w,+x swmcleanup
+done swmcleanup generated
+exec - test '' = 'swmcleanup' || ${STDCMP} 2>/dev/null -s swmcleanup ${INSTALLROOT}/www/etc/swmcleanup || { ${STDMV} ${INSTALLROOT}/www/etc/swmcleanup ${INSTALLROOT}/www/etc/swmcleanup.old 2>/dev/null || true; ${STDCP} swmcleanup ${INSTALLROOT}/www/etc/swmcleanup ;}
+done ${INSTALLROOT}/www/etc/swmcleanup generated
+make ${INSTALLROOT}/www/etc/gateKeeper.jar
+make wm/gateKeeper.jar
+done wm/gateKeeper.jar
+exec - test '' = 'wm/gateKeeper.jar' || ${STDCMP} 2>/dev/null -s wm/gateKeeper.jar ${INSTALLROOT}/www/etc/gateKeeper.jar || { ${STDMV} ${INSTALLROOT}/www/etc/gateKeeper.jar ${INSTALLROOT}/www/etc/gateKeeper.jar.old 2>/dev/null || true; ${STDCP} wm/gateKeeper.jar ${INSTALLROOT}/www/etc/gateKeeper.jar ;}
+done ${INSTALLROOT}/www/etc/gateKeeper.jar generated
+make ${INSTALLROOT}/www/etc/PSE_Lite.jar
+make wm/PSE_Lite.jar
+done wm/PSE_Lite.jar
+exec - test '' = 'wm/PSE_Lite.jar' || ${STDCMP} 2>/dev/null -s wm/PSE_Lite.jar ${INSTALLROOT}/www/etc/PSE_Lite.jar || { ${STDMV} ${INSTALLROOT}/www/etc/PSE_Lite.jar ${INSTALLROOT}/www/etc/PSE_Lite.jar.old 2>/dev/null || true; ${STDCP} wm/PSE_Lite.jar ${INSTALLROOT}/www/etc/PSE_Lite.jar ;}
+done ${INSTALLROOT}/www/etc/PSE_Lite.jar generated
+make ${INSTALLROOT}/www/cgi-bin-members
+exec - if silent test ! -d ${INSTALLROOT}/www/cgi-bin-members
+exec - then mkdir -p ${INSTALLROOT}/www/cgi-bin-members
+exec - fi
+done ${INSTALLROOT}/www/cgi-bin-members generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi
+prev ${INSTALLROOT}/www/cgi-bin-members
+make swmstart.cgi
+meta swmstart.cgi %.sh>% wm/swmstart.cgi.sh swmstart.cgi
+make wm/swmstart.cgi.sh
+done wm/swmstart.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmstart.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmstart.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmstart.cgi.sh swmstart.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmstart.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmstart.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmstart.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmstart.cgi.sh > swmstart.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmstart.cgi -a -x swmstart.cgi || chmod u+w,+x swmstart.cgi
+done swmstart.cgi generated
+exec - test '' = 'swmstart.cgi' || ${STDCMP} 2>/dev/null -s swmstart.cgi ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi.old 2>/dev/null || true; ${STDCP} swmstart.cgi ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmstart.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi
+make swmgreet.cgi
+meta swmgreet.cgi %.sh>% wm/swmgreet.cgi.sh swmgreet.cgi
+make wm/swmgreet.cgi.sh
+done wm/swmgreet.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmgreet.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmgreet.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmgreet.cgi.sh swmgreet.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmgreet.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmgreet.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmgreet.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmgreet.cgi.sh > swmgreet.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmgreet.cgi -a -x swmgreet.cgi || chmod u+w,+x swmgreet.cgi
+done swmgreet.cgi generated
+exec - test '' = 'swmgreet.cgi' || ${STDCMP} 2>/dev/null -s swmgreet.cgi ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi.old 2>/dev/null || true; ${STDCP} swmgreet.cgi ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmgreet.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi
+make swmcontrol.cgi
+meta swmcontrol.cgi %.sh>% wm/swmcontrol.cgi.sh swmcontrol.cgi
+make wm/swmcontrol.cgi.sh
+done wm/swmcontrol.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmcontrol.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmcontrol.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmcontrol.cgi.sh swmcontrol.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmcontrol.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmcontrol.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmcontrol.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmcontrol.cgi.sh > swmcontrol.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmcontrol.cgi -a -x swmcontrol.cgi || chmod u+w,+x swmcontrol.cgi
+done swmcontrol.cgi generated
+exec - test '' = 'swmcontrol.cgi' || ${STDCMP} 2>/dev/null -s swmcontrol.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi.old 2>/dev/null || true; ${STDCP} swmcontrol.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmcontrol.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi
+make swmuploadfile.cgi
+meta swmuploadfile.cgi %.sh>% wm/swmuploadfile.cgi.sh swmuploadfile.cgi
+make wm/swmuploadfile.cgi.sh
+done wm/swmuploadfile.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmuploadfile.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmuploadfile.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmuploadfile.cgi.sh swmuploadfile.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmuploadfile.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmuploadfile.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmuploadfile.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmuploadfile.cgi.sh > swmuploadfile.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmuploadfile.cgi -a -x swmuploadfile.cgi || chmod u+w,+x swmuploadfile.cgi
+done swmuploadfile.cgi generated
+exec - test '' = 'swmuploadfile.cgi' || ${STDCMP} 2>/dev/null -s swmuploadfile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi.old 2>/dev/null || true; ${STDCP} swmuploadfile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmuploadfile.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi
+make swmlistfiles.cgi
+meta swmlistfiles.cgi %.sh>% wm/swmlistfiles.cgi.sh swmlistfiles.cgi
+make wm/swmlistfiles.cgi.sh
+done wm/swmlistfiles.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmlistfiles.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmlistfiles.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmlistfiles.cgi.sh swmlistfiles.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmlistfiles.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmlistfiles.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmlistfiles.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmlistfiles.cgi.sh > swmlistfiles.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmlistfiles.cgi -a -x swmlistfiles.cgi || chmod u+w,+x swmlistfiles.cgi
+done swmlistfiles.cgi generated
+exec - test '' = 'swmlistfiles.cgi' || ${STDCMP} 2>/dev/null -s swmlistfiles.cgi ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi.old 2>/dev/null || true; ${STDCP} swmlistfiles.cgi ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmlistfiles.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi
+make swmdeletefile1.cgi
+meta swmdeletefile1.cgi %.sh>% wm/swmdeletefile1.cgi.sh swmdeletefile1.cgi
+make wm/swmdeletefile1.cgi.sh
+done wm/swmdeletefile1.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmdeletefile1.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmdeletefile1.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmdeletefile1.cgi.sh swmdeletefile1.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmdeletefile1.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmdeletefile1.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmdeletefile1.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmdeletefile1.cgi.sh > swmdeletefile1.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmdeletefile1.cgi -a -x swmdeletefile1.cgi || chmod u+w,+x swmdeletefile1.cgi
+done swmdeletefile1.cgi generated
+exec - test '' = 'swmdeletefile1.cgi' || ${STDCMP} 2>/dev/null -s swmdeletefile1.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi.old 2>/dev/null || true; ${STDCP} swmdeletefile1.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile1.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi
+make swmdeletefile2.cgi
+meta swmdeletefile2.cgi %.sh>% wm/swmdeletefile2.cgi.sh swmdeletefile2.cgi
+make wm/swmdeletefile2.cgi.sh
+done wm/swmdeletefile2.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmdeletefile2.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmdeletefile2.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmdeletefile2.cgi.sh swmdeletefile2.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmdeletefile2.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmdeletefile2.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmdeletefile2.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmdeletefile2.cgi.sh > swmdeletefile2.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmdeletefile2.cgi -a -x swmdeletefile2.cgi || chmod u+w,+x swmdeletefile2.cgi
+done swmdeletefile2.cgi generated
+exec - test '' = 'swmdeletefile2.cgi' || ${STDCMP} 2>/dev/null -s swmdeletefile2.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi.old 2>/dev/null || true; ${STDCP} swmdeletefile2.cgi ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmdeletefile2.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi
+make swmsavefile.cgi
+meta swmsavefile.cgi %.sh>% wm/swmsavefile.cgi.sh swmsavefile.cgi
+make wm/swmsavefile.cgi.sh
+done wm/swmsavefile.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmsavefile.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmsavefile.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmsavefile.cgi.sh swmsavefile.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmsavefile.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmsavefile.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmsavefile.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmsavefile.cgi.sh > swmsavefile.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmsavefile.cgi -a -x swmsavefile.cgi || chmod u+w,+x swmsavefile.cgi
+done swmsavefile.cgi generated
+exec - test '' = 'swmsavefile.cgi' || ${STDCMP} 2>/dev/null -s swmsavefile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi.old 2>/dev/null || true; ${STDCP} swmsavefile.cgi ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmsavefile.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi
+make swmcpasswd.cgi
+meta swmcpasswd.cgi %.sh>% wm/swmcpasswd.cgi.sh swmcpasswd.cgi
+make wm/swmcpasswd.cgi.sh
+done wm/swmcpasswd.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : swmcpasswd.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n wm/swmcpasswd.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp wm/swmcpasswd.cgi.sh swmcpasswd.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < wm/swmcpasswd.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - wm/swmcpasswd.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > swmcpasswd.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - wm/swmcpasswd.cgi.sh > swmcpasswd.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w swmcpasswd.cgi -a -x swmcpasswd.cgi || chmod u+w,+x swmcpasswd.cgi
+done swmcpasswd.cgi generated
+exec - test '' = 'swmcpasswd.cgi' || ${STDCMP} 2>/dev/null -s swmcpasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi.old 2>/dev/null || true; ${STDCP} swmcpasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmcpasswd.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi
+prev swmchangepasswd.cgi
+exec - test '' = 'swmchangepasswd.cgi' || ${STDCMP} 2>/dev/null -s swmchangepasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi.old 2>/dev/null || true; ${STDCP} swmchangepasswd.cgi ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/swmchangepasswd.cgi generated
+make ${INSTALLROOT}/www/htdocs/members
+exec - if silent test ! -d ${INSTALLROOT}/www/htdocs/members
+exec - then mkdir -p ${INSTALLROOT}/www/htdocs/members
+exec - fi
+done ${INSTALLROOT}/www/htdocs/members generated
+make ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html
+prev ${INSTALLROOT}/www/htdocs/members
+make wm/swmuploadfile.html
+done wm/swmuploadfile.html
+exec - test '' = 'wm/swmuploadfile.html' || ${STDCMP} 2>/dev/null -s wm/swmuploadfile.html ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html || { ${STDMV} ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html.old 2>/dev/null || true; ${STDCP} wm/swmuploadfile.html ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html ;}
+done ${INSTALLROOT}/www/htdocs/members/swmuploadfile.html generated
+make ${INSTALLROOT}/bin/swmcheckpasswd
+prev swmcheckpasswd
+exec - test '' = 'swmcheckpasswd' || ${STDCMP} 2>/dev/null -s swmcheckpasswd ${INSTALLROOT}/bin/swmcheckpasswd || { ${STDMV} ${INSTALLROOT}/bin/swmcheckpasswd ${INSTALLROOT}/bin/swmcheckpasswd.old 2>/dev/null || true; ${STDCP} swmcheckpasswd ${INSTALLROOT}/bin/swmcheckpasswd ;}
+done ${INSTALLROOT}/bin/swmcheckpasswd generated
+make ${INSTALLROOT}/bin/suiplot
+make suiplot
+meta suiplot %.sh>% ui/suiplot.sh suiplot
+make ui/suiplot.sh
+done ui/suiplot.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiplot contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiplot.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiplot.sh suiplot
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiplot.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiplot.sh <<'!'
+exec -
+exec - !
+exec - } > suiplot
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiplot.sh > suiplot <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiplot -a -x suiplot || chmod u+w,+x suiplot
+done suiplot generated
+exec - test '' = 'suiplot' || ${STDCMP} 2>/dev/null -s suiplot ${INSTALLROOT}/bin/suiplot || { ${STDMV} ${INSTALLROOT}/bin/suiplot ${INSTALLROOT}/bin/suiplot.old 2>/dev/null || true; ${STDCP} suiplot ${INSTALLROOT}/bin/suiplot ;}
+done ${INSTALLROOT}/bin/suiplot generated
+make ${INSTALLROOT}/bin/suigmap
+make suigmap
+meta suigmap %.sh>% ui/suigmap.sh suigmap
+make ui/suigmap.sh
+done ui/suigmap.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suigmap contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suigmap.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suigmap.sh suigmap
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suigmap.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suigmap.sh <<'!'
+exec -
+exec - !
+exec - } > suigmap
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suigmap.sh > suigmap <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suigmap -a -x suigmap || chmod u+w,+x suigmap
+done suigmap generated
+exec - test '' = 'suigmap' || ${STDCMP} 2>/dev/null -s suigmap ${INSTALLROOT}/bin/suigmap || { ${STDMV} ${INSTALLROOT}/bin/suigmap ${INSTALLROOT}/bin/suigmap.old 2>/dev/null || true; ${STDCP} suigmap ${INSTALLROOT}/bin/suigmap ;}
+done ${INSTALLROOT}/bin/suigmap generated
+make ${INSTALLROOT}/bin/suigraph
+make suigraph
+meta suigraph %.sh>% ui/suigraph.sh suigraph
+make ui/suigraph.sh
+done ui/suigraph.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suigraph contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suigraph.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suigraph.sh suigraph
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suigraph.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suigraph.sh <<'!'
+exec -
+exec - !
+exec - } > suigraph
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suigraph.sh > suigraph <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suigraph -a -x suigraph || chmod u+w,+x suigraph
+done suigraph generated
+exec - test '' = 'suigraph' || ${STDCMP} 2>/dev/null -s suigraph ${INSTALLROOT}/bin/suigraph || { ${STDMV} ${INSTALLROOT}/bin/suigraph ${INSTALLROOT}/bin/suigraph.old 2>/dev/null || true; ${STDCP} suigraph ${INSTALLROOT}/bin/suigraph ;}
+done ${INSTALLROOT}/bin/suigraph generated
+make ${INSTALLROOT}/bin/suitable
+make suitable
+meta suitable %.sh>% ui/suitable.sh suitable
+make ui/suitable.sh
+done ui/suitable.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suitable contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suitable.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suitable.sh suitable
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suitable.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suitable.sh <<'!'
+exec -
+exec - !
+exec - } > suitable
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suitable.sh > suitable <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suitable -a -x suitable || chmod u+w,+x suitable
+done suitable generated
+exec - test '' = 'suitable' || ${STDCMP} 2>/dev/null -s suitable ${INSTALLROOT}/bin/suitable || { ${STDMV} ${INSTALLROOT}/bin/suitable ${INSTALLROOT}/bin/suitable.old 2>/dev/null || true; ${STDCP} suitable ${INSTALLROOT}/bin/suitable ;}
+done ${INSTALLROOT}/bin/suitable generated
+make ${INSTALLROOT}/bin/suibrowser
+make suibrowser
+meta suibrowser %.sh>% ui/suibrowser.sh suibrowser
+make ui/suibrowser.sh
+done ui/suibrowser.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suibrowser contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suibrowser.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suibrowser.sh suibrowser
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suibrowser.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suibrowser.sh <<'!'
+exec -
+exec - !
+exec - } > suibrowser
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suibrowser.sh > suibrowser <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suibrowser -a -x suibrowser || chmod u+w,+x suibrowser
+done suibrowser generated
+exec - test '' = 'suibrowser' || ${STDCMP} 2>/dev/null -s suibrowser ${INSTALLROOT}/bin/suibrowser || { ${STDMV} ${INSTALLROOT}/bin/suibrowser ${INSTALLROOT}/bin/suibrowser.old 2>/dev/null || true; ${STDCP} suibrowser ${INSTALLROOT}/bin/suibrowser ;}
+done ${INSTALLROOT}/bin/suibrowser generated
+make ${INSTALLROOT}/bin/suiprefgen
+make suiprefgen
+meta suiprefgen %.sh>% ui/suiprefgen.sh suiprefgen
+make ui/suiprefgen.sh
+done ui/suiprefgen.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiprefgen contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiprefgen.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiprefgen.sh suiprefgen
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiprefgen.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiprefgen.sh <<'!'
+exec -
+exec - !
+exec - } > suiprefgen
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiprefgen.sh > suiprefgen <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiprefgen -a -x suiprefgen || chmod u+w,+x suiprefgen
+done suiprefgen generated
+exec - test '' = 'suiprefgen' || ${STDCMP} 2>/dev/null -s suiprefgen ${INSTALLROOT}/bin/suiprefgen || { ${STDMV} ${INSTALLROOT}/bin/suiprefgen ${INSTALLROOT}/bin/suiprefgen.old 2>/dev/null || true; ${STDCP} suiprefgen ${INSTALLROOT}/bin/suiprefgen ;}
+done ${INSTALLROOT}/bin/suiprefgen generated
+make ${INSTALLROOT}/bin/suiruncmd
+make suiruncmd
+meta suiruncmd %.sh>% ui/suiruncmd.sh suiruncmd
+make ui/suiruncmd.sh
+done ui/suiruncmd.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiruncmd contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiruncmd.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiruncmd.sh suiruncmd
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiruncmd.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiruncmd.sh <<'!'
+exec -
+exec - !
+exec - } > suiruncmd
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiruncmd.sh > suiruncmd <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiruncmd -a -x suiruncmd || chmod u+w,+x suiruncmd
+done suiruncmd generated
+exec - test '' = 'suiruncmd' || ${STDCMP} 2>/dev/null -s suiruncmd ${INSTALLROOT}/bin/suiruncmd || { ${STDMV} ${INSTALLROOT}/bin/suiruncmd ${INSTALLROOT}/bin/suiruncmd.old 2>/dev/null || true; ${STDCP} suiruncmd ${INSTALLROOT}/bin/suiruncmd ;}
+done ${INSTALLROOT}/bin/suiruncmd generated
+make ${INSTALLROOT}/bin/suigraphhelper
+make suigraphhelper
+meta suigraphhelper %.sh>% ui/suigraphhelper.sh suigraphhelper
+make ui/suigraphhelper.sh
+done ui/suigraphhelper.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suigraphhelper contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suigraphhelper.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suigraphhelper.sh suigraphhelper
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suigraphhelper.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suigraphhelper.sh <<'!'
+exec -
+exec - !
+exec - } > suigraphhelper
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suigraphhelper.sh > suigraphhelper <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suigraphhelper -a -x suigraphhelper || chmod u+w,+x suigraphhelper
+done suigraphhelper generated
+exec - test '' = 'suigraphhelper' || ${STDCMP} 2>/dev/null -s suigraphhelper ${INSTALLROOT}/bin/suigraphhelper || { ${STDMV} ${INSTALLROOT}/bin/suigraphhelper ${INSTALLROOT}/bin/suigraphhelper.old 2>/dev/null || true; ${STDCP} suigraphhelper ${INSTALLROOT}/bin/suigraphhelper ;}
+done ${INSTALLROOT}/bin/suigraphhelper generated
+make ${INSTALLROOT}/bin/suicoord2item
+prev suicoord2item
+exec - test '' = 'suicoord2item' || ${STDCMP} 2>/dev/null -s suicoord2item ${INSTALLROOT}/bin/suicoord2item || { ${STDMV} ${INSTALLROOT}/bin/suicoord2item ${INSTALLROOT}/bin/suicoord2item.old 2>/dev/null || true; ${STDCP} suicoord2item ${INSTALLROOT}/bin/suicoord2item ;}
+done ${INSTALLROOT}/bin/suicoord2item generated
+make ${INSTALLROOT}/bin/suimhistory
+make suimhistory
+meta suimhistory %.sh>% ui/suimhistory.sh suimhistory
+make ui/suimhistory.sh
+done ui/suimhistory.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suimhistory contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suimhistory.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suimhistory.sh suimhistory
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suimhistory.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suimhistory.sh <<'!'
+exec -
+exec - !
+exec - } > suimhistory
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suimhistory.sh > suimhistory <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suimhistory -a -x suimhistory || chmod u+w,+x suimhistory
+done suimhistory generated
+exec - test '' = 'suimhistory' || ${STDCMP} 2>/dev/null -s suimhistory ${INSTALLROOT}/bin/suimhistory || { ${STDMV} ${INSTALLROOT}/bin/suimhistory ${INSTALLROOT}/bin/suimhistory.old 2>/dev/null || true; ${STDCP} suimhistory ${INSTALLROOT}/bin/suimhistory ;}
+done ${INSTALLROOT}/bin/suimhistory generated
+make ${INSTALLROOT}/bin/plotgen
+make plotgen
+meta plotgen %.sh>% ui/plotgen.sh plotgen
+make ui/plotgen.sh
+done ui/plotgen.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : plotgen contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/plotgen.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/plotgen.sh plotgen
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/plotgen.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/plotgen.sh <<'!'
+exec -
+exec - !
+exec - } > plotgen
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/plotgen.sh > plotgen <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w plotgen -a -x plotgen || chmod u+w,+x plotgen
+done plotgen generated
+exec - test '' = 'plotgen' || ${STDCMP} 2>/dev/null -s plotgen ${INSTALLROOT}/bin/plotgen || { ${STDMV} ${INSTALLROOT}/bin/plotgen ${INSTALLROOT}/bin/plotgen.old 2>/dev/null || true; ${STDCP} plotgen ${INSTALLROOT}/bin/plotgen ;}
+done ${INSTALLROOT}/bin/plotgen generated
+make ${INSTALLROOT}/bin/gmapgen
+make gmapgen
+meta gmapgen %.sh>% ui/gmapgen.sh gmapgen
+make ui/gmapgen.sh
+done ui/gmapgen.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : gmapgen contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/gmapgen.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/gmapgen.sh gmapgen
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/gmapgen.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/gmapgen.sh <<'!'
+exec -
+exec - !
+exec - } > gmapgen
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/gmapgen.sh > gmapgen <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w gmapgen -a -x gmapgen || chmod u+w,+x gmapgen
+done gmapgen generated
+exec - test '' = 'gmapgen' || ${STDCMP} 2>/dev/null -s gmapgen ${INSTALLROOT}/bin/gmapgen || { ${STDMV} ${INSTALLROOT}/bin/gmapgen ${INSTALLROOT}/bin/gmapgen.old 2>/dev/null || true; ${STDCP} gmapgen ${INSTALLROOT}/bin/gmapgen ;}
+done ${INSTALLROOT}/bin/gmapgen generated
+make ${INSTALLROOT}/fun/suireadcmd
+make suireadcmd
+meta suireadcmd %.sh>% ui/suireadcmd.sh suireadcmd
+make ui/suireadcmd.sh
+done ui/suireadcmd.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suireadcmd contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suireadcmd.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suireadcmd.sh suireadcmd
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suireadcmd.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suireadcmd.sh <<'!'
+exec -
+exec - !
+exec - } > suireadcmd
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suireadcmd.sh > suireadcmd <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suireadcmd -a -x suireadcmd || chmod u+w,+x suireadcmd
+done suireadcmd generated
+exec - test '' = 'suireadcmd' || ${STDCMP} 2>/dev/null -s suireadcmd ${INSTALLROOT}/fun/suireadcmd || { ${STDMV} ${INSTALLROOT}/fun/suireadcmd ${INSTALLROOT}/fun/suireadcmd.old 2>/dev/null || true; ${STDCP} suireadcmd ${INSTALLROOT}/fun/suireadcmd ;}
+done ${INSTALLROOT}/fun/suireadcmd generated
+make ${INSTALLROOT}/fun/suireadkv
+make suireadkv
+meta suireadkv %.sh>% ui/suireadkv.sh suireadkv
+make ui/suireadkv.sh
+done ui/suireadkv.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suireadkv contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suireadkv.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suireadkv.sh suireadkv
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suireadkv.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suireadkv.sh <<'!'
+exec -
+exec - !
+exec - } > suireadkv
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suireadkv.sh > suireadkv <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suireadkv -a -x suireadkv || chmod u+w,+x suireadkv
+done suireadkv generated
+exec - test '' = 'suireadkv' || ${STDCMP} 2>/dev/null -s suireadkv ${INSTALLROOT}/fun/suireadkv || { ${STDMV} ${INSTALLROOT}/fun/suireadkv ${INSTALLROOT}/fun/suireadkv.old 2>/dev/null || true; ${STDCP} suireadkv ${INSTALLROOT}/fun/suireadkv ;}
+done ${INSTALLROOT}/fun/suireadkv generated
+make ${INSTALLROOT}/fun/suireadcgikv
+make suireadcgikv
+meta suireadcgikv %.sh>% ui/suireadcgikv.sh suireadcgikv
+make ui/suireadcgikv.sh
+done ui/suireadcgikv.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suireadcgikv contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suireadcgikv.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suireadcgikv.sh suireadcgikv
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suireadcgikv.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suireadcgikv.sh <<'!'
+exec -
+exec - !
+exec - } > suireadcgikv
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suireadcgikv.sh > suireadcgikv <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suireadcgikv -a -x suireadcgikv || chmod u+w,+x suireadcgikv
+done suireadcgikv generated
+exec - test '' = 'suireadcgikv' || ${STDCMP} 2>/dev/null -s suireadcgikv ${INSTALLROOT}/fun/suireadcgikv || { ${STDMV} ${INSTALLROOT}/fun/suireadcgikv ${INSTALLROOT}/fun/suireadcgikv.old 2>/dev/null || true; ${STDCP} suireadcgikv ${INSTALLROOT}/fun/suireadcgikv ;}
+done ${INSTALLROOT}/fun/suireadcgikv generated
+make ${INSTALLROOT}/lib/lefty/suiutil.lefty
+make ui/suiutil.lefty
+done ui/suiutil.lefty
+exec - test '' = 'ui/suiutil.lefty' || ${STDCMP} 2>/dev/null -s ui/suiutil.lefty ${INSTALLROOT}/lib/lefty/suiutil.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suiutil.lefty ${INSTALLROOT}/lib/lefty/suiutil.lefty.old 2>/dev/null || true; ${STDCP} ui/suiutil.lefty ${INSTALLROOT}/lib/lefty/suiutil.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suiutil.lefty generated
+make ${INSTALLROOT}/lib/lefty/suigmap.lefty
+make ui/suigmap.lefty
+done ui/suigmap.lefty
+exec - test '' = 'ui/suigmap.lefty' || ${STDCMP} 2>/dev/null -s ui/suigmap.lefty ${INSTALLROOT}/lib/lefty/suigmap.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suigmap.lefty ${INSTALLROOT}/lib/lefty/suigmap.lefty.old 2>/dev/null || true; ${STDCP} ui/suigmap.lefty ${INSTALLROOT}/lib/lefty/suigmap.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suigmap.lefty generated
+make ${INSTALLROOT}/lib/lefty/suiplot.lefty
+make ui/suiplot.lefty
+done ui/suiplot.lefty
+exec - test '' = 'ui/suiplot.lefty' || ${STDCMP} 2>/dev/null -s ui/suiplot.lefty ${INSTALLROOT}/lib/lefty/suiplot.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suiplot.lefty ${INSTALLROOT}/lib/lefty/suiplot.lefty.old 2>/dev/null || true; ${STDCP} ui/suiplot.lefty ${INSTALLROOT}/lib/lefty/suiplot.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suiplot.lefty generated
+make ${INSTALLROOT}/lib/lefty/suigraph.lefty
+make ui/suigraph.lefty
+done ui/suigraph.lefty
+exec - test '' = 'ui/suigraph.lefty' || ${STDCMP} 2>/dev/null -s ui/suigraph.lefty ${INSTALLROOT}/lib/lefty/suigraph.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suigraph.lefty ${INSTALLROOT}/lib/lefty/suigraph.lefty.old 2>/dev/null || true; ${STDCP} ui/suigraph.lefty ${INSTALLROOT}/lib/lefty/suigraph.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suigraph.lefty generated
+make ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty
+make ui/suigraph_ds.lefty
+done ui/suigraph_ds.lefty
+exec - test '' = 'ui/suigraph_ds.lefty' || ${STDCMP} 2>/dev/null -s ui/suigraph_ds.lefty ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty.old 2>/dev/null || true; ${STDCP} ui/suigraph_ds.lefty ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suigraph_ds.lefty generated
+make ${INSTALLROOT}/lib/lefty/suixclient.lefty
+make ui/suixclient.lefty
+done ui/suixclient.lefty
+exec - test '' = 'ui/suixclient.lefty' || ${STDCMP} 2>/dev/null -s ui/suixclient.lefty ${INSTALLROOT}/lib/lefty/suixclient.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/suixclient.lefty ${INSTALLROOT}/lib/lefty/suixclient.lefty.old 2>/dev/null || true; ${STDCP} ui/suixclient.lefty ${INSTALLROOT}/lib/lefty/suixclient.lefty ;}
+done ${INSTALLROOT}/lib/lefty/suixclient.lefty generated
+make ${INSTALLROOT}/lib/prefs
+exec - if silent test ! -d ${INSTALLROOT}/lib/prefs
+exec - then mkdir -p ${INSTALLROOT}/lib/prefs
+exec - fi
+done ${INSTALLROOT}/lib/prefs generated
+make ${INSTALLROOT}/lib/prefs/suibrowser.prefs
+prev ${INSTALLROOT}/lib/prefs
+make ui/suibrowser.prefs
+done ui/suibrowser.prefs
+exec - test '' = 'ui/suibrowser.prefs' || ${STDCMP} 2>/dev/null -s ui/suibrowser.prefs ${INSTALLROOT}/lib/prefs/suibrowser.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suibrowser.prefs ${INSTALLROOT}/lib/prefs/suibrowser.prefs.old 2>/dev/null || true; ${STDCP} ui/suibrowser.prefs ${INSTALLROOT}/lib/prefs/suibrowser.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suibrowser.prefs generated
+make ${INSTALLROOT}/lib/prefs/suigmap.prefs
+make ui/suigmap.prefs
+done ui/suigmap.prefs
+exec - test '' = 'ui/suigmap.prefs' || ${STDCMP} 2>/dev/null -s ui/suigmap.prefs ${INSTALLROOT}/lib/prefs/suigmap.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suigmap.prefs ${INSTALLROOT}/lib/prefs/suigmap.prefs.old 2>/dev/null || true; ${STDCP} ui/suigmap.prefs ${INSTALLROOT}/lib/prefs/suigmap.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suigmap.prefs generated
+make ${INSTALLROOT}/lib/prefs/suigraph.prefs
+make ui/suigraph.prefs
+done ui/suigraph.prefs
+exec - test '' = 'ui/suigraph.prefs' || ${STDCMP} 2>/dev/null -s ui/suigraph.prefs ${INSTALLROOT}/lib/prefs/suigraph.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suigraph.prefs ${INSTALLROOT}/lib/prefs/suigraph.prefs.old 2>/dev/null || true; ${STDCP} ui/suigraph.prefs ${INSTALLROOT}/lib/prefs/suigraph.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suigraph.prefs generated
+make ${INSTALLROOT}/lib/prefs/suiplot.prefs
+make ui/suiplot.prefs
+done ui/suiplot.prefs
+exec - test '' = 'ui/suiplot.prefs' || ${STDCMP} 2>/dev/null -s ui/suiplot.prefs ${INSTALLROOT}/lib/prefs/suiplot.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suiplot.prefs ${INSTALLROOT}/lib/prefs/suiplot.prefs.old 2>/dev/null || true; ${STDCP} ui/suiplot.prefs ${INSTALLROOT}/lib/prefs/suiplot.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suiplot.prefs generated
+make ${INSTALLROOT}/lib/prefs/suipad.prefs
+make ui/suipad.prefs
+done ui/suipad.prefs
+exec - test '' = 'ui/suipad.prefs' || ${STDCMP} 2>/dev/null -s ui/suipad.prefs ${INSTALLROOT}/lib/prefs/suipad.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suipad.prefs ${INSTALLROOT}/lib/prefs/suipad.prefs.old 2>/dev/null || true; ${STDCP} ui/suipad.prefs ${INSTALLROOT}/lib/prefs/suipad.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suipad.prefs generated
+make ${INSTALLROOT}/lib/prefs/suitable.prefs
+make ui/suitable.prefs
+done ui/suitable.prefs
+exec - test '' = 'ui/suitable.prefs' || ${STDCMP} 2>/dev/null -s ui/suitable.prefs ${INSTALLROOT}/lib/prefs/suitable.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suitable.prefs ${INSTALLROOT}/lib/prefs/suitable.prefs.old 2>/dev/null || true; ${STDCP} ui/suitable.prefs ${INSTALLROOT}/lib/prefs/suitable.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suitable.prefs generated
+make ${INSTALLROOT}/lib/prefs/suidserver.prefs
+make ui/suidserver.prefs
+done ui/suidserver.prefs
+exec - test '' = 'ui/suidserver.prefs' || ${STDCMP} 2>/dev/null -s ui/suidserver.prefs ${INSTALLROOT}/lib/prefs/suidserver.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suidserver.prefs ${INSTALLROOT}/lib/prefs/suidserver.prefs.old 2>/dev/null || true; ${STDCP} ui/suidserver.prefs ${INSTALLROOT}/lib/prefs/suidserver.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suidserver.prefs generated
+make ${INSTALLROOT}/lib/prefs/suistyle.prefs
+make ui/suistyle.prefs
+done ui/suistyle.prefs
+exec - test '' = 'ui/suistyle.prefs' || ${STDCMP} 2>/dev/null -s ui/suistyle.prefs ${INSTALLROOT}/lib/prefs/suistyle.prefs || { ${STDMV} ${INSTALLROOT}/lib/prefs/suistyle.prefs ${INSTALLROOT}/lib/prefs/suistyle.prefs.old 2>/dev/null || true; ${STDCP} ui/suistyle.prefs ${INSTALLROOT}/lib/prefs/suistyle.prefs ;}
+done ${INSTALLROOT}/lib/prefs/suistyle.prefs generated
+make ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi
+make suiprefshow.cgi
+meta suiprefshow.cgi %.sh>% ui/suiprefshow.cgi.sh suiprefshow.cgi
+make ui/suiprefshow.cgi.sh
+done ui/suiprefshow.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiprefshow.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiprefshow.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiprefshow.cgi.sh suiprefshow.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiprefshow.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiprefshow.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suiprefshow.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiprefshow.cgi.sh > suiprefshow.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiprefshow.cgi -a -x suiprefshow.cgi || chmod u+w,+x suiprefshow.cgi
+done suiprefshow.cgi generated
+exec - test '' = 'suiprefshow.cgi' || ${STDCMP} 2>/dev/null -s suiprefshow.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi.old 2>/dev/null || true; ${STDCP} suiprefshow.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/suiprefshow.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi
+make suiprefproc.cgi
+meta suiprefproc.cgi %.sh>% ui/suiprefproc.cgi.sh suiprefproc.cgi
+make ui/suiprefproc.cgi.sh
+done ui/suiprefproc.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suiprefproc.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suiprefproc.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suiprefproc.cgi.sh suiprefproc.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suiprefproc.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suiprefproc.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suiprefproc.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suiprefproc.cgi.sh > suiprefproc.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suiprefproc.cgi -a -x suiprefproc.cgi || chmod u+w,+x suiprefproc.cgi
+done suiprefproc.cgi generated
+exec - test '' = 'suiprefproc.cgi' || ${STDCMP} 2>/dev/null -s suiprefproc.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi.old 2>/dev/null || true; ${STDCP} suiprefproc.cgi ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/suiprefproc.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi
+make suipreflist.cgi
+meta suipreflist.cgi %.sh>% ui/suipreflist.cgi.sh suipreflist.cgi
+make ui/suipreflist.cgi.sh
+done ui/suipreflist.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suipreflist.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suipreflist.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suipreflist.cgi.sh suipreflist.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suipreflist.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suipreflist.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suipreflist.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suipreflist.cgi.sh > suipreflist.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suipreflist.cgi -a -x suipreflist.cgi || chmod u+w,+x suipreflist.cgi
+done suipreflist.cgi generated
+exec - test '' = 'suipreflist.cgi' || ${STDCMP} 2>/dev/null -s suipreflist.cgi ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi.old 2>/dev/null || true; ${STDCP} suipreflist.cgi ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/suipreflist.cgi generated
+make ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi
+make suitablehelper.cgi
+meta suitablehelper.cgi %.sh>% ui/suitablehelper.cgi.sh suitablehelper.cgi
+make ui/suitablehelper.cgi.sh
+done ui/suitablehelper.cgi.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suitablehelper.cgi contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ui/suitablehelper.cgi.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ui/suitablehelper.cgi.sh suitablehelper.cgi
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ui/suitablehelper.cgi.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ui/suitablehelper.cgi.sh <<'!'
+exec -
+exec - !
+exec - } > suitablehelper.cgi
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ui/suitablehelper.cgi.sh > suitablehelper.cgi <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suitablehelper.cgi -a -x suitablehelper.cgi || chmod u+w,+x suitablehelper.cgi
+done suitablehelper.cgi generated
+exec - test '' = 'suitablehelper.cgi' || ${STDCMP} 2>/dev/null -s suitablehelper.cgi ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi || { ${STDMV} ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi.old 2>/dev/null || true; ${STDCP} suitablehelper.cgi ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi ;}
+done ${INSTALLROOT}/www/cgi-bin-members/suitablehelper.cgi generated
+make ${INSTALLROOT}/www/htdocs/swift
+exec - if silent test ! -d ${INSTALLROOT}/www/htdocs/swift
+exec - then mkdir -p ${INSTALLROOT}/www/htdocs/swift
+exec - fi
+done ${INSTALLROOT}/www/htdocs/swift generated
+make ${INSTALLROOT}/www/htdocs/swift/suipad.js
+prev ${INSTALLROOT}/www/htdocs/swift
+make ui/suipad.js
+done ui/suipad.js
+exec - test '' = 'ui/suipad.js' || ${STDCMP} 2>/dev/null -s ui/suipad.js ${INSTALLROOT}/www/htdocs/swift/suipad.js || { ${STDMV} ${INSTALLROOT}/www/htdocs/swift/suipad.js ${INSTALLROOT}/www/htdocs/swift/suipad.js.old 2>/dev/null || true; ${STDCP} ui/suipad.js ${INSTALLROOT}/www/htdocs/swift/suipad.js ;}
+done ${INSTALLROOT}/www/htdocs/swift/suipad.js generated
+make ${INSTALLROOT}/www/htdocs/swift/suilss.js
+make ui/suilss.js
+done ui/suilss.js
+exec - test '' = 'ui/suilss.js' || ${STDCMP} 2>/dev/null -s ui/suilss.js ${INSTALLROOT}/www/htdocs/swift/suilss.js || { ${STDMV} ${INSTALLROOT}/www/htdocs/swift/suilss.js ${INSTALLROOT}/www/htdocs/swift/suilss.js.old 2>/dev/null || true; ${STDCP} ui/suilss.js ${INSTALLROOT}/www/htdocs/swift/suilss.js ;}
+done ${INSTALLROOT}/www/htdocs/swift/suilss.js generated
+make ${INSTALLROOT}/bin/suiencode
+prev suiencode
+exec - test '' = 'suiencode' || ${STDCMP} 2>/dev/null -s suiencode ${INSTALLROOT}/bin/suiencode || { ${STDMV} ${INSTALLROOT}/bin/suiencode ${INSTALLROOT}/bin/suiencode.old 2>/dev/null || true; ${STDCP} suiencode ${INSTALLROOT}/bin/suiencode ;}
+done ${INSTALLROOT}/bin/suiencode generated
+make ${INSTALLROOT}/bin/suirserver
+prev suirserver
+exec - test '' = 'suirserver' || ${STDCMP} 2>/dev/null -s suirserver ${INSTALLROOT}/bin/suirserver || { ${STDMV} ${INSTALLROOT}/bin/suirserver ${INSTALLROOT}/bin/suirserver.old 2>/dev/null || true; ${STDCP} suirserver ${INSTALLROOT}/bin/suirserver ;}
+done ${INSTALLROOT}/bin/suirserver generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/suirserver.1
+prev ${INSTALLROOT}/man/man1
+prev suirserver.1
+exec - test '' = 'suirserver.1' || ${STDCMP} 2>/dev/null -s suirserver.1 ${INSTALLROOT}/man/man1/suirserver.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suirserver.1 ${INSTALLROOT}/man/man1/suirserver.1.old 2>/dev/null || true; ${STDCP} suirserver.1 ${INSTALLROOT}/man/man1/suirserver.1 ;}
+done ${INSTALLROOT}/man/man1/suirserver.1 generated
+make ${INSTALLROOT}/bin/suirclient
+prev suirclient
+exec - test '' = 'suirclient' || ${STDCMP} 2>/dev/null -s suirclient ${INSTALLROOT}/bin/suirclient || { ${STDMV} ${INSTALLROOT}/bin/suirclient ${INSTALLROOT}/bin/suirclient.old 2>/dev/null || true; ${STDCP} suirclient ${INSTALLROOT}/bin/suirclient ;}
+done ${INSTALLROOT}/bin/suirclient generated
+make ${INSTALLROOT}/man/man1/suirclient.1
+prev suirclient.1
+exec - test '' = 'suirclient.1' || ${STDCMP} 2>/dev/null -s suirclient.1 ${INSTALLROOT}/man/man1/suirclient.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suirclient.1 ${INSTALLROOT}/man/man1/suirclient.1.old 2>/dev/null || true; ${STDCP} suirclient.1 ${INSTALLROOT}/man/man1/suirclient.1 ;}
+done ${INSTALLROOT}/man/man1/suirclient.1 generated
+make ${INSTALLROOT}/bin/suimserver
+prev suimserver
+exec - test '' = 'suimserver' || ${STDCMP} 2>/dev/null -s suimserver ${INSTALLROOT}/bin/suimserver || { ${STDMV} ${INSTALLROOT}/bin/suimserver ${INSTALLROOT}/bin/suimserver.old 2>/dev/null || true; ${STDCP} suimserver ${INSTALLROOT}/bin/suimserver ;}
+done ${INSTALLROOT}/bin/suimserver generated
+make ${INSTALLROOT}/man/man1/suimserver.1
+prev suimserver.1
+exec - test '' = 'suimserver.1' || ${STDCMP} 2>/dev/null -s suimserver.1 ${INSTALLROOT}/man/man1/suimserver.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suimserver.1 ${INSTALLROOT}/man/man1/suimserver.1.old 2>/dev/null || true; ${STDCP} suimserver.1 ${INSTALLROOT}/man/man1/suimserver.1 ;}
+done ${INSTALLROOT}/man/man1/suimserver.1 generated
+make ${INSTALLROOT}/bin/suimclient
+prev suimclient
+exec - test '' = 'suimclient' || ${STDCMP} 2>/dev/null -s suimclient ${INSTALLROOT}/bin/suimclient || { ${STDMV} ${INSTALLROOT}/bin/suimclient ${INSTALLROOT}/bin/suimclient.old 2>/dev/null || true; ${STDCP} suimclient ${INSTALLROOT}/bin/suimclient ;}
+done ${INSTALLROOT}/bin/suimclient generated
+make ${INSTALLROOT}/man/man1/suimclient.1
+prev suimclient.1
+exec - test '' = 'suimclient.1' || ${STDCMP} 2>/dev/null -s suimclient.1 ${INSTALLROOT}/man/man1/suimclient.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suimclient.1 ${INSTALLROOT}/man/man1/suimclient.1.old 2>/dev/null || true; ${STDCP} suimclient.1 ${INSTALLROOT}/man/man1/suimclient.1 ;}
+done ${INSTALLROOT}/man/man1/suimclient.1 generated
+make ${INSTALLROOT}/bin/suidserver
+prev suidserver
+exec - test '' = 'suidserver' || ${STDCMP} 2>/dev/null -s suidserver ${INSTALLROOT}/bin/suidserver || { ${STDMV} ${INSTALLROOT}/bin/suidserver ${INSTALLROOT}/bin/suidserver.old 2>/dev/null || true; ${STDCP} suidserver ${INSTALLROOT}/bin/suidserver ;}
+done ${INSTALLROOT}/bin/suidserver generated
+make ${INSTALLROOT}/man/man1/suidserver.1
+prev suidserver.1
+exec - test '' = 'suidserver.1' || ${STDCMP} 2>/dev/null -s suidserver.1 ${INSTALLROOT}/man/man1/suidserver.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suidserver.1 ${INSTALLROOT}/man/man1/suidserver.1.old 2>/dev/null || true; ${STDCP} suidserver.1 ${INSTALLROOT}/man/man1/suidserver.1 ;}
+done ${INSTALLROOT}/man/man1/suidserver.1 generated
+make ${INSTALLROOT}/bin/suidclient
+prev suidclient
+exec - test '' = 'suidclient' || ${STDCMP} 2>/dev/null -s suidclient ${INSTALLROOT}/bin/suidclient || { ${STDMV} ${INSTALLROOT}/bin/suidclient ${INSTALLROOT}/bin/suidclient.old 2>/dev/null || true; ${STDCP} suidclient ${INSTALLROOT}/bin/suidclient ;}
+done ${INSTALLROOT}/bin/suidclient generated
+make ${INSTALLROOT}/man/man1/suidclient.1
+prev suidclient.1
+exec - test '' = 'suidclient.1' || ${STDCMP} 2>/dev/null -s suidclient.1 ${INSTALLROOT}/man/man1/suidclient.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suidclient.1 ${INSTALLROOT}/man/man1/suidclient.1.old 2>/dev/null || true; ${STDCP} suidclient.1 ${INSTALLROOT}/man/man1/suidclient.1 ;}
+done ${INSTALLROOT}/man/man1/suidclient.1 generated
+make ${INSTALLROOT}/bin/suixserver
+prev suixserver
+exec - test '' = 'suixserver' || ${STDCMP} 2>/dev/null -s suixserver ${INSTALLROOT}/bin/suixserver || { ${STDMV} ${INSTALLROOT}/bin/suixserver ${INSTALLROOT}/bin/suixserver.old 2>/dev/null || true; ${STDCP} suixserver ${INSTALLROOT}/bin/suixserver ;}
+done ${INSTALLROOT}/bin/suixserver generated
+make ${INSTALLROOT}/man/man1/suixserver.1
+prev suixserver.1
+exec - test '' = 'suixserver.1' || ${STDCMP} 2>/dev/null -s suixserver.1 ${INSTALLROOT}/man/man1/suixserver.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suixserver.1 ${INSTALLROOT}/man/man1/suixserver.1.old 2>/dev/null || true; ${STDCP} suixserver.1 ${INSTALLROOT}/man/man1/suixserver.1 ;}
+done ${INSTALLROOT}/man/man1/suixserver.1 generated
+make ${INSTALLROOT}/bin/suixclient
+prev suixclient
+exec - test '' = 'suixclient' || ${STDCMP} 2>/dev/null -s suixclient ${INSTALLROOT}/bin/suixclient || { ${STDMV} ${INSTALLROOT}/bin/suixclient ${INSTALLROOT}/bin/suixclient.old 2>/dev/null || true; ${STDCP} suixclient ${INSTALLROOT}/bin/suixclient ;}
+done ${INSTALLROOT}/bin/suixclient generated
+make ${INSTALLROOT}/man/man1/suixclient.1
+prev suixclient.1
+exec - test '' = 'suixclient.1' || ${STDCMP} 2>/dev/null -s suixclient.1 ${INSTALLROOT}/man/man1/suixclient.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suixclient.1 ${INSTALLROOT}/man/man1/suixclient.1.old 2>/dev/null || true; ${STDCP} suixclient.1 ${INSTALLROOT}/man/man1/suixclient.1 ;}
+done ${INSTALLROOT}/man/man1/suixclient.1 generated
+make ${INSTALLROOT}/bin/suixwacom
+prev suixwacom
+exec - test '' = 'suixwacom' || ${STDCMP} 2>/dev/null -s suixwacom ${INSTALLROOT}/bin/suixwacom || { ${STDMV} ${INSTALLROOT}/bin/suixwacom ${INSTALLROOT}/bin/suixwacom.old 2>/dev/null || true; ${STDCP} suixwacom ${INSTALLROOT}/bin/suixwacom ;}
+done ${INSTALLROOT}/bin/suixwacom generated
+make ${INSTALLROOT}/man/man1/suixwacom.1
+prev suixwacom.1
+exec - test '' = 'suixwacom.1' || ${STDCMP} 2>/dev/null -s suixwacom.1 ${INSTALLROOT}/man/man1/suixwacom.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suixwacom.1 ${INSTALLROOT}/man/man1/suixwacom.1.old 2>/dev/null || true; ${STDCP} suixwacom.1 ${INSTALLROOT}/man/man1/suixwacom.1 ;}
+done ${INSTALLROOT}/man/man1/suixwacom.1 generated
+make ${INSTALLROOT}/man/man1/suicoord2item.1
+prev suicoord2item.1
+exec - test '' = 'suicoord2item.1' || ${STDCMP} 2>/dev/null -s suicoord2item.1 ${INSTALLROOT}/man/man1/suicoord2item.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suicoord2item.1 ${INSTALLROOT}/man/man1/suicoord2item.1.old 2>/dev/null || true; ${STDCP} suicoord2item.1 ${INSTALLROOT}/man/man1/suicoord2item.1 ;}
+done ${INSTALLROOT}/man/man1/suicoord2item.1 generated
+make ${INSTALLROOT}/bin/suinewpgrp
+prev suinewpgrp
+exec - test '' = 'suinewpgrp' || ${STDCMP} 2>/dev/null -s suinewpgrp ${INSTALLROOT}/bin/suinewpgrp || { ${STDMV} ${INSTALLROOT}/bin/suinewpgrp ${INSTALLROOT}/bin/suinewpgrp.old 2>/dev/null || true; ${STDCP} suinewpgrp ${INSTALLROOT}/bin/suinewpgrp ;}
+done ${INSTALLROOT}/bin/suinewpgrp generated
+make ${INSTALLROOT}/man/man1/suinewpgrp.1
+prev suinewpgrp.1
+exec - test '' = 'suinewpgrp.1' || ${STDCMP} 2>/dev/null -s suinewpgrp.1 ${INSTALLROOT}/man/man1/suinewpgrp.1 || { ${STDMV} ${INSTALLROOT}/man/man1/suinewpgrp.1 ${INSTALLROOT}/man/man1/suinewpgrp.1.old 2>/dev/null || true; ${STDCP} suinewpgrp.1 ${INSTALLROOT}/man/man1/suinewpgrp.1 ;}
+done ${INSTALLROOT}/man/man1/suinewpgrp.1 generated
+make ${INSTALLROOT}/bin/smsserver
+make smsserver
+meta smsserver %.sh>% ms/smsserver.sh smsserver
+make ms/smsserver.sh
+done ms/smsserver.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : smsserver contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ms/smsserver.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ms/smsserver.sh smsserver
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ms/smsserver.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ms/smsserver.sh <<'!'
+exec -
+exec - !
+exec - } > smsserver
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ms/smsserver.sh > smsserver <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w smsserver -a -x smsserver || chmod u+w,+x smsserver
+done smsserver generated
+exec - test '' = 'smsserver' || ${STDCMP} 2>/dev/null -s smsserver ${INSTALLROOT}/bin/smsserver || { ${STDMV} ${INSTALLROOT}/bin/smsserver ${INSTALLROOT}/bin/smsserver.old 2>/dev/null || true; ${STDCP} smsserver ${INSTALLROOT}/bin/smsserver ;}
+done ${INSTALLROOT}/bin/smsserver generated
+make ${INSTALLROOT}/bin/smsclient
+make smsclient
+meta smsclient %.sh>% ms/smsclient.sh smsclient
+make ms/smsclient.sh
+done ms/smsclient.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : smsclient contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ms/smsclient.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ms/smsclient.sh smsclient
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ms/smsclient.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ms/smsclient.sh <<'!'
+exec -
+exec - !
+exec - } > smsclient
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ms/smsclient.sh > smsclient <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w smsclient -a -x smsclient || chmod u+w,+x smsclient
+done smsclient generated
+exec - test '' = 'smsclient' || ${STDCMP} 2>/dev/null -s smsclient ${INSTALLROOT}/bin/smsclient || { ${STDMV} ${INSTALLROOT}/bin/smsclient ${INSTALLROOT}/bin/smsclient.old 2>/dev/null || true; ${STDCP} smsclient ${INSTALLROOT}/bin/smsclient ;}
+done ${INSTALLROOT}/bin/smsclient generated
+make ${INSTALLROOT}/bin/sms3dimg
+make sms3dimg
+meta sms3dimg %.sh>% ms/sms3dimg.sh sms3dimg
+make ms/sms3dimg.sh
+done ms/sms3dimg.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sms3dimg contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ms/sms3dimg.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ms/sms3dimg.sh sms3dimg
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ms/sms3dimg.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ms/sms3dimg.sh <<'!'
+exec -
+exec - !
+exec - } > sms3dimg
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ms/sms3dimg.sh > sms3dimg <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sms3dimg -a -x sms3dimg || chmod u+w,+x sms3dimg
+done sms3dimg generated
+exec - test '' = 'sms3dimg' || ${STDCMP} 2>/dev/null -s sms3dimg ${INSTALLROOT}/bin/sms3dimg || { ${STDMV} ${INSTALLROOT}/bin/sms3dimg ${INSTALLROOT}/bin/sms3dimg.old 2>/dev/null || true; ${STDCP} sms3dimg ${INSTALLROOT}/bin/sms3dimg ;}
+done ${INSTALLROOT}/bin/sms3dimg generated
+make ${INSTALLROOT}/fun/smsruncheck
+make smsruncheck
+meta smsruncheck %.sh>% ms/smsruncheck.sh smsruncheck
+make ms/smsruncheck.sh
+done ms/smsruncheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : smsruncheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ms/smsruncheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ms/smsruncheck.sh smsruncheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ms/smsruncheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ms/smsruncheck.sh <<'!'
+exec -
+exec - !
+exec - } > smsruncheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ms/smsruncheck.sh > smsruncheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w smsruncheck -a -x smsruncheck || chmod u+w,+x smsruncheck
+done smsruncheck generated
+exec - test '' = 'smsruncheck' || ${STDCMP} 2>/dev/null -s smsruncheck ${INSTALLROOT}/fun/smsruncheck || { ${STDMV} ${INSTALLROOT}/fun/smsruncheck ${INSTALLROOT}/fun/smsruncheck.old 2>/dev/null || true; ${STDCP} smsruncheck ${INSTALLROOT}/fun/smsruncheck ;}
+done ${INSTALLROOT}/fun/smsruncheck generated
+make ${INSTALLROOT}/fun/smsspacecheck
+make smsspacecheck
+meta smsspacecheck %.sh>% ms/smsspacecheck.sh smsspacecheck
+make ms/smsspacecheck.sh
+done ms/smsspacecheck.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : smsspacecheck contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ms/smsspacecheck.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ms/smsspacecheck.sh smsspacecheck
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ms/smsspacecheck.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ms/smsspacecheck.sh <<'!'
+exec -
+exec - !
+exec - } > smsspacecheck
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ms/smsspacecheck.sh > smsspacecheck <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w smsspacecheck -a -x smsspacecheck || chmod u+w,+x smsspacecheck
+done smsspacecheck generated
+exec - test '' = 'smsspacecheck' || ${STDCMP} 2>/dev/null -s smsspacecheck ${INSTALLROOT}/fun/smsspacecheck || { ${STDMV} ${INSTALLROOT}/fun/smsspacecheck ${INSTALLROOT}/fun/smsspacecheck.old 2>/dev/null || true; ${STDCP} smsspacecheck ${INSTALLROOT}/fun/smsspacecheck ;}
+done ${INSTALLROOT}/fun/smsspacecheck generated
+make ${INSTALLROOT}/lib/geoms
+exec - if silent test ! -d ${INSTALLROOT}/lib/geoms
+exec - then mkdir -p ${INSTALLROOT}/lib/geoms
+exec - fi
+done ${INSTALLROOT}/lib/geoms generated
+make ${INSTALLROOT}/lib/geoms/border_polys.single
+prev ${INSTALLROOT}/lib/geoms
+make gm/border_polys.single
+done gm/border_polys.single
+exec - test '' = 'gm/border_polys.single' || ${STDCMP} 2>/dev/null -s gm/border_polys.single ${INSTALLROOT}/lib/geoms/border_polys.single || { ${STDMV} ${INSTALLROOT}/lib/geoms/border_polys.single ${INSTALLROOT}/lib/geoms/border_polys.single.old 2>/dev/null || true; ${STDCP} gm/border_polys.single ${INSTALLROOT}/lib/geoms/border_polys.single ;}
+done ${INSTALLROOT}/lib/geoms/border_polys.single generated
+make ${INSTALLROOT}/lib/geoms/world_polys.single
+make gm/world_polys.single
+done gm/world_polys.single
+exec - test '' = 'gm/world_polys.single' || ${STDCMP} 2>/dev/null -s gm/world_polys.single ${INSTALLROOT}/lib/geoms/world_polys.single || { ${STDMV} ${INSTALLROOT}/lib/geoms/world_polys.single ${INSTALLROOT}/lib/geoms/world_polys.single.old 2>/dev/null || true; ${STDCP} gm/world_polys.single ${INSTALLROOT}/lib/geoms/world_polys.single ;}
+done ${INSTALLROOT}/lib/geoms/world_polys.single generated
+make ${INSTALLROOT}/bin/suthdrgen
+make suthdrgen
+meta suthdrgen %.sh>% ut/suthdrgen.sh suthdrgen
+make ut/suthdrgen.sh
+done ut/suthdrgen.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : suthdrgen contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ut/suthdrgen.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ut/suthdrgen.sh suthdrgen
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ut/suthdrgen.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ut/suthdrgen.sh <<'!'
+exec -
+exec - !
+exec - } > suthdrgen
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ut/suthdrgen.sh > suthdrgen <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w suthdrgen -a -x suthdrgen || chmod u+w,+x suthdrgen
+done suthdrgen generated
+exec - test '' = 'suthdrgen' || ${STDCMP} 2>/dev/null -s suthdrgen ${INSTALLROOT}/bin/suthdrgen || { ${STDMV} ${INSTALLROOT}/bin/suthdrgen ${INSTALLROOT}/bin/suthdrgen.old 2>/dev/null || true; ${STDCP} suthdrgen ${INSTALLROOT}/bin/suthdrgen ;}
+done ${INSTALLROOT}/bin/suthdrgen generated
+make ${INSTALLROOT}/fun/sutawk
+make sutawk
+meta sutawk %.sh>% ut/sutawk.sh sutawk
+make ut/sutawk.sh
+done ut/sutawk.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sutawk contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ut/sutawk.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ut/sutawk.sh sutawk
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ut/sutawk.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ut/sutawk.sh <<'!'
+exec -
+exec - !
+exec - } > sutawk
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ut/sutawk.sh > sutawk <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sutawk -a -x sutawk || chmod u+w,+x sutawk
+done sutawk generated
+exec - test '' = 'sutawk' || ${STDCMP} 2>/dev/null -s sutawk ${INSTALLROOT}/fun/sutawk || { ${STDMV} ${INSTALLROOT}/fun/sutawk ${INSTALLROOT}/fun/sutawk.old 2>/dev/null || true; ${STDCP} sutawk ${INSTALLROOT}/fun/sutawk ;}
+done ${INSTALLROOT}/fun/sutawk generated
+make ${INSTALLROOT}/fun/sutgraph
+make sutgraph
+meta sutgraph %.sh>% ut/sutgraph.sh sutgraph
+make ut/sutgraph.sh
+done ut/sutgraph.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : sutgraph contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n ut/sutgraph.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp ut/sutgraph.sh sutgraph
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < ut/sutgraph.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - ut/sutgraph.sh <<'!'
+exec -
+exec - !
+exec - } > sutgraph
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - ut/sutgraph.sh > sutgraph <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w sutgraph -a -x sutgraph || chmod u+w,+x sutgraph
+done sutgraph generated
+exec - test '' = 'sutgraph' || ${STDCMP} 2>/dev/null -s sutgraph ${INSTALLROOT}/fun/sutgraph || { ${STDMV} ${INSTALLROOT}/fun/sutgraph ${INSTALLROOT}/fun/sutgraph.old 2>/dev/null || true; ${STDCP} sutgraph ${INSTALLROOT}/fun/sutgraph ;}
+done ${INSTALLROOT}/fun/sutgraph generated
+make ${INSTALLROOT}/bin/sutendian
+prev sutendian
+exec - test '' = 'sutendian' || ${STDCMP} 2>/dev/null -s sutendian ${INSTALLROOT}/bin/sutendian || { ${STDMV} ${INSTALLROOT}/bin/sutendian ${INSTALLROOT}/bin/sutendian.old 2>/dev/null || true; ${STDCP} sutendian ${INSTALLROOT}/bin/sutendian ;}
+done ${INSTALLROOT}/bin/sutendian generated
+done install virtual
+make test
+done test dontcare virtual

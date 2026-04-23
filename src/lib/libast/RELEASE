@@ -923,11 +923,11 @@
 02-08-28 uwin/rint.c: update
 	 features/libpath.sh: "bin" is now the default value
 02-08-22 vmtrace.h: add for debugging
-02-08-20 misc/magic.c: convert to use <astcdt.h>
+02-08-20 misc/magic.c: convert to use <cdt.h>
 	 vmalloc/vmresizef.c: add for generic discipline resizef default
 	 string/strelapsed.c: allow long time component names
 02-08-19 misc/optget.c: add `.fp 5 CW' to --nroff output
-	 string/(fmtfs|fmtuid|fmtgid|strgid|struid).c: convert to use <astcdt.h>
+	 string/(fmtfs|fmtuid|fmtgid|strgid|struid).c: convert to use <cdt.h>
 	 include/dt.h,cdt/dtnew.c: add for dtopen() in specific vm region
 02-08-13 comp/omitted.c: fix bzero logic for e.g. unixware.i386
 	 include/ast.h: add fmtbase->fmtbasell; swap in 2003-09-01
@@ -1125,7 +1125,7 @@
 	 tm/tmlocale.c: fix native C locale default
 01-08-08 features/float: some compilers (msdev) forget long long vs. double
 01-07-31 misc/optget.c: handle suboptions
-01-07-27 astcdt.h: add DTDISC()
+01-07-27 cdt.h: add DTDISC()
 01-07-17 iffeio.h: move to include for stdio bootstrap iffe workarounds
 01-06-25 regex: perl extensions added and tested
 01-06-21 misc/error: add ERROR_OPTIONS=prefix=string for message processing

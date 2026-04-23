@@ -5,7 +5,7 @@
 
 #include <ast.h>
 #include <vmalloc.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <recsort.h>
 #include <aggr.h>
 

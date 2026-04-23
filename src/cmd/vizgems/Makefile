@@ -1,4 +1,4 @@
-:PACKAGE: swift graphviz ast dds:command swift:command X11:nolibrary
+:PACKAGE: swift ast dds:command swift:command X11:nolibrary
 
 LICENSE = since=1996,author=ek
 
@@ -110,13 +110,15 @@ vg_prop_filter :: vg_prop_filter.c -ldds
 vg_dq_vt_util_pub.h : vg_dq_vt_util.h
 	cp $(>) $(<)
 
+vg_gvc_wrapper 1.0 :LIBRARY: vg_gvc_wrapper.c
+
 vg_dq_vt_util 1.0 :LIBRARY: \
 vg_dq_vt_util_alarmgrid.c vg_dq_vt_util_alarmstyle.c vg_dq_vt_util_alarmtab.c \
 vg_dq_vt_util_em.c vg_dq_vt_util_invgraph.c vg_dq_vt_util_invgrid.c \
 vg_dq_vt_util_invmap.c vg_dq_vt_util_invmapll.c vg_dq_vt_util_invtab.c \
 vg_dq_vt_util_ri.c vg_dq_vt_util_statchart.c vg_dq_vt_util_stattab.c \
 vg_dq_vt_util_ut.c \
--lgvc -lcgraph -lgd -lvgxml
+-lvg_gvc_wrapper -lgd -lvgxml
 
 authkey = "da visualizer"
 key.h :

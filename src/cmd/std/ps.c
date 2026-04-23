@@ -118,7 +118,7 @@ USAGE_LICENSE
 
 #include <ast.h>
 #include <ast_dir.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <ctype.h>
 #include <dirent.h>
 #include <error.h>

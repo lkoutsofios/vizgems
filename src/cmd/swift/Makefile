@@ -150,4 +150,4 @@ $(INSTALLROOT)/fun :INSTALLDIR: sutawk sutgraph
 
 sutendian :: sutendian.c
 
-:: RELEASE
+:: RELEASE suipackkv.sh

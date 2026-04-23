@@ -3,7 +3,7 @@
 #include <ast.h>
 #include <swift.h>
 #include <xml.h>
-#include <astcdt.h>
+#include <cdt.h>
 
 typedef struct job_t {
     Dtlink_t link;

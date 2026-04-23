@@ -25,7 +25,7 @@
 
 #include "pzlib.h"
 
-#include <astcdt.h>
+#include <cdt.h>
 
 struct Deflate_s;
 struct Inflate_s;

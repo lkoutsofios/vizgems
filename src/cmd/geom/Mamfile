@@ -1,0 +1,480 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make cnvlki
+make cnvlki.o
+make cnvlki.c
+make ${PACKAGE_swift_INCLUDE}/swift.h implicit
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done ${PACKAGE_swift_INCLUDE}/swift.h
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/cdt.h
+make ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/tok.h
+make ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/option.h
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done cnvlki.c
+meta cnvlki.o %.c>%.o cnvlki.c cnvlki
+prev cnvlki.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c cnvlki.c
+done cnvlki.o generated
+make ${mam_libm} archive
+done ${mam_libm} dontcare virtual
+bind -lswift
+bind -last
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o cnvlki cnvlki.o ${mam_libswift} ${mam_libast}
+done cnvlki generated
+make ascii2geom
+make ascii2geom.o
+make ascii2geom.c
+make geom.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done geom.h
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ascii2geom.c
+meta ascii2geom.o %.c>%.o ascii2geom.c ascii2geom
+prev ascii2geom.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c ascii2geom.c
+done ascii2geom.o generated
+make libgeom.a archive
+make geom.req
+exec - set -
+exec - echo 'int main(){return 0;}' > 1.${COTEMP}.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c 1.${COTEMP}.c &&
+exec - x=`${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l'*' 2>&1 | sed -e 's/[][()+@?]/#/g' || :` &&
+exec - {
+exec - case "" in
+exec - *?) echo " " ;;
+exec - esac
+exec - for i in geom swift ast
+exec - do case $i in
+exec - "geom"|geom)
+exec - ;;
+exec - *) if test -f ${INSTALLROOT}/lib/lib/$i
+exec - then y=`cat ${INSTALLROOT}/lib/lib/$i`
+exec - case $y in
+exec - *-?*) echo "" $y ;;
+exec - esac
+exec - continue
+exec - elif test ! -f ${INSTALLROOT}/lib/lib$i.a
+exec - then case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -L../../lib ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) continue ;;
+exec - esac
+exec - ;;
+exec - esac
+exec - fi
+exec - ;;
+exec - esac
+exec - echo " -l$i"
+exec - done
+exec - } > geom.req
+exec - rm -f 1.${COTEMP}.*
+done geom.req generated
+make libgeom.o
+make libgeom.c
+prev geom.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done libgeom.c
+meta libgeom.o %.c>%.o libgeom.c libgeom
+prev libgeom.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c libgeom.c
+done libgeom.o generated
+exec - ${AR} rc libgeom.a libgeom.o
+exec - (ranlib libgeom.a) >/dev/null 2>&1 || true
+done libgeom.a generated
+bind -lgeom
+prev ${mam_libm} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o ascii2geom ascii2geom.o ${mam_libgeom} ${mam_libswift} ${mam_libast}
+done ascii2geom generated
+make shapefile2geom
+make shapefile2geom.o
+make shapefile2geom.c
+prev geom.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done shapefile2geom.c
+meta shapefile2geom.o %.c>%.o shapefile2geom.c shapefile2geom
+prev shapefile2geom.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c shapefile2geom.c
+done shapefile2geom.o generated
+prev libgeom.a archive
+prev ${mam_libm} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o shapefile2geom shapefile2geom.o ${mam_libgeom} ${mam_libswift} ${mam_libast}
+done shapefile2geom generated
+make cnvnpanxx
+make cnvnpanxx.o
+make cnvnpanxx.c
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done cnvnpanxx.c
+meta cnvnpanxx.o %.c>%.o cnvnpanxx.c cnvnpanxx
+prev cnvnpanxx.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c cnvnpanxx.c
+done cnvnpanxx.o generated
+prev ${mam_libm} archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o cnvnpanxx cnvnpanxx.o ${mam_libswift} ${mam_libast}
+done cnvnpanxx generated
+make tiger2geom
+make tiger2geom.o
+make tiger2geom.c
+prev geom.h implicit
+make ${PACKAGE_swift_INCLUDE}/tiger.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done ${PACKAGE_swift_INCLUDE}/tiger.h
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tiger2geom.c
+meta tiger2geom.o %.c>%.o tiger2geom.c tiger2geom
+prev tiger2geom.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c tiger2geom.c
+done tiger2geom.o generated
+bind -ltiger
+prev libgeom.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tiger2geom tiger2geom.o ${mam_libtiger} ${mam_libgeom} ${mam_libswift} ${mam_libast}
+done tiger2geom generated
+make tiger2ps
+make tiger2ps.o
+make tiger2ps.c
+prev ${PACKAGE_swift_INCLUDE}/tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tiger2ps.c
+meta tiger2ps.o %.c>%.o tiger2ps.c tiger2ps
+prev tiger2ps.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c tiger2ps.c
+done tiger2ps.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tiger2ps tiger2ps.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tiger2ps generated
+make tiger2off
+make tiger2off.o
+make tiger2off.c
+prev ${PACKAGE_swift_INCLUDE}/tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tiger2off.c
+meta tiger2off.o %.c>%.o tiger2off.c tiger2off
+prev tiger2off.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c tiger2off.c
+done tiger2off.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tiger2off tiger2off.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tiger2off generated
+make tiger2ascii
+make tiger2ascii.o
+make tiger2ascii.c
+prev ${PACKAGE_swift_INCLUDE}/tiger.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/tok.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done tiger2ascii.c
+meta tiger2ascii.o %.c>%.o tiger2ascii.c tiger2ascii
+prev tiger2ascii.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c tiger2ascii.c
+done tiger2ascii.o generated
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L${INSTALLROOT}/lib} -o tiger2ascii tiger2ascii.o ${mam_libtiger} ${mam_libswift} ${mam_libast}
+done tiger2ascii generated
+make geomprint
+make geomprint.o
+make geomprint.c
+prev geom.h implicit
+prev ${PACKAGE_swift_INCLUDE}/swift.h implicit
+prev ${INSTALLROOT}/include/ast/option.h implicit
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done geomprint.c
+meta geomprint.o %.c>%.o geomprint.c geomprint
+prev geomprint.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${PACKAGE_swift_INCLUDE} -I${INSTALLROOT}/include/ast -DUSAGE_LICENSE=\""[-author?Lefteris Koutsofios <ek@research.att.com>][-copyright?Copyright (c) 1996-2026 AT&T Intellectual Property][-license?http://www.eclipse.org/org/documents/epl-v10.html][--catalog?geom]"\" -D_PACKAGE_ast -c geomprint.c
+done geomprint.o generated
+prev libgeom.a archive
+exec - ${CC} ${CCLDFLAGS} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${INSTALLROOT}/lib} -o geomprint geomprint.o ${mam_libgeom} ${mam_libswift} ${mam_libast}
+done geomprint generated
+make geom
+prev libgeom.a archive
+done geom virtual
+prev libgeom.a archive
+make cnvlki.1
+prev cnvlki
+exec - ignore cnvlki --??nroff 2> cnvlki.1
+done cnvlki.1 generated
+make ascii2geom.1
+prev ascii2geom
+exec - ignore ascii2geom --??nroff 2> ascii2geom.1
+done ascii2geom.1 generated
+make shapefile2geom.1
+prev shapefile2geom
+exec - ignore shapefile2geom --??nroff 2> shapefile2geom.1
+done shapefile2geom.1 generated
+make cnvnpanxx.1
+prev cnvnpanxx
+exec - ignore cnvnpanxx --??nroff 2> cnvnpanxx.1
+done cnvnpanxx.1 generated
+make tiger2geom.1
+prev tiger2geom
+exec - ignore tiger2geom --??nroff 2> tiger2geom.1
+done tiger2geom.1 generated
+make tiger2ps.1
+prev tiger2ps
+exec - ignore tiger2ps --??nroff 2> tiger2ps.1
+done tiger2ps.1 generated
+make tiger2off.1
+prev tiger2off
+exec - ignore tiger2off --??nroff 2> tiger2off.1
+done tiger2off.1 generated
+make tiger2ascii.1
+prev tiger2ascii
+exec - ignore tiger2ascii --??nroff 2> tiger2ascii.1
+done tiger2ascii.1 generated
+make geomprint.1
+prev geomprint
+exec - ignore geomprint --??nroff 2> geomprint.1
+done geomprint.1 generated
+make ${PACKAGE_swift_INCLUDE}
+exec - if silent test ! -d ${PACKAGE_swift_INCLUDE}
+exec - then mkdir -p ${PACKAGE_swift_INCLUDE}
+exec - fi
+done ${PACKAGE_swift_INCLUDE} generated
+make ${PACKAGE_swift_INCLUDE}/geom.h
+prev ${PACKAGE_swift_INCLUDE}
+prev geom.h
+exec - test '' = 'geom.h' || ${STDCMP} 2>/dev/null -s geom.h ${PACKAGE_swift_INCLUDE}/geom.h || { ${STDMV} ${PACKAGE_swift_INCLUDE}/geom.h ${PACKAGE_swift_INCLUDE}/geom.h.old 2>/dev/null || true; ${STDCP} geom.h ${PACKAGE_swift_INCLUDE}/geom.h ;}
+done ${PACKAGE_swift_INCLUDE}/geom.h generated
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/cnvlki
+prev ${INSTALLROOT}/bin
+prev cnvlki
+exec - test '' = 'cnvlki' || ${STDCMP} 2>/dev/null -s cnvlki ${INSTALLROOT}/bin/cnvlki || { ${STDMV} ${INSTALLROOT}/bin/cnvlki ${INSTALLROOT}/bin/cnvlki.old 2>/dev/null || true; ${STDCP} cnvlki ${INSTALLROOT}/bin/cnvlki ;}
+done ${INSTALLROOT}/bin/cnvlki generated
+make ${INSTALLROOT}/man/man1
+exec - if silent test ! -d ${INSTALLROOT}/man/man1
+exec - then mkdir -p ${INSTALLROOT}/man/man1
+exec - fi
+done ${INSTALLROOT}/man/man1 generated
+make ${INSTALLROOT}/man/man1/cnvlki.1
+prev ${INSTALLROOT}/man/man1
+prev cnvlki.1
+exec - test '' = 'cnvlki.1' || ${STDCMP} 2>/dev/null -s cnvlki.1 ${INSTALLROOT}/man/man1/cnvlki.1 || { ${STDMV} ${INSTALLROOT}/man/man1/cnvlki.1 ${INSTALLROOT}/man/man1/cnvlki.1.old 2>/dev/null || true; ${STDCP} cnvlki.1 ${INSTALLROOT}/man/man1/cnvlki.1 ;}
+done ${INSTALLROOT}/man/man1/cnvlki.1 generated
+make ${INSTALLROOT}/bin/ascii2geom
+prev ascii2geom
+exec - test '' = 'ascii2geom' || ${STDCMP} 2>/dev/null -s ascii2geom ${INSTALLROOT}/bin/ascii2geom || { ${STDMV} ${INSTALLROOT}/bin/ascii2geom ${INSTALLROOT}/bin/ascii2geom.old 2>/dev/null || true; ${STDCP} ascii2geom ${INSTALLROOT}/bin/ascii2geom ;}
+done ${INSTALLROOT}/bin/ascii2geom generated
+make ${INSTALLROOT}/man/man1/ascii2geom.1
+prev ascii2geom.1
+exec - test '' = 'ascii2geom.1' || ${STDCMP} 2>/dev/null -s ascii2geom.1 ${INSTALLROOT}/man/man1/ascii2geom.1 || { ${STDMV} ${INSTALLROOT}/man/man1/ascii2geom.1 ${INSTALLROOT}/man/man1/ascii2geom.1.old 2>/dev/null || true; ${STDCP} ascii2geom.1 ${INSTALLROOT}/man/man1/ascii2geom.1 ;}
+done ${INSTALLROOT}/man/man1/ascii2geom.1 generated
+make ${INSTALLROOT}/bin/shapefile2geom
+prev shapefile2geom
+exec - test '' = 'shapefile2geom' || ${STDCMP} 2>/dev/null -s shapefile2geom ${INSTALLROOT}/bin/shapefile2geom || { ${STDMV} ${INSTALLROOT}/bin/shapefile2geom ${INSTALLROOT}/bin/shapefile2geom.old 2>/dev/null || true; ${STDCP} shapefile2geom ${INSTALLROOT}/bin/shapefile2geom ;}
+done ${INSTALLROOT}/bin/shapefile2geom generated
+make ${INSTALLROOT}/man/man1/shapefile2geom.1
+prev shapefile2geom.1
+exec - test '' = 'shapefile2geom.1' || ${STDCMP} 2>/dev/null -s shapefile2geom.1 ${INSTALLROOT}/man/man1/shapefile2geom.1 || { ${STDMV} ${INSTALLROOT}/man/man1/shapefile2geom.1 ${INSTALLROOT}/man/man1/shapefile2geom.1.old 2>/dev/null || true; ${STDCP} shapefile2geom.1 ${INSTALLROOT}/man/man1/shapefile2geom.1 ;}
+done ${INSTALLROOT}/man/man1/shapefile2geom.1 generated
+make ${INSTALLROOT}/bin/cnvnpanxx
+prev cnvnpanxx
+exec - test '' = 'cnvnpanxx' || ${STDCMP} 2>/dev/null -s cnvnpanxx ${INSTALLROOT}/bin/cnvnpanxx || { ${STDMV} ${INSTALLROOT}/bin/cnvnpanxx ${INSTALLROOT}/bin/cnvnpanxx.old 2>/dev/null || true; ${STDCP} cnvnpanxx ${INSTALLROOT}/bin/cnvnpanxx ;}
+done ${INSTALLROOT}/bin/cnvnpanxx generated
+make ${INSTALLROOT}/man/man1/cnvnpanxx.1
+prev cnvnpanxx.1
+exec - test '' = 'cnvnpanxx.1' || ${STDCMP} 2>/dev/null -s cnvnpanxx.1 ${INSTALLROOT}/man/man1/cnvnpanxx.1 || { ${STDMV} ${INSTALLROOT}/man/man1/cnvnpanxx.1 ${INSTALLROOT}/man/man1/cnvnpanxx.1.old 2>/dev/null || true; ${STDCP} cnvnpanxx.1 ${INSTALLROOT}/man/man1/cnvnpanxx.1 ;}
+done ${INSTALLROOT}/man/man1/cnvnpanxx.1 generated
+make ${INSTALLROOT}/bin/tiger2geom
+prev tiger2geom
+exec - test '' = 'tiger2geom' || ${STDCMP} 2>/dev/null -s tiger2geom ${INSTALLROOT}/bin/tiger2geom || { ${STDMV} ${INSTALLROOT}/bin/tiger2geom ${INSTALLROOT}/bin/tiger2geom.old 2>/dev/null || true; ${STDCP} tiger2geom ${INSTALLROOT}/bin/tiger2geom ;}
+done ${INSTALLROOT}/bin/tiger2geom generated
+make ${INSTALLROOT}/man/man1/tiger2geom.1
+prev tiger2geom.1
+exec - test '' = 'tiger2geom.1' || ${STDCMP} 2>/dev/null -s tiger2geom.1 ${INSTALLROOT}/man/man1/tiger2geom.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tiger2geom.1 ${INSTALLROOT}/man/man1/tiger2geom.1.old 2>/dev/null || true; ${STDCP} tiger2geom.1 ${INSTALLROOT}/man/man1/tiger2geom.1 ;}
+done ${INSTALLROOT}/man/man1/tiger2geom.1 generated
+make ${INSTALLROOT}/bin/tiger2ps
+prev tiger2ps
+exec - test '' = 'tiger2ps' || ${STDCMP} 2>/dev/null -s tiger2ps ${INSTALLROOT}/bin/tiger2ps || { ${STDMV} ${INSTALLROOT}/bin/tiger2ps ${INSTALLROOT}/bin/tiger2ps.old 2>/dev/null || true; ${STDCP} tiger2ps ${INSTALLROOT}/bin/tiger2ps ;}
+done ${INSTALLROOT}/bin/tiger2ps generated
+make ${INSTALLROOT}/man/man1/tiger2ps.1
+prev tiger2ps.1
+exec - test '' = 'tiger2ps.1' || ${STDCMP} 2>/dev/null -s tiger2ps.1 ${INSTALLROOT}/man/man1/tiger2ps.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tiger2ps.1 ${INSTALLROOT}/man/man1/tiger2ps.1.old 2>/dev/null || true; ${STDCP} tiger2ps.1 ${INSTALLROOT}/man/man1/tiger2ps.1 ;}
+done ${INSTALLROOT}/man/man1/tiger2ps.1 generated
+make ${INSTALLROOT}/bin/tiger2off
+prev tiger2off
+exec - test '' = 'tiger2off' || ${STDCMP} 2>/dev/null -s tiger2off ${INSTALLROOT}/bin/tiger2off || { ${STDMV} ${INSTALLROOT}/bin/tiger2off ${INSTALLROOT}/bin/tiger2off.old 2>/dev/null || true; ${STDCP} tiger2off ${INSTALLROOT}/bin/tiger2off ;}
+done ${INSTALLROOT}/bin/tiger2off generated
+make ${INSTALLROOT}/man/man1/tiger2off.1
+prev tiger2off.1
+exec - test '' = 'tiger2off.1' || ${STDCMP} 2>/dev/null -s tiger2off.1 ${INSTALLROOT}/man/man1/tiger2off.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tiger2off.1 ${INSTALLROOT}/man/man1/tiger2off.1.old 2>/dev/null || true; ${STDCP} tiger2off.1 ${INSTALLROOT}/man/man1/tiger2off.1 ;}
+done ${INSTALLROOT}/man/man1/tiger2off.1 generated
+make ${INSTALLROOT}/bin/tiger2ascii
+prev tiger2ascii
+exec - test '' = 'tiger2ascii' || ${STDCMP} 2>/dev/null -s tiger2ascii ${INSTALLROOT}/bin/tiger2ascii || { ${STDMV} ${INSTALLROOT}/bin/tiger2ascii ${INSTALLROOT}/bin/tiger2ascii.old 2>/dev/null || true; ${STDCP} tiger2ascii ${INSTALLROOT}/bin/tiger2ascii ;}
+done ${INSTALLROOT}/bin/tiger2ascii generated
+make ${INSTALLROOT}/man/man1/tiger2ascii.1
+prev tiger2ascii.1
+exec - test '' = 'tiger2ascii.1' || ${STDCMP} 2>/dev/null -s tiger2ascii.1 ${INSTALLROOT}/man/man1/tiger2ascii.1 || { ${STDMV} ${INSTALLROOT}/man/man1/tiger2ascii.1 ${INSTALLROOT}/man/man1/tiger2ascii.1.old 2>/dev/null || true; ${STDCP} tiger2ascii.1 ${INSTALLROOT}/man/man1/tiger2ascii.1 ;}
+done ${INSTALLROOT}/man/man1/tiger2ascii.1 generated
+make ${INSTALLROOT}/bin/geomprint
+prev geomprint
+exec - test '' = 'geomprint' || ${STDCMP} 2>/dev/null -s geomprint ${INSTALLROOT}/bin/geomprint || { ${STDMV} ${INSTALLROOT}/bin/geomprint ${INSTALLROOT}/bin/geomprint.old 2>/dev/null || true; ${STDCP} geomprint ${INSTALLROOT}/bin/geomprint ;}
+done ${INSTALLROOT}/bin/geomprint generated
+make ${INSTALLROOT}/man/man1/geomprint.1
+prev geomprint.1
+exec - test '' = 'geomprint.1' || ${STDCMP} 2>/dev/null -s geomprint.1 ${INSTALLROOT}/man/man1/geomprint.1 || { ${STDMV} ${INSTALLROOT}/man/man1/geomprint.1 ${INSTALLROOT}/man/man1/geomprint.1.old 2>/dev/null || true; ${STDCP} geomprint.1 ${INSTALLROOT}/man/man1/geomprint.1 ;}
+done ${INSTALLROOT}/man/man1/geomprint.1 generated
+make ${INSTALLROOT}/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib
+exec - then mkdir -p ${INSTALLROOT}/lib
+exec - fi
+done ${INSTALLROOT}/lib generated
+make ${INSTALLROOT}/lib/libgeom.a archive
+prev ${INSTALLROOT}/lib
+prev libgeom.a archive
+exec - test '' = 'libgeom.a' || ${STDCMP} 2>/dev/null -s libgeom.a ${INSTALLROOT}/lib/libgeom.a || { ${STDMV} ${INSTALLROOT}/lib/libgeom.a ${INSTALLROOT}/lib/libgeom.a.old 2>/dev/null || true; ${STDCP} libgeom.a ${INSTALLROOT}/lib/libgeom.a ;}
+exec - (ranlib ${INSTALLROOT}/lib/libgeom.a) >/dev/null 2>&1 || true
+done ${INSTALLROOT}/lib/libgeom.a generated
+make ${INSTALLROOT}/lib/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib/lib
+exec - then mkdir -p ${INSTALLROOT}/lib/lib
+exec - fi
+done ${INSTALLROOT}/lib/lib generated
+make ${INSTALLROOT}/lib/lib/geom
+prev ${INSTALLROOT}/lib/lib
+prev geom.req
+exec - test '' = 'geom.req' || ${STDCMP} 2>/dev/null -s geom.req ${INSTALLROOT}/lib/lib/geom || { ${STDMV} ${INSTALLROOT}/lib/lib/geom ${INSTALLROOT}/lib/lib/geom.old 2>/dev/null || true; ${STDCP} geom.req ${INSTALLROOT}/lib/lib/geom ;}
+done ${INSTALLROOT}/lib/lib/geom generated
+done install virtual
+make test
+done test dontcare virtual

@@ -1,0 +1,99 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make ${INSTALLROOT}/bin
+exec - if silent test ! -d ${INSTALLROOT}/bin
+exec - then mkdir -p ${INSTALLROOT}/bin
+exec - fi
+done ${INSTALLROOT}/bin generated
+make ${INSTALLROOT}/bin/vpm
+prev ${INSTALLROOT}/bin
+make vpm
+meta vpm %.sh>% vpm.sh vpm
+make vpm.sh
+done vpm.sh
+exec - case static,port:$OPTIND:$RANDOM in
+exec - ?*:*:*|*::*|*:*:$RANDOM)
+exec - ;;
+exec - *) if ENV= LC_ALL=C x= $SHELL -nc '[[ a || b ]] && : ${list[level]}  !(pattern)' 2>/dev/null
+exec - then if grep '### .*archaic.* ###' >/dev/null
+exec - then : vpm contains archaic constructs :
+exec - else ENV= LC_ALL=C $SHELL -n vpm.sh
+exec - fi
+exec - fi
+exec - ;;
+exec - esac
+exec - case '${mam_cc_SHELLMAGIC}' in
+exec - "") case 0 in
+exec - 0) cp vpm.sh vpm
+exec - ;;
+exec - *) {
+exec - i=`(read x; echo $x) < vpm.sh`
+exec - case $i in
+exec - '#!'*|*'||'*|':'*|'":"'*|"':'"*) echo "$i" ;;
+exec - esac
+exec - cat - vpm.sh <<'!'
+exec -
+exec - !
+exec - } > vpm
+exec - ;;
+exec - esac
+exec - ;;
+exec - *) cat - vpm.sh > vpm <<'!'
+exec - ${mam_cc_SHELLMAGIC}
+exec -
+exec - !
+exec - ;;
+exec - esac
+exec - silent test -w vpm -a -x vpm || chmod u+w,+x vpm
+done vpm generated
+exec - test '' = 'vpm' || ${STDCMP} 2>/dev/null -s vpm ${INSTALLROOT}/bin/vpm || { ${STDMV} ${INSTALLROOT}/bin/vpm ${INSTALLROOT}/bin/vpm.old 2>/dev/null || true; ${STDCP} vpm ${INSTALLROOT}/bin/vpm ;}
+done ${INSTALLROOT}/bin/vpm generated
+make ${INSTALLROOT}/lib/lefty
+exec - if silent test ! -d ${INSTALLROOT}/lib/lefty
+exec - then mkdir -p ${INSTALLROOT}/lib/lefty
+exec - fi
+done ${INSTALLROOT}/lib/lefty generated
+make ${INSTALLROOT}/lib/lefty/vpm.lefty
+prev ${INSTALLROOT}/lib/lefty
+make vpm.lefty
+done vpm.lefty
+exec - test '' = 'vpm.lefty' || ${STDCMP} 2>/dev/null -s vpm.lefty ${INSTALLROOT}/lib/lefty/vpm.lefty || { ${STDMV} ${INSTALLROOT}/lib/lefty/vpm.lefty ${INSTALLROOT}/lib/lefty/vpm.lefty.old 2>/dev/null || true; ${STDCP} vpm.lefty ${INSTALLROOT}/lib/lefty/vpm.lefty ;}
+done ${INSTALLROOT}/lib/lefty/vpm.lefty generated
+done install virtual
+make test
+done test dontcare virtual

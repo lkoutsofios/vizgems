@@ -1,7 +1,7 @@
 #include <ast.h>
 #include <swift.h>
-#include <dlfcn.h>
 #include "vg_dq_vt_util.h"
+#include "vg_gvc_wrapper.h"
 
 int IGRccexists, IGRclexists, IGRrkexists, IGRndexists, IGRedexists;
 
@@ -46,32 +46,19 @@ static Dtdisc_t eddisc = {
 
 static int width, height;
 
-static Agsym_t *gvsyms[UT_ATTRGROUP_SIZE][UT_ATTR_SIZE];
+static void *gvsyms[UT_ATTRGROUP_SIZE][UT_ATTR_SIZE];
 
-static GVC_t *gvc;
-static Agraph_t *rootgp;
+static void *rootgp;
 static int gid, nid;
-
-#if !_BLD_swift && defined(__IMPORT__)
-#define __PUBLIC_DATA__ __IMPORT__
-#else
-#define __PUBLIC_DATA__
-#endif
-
-static lt_symlist_t lt_symlist[4];
-
-#undef __PUBLIC_DATA__
 
 static RI_t *rip;
 
 static int debugmode;
 
-static int getattrs (Agraph_t *, Agnode_t *, Agedge_t *);
+static int getattrs (void *, void *, void *);
 static int cmp (const void *, const void *);
 
 int IGRinit (char *pm) {
-    void *hp;
-
     if (!(ccdict = dtopen (&ccdisc, Dtset))) {
         SUwarning (0, "IGRinit", "cannot create ccdict");
         return -1;
@@ -151,31 +138,10 @@ int IGRinit (char *pm) {
     UTattrgroups[UT_ATTRGROUP_EDGE][UT_ATTR_HLDRAW].name = "_hldraw_";
     UTattrgroups[UT_ATTRGROUP_EDGE][UT_ATTR_TLDRAW].name = "_tldraw_";
 
-    if (!(hp = dlopen ("libgvplugin_dot_layout.so", RTLD_LAZY)))
-        SUerror ("IGRinit", "cannot load libgvplugin_dot_layout.so");
-    lt_symlist[0].name = "gvplugin_dot_layout_LTX_library";
-    if (!(lt_symlist[0].address = (void *) dlsym (hp, lt_symlist[0].name)))
-        SUerror ("IGRinit", "cannot find gvplugin_dot_layout_LTX_library");
-
-    if (!(hp = dlopen ("libgvplugin_neato_layout.so", RTLD_LAZY)))
-        SUerror ("IGRinit", "cannot load libgvplugin_neato_layout.so");
-    lt_symlist[1].name = "gvplugin_neato_layout_LTX_library";
-    if (!(lt_symlist[1].address = (void *) dlsym (hp, lt_symlist[1].name)))
-        SUerror ("IGRinit", "cannot find gvplugin_neato_layout_LTX_library");
-
-    if (!(hp = dlopen ("libgvplugin_gd.so", RTLD_LAZY)))
-        SUerror ("IGRinit", "cannot load libgvplugin_gd.so");
-    lt_symlist[2].name = "gvplugin_gd_LTX_library";
-    if (!(lt_symlist[2].address = (void *) dlsym (hp, lt_symlist[2].name)))
-        SUerror ("IGRinit", "cannot find gvplugin_gd_LTX_library");
-
-    if (!(hp = dlopen ("libgvplugin_core.so", RTLD_LAZY)))
-        SUerror ("IGRinit", "cannot load libgvplugin_core.so");
-    lt_symlist[3].name = "gvplugin_core_LTX_library";
-    if (!(lt_symlist[3].address = (void *) dlsym (hp, lt_symlist[3].name)))
-        SUerror ("IGRinit", "cannot find gvplugin_core_LTX_library");
-
-    gvc = gvContextPlugins (lt_symlist, 0);
+    if (GVWinit () == -1) {
+        SUwarning (0, "IGRinit", "cannot init gvc wrapper");
+        return -1;
+    }
 
     if (getenv ("DEBUG"))
         debugmode = TRUE;
@@ -506,8 +472,8 @@ int IGRflatten (void) {
 /* graph layout */
 
 int IGRreset (char *style) {
-    gvFreeLayout (gvc, rootgp);
-    agclose (rootgp);
+    GVWfreelayout (rootgp);
+    GVWagclose (rootgp);
     rootgp = NULL;
     return 0;
 }
@@ -516,30 +482,32 @@ int IGRlayout (char *style) {
     UTattr_t *ap;
     int ai;
 
-    gvLayout (gvc, rootgp, style);
-#ifdef _UWIN
-    gvRender (gvc, rootgp, "xdot", NULL);
-#else
-    gvRender (gvc, rootgp, "xdot", debugmode ? stderr : NULL);
-#endif
+    GVWlayout (rootgp, style);
+    GVWrender (rootgp, debugmode);
 
     for (ai = 0; ai < UT_ATTR_SIZE; ai++) {
         ap = &UTattrgroups[UT_ATTRGROUP_GRAPH][ai];
         if (!ap->name)
             continue;
-        gvsyms[UT_ATTRGROUP_GRAPH][ai] = agattr (rootgp, AGRAPH, ap->name, NULL);
+        gvsyms[UT_ATTRGROUP_GRAPH][ai] = GVWagattr (
+            rootgp, GVW_AGRAPH, ap->name, NULL
+        );
     }
     for (ai = 0; ai < UT_ATTR_SIZE; ai++) {
         ap = &UTattrgroups[UT_ATTRGROUP_NODE][ai];
         if (!ap->name)
             continue;
-        gvsyms[UT_ATTRGROUP_NODE][ai] = agattr (rootgp, AGNODE, ap->name, NULL);
+        gvsyms[UT_ATTRGROUP_NODE][ai] = GVWagattr (
+            rootgp, GVW_AGNODE, ap->name, NULL
+        );
     }
     for (ai = 0; ai < UT_ATTR_SIZE; ai++) {
         ap = &UTattrgroups[UT_ATTRGROUP_EDGE][ai];
         if (!ap->name)
             continue;
-        gvsyms[UT_ATTRGROUP_EDGE][ai] = agattr (rootgp, AGEDGE, ap->name, NULL);
+        gvsyms[UT_ATTRGROUP_EDGE][ai] = GVWagattr (
+            rootgp, GVW_AGEDGE, ap->name, NULL
+        );
     }
 
     return 0;
@@ -551,14 +519,14 @@ int IGRnewgraph (IGRcc_t *ccp, char *attrstr) {
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_GRAPH, attrstr) == -1) {
         SUwarning (0, "IGRnewgraph", "cannot parse attrstr");
         return -1;
     }
     sfsprintf (buf, 32, "g%d", gid++);
-    if (!(ccp->gp = rootgp = agopen (buf, Agdirected, NULL))) {
+    if (!(ccp->gp = rootgp = GVWagopen (buf))) {
         SUwarning (0, "IGRnewgraph", "cannot create graph");
         return -1;
     }
@@ -579,43 +547,43 @@ int IGRnewgraph (IGRcc_t *ccp, char *attrstr) {
             havebb = TRUE;
             ap->value[0] = 0;
         }
-        if (!(sp = agattr (rootgp, AGRAPH, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, ap->name, ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, ""))) {
                 SUwarning (0, "IGRnewgraph", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (rootgp, sp, ap->value);
+        GVWagxset (rootgp, sp, ap->value);
     }
     if (havebb) {
         sfsprintf (buf, 32, "%f", (bb.w / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lwidth", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lwidth", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", ""))) {
                 SUwarning (0, "IGRnewgraph", "cannot insert lwidth attr");
                 return -1;
             }
         }
-        agxset (rootgp, sp, buf);
+        GVWagxset (rootgp, sp, buf);
         sfsprintf (buf, 32, "%f", (bb.h / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lheight", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lheight", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", ""))) {
                 SUwarning (0, "IGRnewgraph", "cannot insert lheight attr");
                 return -1;
             }
         }
-        agxset (rootgp, sp, buf);
+        GVWagxset (rootgp, sp, buf);
     }
 
     return 0;
 }
 
-int IGRnewccgraph (Agraph_t *gp, IGRcc_t *ccp, char *attrstr) {
+int IGRnewccgraph (void *gp, IGRcc_t *ccp, char *attrstr) {
     char buf[32], *sgprefix;
     UTattr_t *ap;
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_GRAPH, attrstr) == -1) {
         SUwarning (0, "IGRnewccgraph", "cannot parse attrstr");
@@ -630,7 +598,7 @@ int IGRnewccgraph (Agraph_t *gp, IGRcc_t *ccp, char *attrstr) {
         }
     }
     sfsprintf (buf, 32, "%s_g%d", sgprefix, gid++);
-    if (!(ccp->gp = agsubg (gp, buf, TRUE))) {
+    if (!(ccp->gp = GVWagsubg (gp, buf, TRUE))) {
         SUwarning (0, "IGRnewccgraph", "cannot create sgraph");
         return -1;
     }
@@ -653,43 +621,43 @@ int IGRnewccgraph (Agraph_t *gp, IGRcc_t *ccp, char *attrstr) {
             havebb = TRUE;
             ap->value[0] = 0;
         }
-        if (!(sp = agattr (rootgp, AGRAPH, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, ap->name, ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, ""))) {
                 SUwarning (0, "IGRnewccgraph", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (ccp->gp, sp, ap->value);
+        GVWagxset (ccp->gp, sp, ap->value);
     }
     if (havebb) {
         sfsprintf (buf, 32, "%f", (bb.w / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lwidth", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lwidth", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", ""))) {
                 SUwarning (0, "IGRnewccgraph", "cannot insert lwidth attr");
                 return -1;
             }
         }
-        agxset (ccp->gp, sp, buf);
+        GVWagxset (ccp->gp, sp, buf);
         sfsprintf (buf, 32, "%f", (bb.h / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lheight", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lheight", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", ""))) {
                 SUwarning (0, "IGRnewccgraph", "cannot insert lheight attr");
                 return -1;
             }
         }
-        agxset (ccp->gp, sp, buf);
+        GVWagxset (ccp->gp, sp, buf);
     }
 
     return 0;
 }
 
-int IGRnewclgraph (Agraph_t *gp, IGRcl_t *clp, char *attrstr) {
+int IGRnewclgraph (void *gp, IGRcl_t *clp, char *attrstr) {
     char buf[32], *sgprefix;
     UTattr_t *ap;
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_GRAPH, attrstr) == -1) {
         SUwarning (0, "IGRnewclgraph", "cannot parse attrstr");
@@ -704,7 +672,7 @@ int IGRnewclgraph (Agraph_t *gp, IGRcl_t *clp, char *attrstr) {
         }
     }
     sfsprintf (buf, 32, "%s_g%d", sgprefix, gid++);
-    if (!(clp->gp = agsubg (gp, buf, TRUE))) {
+    if (!(clp->gp = GVWagsubg (gp, buf, TRUE))) {
         SUwarning (0, "IGRnewclgraph", "cannot create sgraph");
         return -1;
     }
@@ -727,43 +695,43 @@ int IGRnewclgraph (Agraph_t *gp, IGRcl_t *clp, char *attrstr) {
             havebb = TRUE;
             ap->value[0] = 0;
         }
-        if (!(sp = agattr (rootgp, AGRAPH, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, ap->name, ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, ""))) {
                 SUwarning (0, "IGRnewclgraph", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (clp->gp, sp, ap->value);
+        GVWagxset (clp->gp, sp, ap->value);
     }
     if (havebb) {
         sfsprintf (buf, 32, "%f", (bb.w / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lwidth", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lwidth", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", ""))) {
                 SUwarning (0, "IGRnewclgraph", "cannot insert lwidth attr");
                 return -1;
             }
         }
-        agxset (clp->gp, sp, buf);
+        GVWagxset (clp->gp, sp, buf);
         sfsprintf (buf, 32, "%f", (bb.h / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lheight", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lheight", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", ""))) {
                 SUwarning (0, "IGRnewclgraph", "cannot insert lheight attr");
                 return -1;
             }
         }
-        agxset (clp->gp, sp, buf);
+        GVWagxset (clp->gp, sp, buf);
     }
 
     return 0;
 }
 
-int IGRnewrkgraph (Agraph_t *gp, IGRrk_t *rkp, char *attrstr) {
+int IGRnewrkgraph (void *gp, IGRrk_t *rkp, char *attrstr) {
     char buf[32], *sgprefix;
     UTattr_t *ap;
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_GRAPH, attrstr) == -1) {
         SUwarning (0, "IGRnewrkgraph", "cannot parse attrstr");
@@ -778,7 +746,7 @@ int IGRnewrkgraph (Agraph_t *gp, IGRrk_t *rkp, char *attrstr) {
         }
     }
     sfsprintf (buf, 32, "%s_g%d", sgprefix, gid++);
-    if (!(rkp->gp = agsubg (gp, buf, TRUE))) {
+    if (!(rkp->gp = GVWagsubg (gp, buf, TRUE))) {
         SUwarning (0, "IGRnewrkgraph", "cannot create sgraph");
         return -1;
     }
@@ -801,50 +769,50 @@ int IGRnewrkgraph (Agraph_t *gp, IGRrk_t *rkp, char *attrstr) {
             havebb = TRUE;
             ap->value[0] = 0;
         }
-        if (!(sp = agattr (rootgp, AGRAPH, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, ap->name, ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,ap->name, ""))) {
                 SUwarning (0, "IGRnewrkgraph", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (rkp->gp, sp, ap->value);
+        GVWagxset (rkp->gp, sp, ap->value);
     }
     if (havebb) {
         sfsprintf (buf, 32, "%f", (bb.w / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lwidth", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lwidth", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lwidth", ""))) {
                 SUwarning (0, "IGRnewrkgraph", "cannot insert lwidth attr");
                 return -1;
             }
         }
-        agxset (rkp->gp, sp, buf);
+        GVWagxset (rkp->gp, sp, buf);
         sfsprintf (buf, 32, "%f", (bb.h / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGRAPH, "lheight", NULL))) {
-            if (!(sp = agattr (rootgp, AGRAPH, "lheight", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGRAPH,"lheight", ""))) {
                 SUwarning (0, "IGRnewrkgraph", "cannot insert lheight attr");
                 return -1;
             }
         }
-        agxset (rkp->gp, sp, buf);
+        GVWagxset (rkp->gp, sp, buf);
     }
 
     return 0;
 }
 
-int IGRnewnode (Agraph_t *gp, IGRnd_t *ndp, char *attrstr) {
+int IGRnewnode (void *gp, IGRnd_t *ndp, char *attrstr) {
     char buf[32];
     UTattr_t *ap;
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_NODE, attrstr) == -1) {
         SUwarning (0, "IGRnewnode", "cannot parse attrstr");
         return -1;
     }
     sfsprintf (buf, 32, "n%d", nid++);
-    if (!(ndp->np = agnode (gp, buf, TRUE))) {
+    if (!(ndp->np = GVWagnode (gp, buf, TRUE))) {
         SUwarning (0, "IGRnewnode", "cannot create node");
         return -1;
     }
@@ -866,53 +834,53 @@ int IGRnewnode (Agraph_t *gp, IGRnd_t *ndp, char *attrstr) {
             ndp->w = bb.w, ndp->h = bb.h, ndp->havewh = TRUE;
             ap->value[0] = 0;
         }
-        if (!(sp = agattr (rootgp, AGNODE, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGNODE, ap->name, ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGNODE,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGNODE,ap->name, ""))) {
                 SUwarning (0, "IGRnewnode", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (ndp->np, sp, ap->value);
+        GVWagxset (ndp->np, sp, ap->value);
     }
     if (havebb) {
         if (bb.w > 5) {
             sfsprintf (buf, 32, "%f", ((bb.w + 4) / 72.0) / 1.35);
-            if (!(sp = agattr (rootgp, AGNODE, "width", NULL))) {
-                if (!(sp = agattr (rootgp, AGNODE, "width", ""))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGNODE,"width", NULL))) {
+                if (!(sp = GVWagattr (rootgp, GVW_AGNODE,"width", ""))) {
                     SUwarning (0, "IGRnewnode", "cannot insert width attr");
                     return -1;
                 }
             }
-            agxset (ndp->np, sp, buf);
+            GVWagxset (ndp->np, sp, buf);
         }
         if (bb.h > 5) {
             sfsprintf (buf, 32, "%f", ((bb.h + 4) / 72.0) / 1.35);
-            if (!(sp = agattr (rootgp, AGNODE, "height", NULL))) {
-                if (!(sp = agattr (rootgp, AGNODE, "height", ""))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGNODE,"height", NULL))) {
+                if (!(sp = GVWagattr (rootgp, GVW_AGNODE,"height", ""))) {
                     SUwarning (0, "IGRnewnode", "cannot insert height attr");
                     return -1;
                 }
             }
-            agxset (ndp->np, sp, buf);
+            GVWagxset (ndp->np, sp, buf);
         }
     }
 
     return 0;
 }
 
-int IGRnewedge (Agraph_t *gp, IGRed_t *edp, char *attrstr) {
+int IGRnewedge (void *gp, IGRed_t *edp, char *attrstr) {
     char buf[32];
     UTattr_t *ap;
     int ai;
     EMbb_t bb;
     int havebb;
-    Agsym_t *sp;
+    void *sp;
 
     if (UTsplitattr (UT_ATTRGROUP_EDGE, attrstr) == -1) {
         SUwarning (0, "IGRnewedge", "cannot parse attrstr");
         return -1;
     }
-    if (!(edp->ep = agedge (gp, edp->ndp1->np, edp->ndp2->np, NULL, TRUE))) {
+    if (!(edp->ep = GVWagedge (gp, edp->ndp1->np, edp->ndp2->np, NULL, TRUE))) {
         SUwarning (0, "IGRnewedge", "cannot create edge");
         return -1;
     }
@@ -933,31 +901,31 @@ int IGRnewedge (Agraph_t *gp, IGRed_t *edp, char *attrstr) {
             }
             havebb = TRUE;
             ap->value[0] = 0;
-        } else if (!(sp = agattr (rootgp, AGEDGE, ap->name, NULL))) {
-            if (!(sp = agattr (rootgp, AGEDGE, ap->name, ""))) {
+        } else if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,ap->name, NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,ap->name, ""))) {
                 SUwarning (0, "IGRnewedge", "cannot insert attr");
                 return -1;
             }
         }
-        agxset (edp->ep, sp, ap->value);
+        GVWagxset (edp->ep, sp, ap->value);
     }
     if (havebb) {
         sfsprintf (buf, 32, "%f", (bb.w / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGEDGE, "lwidth", NULL))) {
-            if (!(sp = agattr (rootgp, AGEDGE, "lwidth", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,"lwidth", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,"lwidth", ""))) {
                 SUwarning (0, "IGRnewedge", "cannot insert lwidth attr");
                 return -1;
             }
         }
-        agxset (edp->ep, sp, buf);
+        GVWagxset (edp->ep, sp, buf);
         sfsprintf (buf, 32, "%f", (bb.h / 72.0) / 1.35);
-        if (!(sp = agattr (rootgp, AGEDGE, "lheight", NULL))) {
-            if (!(sp = agattr (rootgp, AGEDGE, "lheight", ""))) {
+        if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,"lheight", NULL))) {
+            if (!(sp = GVWagattr (rootgp, GVW_AGEDGE,"lheight", ""))) {
                 SUwarning (0, "IGRnewedge", "cannot insert lheight attr");
                 return -1;
             }
         }
-        agxset (edp->ep, sp, buf);
+        GVWagxset (edp->ep, sp, buf);
     }
 
     return 0;
@@ -1109,7 +1077,7 @@ int IGRenddraw (void) {
     return 0;
 }
 
-int IGRdrawsgraph (Agraph_t *gp, RIop_t *ops, int opn, char *obj, char *url) {
+int IGRdrawsgraph (void *gp, RIop_t *ops, int opn, char *obj, char *url) {
     char *bgcolor, *lncolor, *flcolor, *fncolor, *fnname, *fnsize, *info;
     int x, y, w, h;
     UTattr_t *ap;
@@ -1221,7 +1189,7 @@ int IGRdrawsgraph (Agraph_t *gp, RIop_t *ops, int opn, char *obj, char *url) {
 }
 
 int IGRdrawnode (
-    Agnode_t *np, RIop_t *ops, int opn, int havewh, int nw, int nh,
+    void *np, RIop_t *ops, int opn, int havewh, int nw, int nh,
     char *obj, char *url
 ) {
     char *lncolor, *flcolor, *fncolor, *fnname, *fnsize, *info;
@@ -1358,7 +1326,7 @@ int IGRdrawnode (
     return 0;
 }
 
-int IGRdrawedge (Agedge_t *ep, RIop_t *ops, int opn, char *obj, char *url) {
+int IGRdrawedge (void *ep, RIop_t *ops, int opn, char *obj, char *url) {
     char *lncolor, *flcolor, *fncolor, *fnname, *fnsize;
     int x, y, w, h;
     UTattr_t *ap;
@@ -1474,10 +1442,10 @@ int IGRdrawedge (Agedge_t *ep, RIop_t *ops, int opn, char *obj, char *url) {
 
 /* utilities */
 
-static int getattrs (Agraph_t *gp, Agnode_t *np, Agedge_t *ep) {
+static int getattrs (void *gp, void *np, void *ep) {
     UTattr_t *ap;
     int ai;
-    Agsym_t *sp;
+    void *sp;
 
     if (gp) {
         for (ai = 0; ai < UT_ATTR_SIZE; ai++) {
@@ -1486,7 +1454,7 @@ static int getattrs (Agraph_t *gp, Agnode_t *np, Agedge_t *ep) {
             sp = gvsyms[UT_ATTRGROUP_GRAPH][ai];
             if (!ap->name || !sp)
                 continue;
-            ap->value = agxget (gp, sp);
+            ap->value = GVWagxget (gp, sp);
         }
     }
     if (np) {
@@ -1496,7 +1464,7 @@ static int getattrs (Agraph_t *gp, Agnode_t *np, Agedge_t *ep) {
             sp = gvsyms[UT_ATTRGROUP_NODE][ai];
             if (!ap->name || !sp)
                 continue;
-            ap->value = agxget (np, sp);
+            ap->value = GVWagxget (np, sp);
         }
     }
     if (ep) {
@@ -1506,7 +1474,7 @@ static int getattrs (Agraph_t *gp, Agnode_t *np, Agedge_t *ep) {
             sp = gvsyms[UT_ATTRGROUP_EDGE][ai];
             if (!ap->name || !sp)
                 continue;
-            ap->value = agxget (ep, sp);
+            ap->value = GVWagxget (ep, sp);
         }
     }
 

@@ -35,7 +35,7 @@
 	int		nr; \
 	unsigned char*	a;
 
-#include <astcdt.h>
+#include <cdt.h>
 #include <fv.h>
 #include <ip6.h>
 #include <error.h>

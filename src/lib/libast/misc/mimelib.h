@@ -29,7 +29,7 @@
 #define _MIMELIB_H	1
 
 #include <ast.h>
-#include <astcdt.h>
+#include <cdt.h>
 #include <magic.h>
 #include <tok.h>
 

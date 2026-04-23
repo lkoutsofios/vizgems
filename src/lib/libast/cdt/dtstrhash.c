@@ -35,9 +35,9 @@
 */
 
 #if __STD_C
-uint astdtstrhash(uint h, Void_t* args, ssize_t n)
+uint dtstrhash(uint h, Void_t* args, ssize_t n)
 #else
-uint astdtstrhash(h,args,n)
+uint dtstrhash(h,args,n)
 reg uint	h;
 Void_t*		args;
 ssize_t		n;

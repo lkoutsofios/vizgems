@@ -23,39 +23,38 @@
  * backwards binary compatibility
  */
 
-#define DTCODE
-#include <astcdt.h>
+#include <cdt.h>
 
 #if defined(__EXPORT__)
 #define extern	__EXPORT__
 #endif
 
-#undef astdtflatten
-extern astDtlink_t* astdtflatten(astDt_t* d)
+#undef dtflatten
+extern Dtlink_t* dtflatten(Dt_t* d)
 {
-	return (astDtlink_t*)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_FLATTEN);
+	return (Dtlink_t*)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_FLATTEN);
 }
 
-#undef astdtextract
-extern astDtlink_t* astdtextract(astDt_t* d)
+#undef dtextract
+extern Dtlink_t* dtextract(Dt_t* d)
 {
-	return (astDtlink_t*)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_EXTRACT);
+	return (Dtlink_t*)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_EXTRACT);
 }
 
-#undef astdtrestore
-extern astDtlink_t* astdtrestore(astDt_t* d, Void_t* l)
+#undef dtrestore
+extern Dtlink_t* dtrestore(Dt_t* d, Void_t* l)
 {
-	return (astDtlink_t*)(*(_DT(d)->searchf))((d),(l),DT_RESTORE);
+	return (Dtlink_t*)(*(_DT(d)->searchf))((d),(l),DT_RESTORE);
 }
 
-#undef astdtsize
-extern ssize_t astdtsize(astDt_t* d)
+#undef dtsize
+extern ssize_t dtsize(Dt_t* d)
 {
 	return (ssize_t)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_STAT);
 }
 
-#undef astdtstat
-extern ssize_t astdtstat(astDt_t* d)
+#undef dtstat
+extern ssize_t dtstat(Dt_t* d)
 {
 	return (ssize_t)(*(_DT(d)->searchf))((d),(Void_t*)(0),DT_STAT);
 }

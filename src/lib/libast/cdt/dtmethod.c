@@ -27,34 +27,34 @@
 */
 
 #if __STD_C
-astDtmethod_t* astdtmethod(astDt_t* dt, astDtmethod_t* meth)
+Dtmethod_t* dtmethod(Dt_t* dt, Dtmethod_t* meth)
 #else
-astDtmethod_t* astdtmethod(dt, meth)
-astDt_t*		dt;
-astDtmethod_t*	meth;
+Dtmethod_t* dtmethod(dt, meth)
+Dt_t*		dt;
+Dtmethod_t*	meth;
 #endif
 {
-	astDtlink_t	*list;
-	astDtdisc_t	*disc = dt->disc;
-	astDtmethod_t	*oldmt = dt->meth;
-	astDtdata_t	*newdt, *olddt = dt->data;
+	Dtlink_t	*list;
+	Dtdisc_t	*disc = dt->disc;
+	Dtmethod_t	*oldmt = dt->meth;
+	Dtdata_t	*newdt, *olddt = dt->data;
 
 	if(!meth || meth == oldmt)
 		return oldmt;
 
 	/* ask discipline if switching to new method is ok */
 	if(disc->eventf && (*disc->eventf)(dt,DT_METH,(Void_t*)meth,disc) < 0)
-		return NIL(astDtmethod_t*);
+		return NIL(Dtmethod_t*);
 
-	list = astdtextract(dt); /* extract elements out of dictionary */
+	list = dtextract(dt); /* extract elements out of dictionary */
 
 	/* try to create internal structure for new method */
 	if(dt->searchf == oldmt->searchf) /* ie, not viewpathing */
 		dt->searchf = meth->searchf;
 	dt->meth = meth;
-	dt->data = NIL(astDtdata_t*);
+	dt->data = NIL(Dtdata_t*);
 	if((*dt->meth->eventf)(dt, DT_OPEN, NIL(Void_t*)) < 0 )
-		newdt = NIL(astDtdata_t*);
+		newdt = NIL(Dtdata_t*);
 	else	newdt = dt->data;
 
 	/* see what need to be done to data of the old method */ 
@@ -69,17 +69,17 @@ astDtmethod_t*	meth;
 			dt->searchf = meth->searchf;
 		dt->meth = meth;
 		dt->data = newdt;
-		astdtrestore(dt, list);
+		dtrestore(dt, list);
 		return oldmt;
 	}
 	else /* switch failed, restore dictionary to previous states */
-	{	astdtrestore(dt, list); 
-		return NIL(astDtmethod_t*);
+	{	dtrestore(dt, list); 
+		return NIL(Dtmethod_t*);
 	}
 }
 
 /* customize certain actions in a container data structure */
-int astdtcustomize(astDt_t* dt, int type, int action)
+int dtcustomize(Dt_t* dt, int type, int action)
 {
 	int	done = 0;
 

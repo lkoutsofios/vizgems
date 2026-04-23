@@ -1,0 +1,787 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_graphviz ${INSTALLROOT}
+setv PACKAGE_graphviz_INCLUDE ${PACKAGE_graphviz}/include/graphviz
+setv PACKAGE_graphviz_LIB ${PACKAGE_graphviz}/lib
+setv PACKAGE_ast_INCLUDE ${INSTALLROOT}/include/ast
+setv PACKAGE_ast_LIB ${INSTALLROOT}/lib
+setv PACKAGE_X11 ${INSTALLROOT}
+setv PACKAGE_X11_INCLUDE ${PACKAGE_X11}/include/X11
+setv PACKAGE_X11_LIB ${PACKAGE_X11}/lib64
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS ${mam_cc_DLL}
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make gd
+make libgd.a archive
+make gd.req
+exec - set -
+exec - echo 'int main(){return 0;}' > 1.${COTEMP}.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c 1.${COTEMP}.c &&
+exec - x=`${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l'*' 2>&1 | sed -e 's/[][()+@?]/#/g' || :` &&
+exec - {
+exec - case "" in
+exec - *?) echo " " ;;
+exec - esac
+exec - for i in gd freetype X11 Xpm jpeg png ttf z m graphviz ast
+exec - do case $i in
+exec - "gd"|gd)
+exec - ;;
+exec - *) if test -f ${INSTALLROOT}/lib/lib/$i
+exec - then y=`cat ${INSTALLROOT}/lib/lib/$i`
+exec - case $y in
+exec - *-?*) echo "" $y ;;
+exec - esac
+exec - continue
+exec - elif test ! -f ${INSTALLROOT}/lib/lib$i.a
+exec - then case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -L${INSTALLROOT}/lib ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) case `{ ${CC} ${mam_cc_FLAGS} ${CCFLAGS} ${LDFLAGS} -o 1.${COTEMP}.x 1.${COTEMP}.o -l$i 2>&1 || echo '' $x ;} | sed -e 's/[][()+@?]/#/g' || :` in
+exec - *$x*) continue ;;
+exec - esac
+exec - ;;
+exec - esac
+exec - fi
+exec - ;;
+exec - esac
+exec - echo " -l$i"
+exec - done
+exec - } > gd.req
+exec - rm -f 1.${COTEMP}.*
+done gd.req generated
+make gd.o
+make gd.c
+make gdhelpers.h implicit
+make windows.h implicit
+done windows.h dontcare virtual
+make ${INSTALLROOT}/include/ast/endian.h implicit
+make ${INSTALLROOT}/include/ast/bytesex.h implicit
+make ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/ast_map.h implicit
+done ${INSTALLROOT}/include/ast/ast_map.h dontcare
+done ${INSTALLROOT}/include/ast/ast_common.h dontcare
+done ${INSTALLROOT}/include/ast/bytesex.h dontcare
+done ${INSTALLROOT}/include/ast/endian.h dontcare
+done gdhelpers.h
+make gd.h implicit
+make gdfx.h implicit
+prev gd.h implicit
+done gdfx.h dontcare
+make gd_io.h implicit
+make ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/ast_stdio.h implicit
+make ${INSTALLROOT}/include/ast/sfio_s.h implicit
+done ${INSTALLROOT}/include/ast/sfio_s.h dontcare
+make ${INSTALLROOT}/include/ast/ast_std.h implicit
+make ${INSTALLROOT}/include/ast/regex.h implicit
+make ${INSTALLROOT}/include/ast/ast_api.h implicit
+done ${INSTALLROOT}/include/ast/ast_api.h dontcare
+make ${INSTALLROOT}/include/ast/ast_wchar.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_wchar.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+make ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/prototyped.h dontcare
+done ${INSTALLROOT}/include/ast/regex.h dontcare
+make ${INSTALLROOT}/include/ast/getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/getopt.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_map.h implicit
+make ${INSTALLROOT}/include/ast/ast_botch.h implicit
+done ${INSTALLROOT}/include/ast/ast_botch.h dontcare
+make ${INSTALLROOT}/include/ast/ast_limits.h implicit
+done ${INSTALLROOT}/include/ast/ast_limits.h dontcare
+make ${INSTALLROOT}/include/ast/ast_fcntl.h implicit
+make ${INSTALLROOT}/include/ast/ast_fs.h implicit
+done ${INSTALLROOT}/include/ast/ast_fs.h dontcare
+done ${INSTALLROOT}/include/ast/ast_fcntl.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_getopt.h implicit
+make ${INSTALLROOT}/include/ast/ast_sys.h implicit
+done ${INSTALLROOT}/include/ast/ast_sys.h dontcare
+make ${INSTALLROOT}/include/ast/ast_lib.h implicit
+done ${INSTALLROOT}/include/ast/ast_lib.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast_std.h dontcare
+done ${INSTALLROOT}/include/ast/ast_stdio.h dontcare
+done ${INSTALLROOT}/include/ast/stdio.h dontcare
+done gd_io.h dontcare
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+done gd.h dontcare
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make ${INSTALLROOT}/include/ast/cdt.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/cdt.h dontcare
+make ${INSTALLROOT}/include/ast/ast.h implicit
+prev ${INSTALLROOT}/include/ast/ast_api.h implicit
+make ${INSTALLROOT}/include/ast/vmalloc.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/vmalloc.h dontcare
+make ${INSTALLROOT}/include/ast/sfio.h implicit
+prev ${INSTALLROOT}/include/ast/sfio_s.h implicit
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/sfio.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ast.h dontcare
+done ${INSTALLROOT}/include/graphviz/graphvizconfig.h dontcare
+done gd.c
+meta gd.o %.c>%.o gd.c gd
+prev gd.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd.c
+done gd.o generated
+make gd_gd.o
+make gd_gd.c
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_gd.c
+meta gd_gd.o %.c>%.o gd_gd.c gd_gd
+prev gd_gd.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_gd.c
+done gd_gd.o generated
+make gd_gd2.o
+make gd_gd2.c
+make ${INSTALLROOT}/include/ast/zlib.h implicit
+make ${INSTALLROOT}/include/ast/zconf.h implicit
+make unixio.h implicit
+done unixio.h dontcare virtual
+prev windows.h implicit
+prev ${INSTALLROOT}/include/ast/ast_std.h implicit
+done ${INSTALLROOT}/include/ast/zconf.h dontcare
+done ${INSTALLROOT}/include/ast/zlib.h dontcare
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_gd2.c
+meta gd_gd2.o %.c>%.o gd_gd2.c gd_gd2
+prev gd_gd2.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_gd2.c
+done gd_gd2.o generated
+make gd_gif_in.o
+make gd_gif_in.c
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+done gd_gif_in.c
+meta gd_gif_in.o %.c>%.o gd_gif_in.c gd_gif_in
+prev gd_gif_in.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gd_gif_in.c
+done gd_gif_in.o generated
+make gd_gif_out.o
+make gd_gif_out.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+done gd_gif_out.c
+meta gd_gif_out.o %.c>%.o gd_gif_out.c gd_gif_out
+prev gd_gif_out.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gd_gif_out.c
+done gd_gif_out.o generated
+make gd_io.o
+make gd_io.c
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_io.c
+meta gd_io.o %.c>%.o gd_io.c gd_io
+prev gd_io.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_io.c
+done gd_io.o generated
+make gd_io_dp.o
+make gd_io_dp.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_io_dp.c
+meta gd_io_dp.o %.c>%.o gd_io_dp.c gd_io_dp
+prev gd_io_dp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_io_dp.c
+done gd_io_dp.o generated
+make gd_io_file.o
+make gd_io_file.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_io_file.c
+meta gd_io_file.o %.c>%.o gd_io_file.c gd_io_file
+prev gd_io_file.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_io_file.c
+done gd_io_file.o generated
+make gd_io_ss.o
+make gd_io_ss.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_io_ss.c
+meta gd_io_ss.o %.c>%.o gd_io_ss.c gd_io_ss
+prev gd_io_ss.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_io_ss.c
+done gd_io_ss.o generated
+make gd_jpeg.o
+make gd_jpeg.c
+make jpegint.h implicit
+done jpegint.h dontcare virtual
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_jpeg.c
+meta gd_jpeg.o %.c>%.o gd_jpeg.c gd_jpeg
+prev gd_jpeg.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_jpeg.c
+done gd_jpeg.o generated
+make gd_png.o
+make gd_png.c
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_png.c
+meta gd_png.o %.c>%.o gd_png.c gd_png
+prev gd_png.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_png.c
+done gd_png.o generated
+make gd_security.o
+make gd_security.c
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_security.c
+meta gd_security.o %.c>%.o gd_security.c gd_security
+prev gd_security.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_security.c
+done gd_security.o generated
+make gd_ss.o
+make gd_ss.c
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_ss.c
+meta gd_ss.o %.c>%.o gd_ss.c gd_ss
+prev gd_ss.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_ss.c
+done gd_ss.o generated
+make gd_topal.o
+make gd_topal.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+make jinclude.h implicit
+done jinclude.h dontcare virtual
+prev ${INSTALLROOT}/include/ast/ast.h implicit
+done gd_topal.c
+meta gd_topal.o %.c>%.o gd_topal.c gd_topal
+prev gd_topal.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -c gd_topal.c
+done gd_topal.o generated
+make gd_wbmp.o
+make gd_wbmp.c
+make wbmp.h implicit
+done wbmp.h
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make gdfonts.h implicit
+prev gd.h implicit
+done gdfonts.h
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gd_wbmp.c
+meta gd_wbmp.o %.c>%.o gd_wbmp.c gd_wbmp
+prev gd_wbmp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gd_wbmp.c
+done gd_wbmp.o generated
+make gdcache.o
+make gdcache.c
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+make gdcache.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdcache.h dontcare
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdcache.c
+meta gdcache.o %.c>%.o gdcache.c gdcache
+prev gdcache.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gdcache.c
+done gdcache.o generated
+make gdfontg.o
+make gdfontg.c
+make gdfontg.h implicit
+prev gd.h implicit
+done gdfontg.h
+done gdfontg.c
+meta gdfontg.o %.c>%.o gdfontg.c gdfontg
+prev gdfontg.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfontg.c
+done gdfontg.o generated
+make gdfontl.o
+make gdfontl.c
+make gdfontl.h implicit
+prev gd.h implicit
+done gdfontl.h
+done gdfontl.c
+meta gdfontl.o %.c>%.o gdfontl.c gdfontl
+prev gdfontl.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfontl.c
+done gdfontl.o generated
+make gdfontmb.o
+make gdfontmb.c
+make gdfontmb.h implicit
+prev gd.h implicit
+done gdfontmb.h
+done gdfontmb.c
+meta gdfontmb.o %.c>%.o gdfontmb.c gdfontmb
+prev gdfontmb.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfontmb.c
+done gdfontmb.o generated
+make gdfonts.o
+make gdfonts.c
+prev gdfonts.h implicit
+done gdfonts.c
+meta gdfonts.o %.c>%.o gdfonts.c gdfonts
+prev gdfonts.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfonts.c
+done gdfonts.o generated
+make gdfontt.o
+make gdfontt.c
+make gdfontt.h implicit
+prev gd.h implicit
+done gdfontt.h
+done gdfontt.c
+meta gdfontt.o %.c>%.o gdfontt.c gdfontt
+prev gdfontt.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfontt.c
+done gdfontt.o generated
+make gdfont4.o
+make gdfont4.c
+make gdfont4.h implicit
+prev gd.h implicit
+done gdfont4.h
+done gdfont4.c
+meta gdfont4.o %.c>%.o gdfont4.c gdfont4
+prev gdfont4.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont4.c
+done gdfont4.o generated
+make gdfont5.o
+make gdfont5.c
+make gdfont5.h implicit
+prev gd.h implicit
+done gdfont5.h
+done gdfont5.c
+meta gdfont5.o %.c>%.o gdfont5.c gdfont5
+prev gdfont5.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont5.c
+done gdfont5.o generated
+make gdfont6.o
+make gdfont6.c
+make gdfont6.h implicit
+prev gd.h implicit
+done gdfont6.h
+done gdfont6.c
+meta gdfont6.o %.c>%.o gdfont6.c gdfont6
+prev gdfont6.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont6.c
+done gdfont6.o generated
+make gdfont7.o
+make gdfont7.c
+make gdfont7.h implicit
+prev gd.h implicit
+done gdfont7.h
+done gdfont7.c
+meta gdfont7.o %.c>%.o gdfont7.c gdfont7
+prev gdfont7.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont7.c
+done gdfont7.o generated
+make gdfont8.o
+make gdfont8.c
+make gdfont8.h implicit
+prev gd.h implicit
+done gdfont8.h
+done gdfont8.c
+meta gdfont8.o %.c>%.o gdfont8.c gdfont8
+prev gdfont8.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont8.c
+done gdfont8.o generated
+make gdfont9.o
+make gdfont9.c
+make gdfont9.h implicit
+prev gd.h implicit
+done gdfont9.h
+done gdfont9.c
+meta gdfont9.o %.c>%.o gdfont9.c gdfont9
+prev gdfont9.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont9.c
+done gdfont9.o generated
+make gdfont10.o
+make gdfont10.c
+make gdfont10.h implicit
+prev gd.h implicit
+done gdfont10.h
+done gdfont10.c
+meta gdfont10.o %.c>%.o gdfont10.c gdfont10
+prev gdfont10.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont10.c
+done gdfont10.o generated
+make gdfont11.o
+make gdfont11.c
+make gdfont11.h implicit
+prev gd.h implicit
+done gdfont11.h
+done gdfont11.c
+meta gdfont11.o %.c>%.o gdfont11.c gdfont11
+prev gdfont11.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont11.c
+done gdfont11.o generated
+make gdfont12.o
+make gdfont12.c
+make gdfont12.h implicit
+prev gd.h implicit
+done gdfont12.h
+done gdfont12.c
+meta gdfont12.o %.c>%.o gdfont12.c gdfont12
+prev gdfont12.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont12.c
+done gdfont12.o generated
+make gdfont13.o
+make gdfont13.c
+make gdfont13.h implicit
+prev gd.h implicit
+done gdfont13.h
+done gdfont13.c
+meta gdfont13.o %.c>%.o gdfont13.c gdfont13
+prev gdfont13.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont13.c
+done gdfont13.o generated
+make gdfont14.o
+make gdfont14.c
+make gdfont14.h implicit
+prev gd.h implicit
+done gdfont14.h
+done gdfont14.c
+meta gdfont14.o %.c>%.o gdfont14.c gdfont14
+prev gdfont14.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont14.c
+done gdfont14.o generated
+make gdfont15.o
+make gdfont15.c
+make gdfont15.h implicit
+prev gd.h implicit
+done gdfont15.h
+done gdfont15.c
+meta gdfont15.o %.c>%.o gdfont15.c gdfont15
+prev gdfont15.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont15.c
+done gdfont15.o generated
+make gdfont16.o
+make gdfont16.c
+make gdfont16.h implicit
+prev gd.h implicit
+done gdfont16.h
+done gdfont16.c
+meta gdfont16.o %.c>%.o gdfont16.c gdfont16
+prev gdfont16.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont16.c
+done gdfont16.o generated
+make gdfont17.o
+make gdfont17.c
+make gdfont17.h implicit
+prev gd.h implicit
+done gdfont17.h
+done gdfont17.c
+meta gdfont17.o %.c>%.o gdfont17.c gdfont17
+prev gdfont17.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont17.c
+done gdfont17.o generated
+make gdfont18.o
+make gdfont18.c
+make gdfont18.h implicit
+prev gd.h implicit
+done gdfont18.h
+done gdfont18.c
+meta gdfont18.o %.c>%.o gdfont18.c gdfont18
+prev gdfont18.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont18.c
+done gdfont18.o generated
+make gdfont19.o
+make gdfont19.c
+make gdfont19.h implicit
+prev gd.h implicit
+done gdfont19.h
+done gdfont19.c
+meta gdfont19.o %.c>%.o gdfont19.c gdfont19
+prev gdfont19.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont19.c
+done gdfont19.o generated
+make gdfont20.o
+make gdfont20.c
+make gdfont20.h implicit
+prev gd.h implicit
+done gdfont20.h
+done gdfont20.c
+meta gdfont20.o %.c>%.o gdfont20.c gdfont20
+prev gdfont20.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfont20.c
+done gdfont20.o generated
+make gdft.o
+make gdft.c
+make jisx0208.h implicit
+done jisx0208.h dontcare
+prev gdcache.h implicit
+make io.h implicit
+done io.h dontcare virtual
+make entities.h implicit
+done entities.h
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdft.c
+meta gdft.o %.c>%.o gdft.c gdft
+prev gdft.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I/usr/include/freetype2 -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gdft.c
+done gdft.o generated
+make gdfx.o
+make gdfx.c
+prev gd.h implicit
+done gdfx.c
+meta gdfx.o %.c>%.o gdfx.c gdfx
+prev gdfx.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/ast -c gdfx.c
+done gdfx.o generated
+make gdhelpers.o
+make gdhelpers.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdhelpers.c
+meta gdhelpers.o %.c>%.o gdhelpers.c gdhelpers
+prev gdhelpers.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gdhelpers.c
+done gdhelpers.o generated
+make gdkanji.o
+make gdkanji.c
+make ${INSTALLROOT}/include/ast/iconv.h implicit
+make ${INSTALLROOT}/include/ast/ast_iconv.h implicit
+make ${INSTALLROOT}/include/ast/ccode.h implicit
+make ${INSTALLROOT}/include/ast/ast_ccode.h implicit
+done ${INSTALLROOT}/include/ast/ast_ccode.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+prev ${INSTALLROOT}/include/ast/prototyped.h implicit
+done ${INSTALLROOT}/include/ast/ccode.h dontcare
+prev ${INSTALLROOT}/include/ast/ast_common.h implicit
+done ${INSTALLROOT}/include/ast/ast_iconv.h dontcare
+done ${INSTALLROOT}/include/ast/iconv.h dontcare
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdkanji.c
+meta gdkanji.o %.c>%.o gdkanji.c gdkanji
+prev gdkanji.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gdkanji.c
+done gdkanji.o generated
+make gdtables.o
+make gdtables.c
+done gdtables.c
+meta gdtables.o %.c>%.o gdtables.c gdtables
+prev gdtables.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -c gdtables.c
+done gdtables.o generated
+make gdxpm.o
+make gdxpm.c
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done gdxpm.c
+meta gdxpm.o %.c>%.o gdxpm.c gdxpm
+prev gdxpm.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c gdxpm.c
+done gdxpm.o generated
+make wbmp.o
+make wbmp.c
+prev gdhelpers.h implicit
+prev gd.h implicit
+prev wbmp.h implicit
+prev ${INSTALLROOT}/include/ast/stdio.h implicit
+prev ${INSTALLROOT}/include/graphviz/graphvizconfig.h implicit
+done wbmp.c
+meta wbmp.o %.c>%.o wbmp.c wbmp
+prev wbmp.c
+exec - ${CC} ${mam_cc_FLAGS} ${CCFLAGS} -I. -I${INSTALLROOT}/include/graphviz -I${INSTALLROOT}/include/ast -D_PACKAGE_ast -DHAVE_CONFIG_H -c wbmp.c
+done wbmp.o generated
+exec - ${AR} rc libgd.a gd.o gd_gd.o gd_gd2.o gd_gif_in.o gd_gif_out.o gd_io.o gd_io_dp.o gd_io_file.o gd_io_ss.o gd_jpeg.o gd_png.o gd_security.o gd_ss.o gd_topal.o gd_wbmp.o gdcache.o gdfontg.o gdfontl.o gdfontmb.o gdfonts.o gdfontt.o gdfont4.o gdfont5.o gdfont6.o gdfont7.o gdfont8.o gdfont9.o gdfont10.o gdfont11.o gdfont12.o
+exec - ${AR} rc libgd.a gdfont13.o gdfont14.o gdfont15.o gdfont16.o gdfont17.o gdfont18.o gdfont19.o gdfont20.o gdft.o gdfx.o gdhelpers.o gdkanji.o gdtables.o gdxpm.o wbmp.o
+exec - (ranlib libgd.a) >/dev/null 2>&1 || true
+done libgd.a generated
+done gd virtual
+prev libgd.a archive
+make ${INSTALLROOT}/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib
+exec - then mkdir -p ${INSTALLROOT}/lib
+exec - fi
+done ${INSTALLROOT}/lib generated
+make ${INSTALLROOT}/lib/libgd.a archive
+prev ${INSTALLROOT}/lib
+prev libgd.a archive
+exec - test '' = 'libgd.a' || ${STDCMP} 2>/dev/null -s libgd.a ${INSTALLROOT}/lib/libgd.a || { ${STDMV} ${INSTALLROOT}/lib/libgd.a ${INSTALLROOT}/lib/libgd.a.old 2>/dev/null || true; ${STDCP} libgd.a ${INSTALLROOT}/lib/libgd.a ;}
+exec - (ranlib ${INSTALLROOT}/lib/libgd.a) >/dev/null 2>&1 || true
+done ${INSTALLROOT}/lib/libgd.a generated
+make ${INSTALLROOT}/lib/lib
+exec - if silent test ! -d ${INSTALLROOT}/lib/lib
+exec - then mkdir -p ${INSTALLROOT}/lib/lib
+exec - fi
+done ${INSTALLROOT}/lib/lib generated
+make ${INSTALLROOT}/lib/lib/gd
+prev ${INSTALLROOT}/lib/lib
+prev gd.req
+exec - test '' = 'gd.req' || ${STDCMP} 2>/dev/null -s gd.req ${INSTALLROOT}/lib/lib/gd || { ${STDMV} ${INSTALLROOT}/lib/lib/gd ${INSTALLROOT}/lib/lib/gd.old 2>/dev/null || true; ${STDCP} gd.req ${INSTALLROOT}/lib/lib/gd ;}
+done ${INSTALLROOT}/lib/lib/gd generated
+make ${INSTALLROOT}/include/graphviz
+exec - if silent test ! -d ${INSTALLROOT}/include/graphviz
+exec - then mkdir -p ${INSTALLROOT}/include/graphviz
+exec - fi
+done ${INSTALLROOT}/include/graphviz generated
+make ${INSTALLROOT}/include/graphviz/gd.h
+prev ${INSTALLROOT}/include/graphviz
+prev gd.h
+exec - test '' = 'gd.h' || ${STDCMP} 2>/dev/null -s gd.h ${INSTALLROOT}/include/graphviz/gd.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gd.h ${INSTALLROOT}/include/graphviz/gd.h.old 2>/dev/null || true; ${STDCP} gd.h ${INSTALLROOT}/include/graphviz/gd.h ;}
+done ${INSTALLROOT}/include/graphviz/gd.h generated
+make ${INSTALLROOT}/include/graphviz/gd_io.h
+prev gd_io.h
+exec - test '' = 'gd_io.h' || ${STDCMP} 2>/dev/null -s gd_io.h ${INSTALLROOT}/include/graphviz/gd_io.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gd_io.h ${INSTALLROOT}/include/graphviz/gd_io.h.old 2>/dev/null || true; ${STDCP} gd_io.h ${INSTALLROOT}/include/graphviz/gd_io.h ;}
+done ${INSTALLROOT}/include/graphviz/gd_io.h generated
+make ${INSTALLROOT}/include/graphviz/gdfx.h
+prev gdfx.h
+exec - test '' = 'gdfx.h' || ${STDCMP} 2>/dev/null -s gdfx.h ${INSTALLROOT}/include/graphviz/gdfx.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfx.h ${INSTALLROOT}/include/graphviz/gdfx.h.old 2>/dev/null || true; ${STDCP} gdfx.h ${INSTALLROOT}/include/graphviz/gdfx.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfx.h generated
+make ${INSTALLROOT}/include/graphviz/gdfontg.h
+prev gdfontg.h
+exec - test '' = 'gdfontg.h' || ${STDCMP} 2>/dev/null -s gdfontg.h ${INSTALLROOT}/include/graphviz/gdfontg.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfontg.h ${INSTALLROOT}/include/graphviz/gdfontg.h.old 2>/dev/null || true; ${STDCP} gdfontg.h ${INSTALLROOT}/include/graphviz/gdfontg.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfontg.h generated
+make ${INSTALLROOT}/include/graphviz/gdfontl.h
+prev gdfontl.h
+exec - test '' = 'gdfontl.h' || ${STDCMP} 2>/dev/null -s gdfontl.h ${INSTALLROOT}/include/graphviz/gdfontl.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfontl.h ${INSTALLROOT}/include/graphviz/gdfontl.h.old 2>/dev/null || true; ${STDCP} gdfontl.h ${INSTALLROOT}/include/graphviz/gdfontl.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfontl.h generated
+make ${INSTALLROOT}/include/graphviz/gdfontmb.h
+prev gdfontmb.h
+exec - test '' = 'gdfontmb.h' || ${STDCMP} 2>/dev/null -s gdfontmb.h ${INSTALLROOT}/include/graphviz/gdfontmb.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfontmb.h ${INSTALLROOT}/include/graphviz/gdfontmb.h.old 2>/dev/null || true; ${STDCP} gdfontmb.h ${INSTALLROOT}/include/graphviz/gdfontmb.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfontmb.h generated
+make ${INSTALLROOT}/include/graphviz/gdfonts.h
+prev gdfonts.h
+exec - test '' = 'gdfonts.h' || ${STDCMP} 2>/dev/null -s gdfonts.h ${INSTALLROOT}/include/graphviz/gdfonts.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfonts.h ${INSTALLROOT}/include/graphviz/gdfonts.h.old 2>/dev/null || true; ${STDCP} gdfonts.h ${INSTALLROOT}/include/graphviz/gdfonts.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfonts.h generated
+make ${INSTALLROOT}/include/graphviz/gdfontt.h
+prev gdfontt.h
+exec - test '' = 'gdfontt.h' || ${STDCMP} 2>/dev/null -s gdfontt.h ${INSTALLROOT}/include/graphviz/gdfontt.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfontt.h ${INSTALLROOT}/include/graphviz/gdfontt.h.old 2>/dev/null || true; ${STDCP} gdfontt.h ${INSTALLROOT}/include/graphviz/gdfontt.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfontt.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont4.h
+prev gdfont4.h
+exec - test '' = 'gdfont4.h' || ${STDCMP} 2>/dev/null -s gdfont4.h ${INSTALLROOT}/include/graphviz/gdfont4.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont4.h ${INSTALLROOT}/include/graphviz/gdfont4.h.old 2>/dev/null || true; ${STDCP} gdfont4.h ${INSTALLROOT}/include/graphviz/gdfont4.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont4.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont5.h
+prev gdfont5.h
+exec - test '' = 'gdfont5.h' || ${STDCMP} 2>/dev/null -s gdfont5.h ${INSTALLROOT}/include/graphviz/gdfont5.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont5.h ${INSTALLROOT}/include/graphviz/gdfont5.h.old 2>/dev/null || true; ${STDCP} gdfont5.h ${INSTALLROOT}/include/graphviz/gdfont5.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont5.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont6.h
+prev gdfont6.h
+exec - test '' = 'gdfont6.h' || ${STDCMP} 2>/dev/null -s gdfont6.h ${INSTALLROOT}/include/graphviz/gdfont6.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont6.h ${INSTALLROOT}/include/graphviz/gdfont6.h.old 2>/dev/null || true; ${STDCP} gdfont6.h ${INSTALLROOT}/include/graphviz/gdfont6.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont6.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont7.h
+prev gdfont7.h
+exec - test '' = 'gdfont7.h' || ${STDCMP} 2>/dev/null -s gdfont7.h ${INSTALLROOT}/include/graphviz/gdfont7.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont7.h ${INSTALLROOT}/include/graphviz/gdfont7.h.old 2>/dev/null || true; ${STDCP} gdfont7.h ${INSTALLROOT}/include/graphviz/gdfont7.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont7.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont8.h
+prev gdfont8.h
+exec - test '' = 'gdfont8.h' || ${STDCMP} 2>/dev/null -s gdfont8.h ${INSTALLROOT}/include/graphviz/gdfont8.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont8.h ${INSTALLROOT}/include/graphviz/gdfont8.h.old 2>/dev/null || true; ${STDCP} gdfont8.h ${INSTALLROOT}/include/graphviz/gdfont8.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont8.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont9.h
+prev gdfont9.h
+exec - test '' = 'gdfont9.h' || ${STDCMP} 2>/dev/null -s gdfont9.h ${INSTALLROOT}/include/graphviz/gdfont9.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont9.h ${INSTALLROOT}/include/graphviz/gdfont9.h.old 2>/dev/null || true; ${STDCP} gdfont9.h ${INSTALLROOT}/include/graphviz/gdfont9.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont9.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont10.h
+prev gdfont10.h
+exec - test '' = 'gdfont10.h' || ${STDCMP} 2>/dev/null -s gdfont10.h ${INSTALLROOT}/include/graphviz/gdfont10.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont10.h ${INSTALLROOT}/include/graphviz/gdfont10.h.old 2>/dev/null || true; ${STDCP} gdfont10.h ${INSTALLROOT}/include/graphviz/gdfont10.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont10.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont11.h
+prev gdfont11.h
+exec - test '' = 'gdfont11.h' || ${STDCMP} 2>/dev/null -s gdfont11.h ${INSTALLROOT}/include/graphviz/gdfont11.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont11.h ${INSTALLROOT}/include/graphviz/gdfont11.h.old 2>/dev/null || true; ${STDCP} gdfont11.h ${INSTALLROOT}/include/graphviz/gdfont11.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont11.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont12.h
+prev gdfont12.h
+exec - test '' = 'gdfont12.h' || ${STDCMP} 2>/dev/null -s gdfont12.h ${INSTALLROOT}/include/graphviz/gdfont12.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont12.h ${INSTALLROOT}/include/graphviz/gdfont12.h.old 2>/dev/null || true; ${STDCP} gdfont12.h ${INSTALLROOT}/include/graphviz/gdfont12.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont12.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont13.h
+prev gdfont13.h
+exec - test '' = 'gdfont13.h' || ${STDCMP} 2>/dev/null -s gdfont13.h ${INSTALLROOT}/include/graphviz/gdfont13.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont13.h ${INSTALLROOT}/include/graphviz/gdfont13.h.old 2>/dev/null || true; ${STDCP} gdfont13.h ${INSTALLROOT}/include/graphviz/gdfont13.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont13.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont14.h
+prev gdfont14.h
+exec - test '' = 'gdfont14.h' || ${STDCMP} 2>/dev/null -s gdfont14.h ${INSTALLROOT}/include/graphviz/gdfont14.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont14.h ${INSTALLROOT}/include/graphviz/gdfont14.h.old 2>/dev/null || true; ${STDCP} gdfont14.h ${INSTALLROOT}/include/graphviz/gdfont14.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont14.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont15.h
+prev gdfont15.h
+exec - test '' = 'gdfont15.h' || ${STDCMP} 2>/dev/null -s gdfont15.h ${INSTALLROOT}/include/graphviz/gdfont15.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont15.h ${INSTALLROOT}/include/graphviz/gdfont15.h.old 2>/dev/null || true; ${STDCP} gdfont15.h ${INSTALLROOT}/include/graphviz/gdfont15.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont15.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont16.h
+prev gdfont16.h
+exec - test '' = 'gdfont16.h' || ${STDCMP} 2>/dev/null -s gdfont16.h ${INSTALLROOT}/include/graphviz/gdfont16.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont16.h ${INSTALLROOT}/include/graphviz/gdfont16.h.old 2>/dev/null || true; ${STDCP} gdfont16.h ${INSTALLROOT}/include/graphviz/gdfont16.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont16.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont17.h
+prev gdfont17.h
+exec - test '' = 'gdfont17.h' || ${STDCMP} 2>/dev/null -s gdfont17.h ${INSTALLROOT}/include/graphviz/gdfont17.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont17.h ${INSTALLROOT}/include/graphviz/gdfont17.h.old 2>/dev/null || true; ${STDCP} gdfont17.h ${INSTALLROOT}/include/graphviz/gdfont17.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont17.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont18.h
+prev gdfont18.h
+exec - test '' = 'gdfont18.h' || ${STDCMP} 2>/dev/null -s gdfont18.h ${INSTALLROOT}/include/graphviz/gdfont18.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont18.h ${INSTALLROOT}/include/graphviz/gdfont18.h.old 2>/dev/null || true; ${STDCP} gdfont18.h ${INSTALLROOT}/include/graphviz/gdfont18.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont18.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont19.h
+prev gdfont19.h
+exec - test '' = 'gdfont19.h' || ${STDCMP} 2>/dev/null -s gdfont19.h ${INSTALLROOT}/include/graphviz/gdfont19.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont19.h ${INSTALLROOT}/include/graphviz/gdfont19.h.old 2>/dev/null || true; ${STDCP} gdfont19.h ${INSTALLROOT}/include/graphviz/gdfont19.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont19.h generated
+make ${INSTALLROOT}/include/graphviz/gdfont20.h
+prev gdfont20.h
+exec - test '' = 'gdfont20.h' || ${STDCMP} 2>/dev/null -s gdfont20.h ${INSTALLROOT}/include/graphviz/gdfont20.h || { ${STDMV} ${INSTALLROOT}/include/graphviz/gdfont20.h ${INSTALLROOT}/include/graphviz/gdfont20.h.old 2>/dev/null || true; ${STDCP} gdfont20.h ${INSTALLROOT}/include/graphviz/gdfont20.h ;}
+done ${INSTALLROOT}/include/graphviz/gdfont20.h generated
+done install virtual
+make test
+done test dontcare virtual

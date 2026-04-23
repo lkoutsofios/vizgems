@@ -1,0 +1,53 @@
+info mam static 00000 1994-07-17 make (AT&T Research) 5.7 2012-06-20
+setv INSTALLROOT ../../..
+setv PACKAGE_swift_INCLUDE ${INSTALLROOT}/include/swift
+setv PACKAGE_swift_LIB ${INSTALLROOT}/lib
+setv PACKAGEROOT ../../../../..
+setv AR ${mam_cc_AR} ${mam_cc_AR_ARFLAGS}
+setv ARFLAGS rc
+setv AS as
+setv ASFLAGS
+setv CC cc
+setv mam_cc_FLAGS
+setv CCFLAGS ${-debug-symbols?1?${mam_cc_DEBUG} -D_BLD_DEBUG?${mam_cc_OPTIMIZE}?}
+setv CCLDFLAGS ${-strip-symbols?1?${mam_cc_LD_STRIP}??}
+setv COTEMP $$
+setv CPIO cpio
+setv CPIOFLAGS
+setv CPP "${CC} -E"
+setv F77 f77
+setv HOSTCC ${CC}
+setv IGNORE
+setv LD ld
+setv LDFLAGS
+setv LEX lex
+setv LEXFLAGS
+setv LPR lpr
+setv LPRFLAGS
+setv M4FLAGS
+setv NMAKE nmake
+setv NMAKEFLAGS
+setv PR pr
+setv PRFLAGS
+setv SHELL /bin/sh
+setv SILENT
+setv TAR tar
+setv YACC yacc
+setv YACCFLAGS -d
+make ${PACKAGEROOT}/lib/package/swift.lic
+done ${PACKAGEROOT}/lib/package/swift.lic
+make install
+make ${INSTALLROOT}/lib/make
+exec - if silent test ! -d ${INSTALLROOT}/lib/make
+exec - then mkdir -p ${INSTALLROOT}/lib/make
+exec - fi
+done ${INSTALLROOT}/lib/make generated
+make ${INSTALLROOT}/lib/make/pkg-swift.mk
+prev ${INSTALLROOT}/lib/make
+make pkg-swift.mk
+done pkg-swift.mk
+exec - test '' = 'pkg-swift.mk' || ${STDCMP} 2>/dev/null -s pkg-swift.mk ${INSTALLROOT}/lib/make/pkg-swift.mk || { ${STDMV} ${INSTALLROOT}/lib/make/pkg-swift.mk ${INSTALLROOT}/lib/make/pkg-swift.mk.old 2>/dev/null || true; ${STDCP} pkg-swift.mk ${INSTALLROOT}/lib/make/pkg-swift.mk ;}
+done ${INSTALLROOT}/lib/make/pkg-swift.mk generated
+done install virtual
+make test
+done test dontcare virtual

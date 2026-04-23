@@ -60,7 +60,33 @@ cc ld ldd :PACKAGE_INIT: mamake.c proto.c ratz.c release.c
 	cc.sco.i386 \
 	cc.sgi.mips2 cc.sgi.mips3 cc.sgi.mips3-o32 cc.sgi.mips4 \
 	cc.sgi.mips4-n32 ldd.sgi \
-	cc.unix.mc68k
+	cc.unix.mc68k \
+	cc.linux.aarch64 \
+	ar.linux.aarch64-rasp12 cc.linux.aarch64-rasp12 \
+	ar.linux.aarch64-rasp13 cc.linux.aarch64-rasp13 \
+	ar.linux.aarch64-suse cc.linux.aarch64-suse \
+	ar.linux.aarch64-ubuntu24 cc.linux.aarch64-ubuntu24 \
+	ar.freebsd12.amd64 cc.freebsd12.amd64 \
+	ar.linux.i386-64 cc.linux.i386-64 \
+	ar.linux.i386-64-arch99 cc.linux.i386-64-arch99 \
+	ar.linux.i386-64-rh5 cc.linux.i386-64-rh5 \
+	ar.linux.i386-64-rh6 cc.linux.i386-64-rh6 \
+	ar.linux.i386-64-rh7 cc.linux.i386-64-rh7 \
+	ar.linux.i386-64-rh8 cc.linux.i386-64-rh8 \
+	ar.linux.i386-64-rh9 cc.linux.i386-64-rh9 \
+	ar.linux.i386-64-suse cc.linux.i386-64-suse \
+	ar.linux.i386-64-suse15 cc.linux.i386-64-suse15 \
+	ar.linux.i386-64-suse16 cc.linux.i386-64-suse16 \
+	ar.linux.i386-64-suse90 cc.linux.i386-64-suse90 \
+	ar.linux.i386-64-suse99 cc.linux.i386-64-suse99 \
+	ar.linux.i386-64-ubuntu14 cc.linux.i386-64-ubuntu14 \
+	ar.linux.i386-64-ubuntu16 cc.linux.i386-64-ubuntu16 \
+	ar.linux.i386-64-ubuntu18 cc.linux.i386-64-ubuntu18 \
+	ar.linux.i386-64-ubuntu19 cc.linux.i386-64-ubuntu19 \
+	ar.linux.i386-64-ubuntu20 cc.linux.i386-64-ubuntu20 \
+	ar.linux.i386-64-ubuntu22 cc.linux.i386-64-ubuntu22 \
+	ar.linux.i386-64-ubuntu23 cc.linux.i386-64-ubuntu23 \
+	ar.linux.i386-64-ubuntu24 cc.linux.i386-64-ubuntu24
 
 LICENSE : .DONTCARE
 
