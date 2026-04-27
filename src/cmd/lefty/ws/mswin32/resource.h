@@ -1,3 +1,6 @@
+/***********************************************************************
+*             Copyright (c) 1988-2026 Lefteris Koutsofios              *
+***********************************************************************/
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
 // Used by lefty.rc

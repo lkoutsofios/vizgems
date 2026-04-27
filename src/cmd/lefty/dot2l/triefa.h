@@ -1,3 +1,6 @@
+/***********************************************************************
+*             Copyright (c) 1988-2026 Lefteris Koutsofios              *
+***********************************************************************/
 /*  File - TrieFA.h
     The data types for the generated trie-baseed finite automata.
 */

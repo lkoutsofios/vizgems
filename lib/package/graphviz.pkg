@@ -1,5 +1,5 @@
 graphviz :PACKAGE: ast \
-	INITgraphviz dotty gv lefty libgd libgraph libgv
+	INITgraphviz dotty lefty libgd
 
 :REQUIRES: ast
 

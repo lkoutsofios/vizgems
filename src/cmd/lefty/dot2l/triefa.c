@@ -1,3 +1,6 @@
+/***********************************************************************
+*             Copyright (c) 1988-2026 Lefteris Koutsofios              *
+***********************************************************************/
 /*  File - TrieFA.ins.c
     This file contains code to be included in the scanner file using a
     generated trie-based FA.

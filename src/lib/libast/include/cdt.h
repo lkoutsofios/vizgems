@@ -19,11 +19,6 @@
 *                   Phong Vo <kpv@research.att.com>                    *
 *                                                                      *
 ***********************************************************************/
-//#ifdef HAVEGVCDT
-//#include </usr/include/graphviz/cdt.h>
-//#define _CDT_H          1
-//#endif
-
 #ifndef _CDT_H
 #define _CDT_H		1
 

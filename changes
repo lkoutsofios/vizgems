@@ -1,3 +1,9 @@
+v1100.2026.04.27
+
+- more code cleanup from cdt issue
+- added copyright notices in files that didn't have it
+- package info cleanup
+
 v1100.2026.04.23
 
 - rolled back rename of cdt functions and types and used dlopen to pull in libgraphviz as isolated code
