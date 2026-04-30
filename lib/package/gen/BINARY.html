@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>binary package installation instructions</TITLE>
+<HEAD>
+<BODY bgcolor=white link=teal vlink=dimgray>
+<CENTER><H3><FONT face=courier color=red>Binary Package Installation Instructions</FONT></H3></CENTER>
+<P><TABLE cellpadding=0 cellspacing=2>
+<TR><TD align=right valign=top><B>(1)</B></TD><TD align=left>Do not install packages as <I>root/super-user</I>. Although some components may
+      have setuid executables, few must be owned by <I>root</I>. These are best
+      changed manually when the security implications are understood.</TD></TR>
+<TR><TD align=right valign=top><B>(2)</B></TD><TD align=left>Choose a package root directory and cd to it. This will be a local work
+      area for all packages.</TD></TR>
+<TR><TD align=right valign=top><B>(3)</B></TD><TD align=left>These instructions bypass the <I>click to download</I> package links on the
+      download site. If you already clicked, or if your system does not have
+      <A href=../../man/man1/curl.html>curl</A>(1), <A href=../../man/man1/hurl.html>hurl</A>(1), <A href=../../man/man1/lynx.html>lynx</A>(1) or <A href=../../man/man1/wget.html>wget</A>(1) then use the alternate instructions
+      for (3),(4),(5) in plan <B>B</B> below. Plan <B>B</B> installs the <A href=../../man/man1/hurl.html>hurl</A>(1)
+      script which works with ksh and modern bash. The top level URL is:<PRE>
+		URL=http://www.research.att.com/sw/download</PRE></TD></TR>
+<TR><TD align=right valign=top><B>(4)</B></TD><TD align=left>If the <B>bin/package</B> script does not exist then run:<PRE>
+		test -d bin || mkdir bin
+		url=$URL/package
+		(wget -O - $url||curl -L $url||hurl $url) > bin/package
+		chmod +x bin/package</PRE></TD></TR>
+<TR><TD align=right valign=top><B>(5)</B></TD><TD align=left>Determine the list of package names you want from the download site, then
+      use the <A href=../../man/man1/package.html>package</A>(1) command to do the actual download:<PRE>
+		bin/package authorize "<I>NAME</I>" password "<I>PASSWORD</I>" \
+			setup binary $URL <I>PACKAGE</I> ...</PRE>
+      (Refer to the <B>AUTHORIZATION</B> paragraph on the main download page for
+      <I>NAME</I>/<I>PASSWORD</I> details.)  This downloads the closure of the latest
+      binary package(s); covered and up-to-date packages are not downloaded again unless
+      <B>package force ...</B> is specified. Package content is verified using <B>md5sum</B>.
+      If the package root will contain only one architecture then you can install in <B>bin</B> and
+      <B>lib</B> instead of <B>arch/</B><I>HOSTTYPE</I><B>/bin</B> and <B>arch/</B><I>HOSTTYPE</I><B>/lib</B> by running this
+      instead:<PRE>
+		bin/package authorize "<I>NAME</I>" password "<I>PASSWORD</I>" \
+			flat setup binary $URL <B>PACKAGE</B> ...</PRE>
+      To update the same packages from the same URL run:<PRE>
+		bin/package setup binary</PRE></TD></TR>
+<TR><TD align=right valign=top><B>(6)</B></TD><TD align=left>The packaged binaries are position independent, i.e., they do not
+      contain hard-coded paths. However, commands with related files, like
+      <A href=../../man/man1/file.html>file</A>(1) and <A href=../../man/man1/nmake.html>nmake</A>(1), require the path of the bin directory to be
+      exported in <B>PATH.</TD></TR>
+<TR><TD align=right valign=top><B>(7)</B></TD><TD align=left>You can run the binaries directly from the package root, or you can
+      install them in a public root (requires the <I>AT&amp;T</I> <A href=../../man/man1/nmake.html>nmake</A>(1) command):<PRE>
+		bin/package flat install <I>DIRECTORY PACKAGE</I></PRE>
+      This will install in <I>DIRECTORY</I><B>/bin</B> and <I>DIRECTORY</I><B>/lib</B>. If you want to
+      preserve the <B>arch/</B><I>HOSTTYPE</I> hierarchy under <I>DIRECTORY</I> then omit the
+      <B>flat</B> argument. If you don't have <A href=../../man/man1/nmake.html>nmake</A>(1) then the following will do a
+      flat install:<PRE>
+		cd $INSTALLROOT
+		cp -p -r bin lib include <I>DIRECTORY</I></PRE></TD></TR>
+<TR><TD align=right valign=top><B>(8)</B></TD><TD align=left>To summarize, after the first time, the download cycle for the latest
+      binary release is:<PRE>
+		bin/package setup binary</PRE></TD></TR></TABLE><P>
+
+<CENTER><H3><FONT face=courier color=red>Binary Package Installation Instructions -- Plan B</FONT></H3></CENTER>
+<P><TABLE cellpadding=0 cellspacing=2>
+<TR><TD align=right valign=top><B>(3)</B></TD><TD align=left>Create the subdirectory <B>lib/package/tgz</B> and download all package archives
+      into that directory.</TD></TR>
+<TR><TD align=right valign=top><B>(4)</B></TD><TD align=left>If the <B>bin/package</B> script does not exist then manually read the <B>INIT</B>
+      binary package:<PRE>
+		gunzip < lib/package/tgz/INIT.<I>YYYY-MM-DD.HOSTTYPE</I>.tgz |
+			tar xvf -</PRE>
+      Note that some browsers automatically unzip downloaded without warning.
+      If the gunzip fails try:
+		tar xvf -</PRE> lib/package/tgz/INIT.<I>YYYY-MM-DD.HOSTTYPE</I>.tgz
+      If your system does not have <A href=../../man/man1/tar.html>tar</A>(1) or <A href=../../man/man1/gzip.html>gunzip</A>(1) then download the <A href=../../man/man1/ratz.html>ratz</A>
+      binary package:<PRE>
+		mkdir bin
+		cp lib/package/tgz/ratz.<I>YYYY-MM-DD.HOSTTYPE</I>.exe bin/ratz
+		chmod +x bin/ratz
+		bin/ratz -lm < lib/package/tgz/INIT.<I>YYYY-MM-DD/HOSTTYPE</I>.tgz
+<TR><TD align=right valign=top><B>(5)</B></TD><TD align=left>Read all unread package archive(s):<PRE>
+		bin/package read</PRE>
+      Both source and binary packages will be read by this step.</TD></TR></TABLE><P></BODY>
+</HTML>

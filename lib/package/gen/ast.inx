@@ -1,0 +1,4 @@
+name='ast'
+index='ksh, pax, nmake, sfio, and ast open source commands and libraries'
+covers='ast-base ast-make ast-ksh ksh ast-ast ast-dss'
+requires=''

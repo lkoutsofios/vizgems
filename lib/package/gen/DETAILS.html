@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE>intro package installation instructions</TITLE>
+<HEAD>
+<BODY bgcolor=white link=teal vlink=dimgray>
+<CENTER><H3><FONT face=courier color=red>Package Hierarchy Details</FONT></H3></CENTER>
+<P>
+The package directory hierarchy is rooted at <B>$PACKAGEROOT</B>. All source and
+binaries reside under this tree. A two level viewpath is used to separate
+source and binaries. The top view is architecture specific, the bottom view
+is shared source. All building is done in the architecture specific view;
+no source view files are intentionally changed. This means that many
+different binary architectures can be made from a single copy of the source.
+<P>
+Each package contains one or more components. Component source for the <I>FOO</I>
+command is in <B>$PACKAGEROOT/src/cmd/</B><I>FOO</I>, and source for the <I>BAR</I> library is
+in <B>$PACKAGEROOT/src/lib/lib</B><I>BAR</I>. This naming is for convenience only; the
+underlying makefiles handle inter-component build order. The <B>INIT</B> component,
+which contains generic package support files, is always made first, then the
+components named <B>INIT</B>*, then the order determined by the closure of component
+makefile dependencies.
+<P>
+<B>$PACKAGEROOT/lib/package</B> contains package specific files. The package naming
+convention is <I>GROUP</I>[<I>-PART</I>]; e.g., <B>ast-base</B>, <B>gnu-fileutils</B>. The *<B>.pkg</B> files
+are <B>ast</B> <A href=../../man/man1/nmake.html>nmake</A>(1) makefiles that contain the package name, package components,
+references to other packages, and a short package description. *<B>.pkg</B> files
+are used by <TT>package write</TT> to generate new source and binary packages.
+<P>
+<B>$PACKAGEROOT/lib/package/</B><I>GROUP</I><B>.lic</B> files contain license information that
+is used by the <B>ast</B> <A href=../../man/man1/proto.html>proto</A>(1) and <A href=../../man/man1/nmake.html>nmake</A>(1) commands to generate source and
+binary license strings. <I>GROUP</I> is determined by the first <B>:PACKAGE:</B> operator
+name listed in the component <B>nmake</B> makefile. <I>GROUP</I><B>.lic</B> files are part of the
+licensing documentation.  Each component may have its own <B>LICENSE</B> file that
+overrides the <I>GROUP</I><B>.lic</B> file.  The full text of the licenses are in the
+<B>$PACKAGEROOT/lib/package/LICENSES</B> and <B>$INSTALLROOT/lib/package/LICENSES</B>
+directories.
+<P>
+A few files are generated in <B>$PACKAGEROOT/lib/package/gen</B> and
+<B>$INSTALLROOT/lib/package/gen</B>. <I>PACKAGE</I><B>.ver</B> contains one line consisting of<PRE>
+	<I>PACKAGE VERSION RELEASE</I> 1</PRE>
+for the most recent instance of <I>PACKAGE</I> read into <B>$PACKAGEROOT</B>, where
+<I>PACKAGE</I> is the package name, <I>VERSION</I> is the <I>YYYY-MM-DD</I> base version,
+and <I>RELEASE</I> is <I>VERSION</I> for the base release or <I>YYYY-MM-DD</I> for delta releases.
+<I>PACKAGE</I><B>.req</B> contains *<B>.ver</B> entries for the packages required by
+<I>PACKAGE</I>, except that the fourth field is 0 instead of 1. All packages
+except <B>INIT</B> and <A href=../../man/man1/ratz.html>ratz</A> require the <B>INIT</B> package. A simple sort of <I>PACKAGE</I><B>.pkg</B>
+and *<B>.ver</B> determines if the required package have been read in. Finally,
+<I>PACKAGE</I><B>.README</B> contains the <B>README</B> text for <I>PACKAGE</I> and all its
+components. Included are all changes added to the component <B>RELEASE</B>,
+<B>CHANGES</B> or <B>ChangeLog</B> files dated since the two most recent base
+releases. Component <B>RELEASE</B> files contain tag lines of the form
+[<I>CC</I>]<I>YY-MM-DD</I> [ <I>TEXT</I> ] (or <A href=../../man/man1/date.html>date</A>(1) format dates) followed by README
+text, in reverse chronological order (newer entries at the top of the
+file.) <TT>package release</TT> generates this information, and
+<TT>package contents ...</TT> lists the descriptions and components.
+<P>
+<B>$HOSTYPE</B> names the current binary architecture and is determined by the
+output of <TT>package</TT> (no arguments.) The <B>$HOSTTYPE</B> naming scheme is used
+to separate incompatible executable and object formats. All architecture
+specific binaries are placed under <B>$INSTALLROOT</B> (<B>$PACKAGEROOT/arch/$HOSTTYPE</B>.)
+There are a few places that match against <B>$HOSTTYPE</B> when making binaries; these
+are limited to makefile compiler workarounds, e.g., if <B>$HOSTTYPE</B> matches
+'hp.*' then turn off the optimizer for these objects. All other architecture
+dependent logic is handled either by <B>$INSTALLROOT/bin/iffe</B> or by component
+specific configure scripts. Explicit <B>$HOSTYPE</B> values matching *,*cc*[,-*,...]
+optionally set the default <B>CC</B> and <B>CCFLAGS</B>. This is handy for build
+farms that support different compilers on the same architecture.
+<P>
+Each component contains an <B>ast</B> <A href=../../man/man1/nmake.html>nmake</A>(1) makefile (either <B>Nmakefile</B> or <B>Makefile</B>)
+and a <I>MAM</I> (make abstract machine) file (<B>Mamfile</B>.) A Mamfile contains a portable
+makefile description that is used by <B>$INSTALLROOT/bin/mamake</B> to simulate
+<B>nmake</B>. Currently there is no support for old-make/gnu-make makefiles; if
+the binaries are just being built then <B>mamake</B> will suffice; if source or
+makefile modifications are anticipated then <B>nmake</B> (from the <B>ast-open</B> or
+<B>ast-base</B> package) should be used. Mamfiles are automatically generated by
+<TT>package write</TT>.
+<P>
+Most component C source is prototyped. If <B>$CC</B> (default value <B>cc</B>) is not a
+prototyping C compiler then <TT>package make</TT> runs <A href=../../man/man1/proto.html>proto</A>(1) on portions of the
+<B>$PACKAGEROOT/src</B> tree and places the converted output files in the
+<B>$PACKAGEROOT/proto/src</B> tree. Converted files are then viewpathed over the
+original source. The <B>ast</B> <A href=../../man/man1/proto.html>proto</A>(1) command converts an ANSI C subset to code
+that is compatible with K&R, ANSI, and C++ dialects.
+<P>
+All scripts and commands under <B>$PACKAGEROOT</B> use <B>$PATH</B> relative pathnames;
+there are no imbedded absolute pathnames. This means that binaries generated
+under <B>$PACKAGEROOT</B> may be copied to a different root; users need only change
+their <B>$PATH</B> variable to reference the new instalation root bin directory.
+<TT>package install</TT> installs binary packages in a new <B>$INSTALLROOT</B>.
+</BODY>
+</HTML>
