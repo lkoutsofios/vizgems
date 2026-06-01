@@ -51,7 +51,7 @@ function vg_ssh_fun_maindf_send {
 
     case $targettype in
     *linux*)
-        cmd="df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"
+        cmd="/usr/bin/df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"
         ;;
     *freebsd*)
         cmd="df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"
@@ -131,7 +131,7 @@ function vg_ssh_fun_maindf_invsend {
 
     case $targettype in
     *linux*)
-        cmd="df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"
+        cmd="/usr/bin/df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"
         ;;
     *freebsd*)
         cmd="df -P -l -k | egrep -v '^Filesystem|^[a-zA-Z]|^/dev/loop' | egrep '%'"

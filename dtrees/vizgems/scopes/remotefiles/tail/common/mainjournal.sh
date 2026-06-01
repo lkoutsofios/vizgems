@@ -39,7 +39,7 @@ journalctl -q -o short-iso -p 3 --no-pager --cursor-file=jctl.cursor \
     fi
 
     id=${line%%' '*}
-    [[ $id == localhost ]] && id=${TAILHOST:-$id}
+    [[ $id == localhost || $id == *.* ]] && id=${TAILHOST:-$id}
     line=${line#*' '}
     tool=${line%%' '*}
     txt=${line#*' '}

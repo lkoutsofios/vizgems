@@ -1,3 +1,9 @@
+v1100.2026.06.01
+
+fix to vgtail to replace fqn in journal with the scope asset
+fix to vgtail for picking the right ksh to use
+fix to scope ssh df tool to use /usr/bin/df
+
 v1100.2026.04.27
 
 - more code cleanup from cdt issue

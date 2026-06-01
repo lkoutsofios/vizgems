@@ -1,5 +1,5 @@
 
-for exe in ./kshsym /bin/ksh /usr/bin/ksh $(which ksh) ./ksh.*; do
+for exe in ./ksh /bin/ksh /usr/bin/ksh $(which ksh) ./ksh.*; do
     [[ ! -f $exe ]] && continue
 
     if [[ \
@@ -9,16 +9,16 @@ for exe in ./kshsym /bin/ksh /usr/bin/ksh $(which ksh) ./ksh.*; do
         continue
     fi
 
-    [[ $exe == ./kshsym ]] && break
+    [[ $exe == ./ksh ]] && break
 
-    rm -f ./kshsym
-    ln -s $exe ./kshsym
+    rm -f ./ksh
+    ln -s $exe ./ksh
     break
 done
 
-if [[ ! -x ./kshsym ]]; then
+if [[ ! -x ./ksh ]]; then
     print -u2 SWIFT ERROR cannot find working ksh
     exit 1
 fi
 
-SHELL=$PWD/kshsym ./kshsym "$@"
+SHELL=$PWD/ksh ./ksh "$@"
