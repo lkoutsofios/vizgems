@@ -89,14 +89,14 @@ int GVWinit (void) {
      * RTLD_DEEPBIND — graphviz resolves its own CDT calls against its own
      *               copy, not whatever dtopen happens to be in global scope.
      */
-    hcgraph = dlopen("libcgraph.so.6", RTLD_LOCAL | RTLD_LAZY | RTLD_DEEPBIND);
+    hcgraph = dlopen("libcgraph.so", RTLD_LOCAL | RTLD_LAZY | RTLD_DEEPBIND);
     if (!hcgraph) {
-        fprintf(stderr, "GVWinit: cannot load libcgraph.so.6: %s\n", dlerror());
+        fprintf(stderr, "GVWinit: cannot load libcgraph.so: %s\n", dlerror());
         return -1;
     }
-    hgvc = dlopen("libgvc.so.6", RTLD_LOCAL | RTLD_LAZY | RTLD_DEEPBIND);
+    hgvc = dlopen("libgvc.so", RTLD_LOCAL | RTLD_LAZY | RTLD_DEEPBIND);
     if (!hgvc) {
-        fprintf(stderr, "GVWinit: cannot load libgvc.so.6: %s\n", dlerror());
+        fprintf(stderr, "GVWinit: cannot load libgvc.so: %s\n", dlerror());
         return -1;
     }
 
