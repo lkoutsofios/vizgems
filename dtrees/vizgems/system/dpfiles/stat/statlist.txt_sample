@@ -79,6 +79,7 @@ nvmem_util|NV Mem Util (All)|NV Mem Util (%s)|avg|100.0|
 nvmemory_used|NV Mem Used (All)|NV Mem Used (%s)|avg|y|
 nvsensor_power|NV Power (All)|NV Power (%s)|avg|n|
 nvsensor_temp|NV Temp (All)|NV Temp (%s)|avg|n|
+drcpu_used|CPU Used (All)|CPU Used (%s)|avg|100.0|
 os_loadavg|Load Average|Load Average|avg|n|
 os_nproc|Number of Procs|Number of Procs|avg|n|
 os_nthread|Number of Threads|Number of Threads|avg|n|

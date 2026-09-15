@@ -20,6 +20,10 @@ os|mainlinux.i386|mainlinux.i386|ntp_offset|y|SSH:cooked?user=[scope_user]&pass=
 os|mainlinux.i386|mainlinux.i386|nvfan_util|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvfan_util&inst=[[!si_nvidia]]|%|number|||
 os|mainlinux.i386|mainlinux.i386|nvgpu_util|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvgpu_util&inst=[[!si_nvidia]]|%|number|||
 os|mainlinux.i386|mainlinux.i386|nvmem_util|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvmem_util&inst=[[!si_nvidia]]|%|number|||
+os|mainlinux.i386|mainlinux.i386|drcpu_used|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=maindocker&var=drcpu_used&inst=[[!si_dockerid]]|%|number|||
+os|mainlinux.i386|mainlinux.i386|drmemory_used|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=maindocker&var=drmemory_used&inst=[[!si_dockerid]]|GB|number|||
+os|mainlinux.i386|mainlinux.i386|drtcpip_inbyte|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=maindocker&var=drtcpip_inbyte&inst=[[!si_dockerid]]|MB|number|||
+os|mainlinux.i386|mainlinux.i386|drtcpip_outbyte|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=maindocker&var=drtcpip_outbyte&inst=[[!si_dockerid]]|MB|number|||
 os|mainlinux.i386|mainlinux.i386|nvmemory_used|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvmemory_used&inst=[[!si_nvidia]]|MB|number|||
 os|mainlinux.i386|mainlinux.i386|nvsensor_power|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvsensor_power&inst=[[!si_nvidia]]|Watt|number|||
 os|mainlinux.i386|mainlinux.i386|nvsensor_temp|y|SSH:cooked?user=[scope_user]&pass=[scope_pass]&tool=mainnvidia&var=nvsensor_temp&inst=[[!si_nvidia]]|F|number|||

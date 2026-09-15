@@ -1,3 +1,7 @@
+v1100.2026.09.15
+
+- added ssh scope tool to collect stats from docker containers
+
 v1100.2026.08.22
 
 - leftover fix to graphviz wrapper
