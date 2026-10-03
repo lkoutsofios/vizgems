@@ -2,7 +2,7 @@
 
 LICENSE = since=1990,author=gsf
 
-if CC.HOSTTYPE == "linux.i386-64-suse*" || CC.HOSTTYPE == "linux.i386-64-arch99"
+if CC.HOSTTYPE == "linux.i386-64-suse*" || CC.HOSTTYPE == "linux.i386-64-arch99" || CC.HOSTTYPE == "linux.i386-64-ubuntu26*"
 CCFLAGS += --std=c99
 end
 

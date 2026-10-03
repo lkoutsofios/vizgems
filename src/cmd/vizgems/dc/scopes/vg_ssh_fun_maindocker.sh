@@ -60,7 +60,7 @@ function vg_ssh_fun_maindocker_receive {
     set +f
     vn=${#vs[@]}
 
-    di=${vs[0]}
+    di=$(print "${vs[1]}" | sum -x md5)
 
     dockervs[drcpu_used.$di]=${vs[2]%'%'}
     dockerls[drcpu_used.$di]="Docker CPU Used (${vs[1]})"
@@ -141,7 +141,8 @@ function vg_ssh_fun_maindocker_invreceive {
     set +f
     vn=${#vs[@]}
 
-    di=${vs[0]}
+    di=$(print "${vs[1]}" | sum -x md5)
+
     print "node|o|$aid|si_dockerid$di|${vs[1]}"
 
     mem=${vs[3]}

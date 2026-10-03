@@ -86,7 +86,8 @@ cc ld ldd :PACKAGE_INIT: mamake.c proto.c ratz.c release.c
 	ar.linux.i386-64-ubuntu20 cc.linux.i386-64-ubuntu20 \
 	ar.linux.i386-64-ubuntu22 cc.linux.i386-64-ubuntu22 \
 	ar.linux.i386-64-ubuntu23 cc.linux.i386-64-ubuntu23 \
-	ar.linux.i386-64-ubuntu24 cc.linux.i386-64-ubuntu24
+	ar.linux.i386-64-ubuntu24 cc.linux.i386-64-ubuntu24 \
+	ar.linux.i386-64-ubuntu26 cc.linux.i386-64-ubuntu26
 
 LICENSE : .DONTCARE
 

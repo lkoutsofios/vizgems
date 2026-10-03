@@ -4,8 +4,8 @@ ast :PACKAGE: \
 		libz tests coshell cpp cs mam msgcc nmake probe ss \
 		libcoshell libcs libmam libpp libcodex paxlib codexlib \
 		at builtin codex dss dsslib ie mam ncsl pack pzip \
-		re sort sortlib std tksh tw warp libdss libpz \
-		libtksh libtk vczip libvcodex libvgraph libtaso
+		re sort sortlib std tw warp libdss libpz \
+		vczip libvcodex libvgraph libtaso
 
 :COVERS: ast-base ast-dss
 
