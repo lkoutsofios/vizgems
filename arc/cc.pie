@@ -1,0 +1,19 @@
+: linux.i386-64-suse90 cc wrapper : 2006-02-14 :
+
+HOSTTYPE=linux.i386-64-suse90
+
+case " $* " in
+*" -dumpmachine "*) echo $HOSTTYPE; exit ;;
+esac
+
+SEC_CFLAGS="-O2 -fstack-protector-strong -fstack-clash-protection -fcf-protection -D_FORTIFY_SOURCE=3"
+
+ARGS=" $@ "
+
+if [[ " $ARGS " == *" -G "* || " $ARGS " == *" -shared "* || " $ARGS " == *".so "* ]]; then
+    /usr/bin/cc $SEC_CFLAGS -fPIC -Wno-implicit-int -Wno-implicit-function-declaration -P -g "$@" -lm -shared -Wl,-z,relro -Wl,-z,now
+elif [[ " $ARGS " == *" vgxml "* || " $ARGS " == *" -lxml2 "* ]]; then
+    /usr/bin/cc $SEC_CFLAGS -no-pie -Wno-implicit-int -Wno-implicit-function-declaration -P -g "$@" -lm -Wl,-z,lazy
+else
+    /usr/bin/cc $SEC_CFLAGS -fPIE -Wno-implicit-int -Wno-implicit-function-declaration -P -g "$@" -lm -pie -Wl,-z,relro -Wl,-z,now
+fi

@@ -81,7 +81,7 @@ function vg_ssh_fun_maindocker_receive {
 
     net=${vs[5]}
     net=${net%%' '*}
-    u=${net##+([0-9.])}
+    u=${net##+([0-9.e+])}
     v=${net%%"$u"}
     u=${u//i/}
     vg_unitconv "$v" $u MB
@@ -94,7 +94,7 @@ function vg_ssh_fun_maindocker_receive {
 
     net=${vs[5]}
     net=${net##*' '}
-    u=${net##+([0-9.])}
+    u=${net##+([0-9.e+])}
     v=${net%%"$u"}
     u=${u//i/}
     vg_unitconv "$v" $u MB

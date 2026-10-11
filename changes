@@ -1,3 +1,8 @@
+v1100.2026.10.10
+
+- fix to ssh scope tool to collect stats from docker containers
+- added ssh scope tool 'last' to watch the users logging into the system
+
 v1100.2026.10.02
 
 - fix to ssh scope tool to collect stats from docker containers
